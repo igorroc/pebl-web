@@ -4,7 +4,7 @@ body{
     margin:0px;
     font-family: 'Montserrat', sans-serif;
     background-color: #f5f9ff;
-    background-image: url("./assets/BG_Struppe.png");
+    background-image: url("../img/BG_Struppe.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position-y: 50%;
