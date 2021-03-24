@@ -1,40 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body{
-    margin:0px;
+body {
+    margin: 0px;
     font-family: 'Montserrat', sans-serif;
     background-color: #f5f9ff;
-  }
-  .menu{
+}
+
+.menu {
     background-color: #cacaca;
-    width:100%;
-    height:50px;
-    margin:0px;
+    width: 100%;
+    height: 50px;
+    margin: 0px;
     align-items: center;
-  }
-  .grade{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    justify-items:center;
-  }
-  
-  .home{
-    border-radius:80px;
-    width:120px;
-    height:30px;
+}
+
+.grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.home {
+    border-radius: 80px;
+    width: 120px;
+    height: 30px;
     font-weight: 500;
-    margin-top:8px;
-    text-align:center;
-  }
-  
-  .login{
-    border-radius:80px;
-    width:120px;
-    height:30px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.login {
+    border-radius: 80px;
+    width: 120px;
+    height: 30px;
     font-weight: 500;
-    margin-top:8px;
-    text-align:center;
-  }
-  .login img{
-      width: 24px;
-  }
+    margin-top: 8px;
+    text-align: center;
+}
+
+.login img {
+    width: 24px;
+}
+
+
+/* TESTE */
+
+.teste {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    height: 500px;
+    background-color: aqua;
+}
+
+.lembrar {
+    font-size: 1.5rem;
+}
+
+.alternar {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+}
