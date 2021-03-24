@@ -2,9 +2,9 @@
   <img src="./img/icon_neurociencia.jfif" alt="PEBL-Web" />
 
   &#xa0;
-  <h1 align="center">PEBL-Web</h1>
+  <h1 align="center"><a href="https://igorroc.github.io/PEBL-Web" target="_blank">PEBL-Web</a></h1>
 
-  <a href="https://igorroc.github.io/PEBL-Web" target="_blank">Demo</a>
+  <a href="https://igorroc.github.io/PEBL-Web" target="_blank">Site</a>
 </div>
 
 
@@ -27,70 +27,69 @@
 ## Status ##
 
 <h4 align="center"> 
-	🚧  PEBL-Web 🚀 Under construction...  🚧
+	🚧  PEBL-Web 🚀 Em desenvolvimento...  🚧
 </h4> 
 
 <hr>
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-testes">Testes</a> &#xa0; | &#xa0;
+  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-começando">Começando</a> &#xa0; | &#xa0;
+  <a href="#memo-Licença">Licença</a> &#xa0; | &#xa0;
   <a href="https://github.com/IgorRoc" target="_blank">Author</a>
 </p>
 
 <br>
 
-## :dart: About ##
+## :dart: Sobre ##
 
-Describe your project
+Desenvolvimento de testes neuropsicológicos computadorizados online para o contexto brasileiro
 
-## :sparkles: Features ##
+## :sparkles: Testes ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+🚧 Stroop;\
+🚧 BST;\
+🚧 Sternberg;\
+🚧 Torre de Londres;
 
-## :rocket: Technologies ##
+## :rocket: Tecnologias ##
 
-The following tools were used in this project:
+As seguintes ferramentas serão utilizadas no projeto:
 
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Requerimentos ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Antes de começar, você precisa ter o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Começando ##
 
 ```bash
-# Clone this project
-$ git clone https://github.com/IgorRoc/PEBL-Web
+# Clone este projeto
+$ git clone https://github.com/IgorRoc/PEBL-Web.git
 
-# Access
+# Acesse
 $ cd PEBL-Web
 
-# Install dependencies
+# Instale as depencencias
 $ yarn
 
-# Run the project
+# Rode o projeto
 $ yarn start
-
-# The server will initialize in the <http://localhost:3000>
 ```
 
-## :memo: License ##
+## :memo: Licença ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+Esse projeto está sob licença MIT. Para mais detalhes, veja o arquivo de [LICENÇA](LICENSE.md).
 
 
-Made with :heart: by <a href="https://github.com/IgorRoc" target="_blank">Igor Rocha</a>, <a href="https://github.com/inlima" target="_blank">Isaac Lima</a>, <a href="https://github.com/jvrupp" target="_blank">João Rupp</a>
+Feito com :heart: por <a href="https://github.com/IgorRoc" target="_blank">Igor Rocha</a>, <a href="https://github.com/inlima" target="_blank">Isaac Lima</a>, <a href="https://github.com/jvrupp" target="_blank">João Rupp</a>
 
 &#xa0;
 
