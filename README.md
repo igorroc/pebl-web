@@ -1,12 +1,12 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="igorroc.github.io" />
+  <img src="./assets/icon_neurociencia.jfif" alt="PEBL-Web" />
 
   &#xa0;
+  <h1 align="center">PEBL-Web</h1>
 
-  <a href="https://igorroc.github.io.netlify.app">Demo</a>
+  <a href="https://igorroc.github.io">Demo</a>
 </div>
 
-<h1 align="center">PEBL-Web</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/IgorRoc/igorroc.github.io?color=56BEB8">
@@ -24,7 +24,7 @@
   <img alt="Github stars" src="https://img.shields.io/github/stars/IgorRoc/igorroc.github.io?color=56BEB8" />
 </p>
 
-Status
+## Status ##
 
 <h4 align="center"> 
 	🚧  igorroc.github.io 🚀 Under construction...  🚧
