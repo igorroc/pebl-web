@@ -1,36 +1,36 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="PEBL_Web" />
+  <img src="./.github/app.gif" alt="igorroc.github.io" />
 
   &#xa0;
 
-  <!-- <a href="https://pebl_web.netlify.app">Demo</a> -->
+  <a href="https://igorroc.github.io.netlify.app">Demo</a>
 </div>
 
-<h1 align="center">PEBL_Web</h1>
+<h1 align="center">PEBL-Web</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/IgorRoc/pebl_web?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/IgorRoc/igorroc.github.io?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/IgorRoc/pebl_web?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/IgorRoc/igorroc.github.io?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorRoc/pebl_web?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorRoc/igorroc.github.io?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/IgorRoc/pebl_web?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/IgorRoc/igorroc.github.io?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/IgorRoc/pebl_web?color=56BEB8" /> -->
+  <img alt="Github issues" src="https://img.shields.io/github/issues/IgorRoc/igorroc.github.io?color=56BEB8" /> 
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/IgorRoc/pebl_web?color=56BEB8" /> -->
+  <img alt="Github forks" src="https://img.shields.io/github/forks/IgorRoc/igorroc.github.io?color=56BEB8" />
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/IgorRoc/pebl_web?color=56BEB8" /> -->
+  <img alt="Github stars" src="https://img.shields.io/github/stars/IgorRoc/igorroc.github.io?color=56BEB8" />
 </p>
 
-<!-- Status -->
+Status
 
-<!-- <h4 align="center"> 
-	🚧  PEBL_Web 🚀 Under construction...  🚧
+<h4 align="center"> 
+	🚧  igorroc.github.io 🚀 Under construction...  🚧
 </h4> 
 
-<hr> -->
+<hr>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -58,7 +58,6 @@ Describe your project
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
@@ -72,10 +71,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/IgorRoc/pebl_web
+$ git clone https://github.com/IgorRoc/igorroc.github.io
 
 # Access
-$ cd pebl_web
+$ cd igorroc.github.io
 
 # Install dependencies
 $ yarn
