@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./assets/icon_neurociencia.jfif" alt="PEBL-Web" />
+  <img src="./img/icon_neurociencia.jfif" alt="PEBL-Web" />
 
   &#xa0;
   <h1 align="center">PEBL-Web</h1>
