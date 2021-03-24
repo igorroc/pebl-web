@@ -4,7 +4,7 @@
   &#xa0;
   <h1 align="center">PEBL-Web</h1>
 
-  <a href="https://igorroc.github.io" target="_blank">Demo</a>
+  <a href="https://igorroc.github.io/PEBL-Web" target="_blank">Demo</a>
 </div>
 
 
