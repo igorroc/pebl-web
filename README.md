@@ -38,8 +38,7 @@
   <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-começando">Começando</a> &#xa0; | &#xa0;
-  <a href="#memo-Licença">Licença</a> &#xa0; | &#xa0;
-  <a href="https://github.com/IgorRoc" target="_blank">Author</a>
+  <a href="#memo-Licença">Licença</a>
 </p>
 
 <br>
@@ -50,7 +49,7 @@ Desenvolvimento de testes neuropsicológicos computadorizados online para o cont
 
 ## :sparkles: Testes ##
 
-🚧 Stroop;\
+🚧 [Stroop](https://igorroc.github.io/PEBL-Web/stroop.html);\
 🚧 BST;\
 🚧 Sternberg;\
 🚧 Torre de Londres;
