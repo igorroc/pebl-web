@@ -1,0 +1,6 @@
+{
+    "INST1": "Nesta tarefa, você primeiro verá e memorizará uma pequena lista de letras. Por exemplo BN. Depois de memorizar a lista, aparecerá uma letra de cada vez na tela. Você avaliará se a letra que aparece estava ou não estava na lista.\nSe a letra estava, aperte a Shift esquerda.\nSe a letra não estava, aperte a a tecla Shift direita.\n\nClique abaixo quando estiver pronto para começar.",
+    "HEAD1": "A lista a ser aprendida.\n\n Pressione qualquer tecla para começar o teste.",
+    "HEAD2": "[A] PRESENTE                            AUSENTE [L]",
+    "DEBRIEF": "O teste está concluído.\n\nPressione OK para continuar."
+}
