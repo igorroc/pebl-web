@@ -15,6 +15,8 @@ var i = 0;
 function comecar(){
     comeco.textContent = nomes[i]
     comeco.style.color = cores[i]
+    document.body.style.background = "#f3f3f3 url('')"
+    
 
     pegaTempo()
 

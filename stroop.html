@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon_neurociencia.jfif" />
+    <title>Stroop - PEBL Web</title>
+    <link href="./css/stroop.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class='menu'>
+        <div class='grade'>
+            <div></div>
+            <div class ='home'><a href="./index.html">Home</a></div>
+            <div class ='login'><a>Igor</a>
+                <img src="./assets/user.svg" alt="Igor">
+            </div>
+        </div>
+    </div>
+
+    <div class='testes'>
+      <p class="titulo">Fase 1</p>
+      <div class='main'>
+        <div class='texto' onclick="comecar()">
+            <h3 class="start" >Clique para Começar</h3>
+        </div>
+      </div>
+      <div class='botoes'>
+          <div class="err" onclick="clickErrado()">
+              <p>Errado</p>
+          </div>
+          <div class="cer" onclick="clickCerto()">
+              <p>Certo</p>
+          </div>
+      </div>
+    </div>
+
+    <script src="./js/stroop.js"></script>
+  </body>
+</html>
