@@ -82,3 +82,8 @@ body {
     padding: 1rem;
     border-radius: 20px;
 }
+
+.hidden{
+    display: none;
+    visibility: hidden;
+}
