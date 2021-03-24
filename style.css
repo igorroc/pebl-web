@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    margin:0px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f9ff;
+    background-image: url("./assets/BG_Struppe.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 50%;
+  }
+  .menu{
+    background-color: #cacaca;
+    width:100%;
+    height:50px;
+    margin:0px;
+    align-items: center;
+  }
+  .grade{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    justify-items:center;
+  }
+  
+  .home{
+    border-radius:80px;
+    width:120px;
+    height:30px;
+    font-weight: 500;
+    margin-top:8px;
+    text-align:center;
+  }
+  
+  .step{
+    border-radius:80px;
+    width:120px;
+    height:30px;
+    margin-top:8px;
+    text-align:center;
+  }
+  
+  
+  .login{
+    border-radius:80px;
+    width:120px;
+    height:30px;
+    font-weight: 500;
+    margin-top:8px;
+    text-align:center;
+  }
+  .login img{
+      width: 24px;
+  }
+  
+  .testes{
+    margin:45px auto;
+    width:800px;
+    height:500px;
+    box-sizing: border-box;
+    position: relative;
+    display:grid;
+    grid-template-rows:1fr 1fr 1fr;
+  }
+  .testes .titulo{
+      font-weight: 100;
+      text-align: left;
+      margin-left: 1rem;
+        align-self: center;
+  }
+
+  .main{
+    margin:auto;
+    align-self: center;
+  }
+  .texto{
+    text-align: center;
+    font-size: 5rem;
+    padding: 0 2rem;
+    border-radius: 30px;
+    background-color:rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testes .botoes{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-self: center;
+    font-weight: 600;
+    font-size: 3.5rem;
+    color: white;
+  }
+  .testes .botoes .err{
+      grid-column-start: 2;
+      text-align: center;
+  }
+  .testes .botoes .cer{
+    grid-column-start: 4;
+    text-align: center;
+  }
+  .testes .botoes .err p{
+    background-color: #da4545;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.78); 
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.3);
+    padding: 0 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  .testes .botoes .cer p{
+    background-color: #68f986;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.78); 
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.3);
+    padding: 0 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+  }
