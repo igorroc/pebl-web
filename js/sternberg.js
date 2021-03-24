@@ -62,6 +62,7 @@ var listener = function sternberg (e) {
     }else if (escolhas.length%PROX_NIVEL == 0) {
         nivel = nivel+1
         proximo_nivel()
+        lembrar.classList.remove('hidden')
     }
     
 
