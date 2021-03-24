@@ -50,8 +50,10 @@ var listener = function sternberg (e) {
 
     if (acertou) { //Inserção no vetor de escolhas
         escolhas.push(true)
+        lembrar.classList.add('hidden')
     }else{
         escolhas.push(false)
+        lembrar.classList.remove('hidden')
     }
 
 
