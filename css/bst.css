@@ -87,10 +87,55 @@ body {
     margin: 50px;
 }
 
+.bigsquarered {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 50px;
+}
+
+.bigcircleblue {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+    margin: 50px;
+}
+
+.bigsquareblack {
+    width: 190px;
+    height: 190px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 1px 1px 10px black;
+    margin: 50px;
+}
+
+.bigcircleblack {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 1px 1px 10px black;
+    margin: 50px;
+}
+
 .square {
     width: 100px;
     height: 100px;
     background-color: blue;
+    margin: 50px;
+}
+
+.square1 {
+    width: 100px;
+    height: 100px;
+    /* background-color: blue; */
+    border-color: blue;
+    border-style: solid;
     margin: 50px;
 }
 

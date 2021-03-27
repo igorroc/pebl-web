@@ -8,86 +8,59 @@ var level = 1
 
 var alternate = document.getElementsByClassName('alternate')[0]
 var buttons = document.getElementsByClassName('buttons')[0]
-var square = document.getElementsByClassName('square')[0]
-var circle = document.getElementsByClassName('circle')[0]
+var big = document.getElementsByClassName('changing')[0]
 
-var shape = [square, circle];
+var shape = ["bigsquare", "bigcircle", "bigsquarered", "bigcircleblue", "bigsquareblack", "bigcircleblack"];
 
-function click(){
-    // getTime()
+function choose(choice){
+    getTime()
     console.log('choice')
-    // choices.push(choice)
+    choices.push(choice)
+    if(choice == big.classList[1]){
+        console.log('acertou')
+    }
+    big.classList.remove("bigcircle")
+    big.classList.remove("bigsquare")
+    big.classList.remove("bigcircleblue")
+    big.classList.remove("bigsquarered")
+    big.classList.remove("bigsquareblack")
+    big.classList.remove("bigcircleblack")
+    big.classList.add(`${random_shape()}`)
 }
 
-// function start(){
-//     buttons.classList.remove('hidden')
-//     alternate.innerHTML = random_shape()
+function start(){
+    buttons.classList.remove('hidden')
+    alternate.innerHTML = random_shape()
     
-//     getTime()
+    getTime()
+}
 
-//     window.addEventListener('click', listener)
-// }
+function finalizar(){
+    console.log(choices)
+    console.log(result(time))
 
-// function finalizar(){
-//     console.log(choices)
-//     console.log(result(time))
-//     window.removeEventListener('click', listener)
+    alternate.innerHTML = "FIM!"
+    lembrar.innerHTML = ''
+    buttons.classList.add('hidden')
+}
 
-//     alternate.innerHTML = "FIM!"
-//     lembrar.innerHTML = ''
-//     buttons.classList.add('hidden')
-// }
+function random_shape(){
+    return shape[Math.floor(Math.random() * 6)]
+}
 
+function getTime() {
+    var t = new Date()
+    time.push(t)
+}
 
-// var listener = function bts (e) {
-//     getTime()
-//     var codigo = e.code.slice(3)
-//     var acertou = false
+function next_(){
+    random_shape()
+}
 
-//     if (codigo == KEY_AUSENTE) { // Escolha do usuario
-//         if (!lembrar.innerHTML.includes(alternar.innerHTML)) {
-//             acertou = true
-//         }
-//     } else if(codigo == KEY_PRESENTE){
-//         if (lembrar.innerHTML.includes(alternar.innerHTML)) {
-//             acertou = true
-//         }
-//     }
-
-//     if (acertou) { //Inserção no vetor de escolhas
-//         escolhas.push(true)
-//     }else{
-//         escolhas.push(false)
-//     }
-
-
-//     if (escolhas.length%FIM == 0) {
-//         finalizar()
-//     }else if (escolhas.length%PROX_NIVEL == 0) {
-//         level++
-//         next_level()
-//     }
-
-//     alternate.innerHTML = random_shape()
-// }
-
-// function random_shape(){
-//     return shape[Math.floor(Math.random() * 2)]
-// }
-
-// function getTime() {
-//     var t = new Date()
-//     time.push(t)
-// }
-
-// function next_(){
-//     random_shape()
-// }
-
-// function resultado(a){
-//     var dif = new Array
-//     for (var i = 0; i < a.length-1; i++) {
-//         dif.push(a[i+1]-a[i])
-//     }
-//     return dif
-// }
+function resultado(a){
+    var dif = new Array
+    for (var i = 0; i < a.length-1; i++) {
+        dif.push(a[i+1]-a[i])
+    }
+    return dif
+}
