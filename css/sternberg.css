@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root{
+    --cor-do-header:#cacaca;
+    --cor-de-fundo:#f5f9ff;
+    --cor-de-fundo-testes: #f5f5f5;
+    --cor-errado: #ec5959;
+    --cor-certo: #59ec6d;
+    --cor-fonte: #ffff;
+}
+
 body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f5f9ff;
+    background-color: var(--cor-de-fundo);
 }
 
+/* TOP HEADER */
 .menu {
-    background-color: #cacaca;
+    background-color: var(--cor-do-header);
     width: 100%;
     height: 50px;
     margin: 0px;
@@ -44,14 +54,13 @@ body {
 
 
 /* TESTE */
-
 .teste {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     height: 700px;
-    background-color: rgb(245, 245, 245);
+    background-color: var(--cor-de-fundo-testes);
 }
 
 .lembrar {
@@ -59,6 +68,7 @@ body {
 }
 
 .alternar {
+    text-align: center;
     font-size: 4rem;
     font-weight: bold;
     cursor: pointer;
@@ -69,21 +79,45 @@ body {
     grid-template-columns: 1fr 3fr 1fr;
     justify-items: center;
     font-weight: 600;
-    color: white;
+    color: var(--cor-fonte);
 }
 
 .errado{
-    background-color: rgb(236, 89, 89);
+    background-color: var(--cor-errado);
     padding: 1rem;
     border-radius: 20px;
 }
 
 .certo{
-    background-color: rgb(89, 236, 109);
+    background-color: var(--cor-certo);
     padding: 1rem;
     border-radius: 20px;
 }
 
+
+/* TRANSICAO */
+.transicao{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: var(--cor-de-fundo-testes);
+    color: red;
+    font-size: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.transicao p{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+/* OPCOES */
 .hidden{
     visibility: hidden;
+    width: 0px;
+    height: 0px;
 }
