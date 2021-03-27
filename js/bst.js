@@ -1,31 +1,30 @@
-const FIRST_LEVEL = 6
-const NEXT_LEVEL = 20
-const FINAL_LEVEL = 30
+const PROX_NIVEL = 10
+const FIM = 30
 
 var time = []
 var choices = []
-var level = 1
+var level = 0
 
 var alternate = document.getElementsByClassName('alternate')[0]
 var buttons = document.getElementsByClassName('buttons')[0]
 var big = document.getElementsByClassName('changing')[0]
 
-var shape = ["bigsquare", "bigcircle", "bigsquarered", "bigcircleblue", "bigsquareblack", "bigcircleblack"];
+var shape = ["square", "circle"]
+var aux = ["red", "blue", "line"]
 
 function choose(choice){
     getTime()
-    console.log('choice')
     choices.push(choice)
-    if(choice == big.classList[1]){
+    if(choice == big.classList[2]){
         console.log('acertou')
     }
-    big.classList.remove("bigcircle")
-    big.classList.remove("bigsquare")
-    big.classList.remove("bigcircleblue")
-    big.classList.remove("bigsquarered")
-    big.classList.remove("bigsquareblack")
-    big.classList.remove("bigcircleblack")
-    big.classList.add(`${random_shape()}`)
+
+    if (level%PROX_NIVEL == 0) {
+        
+    }
+    removeClasses(big)
+    big.classList.add(random_shape())
+    big.classList.add(random_aux())
 }
 
 function start(){
@@ -44,8 +43,20 @@ function finalizar(){
     buttons.classList.add('hidden')
 }
 
+function removeClasses(div){
+    div.classList.remove('red')
+    div.classList.remove('blue')
+    div.classList.remove('line')
+    div.classList.remove('square')
+    div.classList.remove('circle')
+}
+
 function random_shape(){
-    return shape[Math.floor(Math.random() * 6)]
+    return shape[Math.floor(Math.random() * shape.length)]
+}
+
+function random_aux(){
+    return aux[Math.floor(Math.random() * aux.length)]
 }
 
 function getTime() {
@@ -63,4 +74,10 @@ function resultado(a){
         dif.push(a[i+1]-a[i])
     }
     return dif
+}
+
+function sleep(ms) {
+    return new Promise(
+      resolve => setTimeout(resolve, ms)
+    );
 }
