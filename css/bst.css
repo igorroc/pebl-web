@@ -127,6 +127,8 @@ body {
     display: block;
     text-align: center;
     margin: auto;
+
+    cursor: pointer;
 }
 
 /* OPCOES */
