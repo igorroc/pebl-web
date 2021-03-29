@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f9ff;
+}
+
+.menu {
+    background-color: #cacaca;
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    align-items: center;
+}
+
+.grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.home {
+    border-radius: 80px;
+    width: 120px;
+    height: 30px;
+    font-weight: 500;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.login {
+    border-radius: 80px;
+    width: 120px;
+    height: 30px;
+    font-weight: 500;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.login img {
+    width: 24px;
+}
+
+
+/* TESTE */
+
+.teste {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    height: 700px;
+    background-color: rgb(245, 245, 245);
+}
+
+.lembrar {
+    font-size: 1.5rem;
+}
+
+.alternate {
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttons {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    font-weight: 600;
+    color: white;
+}
+
+/* FORMAS */
+.square {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 50px;
+}
+
+/* VARIACOES */
+.big {
+    width: 200px;
+    height: 200px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.line {
+    width: 190px;
+    height: 190px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 1px 1px 10px black;
+}
+
+/* TRANSICAO */
+.transicao{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: var(--cor-de-fundo-testes);
+    color: red;
+    font-size: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.transicao p{
+    display: block;
+    text-align: center;
+    margin: auto;
+
+    cursor: pointer;
+}
+
+/* OPCOES */
+.hidden{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
