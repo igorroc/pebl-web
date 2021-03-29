@@ -23,6 +23,8 @@ var aux = {
     ]
 }
 
+getTime()
+
 function choose(choice){
     getTime()
     choices.push(choice)
@@ -36,18 +38,12 @@ function choose(choice){
         finalizar()
     }else if (choices.length%PROX_NIVEL == 0) {
         transicionando = true
-        transicao(`Indo para o nivel ${level+1}.\nClique aqui para continuar`)
+        transicao(`Indo para o nível ${level+1}.\nClique aqui para continuar`)
     }
     removeClasses(big)
-    big.classList.add(random_shape())
-    big.classList.add(random_aux())
-}
-
-function start(){
-    buttons.classList.remove('hidden')
-    alternate.innerHTML = random_shape()
-    
-    getTime()
+    let forma = random_shape()
+    big.classList.add(forma)
+    big.classList.add(random_aux(forma))
 }
 
 function transicao(texto){
@@ -68,13 +64,18 @@ function transicao(texto){
 function removeTransicao(){
     level = level+1
     transicionando = false
-    var trans = document.getElementsByClassName('transicao')[0]
-    trans.remove()
-
-    var testes = document.getElementsByClassName('test')[0]
-    testes.classList.remove('hidden')
 
     proximo_nivel()
+
+    removeClasses(big)
+    let forma = random_shape()
+    big.classList.add(forma)
+    big.classList.add(random_aux(forma))
+    
+    var trans = document.getElementsByClassName('transicao')[0]
+    trans.remove()
+    var testes = document.getElementsByClassName('test')[0]
+    testes.classList.remove('hidden')
 }
 
 function finalizar(){
@@ -83,7 +84,7 @@ function finalizar(){
 
     var div =  document.createElement('div')
     var p = document.createElement('p')
-    p.innerText = 'VOCE FINALIZOU'
+    p.innerText = 'VOCÊ FINALIZOU'
     div.classList.add('transicao')
     div.appendChild(p)
     body.appendChild(div)
@@ -95,6 +96,7 @@ function finalizar(){
 }
 
 function proximo_nivel(){
+    aux = {}
     if (level == 1) {
         aux = {
             circle:["red","line"],
@@ -139,7 +141,6 @@ function getTime() {
     var t = new Date()
     time.push(t)
 }
-
 
 function resultado(a){
     var dif = new Array
