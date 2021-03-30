@@ -5,18 +5,9 @@ var vez = 1;
 
 const gabarito = ['vermelho', 'azul', 'amarelo', 'verde']
 
-var gab1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-var gab2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-var gab3 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 var cores = ['vermelho', 'verde', 'azul', 'amarelo', 'verde', 'azul', 'vermelho', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'verde', 'vermelho', 'verde', 'azul', 'amarelo', 'verde', 'azul', 'vermelho', 'amarelo', 'azul', 'vermelho', 'verde']
-
 var textos = ['batata', 'quando', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'brocolis', 'sobre', 'batata', 'quando', 'quando', 'brocolis', 'batata', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'quando']
 var textos2 = ['vermelho', 'vermelho', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde']
-var tempos = [
-  [Date.now()],
-  [],
-  []
-]
 
 var resultadoFinal = {
   fase1: {
@@ -32,9 +23,6 @@ var resultadoFinal = {
       escolhas: []
   }
 }
-
-
-var txt = document.createTextNode('teste')
 
 var circulos = [];
 var level = 0;
@@ -92,7 +80,7 @@ function apagaTestes() {
 }
 
 //transicao-----------------------
-function trasition(txt) {
+function transition(txt) {
   apagaTestes()
   var div = document.createElement('div')
   var p = document.createElement('p')
@@ -109,10 +97,9 @@ function trasition(txt) {
 }
 
 function removeTransition() {
-  level = level + 1
+  level++
   i = 0
   transicionando = false
-  tempos[level].push(Date.now())
 
   var transicao = document.getElementsByClassName('transicao')[0]
   transicao.remove()
@@ -181,7 +168,7 @@ var key = function (e) {
       filhos[23].classList.remove('ativo')
       filhos[23].classList.remove('clique-errado')
       transicionando = true
-      trasition(`Indo para fase ${level+2}.\nAperte qualquer tecla.`)
+      transition(`Indo para fase ${level+2}.\nAperte qualquer tecla.`)
     }
   }
 }
