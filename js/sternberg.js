@@ -30,7 +30,7 @@ var resultadoFinal = {
         tempo: [],
         escolhas: []
     }
-  }
+}
 
 // INICIO DINAMICO
 lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()

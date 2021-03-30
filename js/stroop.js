@@ -11,16 +11,16 @@ var textos2 = ['vermelho', 'vermelho', 'vermelho', 'verde', 'amarelo', 'azul', '
 
 var resultadoFinal = {
   fase1: {
-      tempo: [],
-      escolhas: []
+    tempo: [],
+    escolhas: []
   },
   fase2: {
-      tempo: [],
-      escolhas: []
+    tempo: [],
+    escolhas: []
   },
   fase3: {
-      tempo: [],
-      escolhas: []
+    tempo: [],
+    escolhas: []
   }
 }
 
@@ -34,6 +34,7 @@ var filhos = teste.children
 //FUNCOES
 
 getTime(resultadoFinal[`fase${level+1}`].tempo)
+
 function alteraCorCirculos() {
   for (f of filhos) {
     circulos.push(f.children[0])
@@ -135,7 +136,7 @@ function finalizar() {
   teste.classList.add('hidden')
   var childComandos = document.getElementsByClassName('comandos')[0]
   childComandos.classList.add('hidden')
-  
+
   console.log(resultadoFinal)
 }
 
@@ -183,7 +184,7 @@ function getTime(local) {
 function resultado(a) {
   var dif = new Array
   for (var i = 0; i < a.length - 1; i++) {
-      dif.push(a[i + 1] - a[i])
+    dif.push(a[i + 1] - a[i])
   }
   return dif
 }
