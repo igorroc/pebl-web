@@ -1,0 +1,18 @@
+:root{
+    --cor-do-header:#cacaca;
+    --cor-de-fundo:#f5f9ff;
+    --cor-de-fundo-testes: #dddddd;
+
+    --cor-errado: #ec5959;
+    --cor-certo: #59ec6d;
+
+    --cor-amarelo: yellow;
+    --cor-azul: blue;
+    --cor-verde: green;
+    --cor-vermelho: red;
+    --cor-preto: #000;
+    --cor-branco: #fff;
+
+    --cor-fonte: #ffff;
+    --cor-fonte-transicao: rgb(255, 0, 0);
+}

@@ -1,58 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "pattern.css";
+@import "header-menu.css";
+@import "variables.css";
 
 body {
   margin: 0px;
   font-family: 'Montserrat', sans-serif;
-  background-color: #f5f9ff;
-}
-
-.menu {
-  background-color: #cacaca;
-  width: 100%;
-  height: 50px;
-  margin: 0px;
-  align-items: center;
-}
-
-.grade {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-}
-
-.home {
-  border-radius: 80px;
-  width: 120px;
-  height: 30px;
-  font-weight: 500;
-  margin-top: 8px;
-  text-align: center;
-}
-
-.step {
-  border-radius: 80px;
-  width: 120px;
-  height: 30px;
-  margin-top: 8px;
-  text-align: center;
-}
-
-
-.login {
-  border-radius: 80px;
-  width: 120px;
-  height: 30px;
-  font-weight: 500;
-  margin-top: 8px;
-  text-align: center;
-}
-
-.login img {
-  width: 24px;
+  background-color: var(--cor-de-fundo);
 }
 
 .testes {
-  background-color: gray;
+  background-color: var(--cor-de-fundo-testes);
   width: 90%;
   height: 600px;
   margin: 0 50px;
@@ -60,41 +18,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
 }
-
-
-.encerramento {
-  display: block;
-}
-
-.encerra {
-  width: 50%;
-  color: red;
-  margin: auto;
-  margin-top: 250px;
-  font-size: 40px;
-}
-
-.transicao{
-  position: absolute;
-  width: 100%;
-  height: 70%;
-  background-color: #f9f9f9;
-  color: red;
-  font-size: 3rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-}
-.transicao p{
-  display: block;
-  text-align: center;
-  margin: auto;
-
-  cursor: pointer;
-}
-
 
 .holder {
   align-items: center;
@@ -118,46 +41,40 @@ body {
   margin: -25px 0 0 -25px;
 }
 
-.palavra {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
 .bg-vermelho {
-  background-color: red;
+  background-color: var(--cor-vermelho);
 }
 
 .bg-amarelo {
-  background-color: yellow;
+  background-color: var(--cor-amarelo);
 }
 
 .bg-azul {
-  background-color: rgb(25, 0, 255);
+  background-color: var(--cor-azul);
 }
 
 .bg-verde {
-  background-color: green;
+  background-color: var(--cor-verde);
 }
 
 .txt-vermelho {
-  color: red;
+  color: var(--cor-vermelho);
 }
 
 .txt-amarelo {
-  color: yellow;
+  color: var(--cor-amarelo);
 }
 
 .txt-azul {
-  color: rgb(25, 0, 255);
+  color: var(--cor-azul);
 }
 
 .txt-verde {
-  color: green;
+  color: var(--cor-verde);
 }
 
 .ativo {
-  border: thick solid rgb(0, 0, 0);
+  border: thick solid var(--cor-preto);
 }
 
 /*ANIMACAO DE CLIQUE ERRADO*/
@@ -166,10 +83,9 @@ body {
     background-color: none;
   }
   50%{
-    background-color: white;
+    background-color: var(--cor-branco);
   }
 }
-
 
 
 .comandos {
@@ -180,11 +96,4 @@ body {
 
 .txtcmd {
   margin: 0 auto;
-}
-
-
-.hidden {
-  visibility: hidden;
-  width: 0px;
-  height: 0px;
 }
