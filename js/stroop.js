@@ -1,7 +1,6 @@
 var body = document.getElementsByTagName('body')[0]
 var teste = document.getElementsByClassName('testes')[0]
 var filhosBody = body.children
-var vez = 1;
 
 const gabarito = ['vermelho', 'azul', 'amarelo', 'verde']
 
@@ -24,11 +23,10 @@ var resultadoFinal = {
   }
 }
 
-var circulos = [];
-var level = 0;
-var trans = 0
+var circulos = []
+var level = 0
 var i = 0;
-var transicionando = false;
+var transicionando = false
 var filhos = teste.children
 
 //FUNCOES
@@ -48,7 +46,7 @@ function alteraCorCirculos() {
 }
 
 function alteratextoCirculos(textos) {
-  var p = document.createElement("p") // Create a <h1> element
+  var p = document.createElement("p")
   for (var j = 0; j < circulos.length; j++) {
     p.innerHTML = textos[j];
     circulos[j].appendChild(p.cloneNode(true))
