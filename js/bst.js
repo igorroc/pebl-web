@@ -33,11 +33,11 @@ var big = document.getElementsByClassName('changing')[0]
 
 var shape = ["square", "circle"]
 var aux = {
-    circle:[
+    circle: [
         "red",
         "line"
     ],
-    square:[
+    square: [
         "blue",
         "line"
     ]
@@ -45,18 +45,18 @@ var aux = {
 
 getTime(resultadoFinal[`fase${level}`].tempo)
 
-function choose(choice){
+function choose(choice) {
     getTime(resultadoFinal[`fase${level}`].tempo)
     step++
-    if(choice == big.classList[2]){
+    if (choice == big.classList[2]) {
         resultadoFinal[`fase${level}`].escolhas.push('acertou')
-    }else{
+    } else {
         resultadoFinal[`fase${level}`].escolhas.push('errou')
     }
 
-    if (step%FIM == 0) {
+    if (step % FIM == 0) {
         finalizar()
-    }else if (step%PROX_NIVEL == 0) {
+    } else if (step % PROX_NIVEL == 0) {
         transicionando = true
         transicao(`Indo para o nível ${level+1}.\nClique aqui para continuar`)
     }
@@ -66,8 +66,8 @@ function choose(choice){
     big.classList.add(random_aux(forma))
 }
 
-function transicao(texto){
-    var div =  document.createElement('div')
+function transicao(texto) {
+    var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerText = texto
     div.classList.add('transicao')
@@ -81,8 +81,8 @@ function transicao(texto){
     body.appendChild(div)
 }
 
-function removeTransicao(){
-    level = level+1
+function removeTransicao() {
+    level = level + 1
     transicionando = false
 
     proximo_nivel()
@@ -91,7 +91,7 @@ function removeTransicao(){
     let forma = random_shape()
     big.classList.add(forma)
     big.classList.add(random_aux(forma))
-    
+
     var trans = document.getElementsByClassName('transicao')[0]
     trans.remove()
     var testes = document.getElementsByClassName('teste')[0]
@@ -100,52 +100,57 @@ function removeTransicao(){
 
 }
 
-function finalizar(){
+function finalizar() {
     var buttons = document.getElementsByClassName('buttons')[0]
     buttons.remove()
 
-    var div =  document.createElement('div')
+    var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerText = 'VOCÊ FINALIZOU'
     div.classList.add('transicao')
     div.appendChild(p)
     body.appendChild(div)
-    
+
     var testes = document.getElementsByClassName('teste')[0]
     testes.classList.add('hidden')
 
-    for(i = 1; i <= 5;i++ ){
+    for (i = 1; i <= 5; i++) {
         console.log(resultado(resultadoFinal[`fase${i}`].tempo))
     }
 }
 
-function proximo_nivel(){
+function proximo_nivel() {
     aux = {}
     if (level == 1) {
         aux = {
-            circle:["red","line"],
-            square:["blue","line"]}
-    }else if (level == 2){
+            circle: ["red", "line"],
+            square: ["blue", "line"]
+        }
+    } else if (level == 2) {
         aux = {
-            circle:["line"],
-            square:["line"]}
-    }else if (level == 3){
+            circle: ["line"],
+            square: ["line"]
+        }
+    } else if (level == 3) {
         aux = {
-            circle:["red"],
-            square:["blue"]}
-    }else if (level == 4){
+            circle: ["red"],
+            square: ["blue"]
+        }
+    } else if (level == 4) {
         aux = {
-            circle:["blue"],
-            square:["red"]}
-    }else if (level == 5){
+            circle: ["blue"],
+            square: ["red"]
+        }
+    } else if (level == 5) {
         aux = {
-            circle:["blue","red","line"],
-            square:["blue","red","line"]}
+            circle: ["blue", "red", "line"],
+            square: ["blue", "red", "line"]
+        }
     }
 }
 
 // FUNCOES DE AJUDA
-function removeClasses(div){
+function removeClasses(div) {
     div.classList.remove('red')
     div.classList.remove('blue')
     div.classList.remove('line')
@@ -153,11 +158,11 @@ function removeClasses(div){
     div.classList.remove('circle')
 }
 
-function random_shape(){
+function random_shape() {
     return shape[Math.floor(Math.random() * shape.length)]
 }
 
-function random_aux(forma){
+function random_aux(forma) {
     return aux[forma][Math.floor(Math.random() * aux[forma].length)]
 }
 
@@ -166,16 +171,16 @@ function getTime(local) {
     local.push(t)
 }
 
-function resultado(a){
+function resultado(a) {
     var dif = new Array
-    for (var i = 0; i < a.length-1; i++) {
-        dif.push(a[i+1]-a[i])
+    for (var i = 0; i < a.length - 1; i++) {
+        dif.push(a[i + 1] - a[i])
     }
     return dif
 }
 
 function sleep(ms) {
     return new Promise(
-      resolve => setTimeout(resolve, ms)
+        resolve => setTimeout(resolve, ms)
     );
 }

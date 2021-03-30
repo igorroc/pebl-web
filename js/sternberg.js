@@ -17,10 +17,10 @@ var lembrar = document.getElementsByClassName('lembrar')[0]
 var botoes = document.getElementsByClassName('botoes')[0]
 
 // INICIO DINAMICO
-lembrar.innerHTML = letra_aleatoria()+letra_aleatoria()
+lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
 
 
-async function comecar(){
+async function comecar() {
     botoes.classList.remove('hidden')
     alternar.removeAttribute('onclick')
 
@@ -39,27 +39,27 @@ async function comecar(){
     window.addEventListener('keypress', listener)
 }
 
-function removeComeco(){
+function removeComeco() {
     window.removeEventListener('keyup', comecar)
 }
 
-function finalizar(){
+function finalizar() {
     console.log(escolhas)
     console.log(resultado(tempo))
     window.removeEventListener('keypress', listener)
 
-    var div =  document.createElement('div')
+    var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerText = FRASE_FINAL
     div.classList.add('transicao')
     div.appendChild(p)
     body.appendChild(div)
-    
+
     teste.classList.add('hidden')
 }
 
-function transicao(texto){
-    var div =  document.createElement('div')
+function transicao(texto) {
+    var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerText = texto
     div.classList.add('transicao')
@@ -71,8 +71,8 @@ function transicao(texto){
     body.appendChild(div)
 }
 
-function removeTransicao(){
-    nivel = nivel+1
+function removeTransicao() {
+    nivel = nivel + 1
     transicionando = false
     var trans = document.getElementsByClassName('transicao')[0]
     trans.remove()
@@ -84,48 +84,48 @@ function removeTransicao(){
     lembrar.classList.remove('hidden')
 }
 
-var listener = function sternberg (e) {
+var listener = function sternberg(e) {
     console.log('clicou')
     if (transicionando) {
         removeTransicao()
         console.log('remove transicao')
-    }else{
+    } else {
         pegaTempo()
         var codigo = e.code.slice(3)
         var acertou = false
-    
+
         if (codigo == KEY_AUSENTE) { // Escolha do usuario
             if (!lembrar.innerHTML.includes(alternar.innerHTML)) {
                 acertou = true
             }
-        } else if(codigo == KEY_PRESENTE){
+        } else if (codigo == KEY_PRESENTE) {
             if (lembrar.innerHTML.includes(alternar.innerHTML)) {
                 acertou = true
             }
         }
-    
+
         if (acertou) { //Inserção no vetor de escolhas
             escolhas.push(true)
             lembrar.classList.add('hidden')
-        }else{
+        } else {
             escolhas.push(false)
             lembrar.classList.remove('hidden')
         }
-    
-    
-        if (escolhas.length%FIM == 0) {
+
+
+        if (escolhas.length % FIM == 0) {
             finalizar()
-        }else if (escolhas.length%PROX_NIVEL == 0) {
+        } else if (escolhas.length % PROX_NIVEL == 0) {
             transicionando = true
             transicao(`Indo para o nivel ${nivel+1}.\nAperte qualquer tecla para continuar!`)
         }
-        
-    
+
+
         alternar.innerHTML = letra_aleatoria()
     }
 }
 
-function letra_aleatoria(){
+function letra_aleatoria() {
     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
 }
 
@@ -134,24 +134,24 @@ function pegaTempo() {
     tempo.push(d)
 }
 
-function proximo_nivel(){
+function proximo_nivel() {
     var frase = ''
     for (let i = 0; i < nivel; i++) {
-        frase = frase+letra_aleatoria()+letra_aleatoria()
+        frase = frase + letra_aleatoria() + letra_aleatoria()
     }
     lembrar.innerHTML = frase
 }
 
-function resultado(a){
+function resultado(a) {
     var dif = new Array
-    for (var i = 0; i < a.length-1; i++) {
-        dif.push(a[i+1]-a[i])
+    for (var i = 0; i < a.length - 1; i++) {
+        dif.push(a[i + 1] - a[i])
     }
     return dif
 }
 
 function sleep(ms) {
     return new Promise(
-      resolve => setTimeout(resolve, ms)
+        resolve => setTimeout(resolve, ms)
     );
 }

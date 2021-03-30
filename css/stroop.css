@@ -27,7 +27,7 @@ body {
   font-weight: 900;
 }
 
-.clique-errado{
+.clique-errado {
   animation: clique-errado 0.2s linear;
 }
 
@@ -78,11 +78,12 @@ body {
 }
 
 /*ANIMACAO DE CLIQUE ERRADO*/
-@keyframes clique-errado{
+@keyframes clique-errado {
   100% {
     background-color: none;
   }
-  50%{
+
+  50% {
     background-color: var(--cor-branco);
   }
 }

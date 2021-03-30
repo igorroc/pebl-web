@@ -38,13 +38,13 @@ body {
     color: var(--cor-fonte);
 }
 
-.errado{
+.errado {
     background-color: var(--cor-errado);
     padding: 1rem;
     border-radius: 20px;
 }
 
-.certo{
+.certo {
     background-color: var(--cor-certo);
     padding: 1rem;
     border-radius: 20px;
