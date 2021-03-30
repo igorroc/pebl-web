@@ -1,14 +1,34 @@
 const PROX_NIVEL = 10
 const FIM = 50
 
-var time = []
-var choices = []
+var resultadoFinal = {
+    fase1: {
+        tempo: [],
+        escolhas: []
+    },
+    fase2: {
+        tempo: [],
+        escolhas: []
+    },
+    fase3: {
+        tempo: [],
+        escolhas: []
+    },
+    fase4: {
+        tempo: [],
+        escolhas: []
+    },
+    fase5: {
+        tempo: [],
+        escolhas: []
+    }
+}
+
 var level = 1
+var step = 0
 var transicionando = false
 
 var body = document.getElementsByTagName('body')[0]
-var alternate = document.getElementsByClassName('alternate')[0]
-var buttons = document.getElementsByClassName('buttons')[0]
 var big = document.getElementsByClassName('changing')[0]
 
 var shape = ["square", "circle"]
@@ -23,20 +43,20 @@ var aux = {
     ]
 }
 
-getTime()
+getTime(resultadoFinal[`fase${level}`].tempo)
 
 function choose(choice){
-    getTime()
-    choices.push(choice)
+    getTime(resultadoFinal[`fase${level}`].tempo)
+    step++
     if(choice == big.classList[2]){
-        console.log('acertou')
+        resultadoFinal[`fase${level}`].escolhas.push('acertou')
     }else{
-        console.log('errou')
+        resultadoFinal[`fase${level}`].escolhas.push('errou')
     }
 
-    if (choices.length%FIM == 0) {
+    if (step%FIM == 0) {
         finalizar()
-    }else if (choices.length%PROX_NIVEL == 0) {
+    }else if (step%PROX_NIVEL == 0) {
         transicionando = true
         transicao(`Indo para o nível ${level+1}.\nClique aqui para continuar`)
     }
@@ -55,7 +75,7 @@ function transicao(texto){
 
     div.setAttribute('onclick', 'removeTransicao()')
 
-    var teste = document.getElementsByClassName('test')[0]
+    var teste = document.getElementsByClassName('teste')[0]
     teste.classList.add('hidden')
 
     body.appendChild(div)
@@ -74,8 +94,10 @@ function removeTransicao(){
     
     var trans = document.getElementsByClassName('transicao')[0]
     trans.remove()
-    var testes = document.getElementsByClassName('test')[0]
+    var testes = document.getElementsByClassName('teste')[0]
     testes.classList.remove('hidden')
+    getTime(resultadoFinal[`fase${level}`].tempo)
+
 }
 
 function finalizar(){
@@ -89,10 +111,12 @@ function finalizar(){
     div.appendChild(p)
     body.appendChild(div)
     
-    var testes = document.getElementsByClassName('test')[0]
+    var testes = document.getElementsByClassName('teste')[0]
     testes.classList.add('hidden')
 
-    console.log(resultado(time))
+    for(i = 1; i <= 5;i++ ){
+        console.log(resultado(resultadoFinal[`fase${i}`].tempo))
+    }
 }
 
 function proximo_nivel(){
@@ -137,9 +161,9 @@ function random_aux(forma){
     return aux[forma][Math.floor(Math.random() * aux[forma].length)]
 }
 
-function getTime() {
+function getTime(local) {
     var t = new Date()
-    time.push(t)
+    local.push(t)
 }
 
 function resultado(a){
