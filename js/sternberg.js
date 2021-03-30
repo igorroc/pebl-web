@@ -7,7 +7,8 @@ const FRASE_FINAL = 'Parabéns! Você concluiu o teste.\nAgora você pode retorn
 
 var tempo = []
 var escolhas = []
-var nivel = 1
+var level = 1
+var step = 0
 var transicionando = false
 
 var body = document.getElementsByTagName('body')[0]
@@ -15,6 +16,21 @@ var teste = document.getElementsByClassName('teste')[0]
 var alternar = document.getElementsByClassName('alternar')[0]
 var lembrar = document.getElementsByClassName('lembrar')[0]
 var botoes = document.getElementsByClassName('botoes')[0]
+
+var resultadoFinal = {
+    fase1: {
+        tempo: [],
+        escolhas: []
+    },
+    fase2: {
+        tempo: [],
+        escolhas: []
+    },
+    fase3: {
+        tempo: [],
+        escolhas: []
+    }
+  }
 
 // INICIO DINAMICO
 lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
@@ -34,7 +50,7 @@ async function comecar() {
 
     console.log('comecou')
 
-    pegaTempo()
+    getTime(resultadoFinal[`fase${level}`].tempo)
 
     window.addEventListener('keypress', listener)
 }
@@ -44,8 +60,6 @@ function removeComeco() {
 }
 
 function finalizar() {
-    console.log(escolhas)
-    console.log(resultado(tempo))
     window.removeEventListener('keypress', listener)
 
     var div = document.createElement('div')
@@ -56,6 +70,7 @@ function finalizar() {
     body.appendChild(div)
 
     teste.classList.add('hidden')
+    console.log(resultadoFinal)
 }
 
 function transicao(texto) {
@@ -72,7 +87,7 @@ function transicao(texto) {
 }
 
 function removeTransicao() {
-    nivel = nivel + 1
+    level = level + 1
     transicionando = false
     var trans = document.getElementsByClassName('transicao')[0]
     trans.remove()
@@ -82,15 +97,15 @@ function removeTransicao() {
 
     proximo_nivel()
     lembrar.classList.remove('hidden')
+    getTime(resultadoFinal[`fase${level}`].tempo)
 }
 
 var listener = function sternberg(e) {
-    console.log('clicou')
     if (transicionando) {
         removeTransicao()
-        console.log('remove transicao')
     } else {
-        pegaTempo()
+        getTime(resultadoFinal[`fase${level}`].tempo)
+        step++
         var codigo = e.code.slice(3)
         var acertou = false
 
@@ -105,19 +120,19 @@ var listener = function sternberg(e) {
         }
 
         if (acertou) { //Inserção no vetor de escolhas
-            escolhas.push(true)
+            resultadoFinal[`fase${level}`].escolhas.push('acertou')
             lembrar.classList.add('hidden')
         } else {
-            escolhas.push(false)
+            resultadoFinal[`fase${level}`].escolhas.push('errou')
             lembrar.classList.remove('hidden')
         }
 
 
-        if (escolhas.length % FIM == 0) {
+        if (step % FIM == 0) {
             finalizar()
-        } else if (escolhas.length % PROX_NIVEL == 0) {
+        } else if (step % PROX_NIVEL == 0) {
             transicionando = true
-            transicao(`Indo para o nivel ${nivel+1}.\nAperte qualquer tecla para continuar!`)
+            transicao(`Indo para o nivel ${level+1}.\nAperte qualquer tecla para continuar!`)
         }
 
 
@@ -129,14 +144,14 @@ function letra_aleatoria() {
     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
 }
 
-function pegaTempo() {
-    var d = new Date()
-    tempo.push(d)
+function getTime(local) {
+    var t = new Date()
+    local.push(t)
 }
 
 function proximo_nivel() {
     var frase = ''
-    for (let i = 0; i < nivel; i++) {
+    for (let i = 0; i < level; i++) {
         frase = frase + letra_aleatoria() + letra_aleatoria()
     }
     lembrar.innerHTML = frase

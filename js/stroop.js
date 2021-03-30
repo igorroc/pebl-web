@@ -18,22 +18,34 @@ var tempos = [
   []
 ]
 
+var resultadoFinal = {
+  fase1: {
+      tempo: [],
+      escolhas: []
+  },
+  fase2: {
+      tempo: [],
+      escolhas: []
+  },
+  fase3: {
+      tempo: [],
+      escolhas: []
+  }
+}
+
+
 var txt = document.createTextNode('teste')
 
 var circulos = [];
-var fase = 0;
+var level = 0;
 var trans = 0
 var i = 0;
 var transicionando = false;
 var filhos = teste.children
 
 //FUNCOES
-function pegaTempo(tempos) {
-  for (var j = 0; j < 24; j++) {
-    console.log(tempos[j + 1] - tempos[j]);
-  }
-}
 
+getTime(resultadoFinal[`fase${level+1}`].tempo)
 function alteraCorCirculos() {
   for (f of filhos) {
     circulos.push(f.children[0])
@@ -97,10 +109,10 @@ function trasition(txt) {
 }
 
 function removeTransition() {
-  fase = fase + 1
+  level = level + 1
   i = 0
   transicionando = false
-  tempos[fase].push(Date.now())
+  tempos[level].push(Date.now())
 
   var transicao = document.getElementsByClassName('transicao')[0]
   transicao.remove()
@@ -112,12 +124,13 @@ function removeTransition() {
   childTestes.classList.remove('hidden')
 
   prox_fase()
+  getTime(resultadoFinal[`fase${level+1}`].tempo)
 }
 
 function prox_fase() {
-  if (fase == 1) {
+  if (level == 1) {
     fase2()
-  } else if (fase == 2) {
+  } else if (level == 2) {
     fase3()
   }
 }
@@ -135,7 +148,8 @@ function finalizar() {
   teste.classList.add('hidden')
   var childComandos = document.getElementsByClassName('comandos')[0]
   childComandos.classList.add('hidden')
-  pegaTempo(tempos[fase])
+  
+  console.log(resultadoFinal)
 }
 
 //--------TERMINA FUNCOES-------------
@@ -146,7 +160,7 @@ var key = function (e) {
     removeTransition()
   } else {
     if (filhos[i].children[0].classList.contains(`bg-${escolha}`) || filhos[i].children[0].classList.contains(`txt-${escolha}`)) {
-      tempos[fase].push(Date.now())
+      getTime(resultadoFinal[`fase${level+1}`].tempo)
       i = i + 1
       if (i < 24) {
         filhos[i - 1].classList.remove('clique-errado')
@@ -160,16 +174,29 @@ var key = function (e) {
     }
 
 
-    if (i == 24 && fase == 2) return finalizar()
+    if (i == 24 && level == 2) return finalizar()
 
     if (i == 24) {
       filhos[0].classList.add('ativo')
       filhos[23].classList.remove('ativo')
       filhos[23].classList.remove('clique-errado')
       transicionando = true
-      trasition(`Indo para fase ${fase+2}.\nAperte qualquer tecla.`)
+      trasition(`Indo para fase ${level+2}.\nAperte qualquer tecla.`)
     }
   }
 }
 
 document.addEventListener('keyup', key)
+
+function getTime(local) {
+  var t = new Date()
+  local.push(t)
+}
+
+function resultado(a) {
+  var dif = new Array
+  for (var i = 0; i < a.length - 1; i++) {
+      dif.push(a[i + 1] - a[i])
+  }
+  return dif
+}
