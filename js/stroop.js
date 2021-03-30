@@ -78,6 +78,8 @@ function trasition(txt){
 
   var childComandos = document.getElementsByClassName('comandos')[0]
   childComandos.classList.add('hidden')
+  var testes = document.getElementsByClassName('testes')[0]
+  testes.classList.add('hidden')
 
   body.appendChild(div)
 }
@@ -135,26 +137,29 @@ var key=function(e){
           tempos[fase].push(Date.now())
           i=i+1
           if (i < 24){
+            filhos[i-1].classList.remove('clique-errado')
             filhos[i-1].classList.remove('ativo')
             filhos[i].classList.add('ativo')
           }
       }
       else{
         filhos[i].classList.remove('clique-errado')
+        void filhos[i].offsetWidth
         filhos[i].classList.add('clique-errado')
         console.log('errou')
       }
 
 
-      if (i==24 && fase == 2){
-        finalizar()
-      }else if(i==24){
+      if (i==24 && fase == 2) return finalizar()
+      
+        if(i==24){
         console.log('paratudo')
         //pegaTempo(tempos)
         filhos[0].classList.add('ativo')
         filhos[23].classList.remove('ativo')
+        filhos[23].classList.remove('clique-errado')
         transicionando=true
-        trasition(`Indo para fase ${fase+2}.`)
+        trasition(`Indo para fase ${fase+2}.\nAperte qualquer tecla.`)
       }
     } 
 }
