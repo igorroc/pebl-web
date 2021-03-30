@@ -74,9 +74,27 @@ body {
   font-size: 40px;
 }
 
-.trasicao {
-  display: grid;
+.transicao{
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  background-color: #f9f9f9;
+  color: red;
+  font-size: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
+.transicao p{
+  display: block;
+  text-align: center;
+  margin: auto;
+
+  cursor: pointer;
+}
+
 
 .holder {
   align-items: center;
@@ -98,6 +116,12 @@ body {
   height: 50px;
   border-radius: 50%;
   margin: -25px 0 0 -25px;
+}
+
+.palavra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .bg-vermelho {
@@ -156,18 +180,6 @@ body {
 
 .txtcmd {
   margin: 0 auto;
-}
-
-.transicao {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  text-align: center;
-  background-color: white;
-  color: red;
-  font-size: 3rem;
 }
 
 
