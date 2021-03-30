@@ -1,4 +1,4 @@
-const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const ALFABETO = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const PROX_NIVEL = 10
 const FIM = 30
 const KEY_AUSENTE = 'A'
@@ -141,7 +141,7 @@ var listener = function sternberg(e) {
 }
 
 function letra_aleatoria() {
-    return alfabeto[Math.floor(Math.random() * alfabeto.length)]
+    return ALFABETO[Math.floor(Math.random() * ALFABETO.length)]
 }
 
 function getTime(local) {
