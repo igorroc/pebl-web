@@ -2,6 +2,9 @@ var body=document.getElementsByTagName('body')[0]
 var teste=document.getElementsByClassName('testes')[0]
 var filhosBody=body.children
 var vez=1;
+
+const gabarito = ['vermelho', 'azul', 'amarelo', 'verde']
+
 var gab1=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 var gab2=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 var gab3=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
@@ -129,11 +132,11 @@ function finalizar(){
 //--------TERMINA FUNCOES-------------
 
 var key=function(e){
+    let escolha = gabarito[e.key-1]
   if (transicionando) {
     removeTransition()
-    console.log('remove transicao')
   }else{
-      if (e.key==gab1[i]){
+      if (filhos[i].children[0].classList.contains(`bg-${escolha}` || `txt-${escolha}`)){
           tempos[fase].push(Date.now())
           i=i+1
           if (i < 24){
@@ -146,15 +149,12 @@ var key=function(e){
         filhos[i].classList.remove('clique-errado')
         void filhos[i].offsetWidth
         filhos[i].classList.add('clique-errado')
-        console.log('errou')
       }
 
 
       if (i==24 && fase == 2) return finalizar()
       
         if(i==24){
-        console.log('paratudo')
-        //pegaTempo(tempos)
         filhos[0].classList.add('ativo')
         filhos[23].classList.remove('ativo')
         filhos[23].classList.remove('clique-errado')
