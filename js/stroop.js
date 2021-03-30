@@ -136,7 +136,7 @@ var key=function(e){
   if (transicionando) {
     removeTransition()
   }else{
-      if (filhos[i].children[0].classList.contains(`bg-${escolha}` || `txt-${escolha}`)){
+      if (filhos[i].children[0].classList.contains(`bg-${escolha}`)|| filhos[i].children[0].classList.contains(`txt-${escolha}`)){
           tempos[fase].push(Date.now())
           i=i+1
           if (i < 24){
