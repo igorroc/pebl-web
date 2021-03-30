@@ -5,8 +5,6 @@ const KEY_AUSENTE = 'A'
 const KEY_PRESENTE = 'L'
 const FRASE_FINAL = 'Parabéns! Você concluiu o teste.\nAgora você pode retornar ao menu principal clicando em home.'
 
-var tempo = []
-var escolhas = []
 var level = 1
 var step = 0
 var transicionando = false
