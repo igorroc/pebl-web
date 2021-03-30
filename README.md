@@ -50,7 +50,7 @@ Desenvolvimento de testes neuropsicológicos computadorizados online para o cont
 ## :sparkles: Testes ##
 
 🚧 [Stroop](https://igorroc.github.io/PEBL-Web/stroop.html);\
-🚧 BST;\
+🚧 [BST](https://igorroc.github.io/PEBL-Web/bst.html);\
 🚧 [Sternberg](https://igorroc.github.io/PEBL-Web/sternberg.html);\
 🚧 Torre de Londres;
 
