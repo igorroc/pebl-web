@@ -114,9 +114,7 @@ function finalizar() {
     var testes = document.getElementsByClassName('teste')[0]
     testes.classList.add('hidden')
 
-    for (i = 1; i <= 5; i++) {
-        console.log(resultado(resultadoFinal[`fase${i}`].tempo))
-    }
+    console.log(resultadoFinal)
 }
 
 function proximo_nivel() {
