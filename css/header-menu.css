@@ -21,15 +21,45 @@
     text-align: center;
 }
 
-.login {
-    border-radius: 80px;
-    width: 120px;
-    height: 30px;
-    font-weight: 500;
-    margin-top: 8px;
-    text-align: center;
-}
-
 .login img {
     width: 24px;
+    float: left;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav .logo{
+    margin-right: 200px;
+    margin-left: 100px;
+}
+
+.topnav .login{
+    float: right;
+    margin-right: 100px;
+}
+
+.topnav a{
+    transition: box-shadow .25s ease-Out;
+}
+.topnav a:hover {
+    -webkit-box-shadow:inset 0px 0px 0px 5px #4CAF50;
+    -moz-box-shadow:inset 0px 0px 0px 5px #4CAF50;
+    box-shadow:inset 0px 0px 0px 5px #4CAF50;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
 }
