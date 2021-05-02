@@ -6,6 +6,14 @@ body {
     background-color: #f5f9ff;
 }
 
+h2{
+    text-align: center;
+}
+
+ul{
+    margin: 0 30%;
+}
+
 li {
     font-size: 1.2rem;
 }
