@@ -1,19 +1,317 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "pattern.css";
+@import "header-menu.css";
+@import "variables.css";
+
+:root{
+    --gradient: linear-gradient(#14ffe9, #ffeb3b, #ff00e0)
+
+}
+
+body, html{
+    height: 100%;
+}
 
 body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f5f9ff;
+    font-size: 1rem;
+    background-color: #252525;
+    color: #f1f1f1;
 }
 
-h2{
+a{
+    text-decoration: none;
+}
+
+.main{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 100px auto;
+    gap: 100px;
+}
+
+.main > .content > h2{
+    font-size: 3rem;
+    max-width: 500px;
+}
+
+.main > .content > p{
+    max-width: 600px;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+}
+
+.main > .content > button{
+    margin-top: 1rem;
+
+}
+
+.main .images img{
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+}
+
+.topico{
+    width: 80%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.topico > .esquerda > h3{
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.topico > .esquerda > p{
+    font-size: 1.5rem;
+    max-width: 70%;
+    letter-spacing: 3px;
+    line-height: 3rem;
+}
+
+.topico > .direita > .testes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.topico > .direita > .testes > .teste{
+    width: auto;
+    height: 320px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+
+    background-color: #141414;
 }
 
-ul{
-    margin: 0 30%;
+.topico > .direita > .testes > .teste:hover{
+    background-color: #1b1b1b;
 }
 
-li {
+.topico > .direita > .testes > .teste > h3 {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.topico > .direita > .testes > .teste > p {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.topico > .direita > .testes > .teste > button {
+    padding: 10px 30px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.participantes{
+    display: grid;
+    text-align: center;
+    margin: 100px auto;
+    width: 80%;
+    gap: 80px;
+}
+
+.participantes > h2{
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.participantes > p{
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    max-width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.participantes > .container-participantes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+
+.participantes > .container-participantes > .participante > .imagem > img {
+    width: 100px;
+    height: auto;
+}
+
+.participantes > .container-participantes > .participante > h5 {
     font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin: 10px 10px;
+}
+
+.participantes > .container-participantes > .participante > p {
+    font-size: .8rem;
+    letter-spacing: 3px;
+}
+
+footer{
+    background-color: #141414;
+    padding: 1rem 10%;
+}
+
+footer > p > a{
+    color: #009CD0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* BOTÃO */
+.btn-cta{
+    border: 2px solid #009CD0;
+    color: #eeeeee;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.btn-cta:hover:after {
+    opacity: 0.2;
+}
+
+.btn-cta:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #009CD0;
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.btn-content{
+    padding: 0 26px;
+    position: relative;
+    right: -10%;
+    transition: right 300ms ease;
+    display: block;
+    text-align: left;
+}
+
+.btn-icon{
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    transition: all 300ms ease;
+    transform: translateY(-50%);
+    width: 58px;
+    height: 70%;
+}
+
+.btn-cta:hover .btn-content {
+    right: 100%;
+}
+
+.btn-cta:hover .btn-icon {
+    border-left: 0;
+    width: 100%;
+}
+
+/* OPÇÕES */
+.clip-circle{
+    clip-path: circle(100px at center)
+}
+
+.cl-invert{
+    filter: invert(100%)
+}
+
+.wd-50{
+    width: 50%;
+}
+
+/* CARREGAMENTO */
+.loader{
+    position: relative;
+    margin: 200px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--gradient);
+    animation: rotate 1s linear infinite;
+    transition: .5s;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.loader span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gradient);
+    transition: .5s;
+}
+
+.loader:after{
+    content: '';
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    border-radius: 50%;
+    background-color: #252525;
+    transition: .5s;
+}
+
+.loader span:nth-child(1){
+    filter: blur(5px);
+}
+.loader span:nth-child(2){
+    filter: blur(10px);
+}
+.loader span:nth-child(3){
+    filter: blur(25px);
+}
+.loader span:nth-child(4){
+    filter: blur(50px);
+}
+
+.pausado{
+    width: 150px;
+    height: 150px;
+}
+.pausado:after{
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+}
+.pausado span:nth-child(1),
+.pausado span:nth-child(2),
+.pausado span:nth-child(3),
+.pausado span:nth-child(4){
+    filter: blur(0px);
 }
