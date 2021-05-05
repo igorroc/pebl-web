@@ -36,6 +36,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .container{
@@ -51,6 +52,10 @@ body {
   height: 100px;
   border: #202020 solid 5px;
   margin: 0 auto;
+  color: white;
+  font-size: 3rem;
+  padding: auto;
+  text-align: center;
 }
 
 .vermelho{
@@ -90,3 +95,30 @@ body {
   grid-row: 3;
 }
 
+.diminuir{
+  animation: scale-down .3s ease-in;
+}
+
+.espera{
+  transform: scale(0);
+  opacity: 0;
+}
+
+.aumentar{
+  animation: scale-up .3s ease-in-out;
+}
+
+/* KEYFRAMES */
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes scale-down {
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
