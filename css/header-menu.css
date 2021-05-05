@@ -37,4 +37,6 @@
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
