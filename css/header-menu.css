@@ -43,6 +43,8 @@
 .topnav .logo{
     margin-right: 200px;
     margin-left: 100px;
+    background-color: aqua;
+    color: #333;
 }
 
 .topnav .login{
@@ -51,12 +53,14 @@
 }
 
 .topnav a{
-    transition: box-shadow .25s ease-Out;
+    transition: all .25s ease-Out;
 }
 .topnav a:hover {
     -webkit-box-shadow:inset 0px 0px 0px 5px #4CAF50;
     -moz-box-shadow:inset 0px 0px 0px 5px #4CAF50;
     box-shadow:inset 0px 0px 0px 5px #4CAF50;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .topnav a.active {
