@@ -1,34 +1,7 @@
-.menu {
-    background-color: var(--cor-do-header);
-    width: 100%;
-    height: 50px;
-    margin: 0px;
-    align-items: center;
-}
-
-.grade {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-}
-
-.home {
-    border-radius: 80px;
-    width: 120px;
-    height: 30px;
-    font-weight: 500;
-    margin-top: 8px;
-    text-align: center;
-}
-
-.login img {
-    width: 24px;
-    float: left;
-}
-
 .topnav {
     overflow: hidden;
     background-color: #333;
+    padding: 0 10%;
 }
 
 .topnav a {
@@ -42,14 +15,12 @@
 
 .topnav .logo{
     margin-right: 200px;
-    margin-left: 100px;
     background-color: aqua;
     color: #333;
 }
 
 .topnav .login{
     float: right;
-    margin-right: 100px;
 }
 
 .topnav a{
