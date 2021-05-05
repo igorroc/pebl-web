@@ -8,3 +8,85 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--cor-de-fundo);
 }
+
+.teste{
+  display: grid;
+  grid-template-rows: 2fr 1fr 2fr;
+  width: 80%;
+  height: 800px;
+  margin: 50px auto;
+}
+
+.copiar{
+  background-color: #e9b25a;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.mao{
+  background-color: #a4d844;
+}
+
+.inventario{
+  background-color: #52e7ce;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  border: #202020 solid 3px;
+}
+
+.disco{
+  width: 100px;
+  height: 100px;
+  border: #202020 solid 5px;
+  margin: 0 auto;
+}
+
+.vermelho{
+  background-color: red;
+}
+
+.verde{
+  background-color: green;
+}
+
+.azul{
+  background-color: blue;
+}
+
+/* OPÇÕES */
+.column-1{
+  grid-column: 1;
+}
+
+.column-2{
+  grid-column: 2;
+}
+
+.column-3{
+  grid-column: 3;
+}
+
+.row-1{
+  grid-row: 1;
+}
+
+.row-2{
+  grid-row: 2;
+}
+
+.row-3{
+  grid-row: 3;
+}
+
