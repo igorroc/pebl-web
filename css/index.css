@@ -6,6 +6,7 @@
 @import "background.css";
 @import "colors.css";
 @import "line.css";
+@import "button.css";
 
 body, html{
     height: 100%;
@@ -287,67 +288,6 @@ footer > p > a{
     letter-spacing: 1px;
 }
 
-/* BOTÃO */
-.btn-cta{
-    border: 2px solid #009CD0;
-    color: #eeeeee;
-    padding: 10px 20px;
-    font-size: 1.4rem;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    width: 70%;
-    margin: 0 auto;
-    backdrop-filter: blur(10px);
-}
-
-.btn-cta:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #009CD0;
-    opacity: 0;
-    transition: opacity 300ms ease;
-}
-
-.btn-cta:hover:after {
-    opacity: 0.1;
-}
-
-.btn-content{
-    position: relative;
-    display: block;
-    right: 0;
-    text-align: center;
-    opacity: 1;
-    transition: all 300ms ease;
-}
-
-.btn-icon{
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    right: -50%;
-    transition: all 300ms ease;
-    transform: translateY(-50%);
-    width: 58px;
-    height: 70%;
-    opacity: 0;
-}
-
-.btn-cta:hover .btn-content {
-    right: 100%;
-    opacity: 0;
-}
-
-.btn-cta:hover .btn-icon {
-    right: 0;
-    opacity: 1;
-    width: 100%;
-}
 
 /* OPÇÕES */
 .stop-scrolling {
@@ -359,9 +299,6 @@ footer > p > a{
     clip-path: circle(100px at center)
 }
 
-.cl-invert{
-    filter: invert(100%)
-}
 
 .wd-50{
     width: 50%;
