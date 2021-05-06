@@ -2,6 +2,7 @@
 @import "pattern.css";
 @import "header-menu.css";
 @import "variables.css";
+@import "loader.css";
 
 
 body, html{
