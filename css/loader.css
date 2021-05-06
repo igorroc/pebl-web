@@ -12,9 +12,9 @@
     background: var(--loader-gradient);
     background-size: 400% 400%;
 
-    -webkit-animation: rotate-bg 2s ease infinite;
-    -moz-animation: rotate-bg 2s ease infinite;
-    animation: rotate-bg 2s ease infinite;
+    -webkit-animation: rotate-bg 3s ease infinite;
+    -moz-animation: rotate-bg 3s ease infinite;
+    animation: rotate-bg 3s ease infinite;
 
     display: flex;
     align-items: center;
@@ -54,9 +54,9 @@
     background: var(--loader-gradient);
     background-size: 400% 400%;
 
-    -webkit-animation: rotate-bg 2s ease infinite;
-    -moz-animation: rotate-bg 2s ease infinite;
-    animation: rotate-bg 2s ease infinite;
+    -webkit-animation: rotate-bg 3s ease infinite;
+    -moz-animation: rotate-bg 3s ease infinite;
+    animation: rotate-bg 3s ease infinite;
     
     transition: .5s;
 }
