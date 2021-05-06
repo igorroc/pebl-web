@@ -1,10 +1,25 @@
 :root{
-    --gradiente-vermelho: linear-gradient(90deg, #eb3232 0%, rgb(241, 116, 58) 100%);
+    --gradiente-vermelho: linear-gradient(90deg, #eb3232 0%, #f1743a 100%);
+    --gradiente-azul: linear-gradient(90deg, #32b1eb 0%, #3a4cf1 100%);
+    --gradiente-verde: linear-gradient(90deg, #41eb32 0%, #3af19c 100%);
+    --gradiente-amarelo: linear-gradient(90deg, #ebe833 0%, #cff13a 100%);
     --gradiente-preto: linear-gradient(to left, #141414, #252525);
 }
 
 .bg-grad-red{
-    background: var(--gradiente-vermelho);
+    background: var(--gradiente-vermelho) !important;
+}
+
+.bg-grad-blue{
+    background: var(--gradiente-azul) !important;
+}
+
+.bg-grad-green{
+    background: var(--gradiente-verde) !important;
+}
+
+.bg-grad-yellow{
+    background: var(--gradiente-amarelo) !important;
 }
 
 
