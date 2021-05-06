@@ -5,6 +5,7 @@
 @import "loader.css";
 @import "background.css";
 @import "colors.css";
+@import "line.css";
 
 body {
     margin: 0px;
