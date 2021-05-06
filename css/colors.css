@@ -41,3 +41,7 @@
 .filter-yellow {
     filter: grayscale(100%) brightness(120%) sepia(90%) hue-rotate(5deg) saturate(500%) contrast(0.7);
 }
+
+.cl-invert{
+    filter: invert(100%)
+}
