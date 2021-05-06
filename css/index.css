@@ -5,6 +5,7 @@
 @import "loader.css";
 @import "background.css";
 @import "colors.css";
+@import "line.css";
 
 body, html{
     height: 100%;
@@ -31,99 +32,6 @@ a{
     gap: 100px;
 }
 
-.line-v{
-    position: relative;
-    width: 1px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-}
-
-.line-v::after{
-    content: '';
-    display: block;
-    position: absolute;
-    height: 15vh;
-    width: 100%;
-    top: -50%;
-    left: 0;
-    background: var(--gradiente-azul-transparente-bottom);
-    animation: drop 4s ease-in-out infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
-
-.line-v::before{
-    content: '';
-    display: block;
-    position: absolute;
-    height: 15vh;
-    width: 100%;
-    top: -50%;
-    left: 0;
-    background: var(--gradiente-azul-transparente-bottom);
-    animation: drop 4s ease-in-out infinite;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
-
-.line-h{
-    position: relative;
-    width: 100%;
-    height: 1px;
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-}
-
-.line-h::after{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 55vh;
-    height: 100%;
-    left: -50%;
-    background: var(--gradiente-azul-transparente-right);
-    animation: run 6s ease-in-out infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
-
-.line-h::before{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 55vh;
-    height: 100%;
-    left: -50%;
-    background: var(--gradiente-azul-transparente-right);
-    animation: run 6s ease-in-out infinite;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
-
-@keyframes drop{
-  0%{
-    top: -30%;
-  }
-  100%{
-    top: 110%;
-  }
-}
-
-@keyframes run{
-    0%{
-      left: -30%;
-    }
-    100%{
-      left: 120%;
-    }
-  }
 
 .main > .content > h2{
     font-size: 3rem;
@@ -169,10 +77,16 @@ a{
     grid-template-columns: 1fr 1fr;
 }
 
+.topico > .esquerda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .topico > .esquerda > h3{
     font-size: 3rem;
     font-weight: 800;
     letter-spacing: 5px;
+    margin: 0 0 50px 0;
 }
 
 .topico > .esquerda > p{
@@ -180,6 +94,7 @@ a{
     max-width: 70%;
     letter-spacing: 3px;
     line-height: 3rem;
+    margin: 0;
 }
 
 .topico > .direita > .testes{
@@ -383,10 +298,7 @@ footer > p > a{
     position: relative;
     width: 70%;
     margin: 0 auto;
-}
-
-.btn-cta:hover:after {
-    opacity: 0.2;
+    backdrop-filter: blur(10px);
 }
 
 .btn-cta:after {
@@ -401,31 +313,39 @@ footer > p > a{
     transition: opacity 300ms ease;
 }
 
+.btn-cta:hover:after {
+    opacity: 0.1;
+}
+
 .btn-content{
     position: relative;
-    transition: right 300ms ease;
     display: block;
     right: 0;
     text-align: center;
+    opacity: 1;
+    transition: all 300ms ease;
 }
 
 .btn-icon{
     position: absolute;
-    right: 0;
     text-align: center;
     top: 50%;
+    right: -50%;
     transition: all 300ms ease;
     transform: translateY(-50%);
     width: 58px;
     height: 70%;
+    opacity: 0;
 }
 
 .btn-cta:hover .btn-content {
     right: 100%;
+    opacity: 0;
 }
 
 .btn-cta:hover .btn-icon {
-    border-left: 0;
+    right: 0;
+    opacity: 1;
     width: 100%;
 }
 
