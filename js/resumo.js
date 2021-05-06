@@ -6,9 +6,8 @@ var color = url.searchParams.get("color");
 var imagem = document.getElementById("imagemApresentacao")
 var habilidades = document.getElementById("iconsHabilidade")
 var titulo = document.getElementById("titulo")
+var particles = document.getElementById("particles")
 
-console.log(nome)
-console.log(color)
 
 if(nome){
     titulo.innerHTML = nome
@@ -17,5 +16,8 @@ if(color){
     imagem.classList.add(`filter-${color}`)
     for (const skill of habilidades.children) {
         skill.classList.add(`filter-${color}`)
+    }
+    for (const particle of particles.children) {
+        particle.classList.add(`bg-grad-${color}`)
     }
 }
