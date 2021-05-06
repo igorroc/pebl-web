@@ -32,13 +32,13 @@
     transition: all .25s ease-Out;
 }
 .topnav a:hover {
-    -webkit-box-shadow:inset 0px 0px 0px 5px #4CAF50;
-    -moz-box-shadow:inset 0px 0px 0px 5px #4CAF50;
-    box-shadow:inset 0px 0px 0px 5px #4CAF50;
+    -webkit-box-shadow:inset 0px 0px 0px 5px #32b1eb;
+    -moz-box-shadow:inset 0px 0px 0px 5px #32b1eb;
+    box-shadow:inset 0px 0px 0px 5px #32b1eb;
 }
 
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #32b1eb;
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
