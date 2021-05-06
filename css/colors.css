@@ -1,0 +1,8 @@
+:root{
+    --gradiente-vermelho: linear-gradient(90deg, #eb3232 0%, rgb(241, 116, 58) 100%);
+    --gradiente-preto: linear-gradient(to left, #141414, #252525);
+}
+
+.bg-grad-red{
+    background: var(--gradiente-vermelho);
+}

@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "font.css";
 @import "pattern.css";
 @import "header-menu.css";
 @import "variables.css";
 @import "loader.css";
 @import "background.css";
-
-:root{
-    --bg-gradient: linear-gradient(to left, #141414, #252525);
-}
+@import "colors.css";
 
 body, html{
     height: 100%;
@@ -18,7 +15,7 @@ body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    background: var(--bg-gradient);
+    background: var(--gradiente-preto);
     color: #f1f1f1;
 }
 
@@ -251,7 +248,7 @@ a{
 
 .container-participantes .card:hover .redes_sociais li{
     opacity: .5;
-    transform: translateY(20px);
+    transform: translateY(40px);
 }
 
 .container-participantes .card .redes_sociais li:hover{
