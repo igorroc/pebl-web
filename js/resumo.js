@@ -6,11 +6,13 @@ var color = url.searchParams.get("cor");
 var imagem = document.getElementById("imagemApresentacao")
 var habilidades = document.getElementById("iconsHabilidade")
 var titulo = document.getElementById("titulo")
+var link = document.getElementById("link")
 var particles = document.getElementById("particles")
 
 
 if(nome){
     titulo.innerHTML = nome
+    link.href = `./testes/${nome}`
 }
 if(color){
     imagem.classList.add(`filter-${color}`)
