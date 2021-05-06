@@ -8,6 +8,8 @@ var habilidades = document.getElementById("iconsHabilidade")
 var titulo = document.getElementById("titulo")
 var link = document.getElementById("link")
 var particles = document.getElementById("particles")
+var lines_h = document.getElementsByClassName("line-h")
+var lines_v = document.getElementsByClassName("line-v")
 
 
 if(nome){
@@ -22,5 +24,11 @@ if(color){
     }
     for (const particle of particles.children) {
         particle.classList.add(`bg-grad-${color}`)
+    }
+    for (const line_h of lines_h) {
+        line_h.classList.add(`filter-${color}`)
+    }
+    for (const line_v of lines_v) {
+        line_v.classList.add(`filter-${color}`)
     }
 }
