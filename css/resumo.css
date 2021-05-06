@@ -19,7 +19,7 @@ body {
     height: 600px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: 1.5fr 2fr;
+    grid-template-columns: 1.5fr 0.1fr 2fr;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -76,6 +76,7 @@ body {
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 3rem;
+    max-width: 600px;
 }
 
 .icons {
@@ -96,42 +97,75 @@ body {
 /* BOTÃO */
 .iniciar {
     display: inline-flex;
-    height: 40px;
-    width: 150px;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: .8em;
-    letter-spacing: 1.5px;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+
+    padding: 30px 20px;
+    max-width: 300px;
+    border: 6px solid #ffffff;
+    color: #ffffff;
+    
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+
     position: relative;
     cursor: pointer;
+    overflow: hidden;
+    
+    transition: all .3s ease-Out;
 }
 
 .iniciar a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bolder;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
     position: relative;
-    transition: all .35s ease-Out;
+    transition: all .3s ease-Out;
 }
 
 #slide {
     width: 100%;
     height: 100%;
-    left: -200px;
+    left: -100%;
     background: #ffffff;
     position: absolute;
-    transition: all .35s ease-Out;
+    transition: all .3s ease-Out;
     bottom: 0;
 }
 
 .iniciar:hover #slide {
     left: 0;
+}
+
+.red:hover #slide{
+    background-color: var(--pastel-red);
+}
+.red:hover{
+    border-color: var(--pastel-red);
+}
+
+.blue:hover #slide{
+    background-color: var(--pastel-blue);
+}
+.blue:hover{
+    border-color: var(--pastel-blue);
+}
+
+.green:hover #slide{
+    background-color: var(--pastel-green);
+}
+.green:hover{
+    border-color: var(--pastel-green);
+}
+
+.yellow:hover #slide{
+    background-color: var(--pastel-yellow);
+}
+.yellow:hover{
+    border-color: var(--pastel-yellow);
 }
 
 .iniciar:hover a {

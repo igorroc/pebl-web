@@ -10,7 +10,7 @@ var link = document.getElementById("link")
 var particles = document.getElementById("particles")
 var lines_h = document.getElementsByClassName("line-h")
 var lines_v = document.getElementsByClassName("line-v")
-
+var botao = document.getElementsByClassName("iniciar")[0]
 
 if(nome){
     titulo.innerHTML = nome
@@ -18,6 +18,7 @@ if(nome){
     document.title = nome.charAt(0).toUpperCase() + nome.substr(1)
 }
 if(color){
+    botao.classList.add(color)
     imagem.classList.add(`filter-${color}`)
     for (const skill of habilidades.children) {
         skill.classList.add(`filter-${color}`)
