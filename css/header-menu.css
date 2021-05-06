@@ -35,8 +35,6 @@
     -webkit-box-shadow:inset 0px 0px 0px 5px #4CAF50;
     -moz-box-shadow:inset 0px 0px 0px 5px #4CAF50;
     box-shadow:inset 0px 0px 0px 5px #4CAF50;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .topnav a.active {
