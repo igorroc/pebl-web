@@ -7,6 +7,11 @@
     --gradiente-branco: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
     --gradiente-azul-transparente-bottom: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #32b1eb 75%, #3a4cf1 100%);
     --gradiente-azul-transparente-right: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #32b1eb 75%, #3a4cf1 100%);
+    --pastel-red: #E55558;
+    --pastel-blue: #2A69DB;
+    --pastel-green: #19B219;
+    --pastel-yellow: #dfe07f;
+
 }
 
 .bg-grad-red{
