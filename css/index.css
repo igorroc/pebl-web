@@ -37,18 +37,23 @@ a{
 .main > .content > h2{
     font-size: 3rem;
     max-width: 500px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .main > .content > p{
     max-width: 600px;
     font-size: 1.3rem;
     letter-spacing: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
-.main > .content > button{
-    margin-top: 1rem;
-
+.main > .content > a{
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
+
 .main .images{
     position: relative;
     width: 100%;
