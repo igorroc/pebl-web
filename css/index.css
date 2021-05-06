@@ -5,6 +5,9 @@
 @import "loader.css";
 @import "background.css";
 
+:root{
+    --bg-gradient: linear-gradient(to left, #141414, #252525);
+}
 
 body, html{
     height: 100%;
@@ -15,7 +18,7 @@ body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    background: linear-gradient(to left, #141414, #252525);
+    background: var(--bg-gradient);
     color: #f1f1f1;
 }
 
