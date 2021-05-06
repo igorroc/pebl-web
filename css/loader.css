@@ -1,7 +1,6 @@
 :root{
-    --gradient: linear-gradient(90deg, transparent,
-        transparent 40%, #14ffe9, #ffeb3b, #ff00e0)
-
+    --gradient: linear-gradient(90deg, transparent, transparent 40%, #14ffe9, #ffeb3b, #ff00e0);
+    --loader-gradient: linear-gradient(270deg, #101010, #303030);
 }
 
 .loader-wrapper{
@@ -10,7 +9,13 @@
     right: 0;
     bottom: 0;
     top: 0;
-    background-color: #252525;
+    background: var(--loader-gradient);
+    background-size: 400% 400%;
+
+    -webkit-animation: rotate-bg 2s ease infinite;
+    -moz-animation: rotate-bg 2s ease infinite;
+    animation: rotate-bg 2s ease infinite;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,15 +31,6 @@
     background: var(--gradient);
     animation: rotate 1s linear infinite;
     transition: .5s;
-}
-
-@keyframes rotate {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 }
 
 .loader span{
@@ -54,7 +50,14 @@
     left: 10px;
     right: 10px;
     border-radius: 50%;
-    background-color: #252525;
+
+    background: var(--loader-gradient);
+    background-size: 400% 400%;
+
+    -webkit-animation: rotate-bg 2s ease infinite;
+    -moz-animation: rotate-bg 2s ease infinite;
+    animation: rotate-bg 2s ease infinite;
+    
     transition: .5s;
 }
 
@@ -97,4 +100,29 @@
         opacity: 0;
         visibility: hidden;
     }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate-bg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes rotate-bg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes rotate-bg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
