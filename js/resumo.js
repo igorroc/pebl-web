@@ -13,6 +13,7 @@ var particles = document.getElementById("particles")
 if(nome){
     titulo.innerHTML = nome
     link.href = `./testes/${nome}`
+    document.title = nome.charAt(0).toUpperCase() + nome.substr(1)
 }
 if(color){
     imagem.classList.add(`filter-${color}`)
