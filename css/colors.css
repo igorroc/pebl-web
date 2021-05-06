@@ -4,6 +4,9 @@
     --gradiente-verde: linear-gradient(90deg, #41eb32 0%, #3af19c 100%);
     --gradiente-amarelo: linear-gradient(90deg, #ebe833 0%, #cff13a 100%);
     --gradiente-preto: linear-gradient(to left, #141414, #252525);
+    --gradiente-branco: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    --gradiente-azul-transparente-bottom: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #32b1eb 75%, #3a4cf1 100%);
+    --gradiente-azul-transparente-right: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #32b1eb 75%, #3a4cf1 100%);
 }
 
 .bg-grad-red{
