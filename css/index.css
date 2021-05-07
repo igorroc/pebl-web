@@ -231,7 +231,7 @@ a{
 }
 
 .container-participantes .card .participante .content{
-    width: 80%;
+    width: 80% !important;
 }
 
 .container-participantes .card .participante .content h5{
