@@ -317,6 +317,8 @@ footer > p > a{
 }
 
 /* RESPONSIVE */
+
+
 @media (min-width: 700px) and (max-width: 900px) {
     .participantes{
         width: 80%;
@@ -350,7 +352,14 @@ footer > p > a{
 }
 
 
-@media (max-width: 800px)  {
+@media (max-width: 600px){
+    .participantes{
+        width: 80%;
+    }
+    
+    .container-participantes .card{
+        flex: 50%;
+    }
 }
 
 @media (max-width: 1000px) {
