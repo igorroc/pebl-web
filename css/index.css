@@ -230,6 +230,10 @@ a{
     object-fit: cover;
 }
 
+.container-participantes .card .participante .content{
+    width: 80%;
+}
+
 .container-participantes .card .participante .content h5{
     color: #fff;
     text-transform: uppercase;
@@ -270,6 +274,7 @@ a{
 
 .container-participantes .card .redes_sociais li:hover{
     opacity: 1;
+
 }
 
 .container-participantes .card .redes_sociais > li > a > img{
