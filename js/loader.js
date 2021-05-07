@@ -4,8 +4,19 @@ var everything = document.getElementById("everything")
 
 
 window.addEventListener("load", () => {
-    everything.classList.remove("displaynone")
-    loader_wrapper.classList.add("sumir")
-    loader_wrapper.children[0].classList.add("pausado")
-    body.classList.remove("stop-scrolling")
+    try{
+        everything.classList.remove("displaynone")
+    }catch{ console.log('Não encontrou') }
+
+    try{
+        loader_wrapper.classList.add("sumir")
+    }catch{ console.log('Não encontrou') }
+    
+    try{
+        loader_wrapper.children[0].classList.add("pausado")
+    }catch{ console.log('Não encontrou') }
+    
+    try{
+        body.classList.remove("stop-scrolling")
+    }catch{ console.log('Não encontrou') }
 })
