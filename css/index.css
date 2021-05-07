@@ -317,19 +317,40 @@ footer > p > a{
 }
 
 /* RESPONSIVE */
-
-@media (max-width: 600px)  {
-    .topico{
-        flex-direction: column;
-        text-align: center;
+@media (min-width: 700px) and (max-width: 900px) {
+    .participantes{
+        width: 80%;
     }
+    
+    .container-participantes .card{
+        flex: 40%;
+    }
+}
 
-    .topico > .esquerda > p{
+@media (max-width: 700px) {
+    .participantes > p{
         margin-bottom: 60px;
+        max-width: 100%;
         line-height: 1.6rem;
         font-size: 1rem;
     }
     
+    .participantes{
+        width: 100%;
+    }
+
+    .participantes > p{
+        margin-bottom: 0;
+        margin: 20px;
+    }
+
+    .container-participantes .card{
+        flex: 40%;
+    }
+}
+
+
+@media (max-width: 800px)  {
 }
 
 @media (max-width: 1000px) {
@@ -340,10 +361,31 @@ footer > p > a{
         grid-template-columns: 1fr;
     }
     
-    .participantes > p{
+    .topico{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topico > .esquerda > p{
         margin-bottom: 60px;
-        max-width: 100%;
         line-height: 1.6rem;
         font-size: 1rem;
+    }
+
+    .topico > .direita > .testes > .teste{
+        flex: 30%;
+        margin: 15px;
+    }
+    
+    .topico > .direita > .testes > .teste > h3{
+        font-size: 1.5rem;
+    }
+    
+    .topico > .direita > .testes > .teste > p{
+        font-size: .9rem;
+    }
+    
+    .topico > .direita > .testes > .teste > a{
+        font-size: .9rem;
     }
 }

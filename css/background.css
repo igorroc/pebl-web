@@ -103,6 +103,12 @@
     }
 }
 
+@media (max-width: 700px) {
+    .circle{
+        animation: ripple-mob 6s infinite ease-in-out;
+    }
+}
+
 @media (min-width: 850px) {
     .show-mob{
         display: none;
@@ -112,11 +118,5 @@
 @media (min-width: 1270px) {
     .show-tablet{
         display: none;
-    }
-}
-
-@media (max-width: 700px) {
-    .circle{
-        animation: ripple-mob 6s infinite ease-in-out;
     }
 }
