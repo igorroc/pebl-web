@@ -1,4 +1,3 @@
-const ALFABETO = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const PROX_NIVEL = 10
 const FIM = 30
 const KEY_AUSENTE = 'A'
@@ -138,33 +137,10 @@ var listener = function sternberg(e) {
     }
 }
 
-function letra_aleatoria() {
-    return ALFABETO[Math.floor(Math.random() * ALFABETO.length)]
-}
-
-function getTime(local) {
-    var t = new Date()
-    local.push(t)
-}
-
 function proximo_nivel() {
     var frase = ''
     for (let i = 0; i < level; i++) {
         frase = frase + letra_aleatoria() + letra_aleatoria()
     }
     lembrar.innerHTML = frase
-}
-
-function resultado(a) {
-    var dif = new Array
-    for (var i = 0; i < a.length - 1; i++) {
-        dif.push(a[i + 1] - a[i])
-    }
-    return dif
-}
-
-function sleep(ms) {
-    return new Promise(
-        resolve => setTimeout(resolve, ms)
-    );
 }

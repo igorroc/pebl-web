@@ -54,7 +54,3 @@ async function animacaoOut(el, time){
     await sleep(time)
     el.classList.remove("aumentar")
 }
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
