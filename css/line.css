@@ -12,7 +12,7 @@
     content: '';
     display: block;
     position: absolute;
-    height: 15vh;
+    height: 50%;
     width: 100%;
     top: -50%;
     left: 0;
@@ -26,7 +26,7 @@
     content: '';
     display: block;
     position: absolute;
-    height: 15vh;
+    height: 50%;
     width: 100%;
     top: -50%;
     left: 0;
@@ -51,11 +51,11 @@
     content: '';
     display: block;
     position: absolute;
-    width: 55vh;
+    width: 50%;
     height: 100%;
-    left: -50%;
+    left: -100%;
     background: var(--gradiente-azul-transparente-right);
-    animation: run 6s ease-in-out infinite;
+    animation: run 4s ease-in-out infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
 }
@@ -64,19 +64,19 @@
     content: '';
     display: block;
     position: absolute;
-    width: 55vh;
+    width: 50%;
     height: 100%;
-    left: -50%;
+    left: -100%;
     background: var(--gradiente-azul-transparente-right);
-    animation: run 6s ease-in-out infinite;
-    animation-delay: 3s;
+    animation: run 4s ease-in-out infinite;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
 }
 
 @keyframes drop{
   0%{
-    top: -30%;
+    top: -60%;
   }
   100%{
     top: 110%;
@@ -85,7 +85,7 @@
 
 @keyframes run{
     0%{
-      left: -30%;
+      left: -60%;
     }
     100%{
       left: 120%;
