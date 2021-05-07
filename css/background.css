@@ -63,6 +63,7 @@
     border-radius: 50%;
     background: white;
     animation: ripple 6s infinite ease-in-out;
+    transition: 0.3s;
 
     width: calc(200px * var(--tam));
     height: calc(200px * var(--tam));
@@ -88,6 +89,20 @@
     }
 }
 
+@keyframes ripple-mob {
+    0% {
+        transform: scale(0.6);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(0.6);
+    }
+}
+
 @media (min-width: 850px) {
     .show-mob{
         display: none;
@@ -100,6 +115,8 @@
     }
 }
 
-@media (max-width: 1700px) {
-    
+@media (max-width: 700px) {
+    .circle{
+        animation: ripple-mob 6s infinite ease-in-out;
+    }
 }
