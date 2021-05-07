@@ -49,8 +49,28 @@
     <!-- LINHA DE DIVISAO HORIZONTAL -->
     <div class="line-h"></div>
 
-    <div class="resultados"></div>
+    <div class="resultados">
+        <h3>O Relatório de Resultados inclui:</h3>
+        <span class="line-h" style="transform: scale(-1);"></span>
+        <div class="result-container">
+            <div>
+                <h4>Pontuação Cognitiva</h4>
+                <canvas id="graficoPizza"></canvas>
+            </div>
+            <span class="line-v"></span>
+            <div>
+                <h4>Sinais e Sintomas</h4>
+                <canvas id="graficoPolar"></canvas>
+            </div>
+            <span class="line-v"></span>
+            <div>
+                <h4>Outros</h4>
+                <canvas id="graficoBarra"></canvas>
+            </div>
+        </div>
+    </div>
 
+    <footer></footer>
 
     <!-- PARTICULAS DE FUNDO -->
     <ul id="particles" class="particles">
@@ -65,6 +85,18 @@
         <li></li>
         <li></li>
     </ul>
+    <ul class="particles" style="top: 1500px;" >
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
 
 
     <div id="loader-wrapper" class="loader-wrapper">
@@ -76,9 +108,11 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/resumo.js"></script>
     <script src="./js/loader.js"></script>
     <script src="./js/background.js"></script>
+
 </body>
 
 </html>
