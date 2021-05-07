@@ -18,12 +18,6 @@ for (const particle of particles) {
         var duration = Math.floor(Math.random() * ( max_duration - min_duration ) + min_duration ) + "s"
         var position = Math.floor(Math.random() * ( max_position - min_position ) + min_position ) + "%"
 
-        console.log(box)
-        console.log(size)
-        console.log(delay)
-        console.log(duration)
-        console.log(position)
-
         box.style.width = size
         box.style.height = size
         box.style.animationDelay = delay
