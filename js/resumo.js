@@ -37,6 +37,7 @@ if (color) {
 }
 
 // GRAFICOS
+Chart.defaults.color = "#e3e3e3"
 
 const dataPie = {
     labels: [
