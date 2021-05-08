@@ -18,7 +18,7 @@ body {
 }
 
 a{
-    color: var(--pastel-blue);
+    color: #2691d9;
     text-decoration: none;
 }
 
@@ -28,8 +28,8 @@ a{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 900px;
-    height: 560px;
+    width: 1200px;
+    height: 700px;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
@@ -106,11 +106,10 @@ form .txt_field input:valid ~ label{
 .sub-cont{
     overflow: hidden;
     position: absolute;
-    left: 640px;
+    left: 70%;
     top: 0;
-    width: 900px;
+    width: 30%;
     height: 100%;
-    padding-left: 260px;
     background: #FFF;
     color: black;
 }
@@ -121,9 +120,8 @@ form .txt_field input:valid ~ label{
     position: absolute;
     left: 0;
     top: 0;
-    width: 260px;
+    width: 100%;
     height: 100%;
-    padding-top: 360px;    
 }
 
 .img:before{
@@ -176,7 +174,7 @@ form .txt_field input:valid ~ label{
     z-index: 2;
     position: relative;
     width: 100px;
-    height: 36;
+    height: 36px;
     margin: 0 auto;
     background: transparent;
     color: #FFF;
