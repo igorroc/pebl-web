@@ -2,9 +2,9 @@ var body = document.getElementsByTagName('body')[0]
 var teste = document.getElementsByClassName('testes')[0]
 var filhosBody = body.children
 
-const gabarito = ['vermelho', 'azul', 'amarelo', 'verde']
+const gabarito = ['red', 'blue', 'yellow', 'green']
 
-var cores = ['vermelho', 'verde', 'azul', 'amarelo', 'verde', 'azul', 'vermelho', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'verde', 'vermelho', 'verde', 'azul', 'amarelo', 'verde', 'azul', 'vermelho', 'amarelo', 'azul', 'vermelho', 'verde']
+var cores = ['red', 'green', 'blue', 'yellow', 'green', 'blue', 'red', 'yellow', 'blue', 'red', 'green', 'yellow', 'green', 'red', 'green', 'blue', 'yellow', 'green', 'blue', 'red', 'yellow', 'blue', 'red', 'green']
 var textos = ['batata', 'quando', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'brocolis', 'sobre', 'batata', 'quando', 'quando', 'brocolis', 'batata', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'quando']
 var textos2 = ['vermelho', 'vermelho', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde']
 
@@ -38,10 +38,10 @@ function alteraCorCirculos() {
     circulos.push(f.children[0])
   }
   for (c of circulos) {
-    c.classList.remove('bg-vermelho')
-    c.classList.remove('bg-azul')
-    c.classList.remove('bg-amarelo')
-    c.classList.remove('bg-verde')
+    c.classList.remove('bg-red')
+    c.classList.remove('bg-blue')
+    c.classList.remove('bg-yellow')
+    c.classList.remove('bg-green')
   }
 }
 
@@ -52,7 +52,7 @@ function alteratextoCirculos(textos) {
     circulos[j].appendChild(p.cloneNode(true))
   }
   for (var [k, c] of circulos.entries()) {
-    c.classList.add(`txt-${cores[k]}`)
+    c.classList.add(`cl-${cores[k]}`)
   }
 }
 
@@ -145,7 +145,7 @@ var key = function (e) {
   if (transicionando) {
     removeTransition()
   } else {
-    if (filhos[i].children[0].classList.contains(`bg-${escolha}`) || filhos[i].children[0].classList.contains(`txt-${escolha}`)) {
+    if (filhos[i].children[0].classList.contains(`bg-${escolha}`) || filhos[i].children[0].classList.contains(`cl-${escolha}`)) {
       getTime(resultadoFinal[`fase${level+1}`].tempo)
       i = i + 1
       if (i < 24) {
@@ -173,16 +173,3 @@ var key = function (e) {
 }
 
 document.addEventListener('keyup', key)
-
-function getTime(local) {
-  var t = new Date()
-  local.push(t)
-}
-
-function resultado(a) {
-  var dif = new Array
-  for (var i = 0; i < a.length - 1; i++) {
-    dif.push(a[i + 1] - a[i])
-  }
-  return dif
-}
