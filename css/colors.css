@@ -1,4 +1,4 @@
-:root{
+:root {
     --gradiente-vermelho: linear-gradient(90deg, #eb3232 0%, #f1743a 100%);
     --gradiente-azul: linear-gradient(90deg, #32b1eb 0%, #3a4cf1 100%);
     --gradiente-verde: linear-gradient(90deg, #41eb32 0%, #3af19c 100%);
@@ -14,22 +14,62 @@
 
 }
 
-.bg-grad-red{
+.cl-white {
+    color: white !important;
+}
+
+.cl-black {
+    color: black !important;
+}
+
+.cl-red {
+    color: red !important;
+}
+
+.cl-green {
+    color: green !important;
+}
+
+.cl-blue {
+    color: blue !important;
+}
+
+.cl-yellow {
+    color: yellow !important;
+}
+
+.bg-red {
+    background-color: red !important;
+}
+
+.bg-yellow {
+    background-color: yellow !important;
+}
+
+.bg-blue {
+    background-color: blue !important;
+}
+
+.bg-green {
+    background-color: green !important;
+}
+
+
+.bg-grad-red {
     background: var(--gradiente-vermelho) !important;
 }
 
-.bg-grad-blue{
+.bg-grad-blue {
     background: var(--gradiente-azul) !important;
 }
 
-.bg-grad-green{
+.bg-grad-green {
     background: var(--gradiente-verde) !important;
 }
 
-.bg-grad-yellow{
+.bg-grad-yellow {
     background: var(--gradiente-amarelo) !important;
 }
-
 
 .filter-red {
     filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
@@ -47,6 +87,6 @@
     filter: grayscale(100%) brightness(120%) sepia(90%) hue-rotate(5deg) saturate(500%) contrast(0.7);
 }
 
-.cl-invert{
+.cl-invert {
     filter: invert(100%)
 }
