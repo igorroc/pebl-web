@@ -15,12 +15,61 @@
     <a class="inicio" href="./">Início</a>
     <a class="sobre" href="./about">Sobre</a>
     <a class="contato" href="./contact">Contato</a>
-    <a class="login active" href="./login">Cadastrar-se</a>
   </header>
 
-  <h1 style="text-align: center;">
-    PEGAR A PÁGINA LOGIN/CADASTRO DE RUPP
-  </h1>
+  <div class="cont">
+    <div class="form login">
+      <h2>Faça login</h2>
+      <form method="post">
+        <div class="txt_field">
+          <input type="email" required>
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" required>
+          <span></span>
+          <label>Senha</label>
+        </div>
+        <a style="width: 30%;" class="btn-cta" href="#">
+          <span class="btn-content">Entrar</span>
+          <img class="btn-icon cl-invert" src="./assets/icons/arrow-right-solid.svg">
+        </a>
+        <a class="esqueci" href="#">Esqueci minha senha</a>
+      </form>
+    </div>
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text">
+          <h3>Novo aqui?</h3>
+          <p>Cadastre-se e começe a fazer os nossos testes!</p>
+        </div>
+        <div class="img-text">
+          <h3>Já tem uma conta?</h3>
+          <p>Faça login e veja os seus resultados!</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Cadastrar-se</span>
+          <span class="m-in">Entrar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PARTICULAS DE FUNDO -->
+  <ul class="particles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 
   <div id="loader-wrapper" class="loader-wrapper">
     <div id="loader" class="loader">
@@ -33,6 +82,7 @@
 
   <script src="./js/login.js"></script>
   <script src="./js/loader.js"></script>
+  <script src="./js/background.js"></script>
 </body>
 
 </html>
