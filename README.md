@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./img/icon_neurociencia.jfif" alt="PEBL-Web" />
+  <img src="./assets/img/print1.png" alt="PEBL-Web" />
 
   &#xa0;
   <h1 align="center"><a href="https://igorroc.github.io/PEBL-Web" target="_blank">PEBL-Web</a></h1>
