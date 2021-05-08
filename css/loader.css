@@ -112,9 +112,6 @@
     animation: vanish 0.5s forwards;
 }
 
-.displaynone{
-    display: none;
-}
 
 @keyframes vanish {
     100%{

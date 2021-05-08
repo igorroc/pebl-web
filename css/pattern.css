@@ -4,6 +4,34 @@ p, h1, h2, h3, h4, h5{
     cursor: default;
 }
 
+.informacao{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    
+}
+
+.informacao > .content{
+    color: black;
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 600;
+    max-width: 60%;
+    padding: 20px 40px;
+    box-shadow: 0 0 10px #000;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 /* TRANSICAO */
 .transicao {
     position: absolute;
@@ -33,4 +61,8 @@ p, h1, h2, h3, h4, h5{
     visibility: hidden !important;
     width: 0px !important;
     height: 0px !important;
+}
+
+.displaynone{
+    display: none;
 }
