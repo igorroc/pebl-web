@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "font.css";
+@import "colors.css";
 @import "pattern.css";
 @import "header-menu.css";
 @import "variables.css";
@@ -6,17 +7,20 @@
 body {
   margin: 0px;
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--cor-de-fundo);
+  background: var(--gradiente-preto);
+  overflow: hidden;
 }
 
 .testes {
-  background-color: var(--cor-de-fundo-testes);
-  width: 90%;
-  height: 600px;
-  margin: 0 50px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 1200px;
+  margin: 80px auto;
+  padding: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .holder {
@@ -25,8 +29,24 @@ body {
   text-align: center;
   position: relative;
   font-weight: 900;
+  padding: 50px;
 }
 
+.comandos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.txtcmd {
+  color: white;
+  font-weight: 800;
+  margin: 0 auto;
+  padding: 15px 30px;
+}
+
+/* OPCOES */
 .clique-errado {
   animation: clique-errado 0.2s linear;
 }
@@ -41,40 +61,8 @@ body {
   margin: -25px 0 0 -25px;
 }
 
-.bg-vermelho {
-  background-color: var(--cor-vermelho);
-}
-
-.bg-amarelo {
-  background-color: var(--cor-amarelo);
-}
-
-.bg-azul {
-  background-color: var(--cor-azul);
-}
-
-.bg-verde {
-  background-color: var(--cor-verde);
-}
-
-.txt-vermelho {
-  color: var(--cor-vermelho);
-}
-
-.txt-amarelo {
-  color: var(--cor-amarelo);
-}
-
-.txt-azul {
-  color: var(--cor-azul);
-}
-
-.txt-verde {
-  color: var(--cor-verde);
-}
-
 .ativo {
-  border: thick solid var(--cor-preto);
+  border: thick solid #FFF;
 }
 
 /*ANIMACAO DE CLIQUE ERRADO*/
@@ -88,13 +76,3 @@ body {
   }
 }
 
-
-.comandos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 10px 100px;
-}
-
-.txtcmd {
-  margin: 0 auto;
-}
