@@ -6,7 +6,7 @@ p, h1, h2, h3, h4, h5{
 
 .informacao{
     position: absolute;
-    z-index: 999;
+    z-index: 20;
     top: 3rem;
     left: 0;
     width: 100%;
@@ -15,6 +15,7 @@ p, h1, h2, h3, h4, h5{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(20px);
@@ -30,6 +31,13 @@ p, h1, h2, h3, h4, h5{
     padding: 20px 40px;
     box-shadow: 0 0 10px #000;
     background: rgba(255, 255, 255, 0.3);
+}
+
+.informacao > .feedback{
+    background-color: black;
+    box-shadow: 0 0 10px #000;
+    width: 300px;
+    height: 100px;
 }
 
 /* TRANSICAO */
