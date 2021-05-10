@@ -4,7 +4,7 @@ var filhosBody = body.children
 
 const gabarito = ['red', 'blue', 'yellow', 'green']
 
-var cores = ['red', 'green', 'blue', 'yellow', 'green', 'blue', 'red', 'yellow', 'blue', 'red', 'green', 'yellow', 'green', 'red', 'green', 'blue', 'yellow', 'green', 'blue', 'red', 'yellow', 'blue', 'red', 'green']
+var cores = ['red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red']
 var textos = ['batata', 'quando', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'brocolis', 'sobre', 'batata', 'quando', 'quando', 'brocolis', 'batata', 'sobre', 'brocolis', 'quando', 'batata', 'sobre', 'quando']
 var textos2 = ['vermelho', 'vermelho', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde', 'amarelo', 'azul', 'vermelho', 'verde']
 
