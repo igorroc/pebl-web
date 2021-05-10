@@ -1,12 +1,13 @@
 var informacao = document.getElementById("informacao")
-var language = "us"
 
-fetch(`../translation/stroop.json`)
-    .then(Response => Response.json())
-    .then(data => {
-        console.log(data)
-        console.log(data.pretest.instruction[language])
-        console.log(informacao.firstChild)
-        informacao.children[0].innerHTML = data.pretest.instruction[language]
-        // informacao.classList.remove("displaynone")
-    })
+function pegaTraducao(nivel, valor){
+    fetch(`../translation/stroop.json`)
+        .then(Response => Response.json())
+        .then(data => {
+            if(valor){
+                informacao.children[0].innerHTML =  data[nivel][valor][language]
+            }else{
+                informacao.children[0].innerHTML =  data[nivel][language]
+            }
+        })
+}
