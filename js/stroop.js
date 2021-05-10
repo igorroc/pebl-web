@@ -25,14 +25,61 @@ var resultadoFinal = {
 
 var circulos = []
 var level = 0
-var i = 0;
+var i = 0
 var transicionando = false
 var filhos = teste.children
+var informacao = document.getElementById("informacao")
+var language = "us"
+
+// INICIO DO TESTE
+pegaTraducao("pretest", "instruction")
+document.addEventListener('keyup', inicio)
+
+function inicio(){
+  informacao.innerHTML = ''
+  let p = document.createElement('p')
+  p.innerText = ""
+  pegaTraducao("pretest", "training")
+  p.classList.add("content")
+  let div = document.createElement('div')
+  div.classList.add("feedback")
+  informacao.appendChild(p)
+  informacao.appendChild(div)
+
+  let comandos = document.getElementsByClassName("comandos")[0]
+  comandos.style.zIndex = 1000
+  comandos.style.position = "absolute"
+  comandos.style.left = "50%"
+  comandos.style.transform = "translateX(-50%)"
+
+  document.removeEventListener('keyup', inicio)
+  document.addEventListener('keyup', treinamento)
+}
+
+function treinamento(e){
+  let escolha = gabarito[e.key - 1]
+  let feedback = document.getElementsByClassName("feedback")[0]
+  feedback.classList.add(`bg-${escolha}`)
+
+  for(var classe of feedback.classList){
+    if(classe != "feedback" && classe != `bg-${escolha}`){
+      feedback.classList.remove(classe)
+    }
+  }
+
+  if (e.key == ' ') {
+    informacao.innerHTML = ''
+    let comandos = document.getElementsByClassName("comandos")[0]
+    comandos.style = ''
+    informacao.classList.add("displaynone")
+    level = 1
+    getTime(resultadoFinal[`fase${level}`].tempo)
+    document.removeEventListener('keyup', treinamento)
+    document.addEventListener('keyup', jogo)
+  }
+}
 
 //FUNCOES
-
-getTime(resultadoFinal[`fase${level+1}`].tempo)
-
 function alteraCorCirculos() {
   for (f of filhos) {
     circulos.push(f.children[0])
@@ -63,36 +110,24 @@ function removetxt() {
 }
 
 function fase2() {
-  filhosBody[1].classList.remove('hidden')
   alteraCorCirculos()
   alteratextoCirculos(textos)
 }
 
 function fase3() {
-  filhosBody[1].classList.remove('hidden')
   removetxt()
   alteratextoCirculos(textos2)
 }
 
-function apagaTestes() {
-  filhosBody[1].classList.add('hidden')
-}
 
 //transicao-----------------------
 function transition(txt) {
-  apagaTestes()
-  var div = document.createElement('div')
   var p = document.createElement('p')
-  p.innerText = txt
-  div.classList.add('transicao')
-  div.appendChild(p)
-
-  var childComandos = document.getElementsByClassName('comandos')[0]
-  childComandos.classList.add('hidden')
-  var testes = document.getElementsByClassName('testes')[0]
-  testes.classList.add('hidden')
-
-  body.appendChild(div)
+  p.innerText = ""
+  pegaTraducao("test", `explain_level${level+1}`)
+  p.classList.add("content")
+  informacao.appendChild(p)
+  informacao.classList.remove("displaynone")
 }
 
 function removeTransition() {
@@ -100,53 +135,49 @@ function removeTransition() {
   i = 0
   transicionando = false
 
-  var transicao = document.getElementsByClassName('transicao')[0]
-  transicao.remove()
-
-  var childComandos = document.getElementsByClassName('comandos')[0]
-  childComandos.classList.remove('hidden')
-
-  var childTestes = document.getElementsByClassName('testes')[0]
-  childTestes.classList.remove('hidden')
+  informacao.innerHTML = ''
+  informacao.classList.add("displaynone")
 
   prox_fase()
-  getTime(resultadoFinal[`fase${level+1}`].tempo)
+  document.removeEventListener('keyup', inicio)
+  getTime(resultadoFinal[`fase${level}`].tempo)
 }
 
 function prox_fase() {
-  if (level == 1) {
+  if (level == 2) {
     fase2()
-  } else if (level == 2) {
+  } else if (level == 3) {
     fase3()
   }
 }
 
 function finalizar() {
-  document.removeEventListener('keyup', key)
+  document.removeEventListener('keyup', jogo)
 
-  var div = document.createElement('div')
   var p = document.createElement('p')
-  p.innerText = 'FIM DO TESTE'
-  div.classList.add('transicao')
-  div.appendChild(p)
-  body.appendChild(div)
-
-  teste.classList.add('hidden')
-  var childComandos = document.getElementsByClassName('comandos')[0]
-  childComandos.classList.add('hidden')
+  p.innerText = ""
+  pegaTraducao("ending")
+  p.classList.add("content")
+  
+  informacao.appendChild(p)
+  informacao.classList.remove("displaynone")
 
   console.log(resultadoFinal)
+  
+  console.log(resultado(resultadoFinal.fase1.tempo))
+  console.log(resultado(resultadoFinal.fase2.tempo))
+  console.log(resultado(resultadoFinal.fase3.tempo))
 }
 
 //--------TERMINA FUNCOES-------------
 
-var key = function (e) {
+var jogo = function (e) {
   let escolha = gabarito[e.key - 1]
   if (transicionando) {
     removeTransition()
   } else {
     if (filhos[i].children[0].classList.contains(`bg-${escolha}`) || filhos[i].children[0].classList.contains(`cl-${escolha}`)) {
-      getTime(resultadoFinal[`fase${level+1}`].tempo)
+      getTime(resultadoFinal[`fase${level}`].tempo)
       i = i + 1
       if (i < 24) {
         filhos[i - 1].classList.remove('clique-errado')
@@ -160,16 +191,14 @@ var key = function (e) {
     }
 
 
-    if (i == 24 && level == 2) return finalizar()
+    if (i == 24 && level == 3) return finalizar()
 
     if (i == 24) {
       filhos[0].classList.add('ativo')
       filhos[23].classList.remove('ativo')
       filhos[23].classList.remove('clique-errado')
       transicionando = true
-      transition(`Indo para fase ${level+2}.\nAperte qualquer tecla.`)
+      transition(`Indo para fase ${level+1}.\nAperte qualquer tecla.`)
     }
   }
 }
-
-document.addEventListener('keyup', key)
