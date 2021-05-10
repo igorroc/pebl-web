@@ -29,7 +29,7 @@ var i = 0
 var transicionando = false
 var filhos = teste.children
 var informacao = document.getElementById("informacao")
-var language = "us"
+var language = "br"
 
 // INICIO DO TESTE
 pegaTraducao("pretest", "instruction")
