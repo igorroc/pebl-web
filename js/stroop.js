@@ -59,7 +59,9 @@ function inicio(){
 function treinamento(e){
   let escolha = gabarito[e.key - 1]
   let feedback = document.getElementsByClassName("feedback")[0]
-  feedback.classList.add(`bg-${escolha}`)
+  if(escolha){
+    feedback.classList.add(`bg-${escolha}`)
+  }
 
   for(var classe of feedback.classList){
     if(classe != "feedback" && classe != `bg-${escolha}`){
