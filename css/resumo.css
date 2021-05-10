@@ -141,15 +141,15 @@ footer{
     align-items: center;
     justify-content: center;
 
-    padding: 30px 20px;
+    padding: 15px 10px;
     max-width: 300px;
-    border: 6px solid #ffffff;
+    border: 4px solid #ffffff;
     color: #ffffff;
     
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 500;
 
     position: relative;
     cursor: pointer;
