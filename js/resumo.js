@@ -37,6 +37,8 @@ if (color) {
 }
 
 // GRAFICOS
+const min_size = 50
+const max_size = 300
 Chart.defaults.color = "#e3e3e3"
 
 const dataPie = {
@@ -47,7 +49,9 @@ const dataPie = {
     ],
     datasets: [{
         label: 'Pontuação Cognitiva',
-        data: [300, 50, 100],
+        data: [Math.floor(Math.random() * ( max_size - min_size ) + min_size ), 
+               Math.floor(Math.random() * ( max_size - min_size ) + min_size ), 
+               Math.floor(Math.random() * ( max_size - min_size ) + min_size )],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(255, 159, 64, 0.2)',
@@ -81,7 +85,11 @@ const dataPolar = {
     ],
     datasets: [{
         label: 'Sinais e Sintomas',
-        data: [11, 16, 7, 3, 14],
+        data: [Math.floor(Math.random() * ( max_size - min_size ) + min_size ), 
+               Math.floor(Math.random() * ( max_size - min_size ) + min_size ), 
+               Math.floor(Math.random() * ( max_size - min_size ) + min_size ), 
+               Math.floor(Math.random() * ( max_size - min_size ) + min_size ),
+               Math.floor(Math.random() * ( max_size - min_size ) + min_size )],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(255, 159, 64, 0.2)',
@@ -117,7 +125,13 @@ const dataBarra = {
   labels: labels,
   datasets: [{
     label: 'Outros',
-    data: [65, 59, 80, 81, 56, 55, 40],
+    data: [Math.floor(Math.random() * ( max_size - min_size ) + min_size ), 
+           Math.floor(Math.random() * ( max_size - min_size ) + min_size ),
+           Math.floor(Math.random() * ( max_size - min_size ) + min_size ),
+           Math.floor(Math.random() * ( max_size - min_size ) + min_size ),
+           Math.floor(Math.random() * ( max_size - min_size ) + min_size ),
+           Math.floor(Math.random() * ( max_size - min_size ) + min_size ),
+           Math.floor(Math.random() * ( max_size - min_size ) + min_size )],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(255, 159, 64, 0.2)',
