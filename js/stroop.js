@@ -1,3 +1,5 @@
+var url = new URL(window.location)
+var lang = url.searchParams.get("lang") || "br"
 var body = document.getElementsByTagName('body')[0]
 var teste = document.getElementsByClassName('testes')[0]
 var filhosBody = body.children
@@ -29,17 +31,16 @@ var i = 0
 var transicionando = false
 var filhos = teste.children
 var informacao = document.getElementById("informacao")
-var language = "br"
 
 // INICIO DO TESTE
-pegaTraducao("stroop", "pretest", "instruction")
+pegaTraducao("stroop", "pretest", "instruction", lang)
 document.addEventListener('keyup', inicio)
 
 function inicio(){
   informacao.innerHTML = ''
   let p = document.createElement('p')
   p.innerText = ""
-  pegaTraducao("stroop", "pretest", "training")
+  pegaTraducao("stroop", "pretest", "training", lang)
   p.classList.add("content")
   let div = document.createElement('div')
   div.classList.add("feedback")
@@ -126,7 +127,7 @@ function fase3() {
 function transition(txt) {
   var p = document.createElement('p')
   p.innerText = ""
-  pegaTraducao("stroop", "test", `explain_level${level+1}`)
+  pegaTraducao("stroop", "test", `explain_level${level+1}`, lang)
   p.classList.add("content")
   informacao.appendChild(p)
   informacao.classList.remove("displaynone")
@@ -158,7 +159,7 @@ function finalizar() {
 
   var p = document.createElement('p')
   p.innerText = ""
-  pegaTraducao("stroop", "ending")
+  pegaTraducao("stroop", "ending", undefined, lang)
   p.classList.add("content")
   
   var graph_container = document.createElement('div')
