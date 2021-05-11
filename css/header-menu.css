@@ -20,8 +20,22 @@
 
 .topnav .logo{
     margin-right: 200px;
-    background-color: aqua;
+    padding: 5px 16px;
+    width: 40px;
     color: #333;
+}
+
+.topnav .logo:hover{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.topnav .logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .topnav .login{
