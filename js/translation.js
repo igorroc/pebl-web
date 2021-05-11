@@ -1,7 +1,7 @@
 var informacao = document.getElementById("informacao")
 
-function pegaTraducao(nivel, valor){
-    fetch(`../translation/stroop.json`)
+function pegaTraducao(teste, nivel, valor){
+    fetch(`../translation/${teste}.json`)
         .then(Response => Response.json())
         .then(data => {
             if(valor){

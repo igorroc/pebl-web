@@ -32,14 +32,14 @@ var informacao = document.getElementById("informacao")
 var language = "br"
 
 // INICIO DO TESTE
-pegaTraducao("pretest", "instruction")
+pegaTraducao("stroop", "pretest", "instruction")
 document.addEventListener('keyup', inicio)
 
 function inicio(){
   informacao.innerHTML = ''
   let p = document.createElement('p')
   p.innerText = ""
-  pegaTraducao("pretest", "training")
+  pegaTraducao("stroop", "pretest", "training")
   p.classList.add("content")
   let div = document.createElement('div')
   div.classList.add("feedback")
@@ -126,7 +126,7 @@ function fase3() {
 function transition(txt) {
   var p = document.createElement('p')
   p.innerText = ""
-  pegaTraducao("test", `explain_level${level+1}`)
+  pegaTraducao("stroop", "test", `explain_level${level+1}`)
   p.classList.add("content")
   informacao.appendChild(p)
   informacao.classList.remove("displaynone")
@@ -158,7 +158,7 @@ function finalizar() {
 
   var p = document.createElement('p')
   p.innerText = ""
-  pegaTraducao("ending")
+  pegaTraducao("stroop", "ending")
   p.classList.add("content")
   
   var graph_container = document.createElement('div')
@@ -231,7 +231,9 @@ function showGraphs() {
       options: {
           scales: {
               y: {
-                  beginAtZero: true
+                  beginAtZero: true,
+                  suggestedMin: 50,
+                  suggestedMax: 400
               }
           },
       },
