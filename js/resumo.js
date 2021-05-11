@@ -15,7 +15,7 @@ var botao = document.getElementsByClassName("iniciar")[0]
 if (nome) {
     titulo.innerHTML = nome
     link.href = `./testes/${nome}`
-    document.title = nome.charAt(0).toUpperCase() + nome.substr(1)
+    document.title = nome.charAt(0).toUpperCase() + nome.substr(1) + " - Resumo"
 }
 if (color) {
     botao.classList.add(color)
