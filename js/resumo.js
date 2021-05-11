@@ -6,6 +6,7 @@ var imagem = document.getElementById("imagemApresentacao")
 var habilidades = document.getElementById("iconsHabilidade")
 var titulo = document.getElementById("titulo")
 var link = document.getElementById("link")
+var link_us = document.getElementById("link_us")
 var particles = document.getElementsByClassName("particles")
 var lines_h = document.getElementsByClassName("line-h")
 var lines_v = document.getElementsByClassName("line-v")
@@ -13,7 +14,8 @@ var botao = document.getElementsByClassName("iniciar")[0]
 
 if (nome) {
     titulo.innerHTML = nome
-    link.href = `./testes/${nome}`
+    link.href = `./testes/${nome}?lang=br`
+    link_us.href = `./testes/${nome}?lang=us`
     document.title = nome.charAt(0).toUpperCase() + nome.substr(1) + " - Resumo"
 }
 if (color) {

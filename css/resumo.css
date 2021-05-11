@@ -181,6 +181,15 @@ footer{
     left: 0;
 }
 
+#link_us{
+    color: white;
+    margin: 20px 0;
+    transition: all .2s ease-in-out;
+}
+
+#link_us:hover{
+    color: rgb(240, 94, 81);
+}
 
 /* OPÇÕES */
 .red:hover #slide{
