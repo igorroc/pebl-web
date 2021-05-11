@@ -161,12 +161,15 @@ function finalizar() {
   pegaTraducao("ending")
   p.classList.add("content")
   
+  var graph_container = document.createElement('div')
+  graph_container.classList.add("graph-container")
   var canvas = document.createElement('canvas')
   canvas.id = "graficoBarra"
   canvas.classList.add("content")
 
   informacao.appendChild(p)
-  informacao.appendChild(canvas)
+  graph_container.appendChild(canvas)
+  informacao.appendChild(graph_container)
   informacao.classList.remove("displaynone")
   
   showGraphs()
@@ -231,9 +234,6 @@ function showGraphs() {
                   beginAtZero: true
               }
           },
-          responsive: false,
-          width: 1000,
-          height: 800
       },
   }
 
@@ -241,7 +241,6 @@ function showGraphs() {
       document.getElementById('graficoBarra'),
       configBarra
   )
-
 
 }
 //--------TERMINA FUNCOES-------------
