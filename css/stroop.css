@@ -11,6 +11,10 @@ body {
   overflow: hidden;
 }
 
+#graficoBarra{
+  background: var(--gradiente-preto)
+}
+
 .testes {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);

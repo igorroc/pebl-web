@@ -161,16 +161,89 @@ function finalizar() {
   pegaTraducao("ending")
   p.classList.add("content")
   
-  informacao.appendChild(p)
-  informacao.classList.remove("displaynone")
+  var canvas = document.createElement('canvas')
+  canvas.id = "graficoBarra"
+  canvas.classList.add("content")
 
-  console.log(resultadoFinal)
+  informacao.appendChild(p)
+  informacao.appendChild(canvas)
+  informacao.classList.remove("displaynone")
   
-  console.log(resultado(resultadoFinal.fase1.tempo))
-  console.log(resultado(resultadoFinal.fase2.tempo))
-  console.log(resultado(resultadoFinal.fase3.tempo))
+  showGraphs()
 }
 
+function showGraphs() {
+  const labels = []
+  const data = [[], [], []]
+  const backgroundColor = [[], [], []]
+  const borderColor = [[], [], []]
+  var i = 1
+
+  for (const key of resultado(resultadoFinal.fase1.tempo)) {
+    labels.push(`L${i++}`)
+    data[0].push(key)
+    backgroundColor[0].push(`rgba(255, ${50+4*i}, ${200-4*i}, 0.2)`)
+    borderColor[0].push(`rgb(255, ${50+4*i}, ${200-4*i})`)
+  }
+  i = 0
+  for (const key of resultado(resultadoFinal.fase2.tempo)) {
+    i++
+    data[1].push(key)
+    backgroundColor[1].push(`rgba(150, ${50+4*i}, ${200-4*i}, 0.2)`)
+    borderColor[1].push(`rgb(150, ${50+4*i}, ${200-4*i})`)
+  }
+  i = 0
+  for (const key of resultado(resultadoFinal.fase3.tempo)) {
+    i++
+    data[2].push(key)
+    backgroundColor[2].push(`rgba(75, ${50+4*i}, ${200-4*i}, 0.2)`)
+    borderColor[2].push(`rgb(75, ${50+4*i}, ${200-4*i})`)
+  }
+
+  const dataBarra = {
+    labels: labels,
+    datasets: [{
+      label: 'Fase 1',
+      data: data[0],
+      backgroundColor: backgroundColor[0],
+      borderColor: borderColor[0],
+      borderWidth: 1
+    },{
+      label: 'Fase 2',
+      data: data[1],
+      backgroundColor: backgroundColor[1],
+      borderColor: borderColor[1],
+      borderWidth: 1
+    },{
+      label: 'Fase 3',
+      data: data[2],
+      backgroundColor: backgroundColor[2],
+      borderColor: borderColor[2],
+      borderWidth: 1
+    }]
+  }
+  const configBarra = {
+      type: 'bar',
+      data: dataBarra,
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          },
+          responsive: false,
+          width: 1000,
+          height: 800
+      },
+  }
+
+  var graficoBarra = new Chart(
+      document.getElementById('graficoBarra'),
+      configBarra
+  )
+
+
+}
 //--------TERMINA FUNCOES-------------
 
 var jogo = function (e) {
