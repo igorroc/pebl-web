@@ -1,7 +1,6 @@
-var url_string = window.location;
-var url = new URL(url_string);
-var nome = url.searchParams.get("nome");
-var color = url.searchParams.get("cor");
+var url = new URL(window.location)
+var nome = url.searchParams.get("nome")
+var color = url.searchParams.get("cor")
 
 var imagem = document.getElementById("imagemApresentacao")
 var habilidades = document.getElementById("iconsHabilidade")
