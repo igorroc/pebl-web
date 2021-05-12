@@ -8,7 +8,8 @@
 @import "line.css";
 @import "button.css";
 
-body, html{
+body,
+html {
     height: 100%;
     scroll-behavior: smooth;
 }
@@ -21,11 +22,11 @@ body {
     color: #f1f1f1;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.main{
+.main {
     width: 80%;
     display: grid;
     grid-template-columns: 1fr .01fr 1fr;
@@ -33,29 +34,29 @@ a{
     gap: 100px;
 }
 
-.main > .content{
+.main>.content {
     max-width: 500px;
 }
 
-.main > .content > h2{
+.main>.content>h2 {
     font-size: 3rem;
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-.main > .content > p{
+.main>.content>p {
     font-size: 1.3rem;
     letter-spacing: 5px;
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-.main > .content > a{
+.main>.content>a {
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-.main .images{
+.main .images {
     position: relative;
     width: 100%;
     height: auto;
@@ -63,7 +64,7 @@ a{
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.main .images img{
+.main .images img {
     position: absolute;
     top: 0;
     left: 0;
@@ -72,7 +73,7 @@ a{
     object-fit: cover;
 }
 
-.topico{
+.topico {
     width: 80%;
     margin: 100px auto;
     display: flex;
@@ -80,37 +81,38 @@ a{
     position: relative;
 }
 
-.topico > .esquerda {
+.topico>.esquerda {
     display: flex;
     flex-direction: column;
     justify-content: top;
 }
-.topico > .esquerda > h3{
+
+.topico>.esquerda>h3 {
     font-size: 3rem;
     font-weight: 800;
     letter-spacing: 5px;
     margin: 0 0 50px 0;
 }
 
-.topico > .esquerda > p{
+.topico>.esquerda>p {
     font-size: 1.5rem;
     letter-spacing: 3px;
     line-height: 3rem;
     margin: 0;
 }
 
-.topico > .direita{
+.topico>.direita {
     justify-content: top;
 }
 
-.topico > .direita > .testes{
+.topico>.direita>.testes {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.topico > .direita > .testes > .teste{
+.topico>.direita>.testes>.teste {
     max-width: auto;
     display: flex;
     flex: 30%;
@@ -130,41 +132,41 @@ a{
     transition: .3s;
 }
 
-.topico > .direita > .testes > .teste:hover{
+.topico>.direita>.testes>.teste:hover {
     background-color: rgba(8, 8, 8, 0.5);
     border-bottom: #009CD0 solid 5px;
 }
 
-.topico > .direita > .testes > .teste > h3 {
+.topico>.direita>.testes>.teste>h3 {
     font-size: 2rem;
     text-align: center;
     letter-spacing: 3px;
     margin: 1rem;
 }
 
-.topico > .direita > .testes > .teste > p {
+.topico>.direita>.testes>.teste>p {
     width: 80%;
     text-align: center;
     margin: 1rem auto;
 }
 
-.topico > .direita > .testes > .teste > a {
+.topico>.direita>.testes>.teste>a {
     margin: 1rem auto;
 }
 
-.participantes{
+.participantes {
     text-align: center;
     width: 80%;
     margin: 100px auto;
 }
 
-.participantes h3{
+.participantes h3 {
     font-size: 3rem;
     font-weight: 800;
     letter-spacing: 5px;
 }
 
-.participantes p{
+.participantes p {
     font-size: 1.5rem;
     max-width: 70%;
     letter-spacing: 3px;
@@ -172,7 +174,7 @@ a{
     margin: 0 auto;
 }
 
-.container-participantes{
+.container-participantes {
     z-index: 10;
     display: flex;
     justify-content: center;
@@ -181,7 +183,7 @@ a{
     margin: 40px 0;
 }
 
-.container-participantes .card{
+.container-participantes .card {
     position: relative;
     width: 300px;
     height: 400px;
@@ -196,7 +198,7 @@ a{
     overflow: hidden;
 }
 
-.container-participantes .card .participante{
+.container-participantes .card .participante {
     position: relative;
     display: flex;
     justify-content: center;
@@ -207,19 +209,19 @@ a{
     border-bottom: 0;
 }
 
-.container-participantes .card:hover{
+.container-participantes .card:hover {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     transform: translateY(-20px);
     border-bottom: #009CD0 solid 5px;
 }
 
-.container-participantes .card:hover .participante{
+.container-participantes .card:hover .participante {
     opacity: 1;
     transform: translateY(-20px);
 }
 
-.container-participantes .card .participante .imagem{
+.container-participantes .card .participante .imagem {
     position: relative;
     width: 150px;
     height: 150px;
@@ -228,7 +230,7 @@ a{
     border: 10px solid rgba(0, 0, 0, 0.25);
 }
 
-.container-participantes .card .participante .imagem img{
+.container-participantes .card .participante .imagem img {
     position: absolute;
     top: 0;
     left: 0;
@@ -237,11 +239,11 @@ a{
     object-fit: cover;
 }
 
-.container-participantes > .card > .participante > .content{
+.container-participantes>.card>.participante>.content {
     width: 80% !important;
 }
 
-.container-participantes .card .participante .content h5{
+.container-participantes .card .participante .content h5 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -252,20 +254,20 @@ a{
     line-height: 2rem;
 }
 
-.container-participantes .card .participante .content h5 span{
+.container-participantes .card .participante .content h5 span {
     text-transform: initial;
     font-weight: 300;
     font-size: 1rem;
 }
 
-.container-participantes .card .redes_sociais{
+.container-participantes .card .redes_sociais {
     position: absolute;
     bottom: 50px;
     padding: 0;
     display: flex;
 }
 
-.container-participantes .card .redes_sociais li{
+.container-participantes .card .redes_sociais li {
     list-style: none;
     margin: 0 10px;
     opacity: 0;
@@ -274,27 +276,27 @@ a{
     transition-delay: calc(.05s * var(--i));
 }
 
-.container-participantes .card:hover .redes_sociais li{
+.container-participantes .card:hover .redes_sociais li {
     opacity: .5;
     transform: translateY(40px);
 }
 
-.container-participantes .card .redes_sociais li:hover{
+.container-participantes .card .redes_sociais li:hover {
     opacity: 1;
 
 }
 
-.container-participantes .card .redes_sociais > li > a > img{
+.container-participantes .card .redes_sociais>li>a>img {
     width: 25px;
     color: #FFF;
 }
 
-footer{
+footer {
     background-color: #141414;
     padding: 1rem 10%;
 }
 
-footer > p > a{
+footer>p>a {
     color: #009CD0;
     font-weight: 600;
     letter-spacing: 1px;
@@ -307,12 +309,12 @@ footer > p > a{
     overflow: hidden;
 }
 
-.clip-circle{
+.clip-circle {
     clip-path: circle(100px at center)
 }
 
 
-.wd-50{
+.wd-50 {
     width: 50%;
 }
 
@@ -320,81 +322,84 @@ footer > p > a{
 
 
 @media (min-width: 700px) and (max-width: 900px) {
-    .participantes{
+    .participantes {
         width: 80%;
     }
-    
-    .container-participantes .card{
+
+    .container-participantes .card {
         flex: 40%;
     }
 }
 
 @media (max-width: 700px) {
-    .participantes > p{
+    .participantes>p {
         margin-bottom: 60px;
         max-width: 100%;
         line-height: 1.6rem;
         font-size: 1rem;
     }
-    
-    .participantes{
+
+    .participantes {
         width: 100%;
     }
 
-    .participantes > p{
+    .participantes>p {
         margin-bottom: 0;
         margin: 20px;
     }
 
-    .container-participantes .card{
+    .container-participantes .card {
         flex: 40%;
     }
 }
 
 
-@media (max-width: 600px){
-    .participantes{
+@media (max-width: 600px) {
+    .participantes {
         width: 80%;
     }
-    
-    .container-participantes .card{
+
+    .container-participantes .card {
         flex: 50%;
     }
 }
 
 @media (max-width: 1000px) {
-    .main > .images, .line-v{
+
+    .main>.images,
+    .line-v {
         display: none;
     }
+
     .main {
         grid-template-columns: 1fr;
     }
-    
-    .topico{
+
+    .topico {
         flex-direction: column;
         text-align: center;
     }
 
-    .topico > .esquerda > p{
+    .topico>.esquerda>p {
         margin-bottom: 60px;
         line-height: 1.6rem;
         font-size: 1rem;
     }
 
-    .topico > .direita > .testes > .teste{
+    .topico>.direita>.testes>.teste {
         flex: 30%;
         margin: 15px;
     }
-    
-    .topico > .direita > .testes > .teste > h3{
+
+    .topico>.direita>.testes>.teste>h3 {
         font-size: 1.5rem;
     }
-    
-    .topico > .direita > .testes > .teste > p{
+
+    .topico>.direita>.testes>.teste>p {
         font-size: .9rem;
     }
-    
-    .topico > .direita > .testes > .teste > a{
+
+    .topico>.direita>.testes>.teste>a {
         font-size: .9rem;
     }
 }

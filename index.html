@@ -7,17 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Igor Rocha">
   <meta name="keywords" content="psicologia, psychology, uesc, computing">
-  <meta name="description" content="Projeto de Neuropsicologia Computacional da UESC (PEBL-Brasil). Grupo de Pesquisa de Inovação Tecnológica em Avaliação e Reabilitação Neuropsicológica e Motora.">
+  <meta name="description"
+    content="Projeto de Neuropsicologia Computacional da UESC (PEBL-Brasil). Grupo de Pesquisa de Inovação Tecnológica em Avaliação e Reabilitação Neuropsicológica e Motora.">
 
   <title>PEBL Web</title>
 
-  <link rel="shortcut icon" href="assets/img/logo_brain.png"/>
+  <link rel="shortcut icon" href="assets/img/logo_brain.png" />
   <link href="./css/index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="stop-scrolling">
+  <!-- Class to prevent scrolling when loading the page -->
 
-
+  <!-- Wrapper of everything when loading the page -->
   <div id="everything" class="displaynone">
     <header class="topnav">
       <a class="logo" href="./"><img src="./assets/img/logo_brain.png" alt="Logo"></a>
@@ -26,14 +28,17 @@
       <a class="contato" href="./contact">Contato</a>
       <a class="login" href="./login">Cadastrar-se</a>
     </header>
-    
-  
-    <!-- DESCRIÇÃO DO PROJETO -->
+
+
+    <!-- Project description -->
     <div id="main" class="main">
+      <!-- Random image on the left -->
       <div class="images">
         <img src="https://source.unsplash.com/featured/?neuroscience">
       </div>
+      <!-- Vertical line for division -->
       <div class="line-v"></div>
+      <!-- Content on the right side -->
       <div class="content">
         <p>Bem-vindo(a) ao</p>
         <h2>Projeto de Neuropsicologia Computacional da UESC (PEBL-Brasil)</h2>
@@ -44,19 +49,21 @@
         </a>
       </div>
     </div>
-  
-    <!-- LINHA DE DIVISAO HORIZONTAL -->
+
+    <!-- Horizontal line for division -->
     <div class="line-h" style="transform: scale(-1);"></div>
-  
-  
-    <!-- SHOWCASE DOS TESTES -->
+
+
+    <!-- Showcase of the tests -->
     <div id="testes" class="topico">
+      <!-- Main description of what the tests will do -->
       <div class="esquerda">
         <h3>Testes</h3>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae exercitationem minus amet inventore corrupti
           similique. In quidem maxime iure magni odio ex, animi esse veniam impedit, ab ipsa, maiores eius.</p>
       </div>
       <div class="direita">
+        <!-- Tests cards, with a title, description and link -->
         <div class="testes">
           <div class="teste">
             <h3>Stroop</h3>
@@ -93,16 +100,18 @@
         </div>
       </div>
     </div>
-  
-  
-    <!-- LINHA DE DIVISAO HORIZONTAL -->
+
+
+    <!-- Horizontal line for division -->
     <div class="line-h"></div>
-  
-    <!-- NOSSA EQUIPE -->
+
+    <!-- Our team -->
     <div id="equipe" class="participantes">
       <h3>Equipe</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, eos eaque exercitationem molestiae, eveniet
-        vero ipsa, in hic harum fuga ipsum nisi doloribus officia nostrum reiciendis eius! Provident, doloribus illum.</p>
+        vero ipsa, in hic harum fuga ipsum nisi doloribus officia nostrum reiciendis eius! Provident, doloribus illum.
+      </p>
+      <!-- Team member card, with photo, name, description and links -->
       <div class="container-participantes">
         <div id="igor" class="card">
           <div class="participante">
@@ -132,7 +141,7 @@
             </li>
             <li style="--i:5" class="cl-invert">
               <a href="http://linktr.ee/igorroc" target="_blank" rel="noopener noreferrer"><img
-                src="./assets/icons/web.svg"></a>
+                  src="./assets/icons/web.svg"></a>
             </li>
           </ul>
         </div>
@@ -298,8 +307,8 @@
         </div>
       </div>
     </div>
-  
-    <!-- PARTICULAS DE FUNDO -->
+
+    <!-- Background particles -->
     <ul class="particles">
       <li></li>
       <li></li>
@@ -312,6 +321,7 @@
       <li></li>
       <li></li>
     </ul>
+    <!-- Left side circles -->
     <div class="ripple">
       <div style="--tam:5" class="circle"></div>
       <div style="--tam:3" class="circle"></div>
@@ -319,7 +329,8 @@
       <div style="--tam:4" class="circle"></div>
       <div style="--tam:1" class="circle"></div>
     </div>
-    <ul class="particles" style="top: 2500px;" >
+    <!-- 2nd Background particles -->
+    <ul class="particles" style="top: 2500px;">
       <li></li>
       <li></li>
       <li></li>
@@ -331,7 +342,8 @@
       <li></li>
       <li></li>
     </ul>
-    <ul class="particles show-tablet" style="top: 4000px;" >
+    <!-- 3th Background particles, only show on small screens -->
+    <ul class="particles show-tablet" style="top: 4000px;">
       <li></li>
       <li></li>
       <li></li>
@@ -343,8 +355,7 @@
       <li></li>
       <li></li>
     </ul>
-    
-    <!-- RODAPE -->
+
     <footer>
       <p>
         © 2021 Todos os direitos reservados. Desenvolvido por
@@ -353,10 +364,11 @@
         <a href="#rupp">Rupp</a>.
       </p>
     </footer>
-  
-  
+
+
   </div>
-  
+
+  <!-- Page loader -->
   <div id="loader-wrapper" class="loader-wrapper">
     <div id="loader" class="loader box-loader">
       <span></span>
