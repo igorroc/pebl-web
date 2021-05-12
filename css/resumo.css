@@ -241,6 +241,10 @@ footer{
         display: flex;
         flex-direction: column;
     }
+
+    footer{
+        height: 100px;
+    }
 }
 
 @media only screen and (max-width:1280px){
@@ -255,6 +259,7 @@ footer{
         font-size: 1.2rem;
         letter-spacing: 2px;
     }
+
 }
 
 @media only screen and (max-width:750px){
@@ -268,5 +273,26 @@ footer{
     .info .descricao p {
         font-size: 1rem;
         letter-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .apresentacao{
+        width:90%;
+    }
+    .habilidades{
+        height: 100px
+    }
+    .descricao{
+        height: 300px;
+    }
+
+    .iniciar{
+        font-size: 1rem;
+    }
+
+    .resultados{
+        width: calc(90% - 60px);
+        padding: 30px;
     }
 }
