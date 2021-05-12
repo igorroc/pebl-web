@@ -1,10 +1,12 @@
 var url = new URL(window.location)
+var id = url.searchParams.get("id")
 var nome = url.searchParams.get("nome")
-var color = url.searchParams.get("cor")
+var cor = url.searchParams.get("cor")
 
 var imagem = document.getElementById("imagemApresentacao")
 var habilidades = document.getElementById("iconsHabilidade")
 var titulo = document.getElementById("titulo")
+var description = document.getElementsByClassName("descricao")[0].children[0]
 var link = document.getElementById("link")
 var link_us = document.getElementById("link_us")
 var particles = document.getElementsByClassName("particles")
@@ -12,29 +14,30 @@ var lines_h = document.getElementsByClassName("line-h")
 var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
-if (nome) {
-    titulo.innerHTML = nome
-    link.href = `./testes/${nome}?lang=br`
-    link_us.href = `./testes/${nome}?lang=us`
-    document.title = nome.charAt(0).toUpperCase() + nome.substr(1) + " - Resumo"
+if(id){
+    fetch("../info_testes.json")
+        .then(Response => Response.json())
+        .then(data => {
+            if(data[id]){
+                console.log(data[id])
+                titulo.innerHTML = data[id].title
+                link.href = `./testes/${data[id].link}?lang=br`
+                link_us.href = `./testes/${data[id].link}?lang=us`
+                document.title = data[id].title.charAt(0).toUpperCase() + data[id].title.substr(1) + " - Resumo"
+                description.innerHTML = data[id].description
+                addFilter(data[id].color)
+            }
+        })
+}else{
+    if (nome) {
+        titulo.innerHTML = nome
+        link.href = `./testes/${nome}?lang=br`
+        link_us.href = `./testes/${nome}?lang=us`
+        document.title = nome.charAt(0).toUpperCase() + nome.substr(1) + " - Resumo"
+    }
 }
-if (color) {
-    botao.classList.add(color)
-    imagem.classList.add(`filter-${color}`)
-    for (const skill of habilidades.children) {
-        skill.classList.add(`filter-${color}`)
-    }
-    for (const particle of particles) {
-        for (const p of particle.children) {
-            p.classList.add(`bg-grad-${color}`)
-        }
-    }
-    for (const line_h of lines_h) {
-        line_h.classList.add(`filter-${color}`)
-    }
-    for (const line_v of lines_v) {
-        line_v.classList.add(`filter-${color}`)
-    }
+if (cor) {
+    addFilter(cor)
 }
 
 // GRAFICOS
@@ -169,3 +172,22 @@ var graficoBarra = new Chart(
     document.getElementById('graficoBarra'),
     configBarra
 )
+
+function addFilter(color){
+    botao.classList.add(color)
+    imagem.classList.add(`filter-${color}`)
+    for (const skill of habilidades.children) {
+        skill.classList.add(`filter-${color}`)
+    }
+    for (const particle of particles) {
+        for (const p of particle.children) {
+            p.classList.add(`bg-grad-${color}`)
+        }
+    }
+    for (const line_h of lines_h) {
+        line_h.classList.add(`filter-${color}`)
+    }
+    for (const line_v of lines_v) {
+        line_v.classList.add(`filter-${color}`)
+    }
+}
