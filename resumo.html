@@ -1,104 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1920, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/logo_brain.png"/>
-    <title>Nome Do Teste - Resumo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo</title>
+    <link rel="shortcut icon" href="assets/img/logo_brain.png" />
     <link href="./css/resumo.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-    <header class="topnav">
-        <a class="logo" href="./"><img src="./assets/img/logo_brain.png" alt="Logo"></a>
-        <a class="inicio" href="./">Início</a>
-        <a class="sobre" href="./about">Sobre</a>
-        <a class="contato" href="./contact">Contato</a>
-        <a class='login'>Igor</a>
-    </header>
+<body class="stop-scrolling">
 
-    <div class="apresentacao">
-        <div class="imagem">
-            <img id="imagemApresentacao" src="https://source.unsplash.com/featured/?fast,speed" alt="">
+    <div id="everything" class="displaynone">
+        <header class="topnav">
+            <a class="logo" href="./"><img src="./assets/img/logo_brain.png" alt="Logo"></a>
+            <a class="inicio" href="./">Início</a>
+            <a class="sobre" href="./about">Sobre</a>
+            <a class="contato" href="./contact">Contato</a>
+            <a class='login'>Igor</a>
+        </header>
+
+        <div class="apresentacao">
+            <div class="imagem">
+                <img id="imagemApresentacao" src="https://source.unsplash.com/featured/?fast,speed" alt="">
+            </div>
+            <div class="line-v"></div>
+            <div class="info">
+                <h3 id="titulo">Nome do Teste</h3>
+                <div class="habilidades">
+                    <p>Habilidades Avaliadas</p>
+                    <div id="iconsHabilidade" class="icons">
+                        <div class="icon"></div>
+                        <div class="icon"></div>
+                        <div class="icon"></div>
+                        <div class="icon"></div>
+                    </div>
+                </div>
+                <div class="descricao">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptas nobis dignissimos
+                        adipisci
+                        hic, eius reiciendis odit, reprehenderit nihil dicta quos, nemo neque odio totam velit in illo?
+                        Voluptatibus, nam.</p>
+                </div>
+                <div class="iniciar">
+                    <div id="slide"></div>
+                    <a id="link" href="#">Iniciar Teste</a>
+                </div>
+                <a id="link_us" href="#">Teste em inglês</a>
+            </div>
         </div>
-        <div class="line-v"></div>
-        <div class="info">
-            <h3 id="titulo">Nome do Teste</h3>
-            <div class="habilidades">
-                <p>Habilidades Avaliadas</p>
-                <div id="iconsHabilidade" class="icons">
-                    <div class="icon"></div>
-                    <div class="icon"></div>
-                    <div class="icon"></div>
-                    <div class="icon"></div>
+
+        <!-- LINHA DE DIVISAO HORIZONTAL -->
+        <div class="line-h"></div>
+
+        <div class="resultados">
+            <h3>O Relatório de Resultados inclui:</h3>
+            <span class="line-h" style="transform: scale(-1);"></span>
+            <div class="result-container">
+                <div>
+                    <h4>Pontuação Cognitiva</h4>
+                    <canvas id="graficoPizza"></canvas>
+                </div>
+                <span class="line-v"></span>
+                <div>
+                    <h4>Sinais e Sintomas</h4>
+                    <canvas id="graficoPolar"></canvas>
+                </div>
+                <span class="line-v"></span>
+                <div>
+                    <h4>Outros</h4>
+                    <canvas id="graficoBarra"></canvas>
                 </div>
             </div>
-            <div class="descricao">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptas nobis dignissimos adipisci
-                    hic, eius reiciendis odit, reprehenderit nihil dicta quos, nemo neque odio totam velit in illo?
-                    Voluptatibus, nam.</p>
-            </div>
-            <div class="iniciar">
-                <div id="slide"></div>
-                <a id="link" href="#">Iniciar Teste</a>
-            </div>
-            <a id="link_us" href="#">Teste em inglês</a>
         </div>
+
+        <footer></footer>
+
+        <!-- PARTICULAS DE FUNDO -->
+        <ul id="particles" class="particles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="particles" style="top: 1500px;">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
     </div>
-
-    <!-- LINHA DE DIVISAO HORIZONTAL -->
-    <div class="line-h"></div>
-
-    <div class="resultados">
-        <h3>O Relatório de Resultados inclui:</h3>
-        <span class="line-h" style="transform: scale(-1);"></span>
-        <div class="result-container">
-            <div>
-                <h4>Pontuação Cognitiva</h4>
-                <canvas id="graficoPizza"></canvas>
-            </div>
-            <span class="line-v"></span>
-            <div>
-                <h4>Sinais e Sintomas</h4>
-                <canvas id="graficoPolar"></canvas>
-            </div>
-            <span class="line-v"></span>
-            <div>
-                <h4>Outros</h4>
-                <canvas id="graficoBarra"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <footer></footer>
-
-    <!-- PARTICULAS DE FUNDO -->
-    <ul id="particles" class="particles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <ul class="particles" style="top: 1500px;" >
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
 
 
     <div id="loader-wrapper" class="loader-wrapper">
