@@ -28,7 +28,6 @@ footer{
     z-index: 10;
     width: calc(60% + 200px);
     max-width: 1280px;
-    height: 600px;
     margin: 50px auto;
     display: grid;
     grid-template-columns: 1.5fr 0.1fr 2fr;
@@ -279,12 +278,6 @@ footer{
 @media only screen and (max-width:600px){
     .apresentacao{
         width:90%;
-    }
-    .habilidades{
-        height: 100px
-    }
-    .descricao{
-        height: 300px;
     }
 
     .iniciar{
