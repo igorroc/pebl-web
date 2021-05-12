@@ -246,7 +246,7 @@ footer{
     }
 }
 
-@media only screen and (max-width:1280px){
+@media only screen and (max-width:900px){
     .info h3 {
         font-size: 2.5rem;
         font-weight: 800;
@@ -262,6 +262,19 @@ footer{
 }
 
 @media only screen and (max-width:750px){
+    .apresentacao{
+        width:90%;
+        display:flex;
+    }
+
+    .apresentacao>.imagem{
+        display:none;
+    }
+
+    .apresentacao>.info{
+        margin: 40px;
+    }
+    
     .info h3 {
         font-size: 2.2rem;
         font-weight: 800;
@@ -269,21 +282,9 @@ footer{
         letter-spacing: 5px;
     }
     
-    .info .descricao p {
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
 }
 
 @media only screen and (max-width:600px){
-    .apresentacao{
-        width:90%;
-    }
-
-    .iniciar{
-        font-size: 1rem;
-    }
-
     .resultados{
         width: calc(90% - 60px);
         padding: 30px;
