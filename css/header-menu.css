@@ -59,8 +59,19 @@
     letter-spacing: 1px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .topnav .logo{
         margin-right: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .topnav{
+        margin-top:20px;
+        padding: 0;
+    }
+
+    .topnav .logo{
+        margin-right: 0;
     }
 }
