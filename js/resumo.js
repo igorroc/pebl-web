@@ -28,13 +28,6 @@ if(id){
                 addFilter(data[id].color)
             }
         })
-}else{
-    if (nome) {
-        titulo.innerHTML = nome
-        link.href = `./testes/${nome}?lang=br`
-        link_us.href = `./testes/${nome}?lang=us`
-        document.title = nome.charAt(0).toUpperCase() + nome.substr(1) + " - Resumo"
-    }
 }
 if (cor) {
     addFilter(cor)
