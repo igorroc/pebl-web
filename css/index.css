@@ -355,6 +355,10 @@ footer>p>a {
 
 
 @media (max-width: 600px) {
+    .topico>.direita>.testes {
+        flex-direction: column;
+    }
+
     .participantes {
         width: 80%;
     }
