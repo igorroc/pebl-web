@@ -15,7 +15,7 @@ var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
 if(id){
-    fetch("https://igorroc.github.io/PEBL-Web/info_testes.json")
+    fetch("https://igorroc.github.io/pebl-web/info_testes.json")
         .then(Response => Response.json())
         .then(data => {
             if(data[id]){

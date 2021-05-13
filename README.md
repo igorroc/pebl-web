@@ -2,26 +2,26 @@
   <img src="./assets/img/print1.png" alt="PEBL-Web" />
 
   &#xa0;
-  <h1 align="center"><a href="https://igorroc.github.io/PEBL-Web" target="_blank">PEBL-Web</a></h1>
+  <h1 align="center"><a href="https://igorroc.github.io/pebl-web" target="_blank">PEBL-Web</a></h1>
 
-  <a href="https://igorroc.github.io/PEBL-Web" target="_blank">Site</a>
+  <a href="https://igorroc.github.io/pebl-web" target="_blank">Site</a>
 </div>
 
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/IgorRoc/PEBL-Web?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/IgorRoc/pebl-web?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/IgorRoc/PEBL-Web?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/IgorRoc/pebl-web?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorRoc/PEBL-Web?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorRoc/pebl-web?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/IgorRoc/PEBL-Web?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/IgorRoc/pebl-web?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/IgorRoc/PEBL-Web?color=56BEB8" /> 
+  <img alt="Github issues" src="https://img.shields.io/github/issues/IgorRoc/pebl-web?color=56BEB8" /> 
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/IgorRoc/PEBL-Web?color=56BEB8" />
+  <img alt="Github forks" src="https://img.shields.io/github/forks/IgorRoc/pebl-web?color=56BEB8" />
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/IgorRoc/PEBL-Web?color=56BEB8" />
+  <img alt="Github stars" src="https://img.shields.io/github/stars/IgorRoc/pebl-web?color=56BEB8" />
 </p>
 
 ## Status ##
@@ -49,10 +49,10 @@ Desenvolvimento de testes neuropsicológicos computadorizados online para o cont
 
 ## :sparkles: Testes ##
 
-🚧 [Stroop](https://igorroc.github.io/PEBL-Web/testes/stroop.html);\
-🚧 [BST](https://igorroc.github.io/PEBL-Web/testes/bst.html);\
-🚧 [Sternberg](https://igorroc.github.io/PEBL-Web/testes/sternberg.html);\
-🚧 [Torre de Londres](https://igorroc.github.io/PEBL-Web/testes/torre.html);
+🚧 [Stroop](https://igorroc.github.io/pebl-web/testes/stroop.html);\
+🚧 [BST](https://igorroc.github.io/pebl-web/testes/bst.html);\
+🚧 [Sternberg](https://igorroc.github.io/pebl-web/testes/sternberg.html);\
+🚧 [Torre de Londres](https://igorroc.github.io/pebl-web/testes/torre.html);
 
 ## :rocket: Tecnologias ##
 
@@ -71,10 +71,10 @@ Antes de começar, você precisa ter o [Git](https://git-scm.com) e [Node](https
 
 ```bash
 # Clone este projeto
-$ git clone https://github.com/IgorRoc/PEBL-Web.git
+$ git clone https://github.com/IgorRoc/pebl-web.git
 
 # Acesse
-$ cd PEBL-Web
+$ cd pebl-web
 
 # Instale as depencencias
 $ yarn
