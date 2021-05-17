@@ -1,34 +1,34 @@
 {
-    "1":{
-        "title": "Stroop",
-        "link": "stroop",
-        "color": "red",
-        "description": "O Teste de Cores e Palavras (mais conhecido como teste de STROOP) permite detetar problemas neurológicos e cerebrais, avaliando os efeitos de interferência entre os dois hemisférios cerebrais. O STROOP poderá ser utilizado em diversas situações clínicas (p.e., lesões cerebrais, demência, psicopatologia, etc.) independentemente do nível cultural do sujeito.\nAs tarefas requeridas pelo STROOP implicam a identificação de cores e de palavras.",
-        "img": "",
-        "habilities": ["puzzle", "picture", "speed", "batery"]
-    },
-    "2":{
-        "title": "Bst",
-        "link": "bst",
-        "color": "blue",
-        "description": "Descrição do teste BST<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
-        "img": "",
-        "habilities": ["puzzle", "picture", "speed", "batery"]
-    },
-    "3":{
-        "title": "Sternberg",
-        "link": "sternberg",
-        "color": "yellow",
-        "description": "Descrição do teste Sternberg<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
-        "img": "",
-        "habilities": ["puzzle", "picture", "speed", "batery"]
-    },
-    "4":{
-        "title": "Torre de Londres",
-        "link": "torre",
-        "color": "green",
-        "description": "Descrição do teste Torre de Londres<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
-        "img": "",
-        "habilities": ["puzzle", "picture", "speed", "batery"]
-    }
+	"1": {
+		"title": "Stroop",
+		"link": "stroop",
+		"color": "red",
+		"description": "O Teste de Cores e Palavras (mais conhecido como teste de STROOP) permite detetar problemas neurológicos e cerebrais, avaliando os efeitos de interferência entre os dois hemisférios cerebrais. O STROOP poderá ser utilizado em diversas situações clínicas (p.e., lesões cerebrais, demência, psicopatologia, etc.) independentemente do nível cultural do sujeito.\nAs tarefas requeridas pelo STROOP implicam a identificação de cores e de palavras.",
+		"img": "",
+		"habilities": ["puzzle", "picture", "speed", "batery"]
+	},
+	"2": {
+		"title": "Bst",
+		"link": "bst",
+		"color": "blue",
+		"description": "Descrição do teste BST<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"img": "",
+		"habilities": ["puzzle", "picture", "speed", "batery"]
+	},
+	"3": {
+		"title": "Sternberg",
+		"link": "sternberg",
+		"color": "yellow",
+		"description": "Descrição do teste Sternberg<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"img": "",
+		"habilities": ["puzzle", "picture", "speed", "batery"]
+	},
+	"4": {
+		"title": "Torre de Londres",
+		"link": "torre",
+		"color": "green",
+		"description": "Descrição do teste Torre de Londres<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"img": "",
+		"habilities": ["puzzle", "picture", "speed", "batery"]
+	}
 }

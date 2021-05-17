@@ -4,75 +4,73 @@
 @import "variables.css";
 
 body {
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--cor-de-fundo);
+	margin: 0px;
+	background-color: var(--cor-de-fundo);
 }
 
 /* TESTE */
 .teste {
-    justify-items: center;
-    align-items: center;
-    background-color: var(--cor-de-fundo-testes);
+	justify-items: center;
+	align-items: center;
+	background-color: var(--cor-de-fundo-testes);
 }
 
 .lembrar {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .alternate {
-    font-size: 4rem;
-    font-weight: bold;
-    cursor: pointer;
+	font-size: 4rem;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .buttons {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	justify-items: center;
 }
 
 .options {
-    margin: 0 auto;
-    justify-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+	margin: 0 auto;
+	justify-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
-
 
 /* FORMAS */
 .square {
-    width: 100px;
-    height: 100px;
-    margin: 50px;
+	width: 100px;
+	height: 100px;
+	margin: 50px;
 }
 
 .circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 50px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 50px;
 }
 
 /* VARIACOES */
 .big {
-    width: 200px;
-    height: 200px;
+	width: 200px;
+	height: 200px;
 }
 
 .red {
-    background-color: var(--cor-vermelho);
+	background-color: var(--cor-vermelho);
 }
 
 .blue {
-    background-color: var(--cor-azul);
+	background-color: var(--cor-azul);
 }
 
 .line {
-    width: 190px;
-    height: 190px;
-    border-color: var(--cor-preto);
-    border-width: 5px;
-    border-style: solid;
-    box-shadow: 1px 1px 10px var(--cor-preto);
+	width: 190px;
+	height: 190px;
+	border-color: var(--cor-preto);
+	border-width: 5px;
+	border-style: solid;
+	box-shadow: 1px 1px 10px var(--cor-preto);
 }

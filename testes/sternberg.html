@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="../assets/img/logo_brain.png" />
+		<title>Sternberg - Teste</title>
+		<link href="../css/sternberg.css" rel="stylesheet" type="text/css" />
+	</head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="../assets/img/logo_brain.png"/>
-  <title>Sternberg - Teste</title>
-  <link href="../css/sternberg.css" rel="stylesheet" type="text/css" />
-</head>
+	<body>
+		<header class="topnav white-mode">
+			<a class="logo" href="../"
+				><img src="../assets/img/logo_brain.png" alt="Logo"
+			/></a>
+			<a class="inicio" href="../">Início</a>
+			<a class="sobre" href="../about">Sobre</a>
+			<a class="contato" href="../contact">Contato</a>
+			<a class="login" href="../usuario">Igor</a>
+		</header>
 
-<body>
-  <header class="topnav white-mode">
-    <a class="logo" href="../"><img src="../assets/img/logo_brain.png" alt="Logo"></a>
-    <a class="inicio" href="../">Início</a>
-    <a class="sobre" href="../about">Sobre</a>
-    <a class="contato" href="../contact">Contato</a>
-    <a class="login" href="../usuario">Igor</a>
-  </header>
+		<div class="teste">
+			<div class="lembrar"></div>
+			<div class="alternar" onclick="comecar()">
+				A lista a ser aprendida está acima.<br />Clique aqui para
+				começar.
+			</div>
+			<div class="botoes hidden">
+				<div class="errado">[A] AUSENTE</div>
+				<div></div>
+				<div class="certo">PRESENTE [L]</div>
+			</div>
+		</div>
 
-  <div class="teste">
-    <div class="lembrar"></div>
-    <div class="alternar" onclick="comecar()">A lista a ser aprendida está acima.<br>Clique aqui para começar.</div>
-    <div class="botoes hidden">
-      <div class="errado">[A] AUSENTE</div>
-      <div></div>
-      <div class="certo">PRESENTE [L]</div>
-    </div>
-  </div>
-
-  <script src="../js/functions.js"></script>
-  <script src="../js/sternberg.js"></script>
-</body>
-
+		<script src="../js/functions.js"></script>
+		<script src="../js/sternberg.js"></script>
+	</body>
 </html>

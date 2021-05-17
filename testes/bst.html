@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="../assets/img/logo_brain.png" />
+		<title>BST - Teste</title>
+		<link href="../css/bst.css" rel="stylesheet" type="text/css" />
+	</head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="../assets/img/logo_brain.png"/>
-  <title>BST - Teste</title>
-  <link href="../css/bst.css" rel="stylesheet" type="text/css" />
-</head>
+	<body>
+		<header class="topnav white-mode">
+			<a class="logo" href="../"
+				><img src="../assets/img/logo_brain.png" alt="Logo"
+			/></a>
+			<a class="inicio" href="../">Início</a>
+			<a class="sobre" href="../about">Sobre</a>
+			<a class="contato" href="../contact">Contato</a>
+			<a class="login" href="../usuario">Igor</a>
+		</header>
 
-<body>
-  <header class="topnav white-mode">
-    <a class="logo" href="../"><img src="../assets/img/logo_brain.png" alt="Logo"></a>
-    <a class="inicio" href="../">Início</a>
-    <a class="sobre" href="../about">Sobre</a>
-    <a class="contato" href="../contact">Contato</a>
-    <a class="login" href="../usuario">Igor</a>
-  </header>
+		<div class="teste">
+			<div class="buttons">
+				<div class="changing big circle red"></div>
+				<div class="options">
+					<div class="circle red" onclick="choose('circle')"></div>
+					<div class="square blue" onclick="choose('square')"></div>
+				</div>
+			</div>
+		</div>
 
-  <div class="teste">
-    <div class="buttons">
-      <div class="changing big circle red"></div>
-      <div class="options">
-        <div class="circle red" onclick="choose('circle')"></div>
-        <div class="square blue" onclick="choose('square')"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="../js/functions.js"></script>
-  <script src="../js/bst.js"></script>
-</body>
-
+		<script src="../js/functions.js"></script>
+		<script src="../js/bst.js"></script>
+	</body>
 </html>

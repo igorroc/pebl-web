@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="../assets/img/logo_brain.png" />
+		<title>Torre - Teste</title>
+		<link href="../css/torre.css" rel="stylesheet" type="text/css" />
+	</head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="../assets/img/logo_brain.png"/>
-  <title>Torre - Teste</title>
-  <link href="../css/torre.css" rel="stylesheet" type="text/css" />
-</head>
+	<body>
+		<header class="topnav white-mode">
+			<a class="logo" href="../"
+				><img src="../assets/img/logo_brain.png" alt="Logo"
+			/></a>
+			<a class="inicio" href="../">Início</a>
+			<a class="sobre" href="../about">Sobre</a>
+			<a class="contato" href="../contact">Contato</a>
+			<a class="login" href="../usuario">Igor</a>
+		</header>
 
-<body>
-  <header class="topnav white-mode">
-    <a class="logo" href="../"><img src="../assets/img/logo_brain.png" alt="Logo"></a>
-    <a class="inicio" href="../">Início</a>
-    <a class="sobre" href="../about">Sobre</a>
-    <a class="contato" href="../contact">Contato</a>
-    <a class="login" href="../usuario">Igor</a>
-  </header>
+		<div class="teste">
+			<div class="copiar">
+				<div class="container">
+					<div class="disco verde row-3"></div>
+				</div>
+				<div class="container">
+					<div class="disco vermelho row-3"></div>
+				</div>
+				<div class="container">
+					<div class="disco azul row-3"></div>
+				</div>
+			</div>
 
-  <div class="teste">
-    <div class="copiar">
-      <div class="container">
-        <div class="disco verde row-3"></div>
-      </div>
-      <div class="container">
-        <div class="disco vermelho row-3"></div>
-      </div>
-      <div class="container">
-        <div class="disco azul row-3"></div>
-      </div>
-    </div>
+			<div id="mao" class="mao"></div>
 
-    <div id="mao" class="mao"></div>
-    
-    <div class="inventario">
-      <div id="slot1" class="container">
-        <div class="disco vermelho row-3"></div>
-        <div class="disco azul row-2"></div>
-        <div class="disco verde row-1"></div>
-      </div>
-      <div id="slot2" class="container">
-        <div class="disco azul row-3"></div>
-      </div>
-      <div id="slot3" class="container">
-        <div class="disco verde row-3"></div>
-      </div>
-    </div>
-  </div>
+			<div class="inventario">
+				<div id="slot1" class="container">
+					<div class="disco vermelho row-3"></div>
+					<div class="disco azul row-2"></div>
+					<div class="disco verde row-1"></div>
+				</div>
+				<div id="slot2" class="container">
+					<div class="disco azul row-3"></div>
+				</div>
+				<div id="slot3" class="container">
+					<div class="disco verde row-3"></div>
+				</div>
+			</div>
+		</div>
 
-  <script src="../js/functions.js"></script>
-  <script src="../js/torre.js"></script>
-</body>
-
+		<script src="../js/functions.js"></script>
+		<script src="../js/torre.js"></script>
+	</body>
 </html>

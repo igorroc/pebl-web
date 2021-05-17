@@ -1,389 +1,553 @@
 <!DOCTYPE html>
 <html lang="pt">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Igor Rocha" />
+		<meta
+			name="keywords"
+			content="psicologia, psychology, uesc, computing"
+		/>
+		<meta
+			name="description"
+			content="Projeto de Neuropsicologia Computacional da UESC (PEBL-Brasil). Grupo de Pesquisa de Inovação Tecnológica em Avaliação e Reabilitação Neuropsicológica e Motora."
+		/>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Igor Rocha">
-  <meta name="keywords" content="psicologia, psychology, uesc, computing">
-  <meta name="description"
-    content="Projeto de Neuropsicologia Computacional da UESC (PEBL-Brasil). Grupo de Pesquisa de Inovação Tecnológica em Avaliação e Reabilitação Neuropsicológica e Motora.">
+		<title>PEBL Web</title>
 
-  <title>PEBL Web</title>
+		<link rel="shortcut icon" href="assets/img/logo_brain.png" />
+		<link href="./css/index.css" rel="stylesheet" type="text/css" />
+	</head>
 
-  <link rel="shortcut icon" href="assets/img/logo_brain.png" />
-  <link href="./css/index.css" rel="stylesheet" type="text/css" />
-</head>
+	<body class="stop-scrolling">
+		<!-- Class to prevent scrolling when loading the page -->
 
-<body class="stop-scrolling">
-  <!-- Class to prevent scrolling when loading the page -->
+		<!-- Wrapper of everything when loading the page -->
+		<div id="everything" class="displaynone">
+			<header class="topnav">
+				<a class="logo" href="./"
+					><img src="./assets/img/logo_brain.png" alt="Logo"
+				/></a>
+				<a class="inicio active" href="./">Início</a>
+				<a class="sobre" href="./about">Sobre</a>
+				<a class="contato" href="./contact">Contato</a>
+				<a class="login" href="./login">Cadastrar-se</a>
+			</header>
 
-  <!-- Wrapper of everything when loading the page -->
-  <div id="everything" class="displaynone">
-    <header class="topnav">
-      <a class="logo" href="./"><img src="./assets/img/logo_brain.png" alt="Logo"></a>
-      <a class="inicio active" href="./">Início</a>
-      <a class="sobre" href="./about">Sobre</a>
-      <a class="contato" href="./contact">Contato</a>
-      <a class="login" href="./login">Cadastrar-se</a>
-    </header>
+			<!-- Horizontal line for division -->
+			<div class="line-h"></div>
 
-    <!-- Horizontal line for division -->
-    <div class="line-h"></div>
+			<!-- Project description -->
+			<div id="main" class="main">
+				<!-- Random image on the left -->
+				<div class="images">
+					<img
+						src="https://source.unsplash.com/featured/?neuroscience"
+					/>
+				</div>
+				<!-- Vertical line for division -->
+				<div class="line-v"></div>
+				<!-- Content on the right side -->
+				<div class="content">
+					<p>Bem-vindo(a) ao</p>
+					<h2>
+						Projeto de Neuropsicologia Computacional da UESC
+						(PEBL-Brasil)
+					</h2>
+					<p>
+						Grupo de Pesquisa de Inovação Tecnológica em Avaliação e
+						Reabilitação Neuropsicológica e Motora.
+					</p>
+					<a style="width: 30%" class="btn-cta" href="./about">
+						<span class="btn-content">Sobre Nós</span>
+						<img
+							class="btn-icon cl-invert"
+							src="./assets/icons/arrow-right-solid.svg"
+						/>
+					</a>
+				</div>
+			</div>
 
+			<!-- Horizontal line for division -->
+			<div class="line-h" style="transform: scale(-1)"></div>
 
-    <!-- Project description -->
-    <div id="main" class="main">
-      <!-- Random image on the left -->
-      <div class="images">
-        <img src="https://source.unsplash.com/featured/?neuroscience">
-      </div>
-      <!-- Vertical line for division -->
-      <div class="line-v"></div>
-      <!-- Content on the right side -->
-      <div class="content">
-        <p>Bem-vindo(a) ao</p>
-        <h2>Projeto de Neuropsicologia Computacional da UESC (PEBL-Brasil)</h2>
-        <p>Grupo de Pesquisa de Inovação Tecnológica em Avaliação e Reabilitação Neuropsicológica e Motora.</p>
-        <a style="width: 30%;" class="btn-cta" href="./about">
-          <span class="btn-content">Sobre Nós</span>
-          <img class="btn-icon cl-invert" src="./assets/icons/arrow-right-solid.svg">
-        </a>
-      </div>
-    </div>
+			<!-- Showcase of the tests -->
+			<div id="testes" class="topico">
+				<!-- Main description of what the tests will do -->
+				<div class="esquerda">
+					<h3>Testes</h3>
+					<p>
+						Lorem ipsum, dolor sit amet consectetur adipisicing
+						elit. Vitae exercitationem minus amet inventore corrupti
+						similique. In quidem maxime iure magni odio ex, animi
+						esse veniam impedit, ab ipsa, maiores eius.
+					</p>
+				</div>
+				<div class="direita">
+					<!-- Tests cards, with a title, description and link -->
+					<div class="testes">
+						<div class="teste">
+							<h3>Stroop</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Voluptates architecto
+								consectetur quisquam
+							</p>
+							<a class="btn-cta" href="./resumo?id=1">
+								<span class="btn-content">Saiba mais</span>
+								<img
+									class="btn-icon cl-invert"
+									src="./assets/icons/arrow-right-solid.svg"
+								/>
+							</a>
+						</div>
+						<div class="teste">
+							<h3>BST</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Voluptates architecto
+								consectetur quisquam
+							</p>
+							<a class="btn-cta" href="./resumo?id=2">
+								<span class="btn-content">Saiba mais</span>
+								<img
+									class="btn-icon cl-invert"
+									src="./assets/icons/arrow-right-solid.svg"
+								/>
+							</a>
+						</div>
+						<div class="teste">
+							<h3>Sternberg</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Voluptates architecto
+								consectetur quisquam
+							</p>
+							<a class="btn-cta" href="./resumo?id=3">
+								<span class="btn-content">Saiba mais</span>
+								<img
+									class="btn-icon cl-invert"
+									src="./assets/icons/arrow-right-solid.svg"
+								/>
+							</a>
+						</div>
+						<div class="teste">
+							<h3>Torre de Londres</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Voluptates architecto
+								consectetur quisquam
+							</p>
+							<a class="btn-cta" href="./resumo?id=4">
+								<span class="btn-content">Saiba mais</span>
+								<img
+									class="btn-icon cl-invert"
+									src="./assets/icons/arrow-right-solid.svg"
+								/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-    <!-- Horizontal line for division -->
-    <div class="line-h" style="transform: scale(-1);"></div>
+			<!-- Horizontal line for division -->
+			<div class="line-h"></div>
 
+			<!-- Our team -->
+			<div id="equipe" class="participantes">
+				<h3>Equipe</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Nesciunt, eos eaque exercitationem molestiae, eveniet vero
+					ipsa, in hic harum fuga ipsum nisi doloribus officia nostrum
+					reiciendis eius! Provident, doloribus illum.
+				</p>
+				<!-- Team member card, with photo, name, description and links -->
+				<div class="container-participantes">
+					<div id="igor" class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img
+									src="./assets/img/igor.png"
+									alt="Foto de Igor"
+								/>
+							</div>
+							<div class="content">
+								<h5>
+									Igor Lima Rocha<br /><span
+										>Frontend Developer</span
+									>
+								</h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="http://be.net/igorrocha"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/behance.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="https://instagram.com/igor.roc"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/instagram.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="https://github.com/IgorRoc/"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/github.svg"
+								/></a>
+							</li>
+							<li style="--i: 4" class="cl-invert">
+								<a
+									href="https://linkedin.com/in/igorroc"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+							<li style="--i: 5" class="cl-invert">
+								<a
+									href="http://linktr.ee/igorroc"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/web.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div id="isaac" class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/img/isaac.jpg" alt="" />
+							</div>
+							<div class="content">
+								<h5>
+									Isaac Nascimento Lima<br /><span
+										>Backend Developer</span
+									>
+								</h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="https://www.linkedin.com/in/inlima11/"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div id="rupp" class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/img/rupp.png" alt="" />
+							</div>
+							<div class="content">
+								<h5>
+									João Victor Oliveira Rupp<br /><span
+										>Data Analist</span
+									>
+								</h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="https://github.com/jvrupp"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/github.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="https://www.linkedin.com/in/jvrupp-r-20aa34122/"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="mailto:jvrupp@outlook.com.br"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/email.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/icons/user.svg" alt="" />
+							</div>
+							<div class="content">
+								<h5>
+									Paulo Cesar Ribeiro Barbosa<br /><span
+										>Pesquisador</span
+									>
+								</h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/behance.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/instagram.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/icons/user.svg" alt="" />
+							</div>
+							<div class="content">
+								<h5>Naiana<br /><span>Pesquisador</span></h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/behance.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/instagram.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/icons/user.svg" alt="" />
+							</div>
+							<div class="content">
+								<h5>Allan<br /><span>Pesquisador</span></h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/behance.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/instagram.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/icons/user.svg" alt="" />
+							</div>
+							<div class="content">
+								<h5>
+									Paulo Ambrósio<br /><span>Pesquisador</span>
+								</h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/behance.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/instagram.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+					<div class="card">
+						<div class="participante">
+							<div class="imagem">
+								<img src="./assets/icons/user.svg" alt="" />
+							</div>
+							<div class="content">
+								<h5>
+									Marcelo Honda<br /><span>Pesquisador</span>
+								</h5>
+							</div>
+						</div>
+						<ul class="redes_sociais">
+							<li style="--i: 1" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/behance.svg"
+								/></a>
+							</li>
+							<li style="--i: 2" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/instagram.svg"
+								/></a>
+							</li>
+							<li style="--i: 3" class="cl-invert">
+								<a
+									href="http://github.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									><img src="./assets/icons/linkedin.svg"
+								/></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-    <!-- Showcase of the tests -->
-    <div id="testes" class="topico">
-      <!-- Main description of what the tests will do -->
-      <div class="esquerda">
-        <h3>Testes</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae exercitationem minus amet inventore corrupti
-          similique. In quidem maxime iure magni odio ex, animi esse veniam impedit, ab ipsa, maiores eius.</p>
-      </div>
-      <div class="direita">
-        <!-- Tests cards, with a title, description and link -->
-        <div class="testes">
-          <div class="teste">
-            <h3>Stroop</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates architecto consectetur quisquam</p>
-            <a class="btn-cta" href="./resumo?id=1">
-              <span class="btn-content">Saiba mais</span>
-              <img class="btn-icon cl-invert" src="./assets/icons/arrow-right-solid.svg">
-            </a>
-          </div>
-          <div class="teste">
-            <h3>BST</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates architecto consectetur quisquam</p>
-            <a class="btn-cta" href="./resumo?id=2">
-              <span class="btn-content">Saiba mais</span>
-              <img class="btn-icon cl-invert" src="./assets/icons/arrow-right-solid.svg">
-            </a>
-          </div>
-          <div class="teste">
-            <h3>Sternberg</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates architecto consectetur quisquam</p>
-            <a class="btn-cta" href="./resumo?id=3">
-              <span class="btn-content">Saiba mais</span>
-              <img class="btn-icon cl-invert" src="./assets/icons/arrow-right-solid.svg">
-            </a>
-          </div>
-          <div class="teste">
-            <h3>Torre de Londres</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates architecto consectetur quisquam</p>
-            <a class="btn-cta" href="./resumo?id=4">
-              <span class="btn-content">Saiba mais</span>
-              <img class="btn-icon cl-invert" src="./assets/icons/arrow-right-solid.svg">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+			<!-- Background particles -->
+			<ul class="particles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<!-- Left side circles -->
+			<div class="ripple">
+				<div style="--tam: 5" class="circle"></div>
+				<div style="--tam: 3" class="circle"></div>
+				<div style="--tam: 2" class="circle"></div>
+				<div style="--tam: 4" class="circle"></div>
+				<div style="--tam: 1" class="circle"></div>
+			</div>
+			<!-- 2nd Background particles -->
+			<ul class="particles" style="top: 2500px">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<!-- 3th Background particles, only show on small screens -->
+			<ul class="particles show-tablet" style="top: 4000px">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 
+			<footer>
+				<p>
+					© 2021 Todos os direitos reservados. Desenvolvido por
+					<a href="#igor">Igor</a>, <a href="#isaac">Isaac</a> e
+					<a href="#rupp">Rupp</a>.
+				</p>
+			</footer>
+		</div>
 
-    <!-- Horizontal line for division -->
-    <div class="line-h"></div>
+		<!-- Page loader -->
+		<div id="loader-wrapper" class="loader-wrapper">
+			<div id="loader" class="loader box-loader">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
 
-    <!-- Our team -->
-    <div id="equipe" class="participantes">
-      <h3>Equipe</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, eos eaque exercitationem molestiae, eveniet
-        vero ipsa, in hic harum fuga ipsum nisi doloribus officia nostrum reiciendis eius! Provident, doloribus illum.
-      </p>
-      <!-- Team member card, with photo, name, description and links -->
-      <div class="container-participantes">
-        <div id="igor" class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/img/igor.png" alt="Foto de Igor">
-            </div>
-            <div class="content">
-              <h5>Igor Lima Rocha<br><span>Frontend Developer</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="http://be.net/igorrocha" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/behance.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="https://instagram.com/igor.roc" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/instagram.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="https://github.com/IgorRoc/" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/github.svg"></a>
-            </li>
-            <li style="--i:4" class="cl-invert">
-              <a href="https://linkedin.com/in/igorroc" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-            <li style="--i:5" class="cl-invert">
-              <a href="http://linktr.ee/igorroc" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/web.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div id="isaac" class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/img/isaac.jpg" alt="">
-            </div>
-            <div class="content">
-              <h5>Isaac Nascimento Lima<br><span>Backend Developer</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="https://www.linkedin.com/in/inlima11/" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div id="rupp" class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/img/rupp.png" alt="">
-            </div>
-            <div class="content">
-              <h5>João Victor Oliveira Rupp<br><span>Data Analist</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="https://github.com/jvrupp" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/github.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="https://www.linkedin.com/in/jvrupp-r-20aa34122/" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="mailto:jvrupp@outlook.com.br" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/email.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/icons/user.svg" alt="">
-            </div>
-            <div class="content">
-              <h5>Paulo Cesar Ribeiro Barbosa<br><span>Pesquisador</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/behance.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/instagram.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/icons/user.svg" alt="">
-            </div>
-            <div class="content">
-              <h5>Naiana<br><span>Pesquisador</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/behance.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/instagram.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/icons/user.svg" alt="">
-            </div>
-            <div class="content">
-              <h5>Allan<br><span>Pesquisador</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/behance.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/instagram.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/icons/user.svg" alt="">
-            </div>
-            <div class="content">
-              <h5>Paulo Ambrósio<br><span>Pesquisador</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/behance.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/instagram.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="participante">
-            <div class="imagem">
-              <img src="./assets/icons/user.svg" alt="">
-            </div>
-            <div class="content">
-              <h5>Marcelo Honda<br><span>Pesquisador</span></h5>
-            </div>
-          </div>
-          <ul class="redes_sociais">
-            <li style="--i:1" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/behance.svg"></a>
-            </li>
-            <li style="--i:2" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/instagram.svg"></a>
-            </li>
-            <li style="--i:3" class="cl-invert">
-              <a href="http://github.com" target="_blank" rel="noopener noreferrer"><img
-                  src="./assets/icons/linkedin.svg"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Background particles -->
-    <ul class="particles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <!-- Left side circles -->
-    <div class="ripple">
-      <div style="--tam:5" class="circle"></div>
-      <div style="--tam:3" class="circle"></div>
-      <div style="--tam:2" class="circle"></div>
-      <div style="--tam:4" class="circle"></div>
-      <div style="--tam:1" class="circle"></div>
-    </div>
-    <!-- 2nd Background particles -->
-    <ul class="particles" style="top: 2500px;">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <!-- 3th Background particles, only show on small screens -->
-    <ul class="particles show-tablet" style="top: 4000px;">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-
-    <footer>
-      <p>
-        © 2021 Todos os direitos reservados. Desenvolvido por
-        <a href="#igor">Igor</a>,
-        <a href="#isaac">Isaac</a> e
-        <a href="#rupp">Rupp</a>.
-      </p>
-    </footer>
-
-
-  </div>
-
-  <!-- Page loader -->
-  <div id="loader-wrapper" class="loader-wrapper">
-    <div id="loader" class="loader box-loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <script src="./js/index.js"></script>
-  <script src="./js/loader.js"></script>
-  <script src="./js/background.js"></script>
-</body>
-
+		<script src="./js/index.js"></script>
+		<script src="./js/loader.js"></script>
+		<script src="./js/background.js"></script>
+	</body>
 </html>

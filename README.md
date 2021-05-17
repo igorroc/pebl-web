@@ -1,12 +1,13 @@
 <div align="center" id="top"> 
   <img src="./assets/img/print1.png" alt="PEBL-Web" />
 
-  &#xa0;
+&#xa0;
+
   <h1 align="center"><a href="https://igorroc.github.io/pebl-web" target="_blank">PEBL-Web</a></h1>
 
-  <a href="https://igorroc.github.io/pebl-web" target="_blank">Site</a>
-</div>
+<a href="https://igorroc.github.io/pebl-web" target="_blank">Site</a>
 
+</div>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/IgorRoc/pebl-web?color=56BEB8">
@@ -17,18 +18,18 @@
 
   <img alt="License" src="https://img.shields.io/github/license/IgorRoc/pebl-web?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/IgorRoc/pebl-web?color=56BEB8" /> 
+  <img alt="Github issues" src="https://img.shields.io/github/issues/IgorRoc/pebl-web?color=56BEB8" />
 
   <img alt="Github forks" src="https://img.shields.io/github/forks/IgorRoc/pebl-web?color=56BEB8" />
 
   <img alt="Github stars" src="https://img.shields.io/github/stars/IgorRoc/pebl-web?color=56BEB8" />
 </p>
 
-## Status ##
+## Status
 
 <h4 align="center"> 
 	🚧  PEBL-Web 🚀 Em desenvolvimento...  🚧
-</h4> 
+</h4>
 
 <hr>
 
@@ -43,31 +44,31 @@
 
 <br>
 
-## :dart: Sobre ##
+## :dart: Sobre
 
 Desenvolvimento de testes neuropsicológicos computadorizados online para o contexto brasileiro
 
-## :sparkles: Testes ##
+## :sparkles: Testes
 
 🚧 [Stroop](https://igorroc.github.io/pebl-web/testes/stroop.html);\
 🚧 [BST](https://igorroc.github.io/pebl-web/testes/bst.html);\
 🚧 [Sternberg](https://igorroc.github.io/pebl-web/testes/sternberg.html);\
 🚧 [Torre de Londres](https://igorroc.github.io/pebl-web/testes/torre.html);
 
-## :rocket: Tecnologias ##
+## :rocket: Tecnologias
 
 As seguintes ferramentas serão utilizadas no projeto:
 
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+-   [Node.js](https://nodejs.org/en/)
+-   [React](https://pt-br.reactjs.org/)
+-   [React Native](https://reactnative.dev/)
+-   [TypeScript](https://www.typescriptlang.org/)
 
-## :white_check_mark: Requerimentos ##
+## :white_check_mark: Requerimentos
 
 Antes de começar, você precisa ter o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
 
-## :checkered_flag: Começando ##
+## :checkered_flag: Começando
 
 ```bash
 # Clone este projeto
@@ -83,10 +84,9 @@ $ yarn
 $ yarn start
 ```
 
-## :memo: Licença ##
+## :memo: Licença
 
 Esse projeto está sob licença MIT. Para mais detalhes, veja o arquivo de [LICENÇA](LICENSE.md).
-
 
 Feito com :heart: por <a href="https://github.com/IgorRoc" target="_blank">Igor Rocha</a>, <a href="https://github.com/inlima" target="_blank">Isaac Lima</a>, <a href="https://github.com/jvrupp" target="_blank">João Rupp</a>
 

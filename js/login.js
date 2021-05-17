@@ -1,5 +1,5 @@
 var loader = document.getElementById("loader")
 
-loader.addEventListener('click', () => {
-    loader.classList.toggle("pausado")
+loader.addEventListener("click", () => {
+	loader.classList.toggle("pausado")
 })

@@ -1,76 +1,75 @@
 .topnav {
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(5px);
-    padding: 0 10%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.05);
+	backdrop-filter: blur(5px);
+	padding: 0 10%;
 }
 
-.white-mode{
-    background-color: #333;
+.white-mode {
+	background-color: #333;
 }
 
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
 
-.topnav .logo{
-    margin-right: 200px;
-    padding: 5px 16px;
-    width: 40px;
-    color: #333;
+.topnav .logo {
+	margin-right: 200px;
+	padding: 5px 16px;
+	width: 40px;
+	color: #333;
 }
 
-.topnav .logo:hover{
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-
+.topnav .logo:hover {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
-.topnav .logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.topnav .logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-.topnav .login{
-    float: right;
+.topnav .login {
+	float: right;
 }
 
-.topnav a{
-    transition: all .25s ease-Out;
+.topnav a {
+	transition: all 0.25s ease-Out;
 }
 
 .topnav a:hover {
-    -webkit-box-shadow:inset 0px 0px 0px 5px #32b1eb;
-    -moz-box-shadow:inset 0px 0px 0px 5px #32b1eb;
-    box-shadow:inset 0px 0px 0px 5px #32b1eb;
+	-webkit-box-shadow: inset 0px 0px 0px 5px #32b1eb;
+	-moz-box-shadow: inset 0px 0px 0px 5px #32b1eb;
+	box-shadow: inset 0px 0px 0px 5px #32b1eb;
 }
 
 .topnav a.active {
-    background-color: #32b1eb;
-    color: white;
-    font-weight: 700;
-    letter-spacing: 1px;
+	background-color: #32b1eb;
+	color: white;
+	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 @media (max-width: 900px) {
-    .topnav .logo{
-        margin-right: 50px;
-    }
+	.topnav .logo {
+		margin-right: 50px;
+	}
 }
 
 @media (max-width: 700px) {
-    .topnav{
-        padding: 10px 0;
-    }
+	.topnav {
+		padding: 10px 0;
+	}
 
-    .topnav .logo{
-        margin-right: 0;
-    }
+	.topnav .logo {
+		margin-right: 0;
+	}
 }

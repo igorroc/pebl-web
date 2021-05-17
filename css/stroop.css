@@ -6,74 +6,72 @@
 @import "loader.css";
 
 body {
-  margin: 0px;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--gradiente-preto);
-  overflow: hidden;
+	margin: 0px;
+	background: var(--gradiente-preto);
+	overflow: hidden;
 }
 
 .testes {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  width: 1200px;
-  margin: 80px auto;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	width: 1200px;
+	margin: 80px auto;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .holder {
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  position: relative;
-  font-weight: 900;
-  padding: 50px;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+	position: relative;
+	font-weight: 900;
+	padding: 50px;
 }
 
 .comandos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 1200px;
-  margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	width: 1200px;
+	margin: 0 auto;
 }
 
 .txtcmd {
-  color: white;
-  font-weight: 800;
-  margin: 0 auto;
-  padding: 15px 30px;
+	color: white;
+	font-weight: 800;
+	margin: 0 auto;
+	padding: 15px 30px;
 }
 
 /* OPCOES */
 .clique-errado {
-  animation: clique-errado 0.2s linear;
+	animation: clique-errado 0.2s linear;
 }
 
 .circulo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: -25px 0 0 -25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: -25px 0 0 -25px;
 }
 
 .ativo {
-  border: thick solid #FFF;
+	border: thick solid #fff;
 }
 
 /*ANIMACAO DE CLIQUE ERRADO*/
 @keyframes clique-errado {
-  100% {
-    background-color: none;
-  }
+	100% {
+		background-color: none;
+	}
 
-  50% {
-    background-color: var(--cor-branco);
-  }
+	50% {
+		background-color: var(--cor-branco);
+	}
 }
-

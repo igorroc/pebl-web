@@ -4,48 +4,47 @@
 @import "variables.css";
 
 body {
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--cor-de-fundo);
+	margin: 0px;
+	background-color: var(--cor-de-fundo);
 }
 
 /* TESTE */
 .teste {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    height: 700px;
-    background-color: var(--cor-de-fundo-testes);
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+	height: 700px;
+	background-color: var(--cor-de-fundo-testes);
 }
 
 .lembrar {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .alternar {
-    text-align: center;
-    font-size: 4rem;
-    font-weight: bold;
-    cursor: pointer;
+	text-align: center;
+	font-size: 4rem;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .botoes {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    justify-items: center;
-    font-weight: 600;
-    color: var(--cor-fonte);
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	justify-items: center;
+	font-weight: 600;
+	color: var(--cor-fonte);
 }
 
 .errado {
-    background-color: var(--cor-errado);
-    padding: 1rem;
-    border-radius: 20px;
+	background-color: var(--cor-errado);
+	padding: 1rem;
+	border-radius: 20px;
 }
 
 .certo {
-    background-color: var(--cor-certo);
-    padding: 1rem;
-    border-radius: 20px;
+	background-color: var(--cor-certo);
+	padding: 1rem;
+	border-radius: 20px;
 }
