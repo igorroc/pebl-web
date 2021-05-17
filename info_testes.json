@@ -5,30 +5,118 @@
 		"color": "red",
 		"description": "O Teste de Cores e Palavras (mais conhecido como teste de STROOP) permite detetar problemas neurológicos e cerebrais, avaliando os efeitos de interferência entre os dois hemisférios cerebrais. O STROOP poderá ser utilizado em diversas situações clínicas (p.e., lesões cerebrais, demência, psicopatologia, etc.) independentemente do nível cultural do sujeito.\nAs tarefas requeridas pelo STROOP implicam a identificação de cores e de palavras.",
 		"img": "",
-		"habilities": ["puzzle", "headphone", "speed", "battery"]
+		"habilities": {
+			"1": {
+				"title": "hearing",
+				"description": "Audição:\nCommodo reprehenderit esse exercitation commodo officia do do laboris aute cillum."
+			},
+			"2": {
+				"title": "speed",
+				"description": "Velocidade:\nIpsum officia eiusmod consectetur est non sunt nostrud fugiat incididunt et laboris ullamco occaecat."
+			},
+			"3": {
+				"title": "battery",
+				"description": "Bateria:\nAdipisicing sint in veniam excepteur dolor velit id."
+			},
+			"4": {
+				"title": "lamp",
+				"description": "Ideia:\nSunt eu voluptate ullamco aliquip voluptate incididunt sit qui occaecat ullamco do."
+			},
+			"5": {
+				"title": "puzzle",
+				"description": "Puzzle:\nAnim minim duis sit tempor dolor amet non mollit duis cillum."
+			},
+			"6": {
+				"title": "headphone",
+				"description": "Fone:\nQuis esse eu sit minim nostrud proident adipisicing deserunt pariatur ut in laborum."
+			},
+			"7": {
+				"title": "lamp",
+				"description": "Ideia:\nNostrud nulla laborum ut mollit labore."
+			},
+			"8": {
+				"title": "puzzle",
+				"description": "Puzzle:\nExercitation eiusmod elit ad cillum sit est laboris dolore consectetur deserunt mollit."
+			},
+			"9": {
+				"title": "headphone",
+				"description": "Fone:\nFugiat cillum minim dolore excepteur est consequat culpa tempor."
+			}
+		}
 	},
 	"2": {
 		"title": "Bst",
 		"link": "bst",
 		"color": "blue",
-		"description": "Descrição do teste BST<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"description": "Descrição do teste BST\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
 		"img": "",
-		"habilities": ["puzzle", "headphone", "speed", "battery"]
+		"habilities": {
+			"1": {
+				"title": "puzzle",
+				"description": "Descrição de puzzle"
+			},
+			"2": {
+				"title": "speed",
+				"description": "Descrição de velocidade"
+			},
+			"3": {
+				"title": "battery",
+				"description": "Descrição de bateria"
+			},
+			"4": {
+				"title": "lamp",
+				"description": "Descrição de ideia"
+			}
+		}
 	},
 	"3": {
 		"title": "Sternberg",
 		"link": "sternberg",
 		"color": "yellow",
-		"description": "Descrição do teste Sternberg<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"description": "Descrição do teste Sternberg\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
 		"img": "",
-		"habilities": ["puzzle", "headphone", "speed", "battery"]
+		"habilities": {
+			"1": {
+				"title": "puzzle",
+				"description": "Descrição de puzzle"
+			},
+			"2": {
+				"title": "speed",
+				"description": "Descrição de velocidade"
+			},
+			"3": {
+				"title": "battery",
+				"description": "Descrição de bateria"
+			},
+			"4": {
+				"title": "lamp",
+				"description": "Descrição de ideia"
+			}
+		}
 	},
 	"4": {
 		"title": "Torre de Londres",
 		"link": "torre",
 		"color": "green",
-		"description": "Descrição do teste Torre de Londres<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"description": "Descrição do teste Torre de Londres\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
 		"img": "",
-		"habilities": ["puzzle", "headphone", "speed", "battery"]
+		"habilities": {
+			"1": {
+				"title": "puzzle",
+				"description": "Descrição de puzzle"
+			},
+			"2": {
+				"title": "speed",
+				"description": "Descrição de velocidade"
+			},
+			"3": {
+				"title": "battery",
+				"description": "Descrição de bateria"
+			},
+			"4": {
+				"title": "lamp",
+				"description": "Descrição de ideia"
+			}
+		}
 	}
 }
