@@ -15,23 +15,29 @@ var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
 if (id) {
-	fetch("https://igorroc.github.io/pebl-web/info_testes.json")
+	fetch("../info_testes.json")
 		.then((Response) => Response.json())
 		.then((data) => {
 			if (data[id]) {
-				titulo.innerHTML = data[id].title
+				titulo.innerText = data[id].title
 				link.href = `./testes/${data[id].link}?lang=br`
 				link_us.href = `./testes/${data[id].link}?lang=us`
 				document.title =
 					data[id].title.charAt(0).toUpperCase() +
 					data[id].title.substr(1) +
 					" - Resumo"
-				description.innerHTML = data[id].description
-				for (const hab of data[id].habilities) {
+				description.innerText = data[id].description
+				for (const hab in data[id].habilities) {
+					let obj = data[id].habilities[hab]
 					let div = document.createElement("div")
 					div.classList.add("icon")
+					div.classList.add("tooltip-holder")
 					let img = document.createElement("img")
-					img.src = `./assets/icons/${hab}.svg`
+					img.src = `./assets/icons/${obj.title}.svg`
+					let span = document.createElement("span")
+					span.classList.add("tooltip")
+					span.innerText = obj.description
+					div.appendChild(span)
 					div.appendChild(img)
 					habilidades.appendChild(div)
 				}
