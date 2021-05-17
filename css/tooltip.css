@@ -1,0 +1,35 @@
+.tooltip {
+	visibility: hidden;
+	position: absolute;
+
+	z-index: -1;
+	width: 220px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 15px 15px;
+	bottom: 150%;
+	left: 50%;
+
+	transform: translate(-50%, 20px) scale(0);
+	transform-origin: 50% 100%;
+
+	transition: 0.3s;
+}
+
+.tooltip::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+}
+
+.tooltip-holder:hover .tooltip {
+	visibility: visible;
+	transform: translate(-50%, 0) scale(1);
+}
