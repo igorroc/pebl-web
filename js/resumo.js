@@ -19,7 +19,6 @@ if (id) {
 		.then((Response) => Response.json())
 		.then((data) => {
 			if (data[id]) {
-				console.log(data[id])
 				titulo.innerHTML = data[id].title
 				link.href = `./testes/${data[id].link}?lang=br`
 				link_us.href = `./testes/${data[id].link}?lang=us`
@@ -28,6 +27,14 @@ if (id) {
 					data[id].title.substr(1) +
 					" - Resumo"
 				description.innerHTML = data[id].description
+				for (const hab of data[id].habilities) {
+					let div = document.createElement("div")
+					div.classList.add("icon")
+					let img = document.createElement("img")
+					img.src = `./assets/icons/${hab}.svg`
+					div.appendChild(img)
+					habilidades.appendChild(div)
+				}
 				addFilter(data[id].color)
 			}
 		})
