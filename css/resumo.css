@@ -72,7 +72,7 @@ footer {
 
 .habilidades {
 	display: grid;
-	grid-template-rows: .5fr 1fr;
+	grid-template-rows: 0.5fr 1fr;
 	gap: 0;
 }
 
@@ -104,7 +104,7 @@ footer {
 	margin-bottom: 10px;
 }
 
-.icon img{
+.icon img {
 	position: absolute;
 	background-size: cover;
 	height: 60%;
