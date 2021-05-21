@@ -21,9 +21,6 @@ h5 {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
-	background: rgba(255, 255, 255, 0.01);
-	backdrop-filter: blur(20px);
 }
 
 .informacao > .content {
@@ -86,4 +83,17 @@ h5 {
 
 .displaynone {
 	display: none;
+}
+/* slightly transparent fallback */
+.backdrop-blur {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
+	.backdrop-blur {
+		background-color: rgba(0, 0, 0, 0.1);
+		-webkit-backdrop-filter: blur(2em);
+		backdrop-filter: blur(2em);
+	}
 }
