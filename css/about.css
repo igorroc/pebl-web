@@ -34,28 +34,26 @@ body {
 
 	-webkit-filter: drop-shadow(5px 5px 5px #2227);
 	filter: drop-shadow(2px 3px 5px #2227);
-
 }
 
-.resumo{
+.resumo {
 	display: flex;
 	width: 60%;
 	margin: 100px auto;
 	align-items: center;
 }
 
-.resumo .text{
+.resumo .text {
 	margin-right: 50px;
 }
 
-.resumo .photo img{
+.resumo .photo img {
 	height: 300px;
 }
 
-
 .participantes {
 	text-align: center;
-	width: 80%;
+	width: 100%;
 	margin: 100px auto;
 }
 
@@ -133,7 +131,7 @@ body {
 	object-fit: cover;
 }
 
-.container-participantes .card > .participante > .content > .description{
+.container-participantes .card > .participante > .content > .description {
 	font-size: 1em;
 	line-height: 1.5em;
 	text-align: left;
@@ -174,7 +172,7 @@ body {
 	margin: 0 10px;
 	opacity: 0;
 	transform: translateY(170px);
-	transition: .8s;
+	transition: 0.8s;
 	transition-delay: calc(0.05s * var(--i));
 }
 
@@ -192,7 +190,40 @@ body {
 	color: #fff;
 }
 
-.espaco {
-	height: 1000px;
-	background-color: red;
+@media (max-width: 1500px) {
+	.resumo {
+		width: 80%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.resumo .photo {
+		display: none;
+	}
+}
+
+@media (max-width: 800px) {
+	.title {
+		padding: 50px 0;
+	}
+	.title h1 {
+		font-size: 2em;
+	}
+}
+
+@media (max-width: 650px) {
+	.title h1{
+		width: 90%;
+		max-width:90%;
+	}
+	.container-participantes .card > .participante > .content > .description{
+		line-height: 1.2em;
+	}
+}
+
+@media (max-width: 500px) {
+	.container-participantes .card > .participante > .content > .description{
+		line-height: 1em;
+		font-size: 1em;
+	}
 }
