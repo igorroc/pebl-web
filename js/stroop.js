@@ -4,99 +4,35 @@ var body = document.getElementsByTagName("body")[0]
 var teste = document.getElementsByClassName("testes")[0]
 var filhosBody = body.children
 
-const gabarito = ["red", "blue", "yellow", "green"]
+const colors = ["red", "blue", "yellow", "green"]
 
-var cores = [
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-	"red",
-]
-var textos = [
-	"batata",
-	"quando",
-	"sobre",
-	"brocolis",
-	"quando",
-	"batata",
-	"sobre",
-	"brocolis",
-	"quando",
-	"batata",
-	"sobre",
-	"brocolis",
-	"sobre",
-	"batata",
-	"quando",
-	"quando",
-	"brocolis",
-	"batata",
-	"sobre",
-	"brocolis",
-	"quando",
-	"batata",
-	"sobre",
-	"quando",
-]
-var textos2 = [
-	"vermelho",
-	"vermelho",
-	"vermelho",
-	"verde",
-	"amarelo",
-	"azul",
-	"vermelho",
-	"verde",
-	"amarelo",
-	"azul",
-	"vermelho",
-	"verde",
-	"amarelo",
-	"azul",
-	"vermelho",
-	"verde",
-	"amarelo",
-	"azul",
-	"vermelho",
-	"verde",
-	"amarelo",
-	"azul",
-	"vermelho",
-	"verde",
-]
+const gabarito =
+	lang == "br"
+		? ["vermelho", "azul", "amarelo", "verde"]
+		: ["red", "blue", "yellow", "green"]
+
+const palavras = ["batata", "quando", "sobre", "brocolis"]
+
+var coresFase1 = randomColors()
+var coresFase2 = randomColors()
+var coresFase3 = randomColors()
+
+var textosFase2 = randomWords()
+var textosFase3 = randomColorNames()
+
+let testeblabla = []
+let blabla
+traducaoTeste(testeblabla)
 
 var resultadoFinal = {
 	fase1: {
 		tempo: [],
-		escolhas: [],
 	},
 	fase2: {
 		tempo: [],
-		escolhas: [],
 	},
 	fase3: {
 		tempo: [],
-		escolhas: [],
 	},
 }
 
@@ -107,15 +43,19 @@ var transicionando = false
 var filhos = teste.children
 var informacao = document.getElementById("informacao")
 
-// INICIO DO TESTE
-pegaTraducao("stroop", "pretest", "instruction", lang)
-document.addEventListener("keyup", inicio)
+// ! INICIO DO TESTE
+for (var j = 0; j < 24; j++) {
+	filhos[j].children[0].classList.add(`bg-${coresFase1[j]}`)
+}
+
+traduzInformacao("stroop", "pretest", "instruction", lang)
+document.addEventListener("keydown", inicio)
 
 function inicio() {
 	informacao.innerHTML = ""
 	let p = document.createElement("p")
 	p.innerText = ""
-	pegaTraducao("stroop", "pretest", "training", lang)
+	traduzInformacao("stroop", "pretest", "training", lang)
 	p.classList.add("content")
 	let div = document.createElement("div")
 	div.classList.add("feedback")
@@ -128,12 +68,13 @@ function inicio() {
 	comandos.style.left = "50%"
 	comandos.style.transform = "translateX(-50%)"
 
-	document.removeEventListener("keyup", inicio)
-	document.addEventListener("keyup", treinamento)
+	document.removeEventListener("keydown", inicio)
+	document.addEventListener("keydown", treinamento)
 }
 
 function treinamento(e) {
-	let escolha = gabarito[e.key - 1]
+	let escolha = colors[e.key - 1]
+
 	let feedback = document.getElementsByClassName("feedback")[0]
 	if (escolha) {
 		feedback.classList.add(`bg-${escolha}`)
@@ -152,8 +93,8 @@ function treinamento(e) {
 		informacao.classList.add("displaynone")
 		level = 1
 		getTime(resultadoFinal[`fase${level}`].tempo)
-		document.removeEventListener("keyup", treinamento)
-		document.addEventListener("keyup", jogo)
+		document.removeEventListener("keydown", treinamento)
+		document.addEventListener("keydown", jogo)
 	}
 }
 
@@ -177,7 +118,7 @@ function alteratextoCirculos(textos) {
 		circulos[j].appendChild(p.cloneNode(true))
 	}
 	for (var [k, c] of circulos.entries()) {
-		c.classList.add(`cl-${cores[k]}`)
+		c.classList.add(`cl-${coresFase2[k]}`)
 	}
 }
 
@@ -189,19 +130,19 @@ function removetxt() {
 
 function fase2() {
 	alteraCorCirculos()
-	alteratextoCirculos(textos)
+	alteratextoCirculos(textosFase2)
 }
 
 function fase3() {
 	removetxt()
-	alteratextoCirculos(textos2)
+	alteratextoCirculos(textosFase3)
 }
 
 //transicao-----------------------
 function transition(txt) {
 	var p = document.createElement("p")
 	p.innerText = ""
-	pegaTraducao("stroop", "test", `explain_level${level + 1}`, lang)
+	traduzInformacao("stroop", "test", `explain_level${level + 1}`, lang)
 	p.classList.add("content")
 	informacao.appendChild(p)
 	informacao.classList.remove("displaynone")
@@ -216,7 +157,7 @@ function removeTransition() {
 	informacao.classList.add("displaynone")
 
 	prox_fase()
-	document.removeEventListener("keyup", inicio)
+	document.removeEventListener("keydown", inicio)
 	getTime(resultadoFinal[`fase${level}`].tempo)
 }
 
@@ -229,11 +170,11 @@ function prox_fase() {
 }
 
 function finalizar() {
-	document.removeEventListener("keyup", jogo)
+	document.removeEventListener("keydown", jogo)
 
 	var p = document.createElement("p")
 	p.innerText = ""
-	pegaTraducao("stroop", "ending", undefined, lang)
+	traduzInformacao("stroop", "ending", undefined, lang)
 	p.classList.add("content")
 
 	var graph_container = document.createElement("div")
@@ -323,10 +264,61 @@ function showGraphs() {
 		configBarra
 	)
 }
+
+function randomColors() {
+	let regra = [true, true, true, true]
+	let array = []
+	for (var i = 0; i < 6; i++) {
+		for (var j = 0; j < 4; j++) {
+			let random = Math.floor(Math.random() * 4)
+			while (!regra[random]) {
+				random = Math.floor(Math.random() * 4)
+			}
+			regra[random] = false
+			array.push(colors[random])
+		}
+		regra[0] = regra[1] = regra[2] = regra[3] = true
+	}
+	return array
+}
+
+function randomWords() {
+	let regra = [true, true, true, true]
+	let array = []
+	for (var i = 0; i < 6; i++) {
+		for (var j = 0; j < 4; j++) {
+			let random = Math.floor(Math.random() * 4)
+			while (!regra[random]) {
+				random = Math.floor(Math.random() * 4)
+			}
+			regra[random] = false
+			array.push(palavras[random])
+		}
+		regra[0] = regra[1] = regra[2] = regra[3] = true
+	}
+	return array
+}
+
+function randomColorNames() {
+	let regra = [true, true, true, true]
+	let array = []
+	for (var i = 0; i < 6; i++) {
+		for (var j = 0; j < 4; j++) {
+			let random = Math.floor(Math.random() * 4)
+			while (!regra[random]) {
+				random = Math.floor(Math.random() * 4)
+			}
+			regra[random] = false
+			array.push(gabarito[random])
+		}
+		regra[0] = regra[1] = regra[2] = regra[3] = true
+	}
+	return array
+}
 //--------TERMINA FUNCOES-------------
 
 var jogo = function (e) {
-	let escolha = gabarito[e.key - 1]
+	let escolha = colors[e.key - 1]
 	if (transicionando) {
 		removeTransition()
 	} else {
