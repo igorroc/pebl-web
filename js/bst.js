@@ -1,5 +1,7 @@
 const PROX_NIVEL = 10
 const FIM = 50
+var url = new URL(window.location)
+var lang = url.searchParams.get("lang") || "br"
 
 var resultadoFinal = {
 	fase1: {
@@ -37,9 +39,27 @@ var aux = {
 	square: ["blue", "line"],
 }
 
-getTime(resultadoFinal[`fase${level}`].tempo)
+// ! Inicio do teste
 
-function choose(choice) {
+traduzInformacao("bst", "pretest", "instruction", lang)
+document.addEventListener("keydown", inicio)
+
+function inicio() {
+	informacao.children[0].innerHTML = ""
+	traduzInformacao("bst", "pretest", "instruction_2", lang)
+
+	document.removeEventListener("keydown", inicio)
+	document.addEventListener("keydown", treinamento)
+}
+
+function treinamento() {
+	informacao.children[0].innerHTML = ""
+	informacao.classList.add("displaynone")
+	document.removeEventListener("keydown", treinamento)
+	getTime(resultadoFinal[`fase${level}`].tempo)
+}
+
+function jogo(choice) {
 	getTime(resultadoFinal[`fase${level}`].tempo)
 	step++
 	if (choice == big.classList[2]) {
@@ -52,7 +72,7 @@ function choose(choice) {
 		finalizar()
 	} else if (step % PROX_NIVEL == 0) {
 		transicionando = true
-		transicao(`Indo para o nível ${level + 1}.\nClique aqui para continuar`)
+		transition()
 	}
 	removeClasses(big)
 	let forma = random_shape()
@@ -60,23 +80,16 @@ function choose(choice) {
 	big.classList.add(random_aux(forma))
 }
 
-function transicao(texto) {
-	var div = document.createElement("div")
-	var p = document.createElement("p")
-	p.innerText = texto
-	div.classList.add("transicao")
-	div.appendChild(p)
+function transition(txt) {
+	informacao.children[0].innerHTML = ""
+	traduzInformacao("bst", "test", `explain_level${level}`, lang)
+	informacao.classList.remove("displaynone")
 
-	div.setAttribute("onclick", "removeTransicao()")
-
-	var teste = document.getElementsByClassName("teste")[0]
-	teste.classList.add("hidden")
-
-	body.appendChild(div)
+	window.addEventListener("keydown", removeTransition)
 }
 
-function removeTransicao() {
-	level = level + 1
+function removeTransition() {
+	level++
 	transicionando = false
 
 	proximo_nivel()
@@ -86,28 +99,99 @@ function removeTransicao() {
 	big.classList.add(forma)
 	big.classList.add(random_aux(forma))
 
-	var trans = document.getElementsByClassName("transicao")[0]
-	trans.remove()
-	var testes = document.getElementsByClassName("teste")[0]
-	testes.classList.remove("hidden")
+	window.removeEventListener("keydown", removeTransition)
+
+	informacao.children[0].innerHTML = ""
+	informacao.classList.add("displaynone")
+
 	getTime(resultadoFinal[`fase${level}`].tempo)
 }
 
 function finalizar() {
-	var buttons = document.getElementsByClassName("buttons")[0]
-	buttons.remove()
+	document.removeEventListener("keydown", jogo)
 
-	var div = document.createElement("div")
-	var p = document.createElement("p")
-	p.innerText = "VOCÊ FINALIZOU"
-	div.classList.add("transicao")
-	div.appendChild(p)
-	body.appendChild(div)
+	traduzInformacao("bst", "ending", undefined, lang)
 
-	var testes = document.getElementsByClassName("teste")[0]
-	testes.classList.add("hidden")
+	var graph_container = document.createElement("div")
+	graph_container.classList.add("graph-container")
+	var canvas = document.createElement("canvas")
+	canvas.id = "graficoBarra"
+	canvas.classList.add("content")
 
-	console.log(resultadoFinal)
+	graph_container.appendChild(canvas)
+	informacao.appendChild(graph_container)
+	informacao.classList.remove("displaynone")
+
+	showGraphs()
+}
+
+function showGraphs() {
+	const labels = []
+	const data = []
+	const dataSet = []
+	const backgroundColor = []
+	const borderColor = []
+	let i = 1
+
+	for (const k of resultado(resultadoFinal.fase1.tempo)) {
+		labels.push(`L${i++}`)
+	}
+
+	let colorVariation = 255 / (FIM/PROX_NIVEL)
+	let colorChange = 0
+	
+	i = 0
+	for (const item of Object.entries(resultadoFinal)) {
+		let j = 0
+		let fase = item[1]
+		data.push([])
+		backgroundColor.push([])
+		borderColor.push([])
+		for (const key of resultado(fase.tempo)) {
+			j++
+			data[i].push(key)
+			backgroundColor[i].push(
+				`rgba(${255 - colorChange}, ${50 + 4 * j}, ${200 - 4 * j}, 0.2)`
+			)
+			borderColor[i].push(
+				`rgb(${255 - colorChange}, ${50 + 4 * j}, ${200 - 4 * j})`
+			)
+			// console.log(`🚀 | ${colorChange} | ${j} | ${borderColor[i]}`)
+		}
+		colorChange += colorVariation
+		// console.log("🚀 | file: bst.js | line 133 | showGraphs | data", data)
+		dataSet.push({
+			label: item[0],
+			data: data[i],
+			backgroundColor: backgroundColor[i],
+			borderColor: borderColor[i],
+			borderWidth: 1,
+		})
+		i++
+	}
+
+	const dataBarra = {
+		labels: labels,
+		datasets: dataSet,
+	}
+	const configBarra = {
+		type: "bar",
+		data: dataBarra,
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true,
+					suggestedMin: 50,
+					suggestedMax: 400,
+				},
+			},
+		},
+	}
+
+	var graficoBarra = new Chart(
+		document.getElementById("graficoBarra"),
+		configBarra
+	)
 }
 
 function proximo_nivel() {
