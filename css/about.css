@@ -3,9 +3,196 @@
 @import "header-menu.css";
 @import "variables.css";
 @import "loader.css";
+@import "background.css";
+@import "colors.css";
+@import "line.css";
+@import "button.css";
 
 body {
 	margin: 0px;
 	background-color: #252525;
 	color: white;
+	font-size: 20px;
+}
+
+.title {
+	position: relative;
+	background-image: url("https://source.unsplash.com/featured/?neuroscience");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 100px 0;
+}
+
+.title h1 {
+	z-index: 3;
+	font-size: 3em;
+	max-width: 60%;
+	width: 80%;
+	margin: 100px auto;
+
+	-webkit-filter: drop-shadow(5px 5px 5px #2227);
+	filter: drop-shadow(2px 3px 5px #2227);
+
+}
+
+.resumo{
+	display: flex;
+	width: 60%;
+	margin: 100px auto;
+	align-items: center;
+}
+
+.resumo .text{
+	margin-right: 50px;
+}
+
+.resumo .photo img{
+	height: 300px;
+}
+
+
+.participantes {
+	text-align: center;
+	width: 80%;
+	margin: 100px auto;
+}
+
+.participantes h3 {
+	font-size: 3rem;
+	font-weight: 800;
+	letter-spacing: 5px;
+}
+
+.participantes p {
+	font-size: 1.5rem;
+	max-width: 70%;
+	letter-spacing: 3px;
+	line-height: 3rem;
+	margin: 0 auto;
+}
+
+.container-participantes {
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 40px 0;
+}
+
+.container-participantes .card {
+	position: relative;
+	width: 600px;
+	height: 500px;
+	background: rgba(255, 255, 255, 0.05);
+	margin: 20px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(4px);
+	transition: 0.5s;
+	overflow: hidden;
+}
+
+.container-participantes .card .participante {
+	position: relative;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.6s;
+	border-bottom: 0;
+}
+
+.container-participantes .card:hover {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.container-participantes .card:hover .participante {
+	transform: translateY(-100%);
+}
+
+.container-participantes .card .participante .imagem {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+
+.container-participantes .card .participante .imagem img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.container-participantes .card > .participante > .content > .description{
+	font-size: 1em;
+	line-height: 1.5em;
+	text-align: left;
+	position: absolute;
+	padding: 5%;
+	width: 100%;
+	max-width: 90%;
+	left: 0;
+	top: 100%;
+}
+
+.container-participantes .card .participante .content h5 {
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 20px 0 10px;
+	line-height: 2rem;
+}
+
+.container-participantes .card .participante .content h5 span {
+	text-transform: initial;
+	font-weight: 300;
+	font-size: 1rem;
+}
+
+.container-participantes .card .redes_sociais {
+	position: absolute;
+	bottom: 50px;
+	padding: 0;
+	display: flex;
+}
+
+.container-participantes .card .redes_sociais li {
+	list-style: none;
+	margin: 0 10px;
+	opacity: 0;
+	transform: translateY(170px);
+	transition: .8s;
+	transition-delay: calc(0.05s * var(--i));
+}
+
+.container-participantes .card:hover .redes_sociais li {
+	opacity: 0.5;
+	transform: translateY(60px);
+}
+
+.container-participantes .card .redes_sociais li:hover {
+	opacity: 1;
+}
+
+.container-participantes .card .redes_sociais > li > a > img {
+	width: 25px;
+	color: #fff;
+}
+
+.espaco {
+	height: 1000px;
+	background-color: red;
 }
