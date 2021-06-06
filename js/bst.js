@@ -60,6 +60,7 @@ function treinamento() {
 }
 
 function jogo(choice) {
+	if (transicionando) return
 	getTime(resultadoFinal[`fase${level}`].tempo)
 	step++
 	if (choice == big.classList[2]) {
@@ -74,10 +75,15 @@ function jogo(choice) {
 		transicionando = true
 		transition()
 	}
+
+	removeOptions()
 	removeClasses(big)
 	let forma = random_shape()
 	big.classList.add(forma)
 	big.classList.add(random_aux(forma))
+	set(() => {
+		showOptions()
+	}, 100)
 }
 
 function transition(txt) {
@@ -125,6 +131,64 @@ function finalizar() {
 	showGraphs()
 }
 
+function proximo_nivel() {
+	aux = {}
+	if (level == 1) {
+		aux = {
+			circle: ["red", "line"],
+			square: ["blue", "line"],
+		}
+	} else if (level == 2) {
+		aux = {
+			circle: ["line"],
+			square: ["line"],
+		}
+	} else if (level == 3) {
+		aux = {
+			circle: ["red"],
+			square: ["blue"],
+		}
+	} else if (level == 4) {
+		aux = {
+			circle: ["blue"],
+			square: ["red"],
+		}
+	} else if (level == 5) {
+		aux = {
+			circle: ["blue", "red", "line"],
+			square: ["blue", "red", "line"],
+		}
+	}
+}
+
+// FUNCOES DE AJUDA
+function removeOptions() {
+	big.style.opacity = 0
+	transicionando = true
+}
+
+function showOptions() {
+	big.style.opacity = 1
+	transicionando = false
+}
+
+function removeClasses(div) {
+	div.classList.remove("red")
+	div.classList.remove("blue")
+	div.classList.remove("line")
+	div.classList.remove("square")
+	div.classList.remove("circle")
+}
+
+function random_shape() {
+	return shape[Math.floor(Math.random() * shape.length)]
+}
+
+function random_aux(forma) {
+	return aux[forma][Math.floor(Math.random() * aux[forma].length)]
+}
+
+// GRAFICOS
 function showGraphs() {
 	const labels = []
 	const data = []
@@ -137,9 +201,9 @@ function showGraphs() {
 		labels.push(`L${i++}`)
 	}
 
-	let colorVariation = 255 / (FIM/PROX_NIVEL)
+	let colorVariation = 255 / (FIM / PROX_NIVEL)
 	let colorChange = 0
-	
+
 	i = 0
 	for (const item of Object.entries(resultadoFinal)) {
 		let j = 0
@@ -192,51 +256,4 @@ function showGraphs() {
 		document.getElementById("graficoBarra"),
 		configBarra
 	)
-}
-
-function proximo_nivel() {
-	aux = {}
-	if (level == 1) {
-		aux = {
-			circle: ["red", "line"],
-			square: ["blue", "line"],
-		}
-	} else if (level == 2) {
-		aux = {
-			circle: ["line"],
-			square: ["line"],
-		}
-	} else if (level == 3) {
-		aux = {
-			circle: ["red"],
-			square: ["blue"],
-		}
-	} else if (level == 4) {
-		aux = {
-			circle: ["blue"],
-			square: ["red"],
-		}
-	} else if (level == 5) {
-		aux = {
-			circle: ["blue", "red", "line"],
-			square: ["blue", "red", "line"],
-		}
-	}
-}
-
-// FUNCOES DE AJUDA
-function removeClasses(div) {
-	div.classList.remove("red")
-	div.classList.remove("blue")
-	div.classList.remove("line")
-	div.classList.remove("square")
-	div.classList.remove("circle")
-}
-
-function random_shape() {
-	return shape[Math.floor(Math.random() * shape.length)]
-}
-
-function random_aux(forma) {
-	return aux[forma][Math.floor(Math.random() * aux[forma].length)]
 }
