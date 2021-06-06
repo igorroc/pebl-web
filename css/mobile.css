@@ -1,0 +1,43 @@
+.mobileOnly {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+
+	color: white;
+}
+
+.mobileOnly h2 {
+	font-size: 3rem;
+	margin: 0;
+}
+
+.mobileOnly p {
+	font-size: 1.5rem;
+	width: 90%;
+	margin: 70px 0;
+}
+
+.mobileOnly .btn {
+	background-color: red;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+}
+
+.mobileOnly .btn:hover {
+	background-color: #e74242;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	.mobileOnly {
+		display: flex;
+		flex-direction: column;
+	}
+	#everything {
+		display: none;
+	}
+}

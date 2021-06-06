@@ -7,6 +7,7 @@
 @import "colors.css";
 @import "line.css";
 @import "tooltip.css";
+@import "mobile.css";
 
 body,
 html {
