@@ -139,7 +139,7 @@ function fase3() {
 }
 
 //transicao-----------------------
-function transition(txt) {
+function transition() {
 	var p = document.createElement("p")
 	p.innerText = ""
 	traduzInformacao("stroop", "test", `explain_level${level + 1}`, lang)
@@ -346,7 +346,7 @@ var jogo = function (e) {
 			filhos[23].classList.remove("ativo")
 			filhos[23].classList.remove("clique-errado")
 			transicionando = true
-			transition(`Indo para fase ${level + 1}.\nAperte qualquer tecla.`)
+			transition()
 		}
 	}
 }
