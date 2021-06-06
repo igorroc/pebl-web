@@ -1,3 +1,5 @@
+var url = new URL(window.location)
+var lang = url.searchParams.get("lang") || "br"
 const PROX_NIVEL = 10
 const FIM = 30
 const KEY_AUSENTE = "A"
@@ -14,6 +16,7 @@ var teste = document.getElementsByClassName("teste")[0]
 var alternar = document.getElementsByClassName("alternar")[0]
 var lembrar = document.getElementsByClassName("lembrar")[0]
 var botoes = document.getElementsByClassName("botoes")[0]
+var informacao = document.getElementById("informacao")
 
 var resultadoFinal = {
 	fase1: {
@@ -32,78 +35,156 @@ var resultadoFinal = {
 
 // INICIO DINAMICO
 lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
+traduzInformacao("sternberg", "pretest", "instruction", lang)
+document.addEventListener("keydown", inicio)
 
-async function comecar() {
-	botoes.classList.remove("hidden")
-	alternar.removeAttribute("onclick")
+function inicio() {
+	informacao.classList.add("displaynone")
 
-	alternar.innerHTML = "3"
-	await sleep(1000)
-	alternar.innerHTML = "2"
-	await sleep(1000)
-	alternar.innerHTML = "1"
-	await sleep(1000)
+	document.removeEventListener("keydown", inicio)
+	document.addEventListener("keydown", comecarComTimer)
+}
+
+async function comecarComTimer() {
+	document.removeEventListener("keydown", comecarComTimer)
+	informacao.classList.add("displaynone")
+
+	await timer(4)
+
 	alternar.innerHTML = letra_aleatoria()
 
-	console.log("comecou")
+	lembrar.classList.add("hidden")
+	alternar.classList.remove("info")
 
 	getTime(resultadoFinal[`fase${level}`].tempo)
 
-	window.addEventListener("keypress", listener)
+	window.addEventListener("keypress", jogo)
 }
 
-function removeComeco() {
-	window.removeEventListener("keyup", comecar)
-}
 
 function finalizar() {
-	window.removeEventListener("keypress", listener)
+	document.removeEventListener("keydown", jogo)
 
-	var div = document.createElement("div")
-	var p = document.createElement("p")
-	p.innerText = FRASE_FINAL
-	div.classList.add("transicao")
-	div.appendChild(p)
-	body.appendChild(div)
+	traduzInformacao("sternberg", "ending", undefined, lang)
 
-	teste.classList.add("hidden")
-	console.log(resultadoFinal)
+	var graph_container = document.createElement("div")
+	graph_container.classList.add("graph-container")
+	var canvas = document.createElement("canvas")
+	canvas.id = "graficoBarra"
+	canvas.classList.add("content")
+
+	graph_container.appendChild(canvas)
+	informacao.appendChild(graph_container)
+	informacao.classList.remove("displaynone")
+
+	showGraphs()
 }
 
-function transicao(texto) {
-	var div = document.createElement("div")
-	var p = document.createElement("p")
-	p.innerText = texto
-	div.classList.add("transicao")
-	div.appendChild(p)
+function showGraphs() {
+	const labels = []
+	const data = [[], [], []]
+	const backgroundColor = [[], [], []]
+	const borderColor = [[], [], []]
+	var i = 1
 
-	var teste = document.getElementsByClassName("teste")[0]
-	teste.classList.add("hidden")
+	for (const key of resultado(resultadoFinal.fase1.tempo)) {
+		labels.push(`L${i++}`)
+		data[0].push(key)
+		backgroundColor[0].push(`rgba(255, ${50 + 4 * i}, ${200 - 4 * i}, 0.2)`)
+		borderColor[0].push(`rgb(255, ${50 + 4 * i}, ${200 - 4 * i})`)
+	}
+	i = 0
+	for (const key of resultado(resultadoFinal.fase2.tempo)) {
+		i++
+		data[1].push(key)
+		backgroundColor[1].push(`rgba(150, ${50 + 4 * i}, ${200 - 4 * i}, 0.2)`)
+		borderColor[1].push(`rgb(150, ${50 + 4 * i}, ${200 - 4 * i})`)
+	}
+	i = 0
+	for (const key of resultado(resultadoFinal.fase3.tempo)) {
+		i++
+		data[2].push(key)
+		backgroundColor[2].push(`rgba(75, ${50 + 4 * i}, ${200 - 4 * i}, 0.2)`)
+		borderColor[2].push(`rgb(75, ${50 + 4 * i}, ${200 - 4 * i})`)
+	}
 
-	body.appendChild(div)
+	const dataBarra = {
+		labels: labels,
+		datasets: [
+			{
+				label: "Fase 1",
+				data: data[0],
+				backgroundColor: backgroundColor[0],
+				borderColor: borderColor[0],
+				borderWidth: 1,
+			},
+			{
+				label: "Fase 2",
+				data: data[1],
+				backgroundColor: backgroundColor[1],
+				borderColor: borderColor[1],
+				borderWidth: 1,
+			},
+			{
+				label: "Fase 3",
+				data: data[2],
+				backgroundColor: backgroundColor[2],
+				borderColor: borderColor[2],
+				borderWidth: 1,
+			},
+		],
+	}
+	const configBarra = {
+		type: "bar",
+		data: dataBarra,
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true,
+					suggestedMin: 50,
+					suggestedMax: 400,
+				},
+			},
+		},
+	}
+
+	var graficoBarra = new Chart(
+		document.getElementById("graficoBarra"),
+		configBarra
+	)
 }
 
-function removeTransicao() {
-	level = level + 1
+function transition() {
+	lembrar.classList.remove("hidden")
+	traduzInformacao("sternberg", "test", `explain_level${level + 1}`, lang)
+	informacao.classList.remove("displaynone")
+}
+
+function removeTransition() {
+	level++
+	i = 0
 	transicionando = false
-	var trans = document.getElementsByClassName("transicao")[0]
-	trans.remove()
 
-	var testes = document.getElementsByClassName("teste")[0]
-	testes.classList.remove("hidden")
+	informacao.classList.add("displaynone")
 
 	proximo_nivel()
-	lembrar.classList.remove("hidden")
-	getTime(resultadoFinal[`fase${level}`].tempo)
+	document.removeEventListener("keydown", inicio)
+	
+	
+	window.removeEventListener("keypress", jogo)
+	comecarComTimer()
 }
 
-var listener = function sternberg(e) {
+var jogo = function sternberg(e) {
 	if (transicionando) {
-		removeTransicao()
+		removeTransition()
 	} else {
+		var codigo = e.code.slice(3)
+		if(codigo != KEY_AUSENTE && codigo != KEY_PRESENTE){
+			return
+		}
 		getTime(resultadoFinal[`fase${level}`].tempo)
 		step++
-		var codigo = e.code.slice(3)
 		var acertou = false
 
 		if (codigo == KEY_AUSENTE) {
@@ -130,11 +211,7 @@ var listener = function sternberg(e) {
 			finalizar()
 		} else if (step % PROX_NIVEL == 0) {
 			transicionando = true
-			transicao(
-				`Indo para o nivel ${
-					level + 1
-				}.\nAperte qualquer tecla para continuar!`
-			)
+			transition()
 		}
 
 		alternar.innerHTML = letra_aleatoria()
@@ -147,4 +224,11 @@ function proximo_nivel() {
 		frase = frase + letra_aleatoria() + letra_aleatoria()
 	}
 	lembrar.innerHTML = frase
+}
+
+async function timer(tempo) {
+	for (let i = tempo; i > 0; i--) {
+		alternar.innerHTML = i
+		await sleep(1000)
+	}
 }

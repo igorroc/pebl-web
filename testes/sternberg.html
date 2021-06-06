@@ -13,30 +13,47 @@
 	</head>
 
 	<body>
-		<header class="topnav white-mode">
-			<a class="logo" href="../"
-				><img src="../assets/img/logo_brain.png" alt="Logo"
-			/></a>
-			<a class="inicio" href="../">Início</a>
-			<a class="sobre" href="../about">Sobre</a>
-			<a class="contato" href="../contact">Contato</a>
-			<a class="login" href="../usuario">Igor</a>
-		</header>
+		<div id="everything" class="displaynone">
+			<header class="topnav">
+				<a class="logo" href="../"
+					><img src="../assets/img/logo_brain.png" alt="Logo"
+				/></a>
+				<a class="inicio" href="../">Início</a>
+				<a class="sobre" href="../about">Sobre</a>
+				<a class="contato" href="../contact">Contato</a>
+				<a class="login" href="../usuario">Igor</a>
+			</header>
 
-		<div class="teste">
-			<div class="lembrar"></div>
-			<div class="alternar" onclick="comecar()">
-				A lista a ser aprendida está acima.<br />Clique aqui para
-				começar.
+			<div class="teste">
+				<div class="lembrar"></div>
+				<div class="alternar info">
+					A lista a ser aprendida está acima.<br />Aperte qualquer tecla para começar
+				</div>
+				<div class="botoes">
+					<div class="errado">[A] AUSENTE</div>
+					<div></div>
+					<div class="certo">PRESENTE [L]</div>
+				</div>
 			</div>
-			<div class="botoes hidden">
-				<div class="errado">[A] AUSENTE</div>
-				<div></div>
-				<div class="certo">PRESENTE [L]</div>
+
+			<div id="informacao" class="informacao backdrop-blur">
+				<p class="content">INFORMAÇÃO SOBRE O TESTE</p>
 			</div>
 		</div>
 
+		<div id="loader-wrapper" class="loader-wrapper">
+			<div id="loader" class="loader box-loader">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script src="../js/functions.js"></script>
+		<script src="../js/loader.js"></script>
+		<script src="../js/translation.js"></script>
 		<script src="../js/sternberg.js"></script>
 	</body>
 </html>
