@@ -1,21 +1,33 @@
 @import "font.css";
+@import "colors.css";
 @import "pattern.css";
 @import "header-menu.css";
 @import "variables.css";
 
 body {
 	margin: 0px;
-	background-color: var(--cor-de-fundo);
+	background: var(--gradiente-preto);
+	overflow: hidden;
 }
 
 /* TESTE */
 .teste {
+	width: 1200px;
+	height: 600px;
+	margin: 80px auto;
+	padding: 50px 0;
+
 	display: grid;
-	grid-template-rows: 1fr 1fr 1fr;
-	justify-items: center;
+	grid-template-rows: auto 1fr auto;
+	justify-content: center;
 	align-items: center;
-	height: 700px;
-	background-color: var(--cor-de-fundo-testes);
+	text-align: center;
+
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	
+	color: white;
 }
 
 .lembrar {
@@ -26,7 +38,10 @@ body {
 	text-align: center;
 	font-size: 4rem;
 	font-weight: bold;
-	cursor: pointer;
+}
+
+.info{
+	font-size: 2rem;
 }
 
 .botoes {
