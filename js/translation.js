@@ -5,9 +5,9 @@ function traduzInformacao(teste, nivel, valor, lang) {
 		.then((Response) => Response.json())
 		.then((data) => {
 			if (valor) {
-				informacao.children[0].innerHTML = data[nivel][valor][lang]
+				informacao.children[0].innerText = data[nivel][valor][lang]
 			} else {
-				informacao.children[0].innerHTML = data[nivel][lang]
+				informacao.children[0].innerText = data[nivel][lang]
 			}
 		})
 }
