@@ -32,7 +32,7 @@
 	background-color: #e74242;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 100px) and (max-device-width: 900px) {
 	.mobileOnly {
 		display: flex;
 		flex-direction: column;
