@@ -47,9 +47,9 @@ var informacao = document.getElementById("informacao")
 for (var j = 0; j < 24; j++) {
 	filhos[j].children[0].classList.add(`bg-${coresFase1[j]}`)
 }
-
 traduzInformacao("stroop", "pretest", "instruction", lang)
 document.addEventListener("keydown", inicio)
+// ! FIM DO INICIO DO TESTE
 
 function inicio() {
 	informacao.innerHTML = ""

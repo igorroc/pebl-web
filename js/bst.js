@@ -39,10 +39,10 @@ var aux = {
 	square: ["blue", "line"],
 }
 
-// ! Inicio do teste
-
+// ! INICIO DO TESTE
 traduzInformacao("bst", "pretest", "instruction", lang)
 document.addEventListener("keydown", inicio)
+// ! FIM DO INICIO DO TESTE
 
 function inicio() {
 	informacao.children[0].innerHTML = ""

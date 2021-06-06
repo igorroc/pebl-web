@@ -31,10 +31,11 @@ var resultadoFinal = {
 	},
 }
 
-// INICIO DINAMICO
+// ! INICIO DINAMICO
 lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
 traduzInformacao("sternberg", "pretest", "instruction", lang)
 document.addEventListener("keydown", inicio)
+// ! FIM DO INICIO DINAMICO
 
 function inicio() {
 	informacao.classList.add("displaynone")
