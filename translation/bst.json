@@ -11,24 +11,24 @@
 	},
 	"test": {
 		"explain_level1": {
-			"br": "Pressione qualquer tecla para começar.",
+			"br": "Ótimo! Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à FORMA que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
 			"us": "Good. In the next round, respond by clicking or touching the smaller shape corresponding to the SHAPE you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		},
 		"explain_level2": {
-			"br": "Pressione qualquer tecla para começar.",
+			"br": "Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à forma que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
 			"us": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		},
 		"explain_level3": {
-			"br": "Pressione qualquer tecla para começar.",
+			"br": "Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à forma que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
 			"us": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		},
 		"explain_level4": {
-			"br": "Pressione qualquer tecla para começar.",
+			"br": "Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à forma que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
 			"us": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		}
 	},
 	"ending": {
-		"br": "Você finalizou!<br>Obrigado por participar.",
-		"us": "Thank you for participating in this study. Please alert the researcher that you are done."
+		"br": "Obrigado por participar desse teste!\nPor favor avise ao seu pesquisador que você finalizou.",
+		"us": "Thank you for participating in this study.\nPlease alert the researcher that you are done."
 	}
 }
