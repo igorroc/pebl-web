@@ -1,12 +1,12 @@
 {
 	"pretest": {
 		"instruction": {
-			"br": "Você está prestes a ser testado quanto à sua capacidade de ler palavras e as cores com que aparecem. Na primeira parte, você deve nomear as cores dos pontos o mais rápido possível. Siga o retângulo de borda branca e pressione as teclas corretas [1, 2, 3, 4] de acordo.<br><br>Pressione qualquer tecla para começar.",
-			"us": "You are about to be tested regarding how well you can read words and the colors they appear in. In the first part, you must name the colors of the dots as quickly as you can. Follow the white border rectangle and press the correct keys [1, 2, 3, 4] accordingly.<br><br>Press any key to begin."
+			"br": "Você está prestes a ser testado quanto à sua capacidade de ler palavras e as cores com que aparecem. Na primeira parte, você deve nomear as cores dos pontos o mais rápido possível. Siga o retângulo de borda branca e pressione as teclas corretas [1, 2, 3, 4] de acordo.\n\nPressione qualquer tecla para começar.",
+			"us": "You are about to be tested regarding how well you can read words and the colors they appear in. In the first part, you must name the colors of the dots as quickly as you can. Follow the white border rectangle and press the correct keys [1, 2, 3, 4] accordingly.\n\nPress any key to begin."
 		},
 		"training": {
-			"br": "Antes de começar, reserve um momento para aprender o mapeamento entre as cores e as teclas.<br>Pressione as teclas [1, 2, 3 ou 4] consecutivamente para praticar os estímulos e a barra de espaço para iniciar o teste.",
-			"us": "Before we begin, take a moment to learn the mapping between colors and the keys.<br>Press the keys [1, 2, 3 or 4] consecutively to practice the stimuli, and space bar to begin the test."
+			"br": "Antes de começar, reserve um momento para aprender o mapeamento entre as cores e as teclas.\nPressione as teclas [1, 2, 3 ou 4] consecutivamente para praticar os estímulos e a barra de espaço para iniciar o teste.",
+			"us": "Before we begin, take a moment to learn the mapping between colors and the keys.\nPress the keys [1, 2, 3 or 4] consecutively to practice the stimuli, and space bar to begin the test."
 		},
 		"start_test": {
 			"br": "Pressione qualquer tecla para começar.",
@@ -35,16 +35,16 @@
 			"us": "Press key to indicate color."
 		},
 		"explain_level2": {
-			"br": "Desta vez, nomeie as cores das palavras o mais rápido possível.<br>Siga o retângulo de borda branca e pressione a tecla correta [1, 2, 3 ou 4] de acordo.<br><br>Pressione qualquer tecla para começar.",
-			"us": "This time, name the colors of the words as quickly as you can.<br>Follow the white border rectangle and press the correct key [1, 2, 3 or 4] accordingly.<br><br>Press any key to begin."
+			"br": "Desta vez, nomeie as cores das palavras o mais rápido possível.\nSiga o retângulo de borda branca e pressione a tecla correta [1, 2, 3 ou 4] de acordo.\n\nPressione qualquer tecla para começar.",
+			"us": "This time, name the colors of the words as quickly as you can.\nFollow the white border rectangle and press the correct key [1, 2, 3 or 4] accordingly.\n\nPress any key to begin."
 		},
 		"explain_level3": {
-			"br": "Novamente, nomeie as cores em que as palavras são impressas o mais rápido possível. Não leia a palavra! Em vez disso, nomeie a cor na qual a palavra foi impressa.<br><br>Pressione qualquer tecla para começar.",
-			"us": "Again, name the colors in which the words are printed as quickly as you can. Don't read the word! Instead, name the color in which the word is printed.<br><br>Press any key to begin."
+			"br": "Novamente, nomeie as cores em que as palavras são impressas o mais rápido possível. Não leia a palavra! Em vez disso, nomeie a cor na qual a palavra foi impressa.\n\nPressione qualquer tecla para começar.",
+			"us": "Again, name the colors in which the words are printed as quickly as you can. Don't read the word! Instead, name the color in which the word is printed.\n\nPress any key to begin."
 		}
 	},
 	"ending": {
-		"br": "Você finalizou!<br>Obrigado por participar.",
-		"us": "You are now finished!<br>Thank you for participating."
+		"br": "Você finalizou!\nObrigado por participar.",
+		"us": "You are now finished!\nThank you for participating."
 	}
 }
