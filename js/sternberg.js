@@ -4,8 +4,6 @@ const PROX_NIVEL = 10
 const FIM = 30
 const KEY_AUSENTE = "A"
 const KEY_PRESENTE = "L"
-const FRASE_FINAL =
-	"Parabéns! Você concluiu o teste.\nAgora você pode retornar ao menu principal clicando em home."
 
 var level = 1
 var step = 0
@@ -60,7 +58,6 @@ async function comecarComTimer() {
 
 	window.addEventListener("keypress", jogo)
 }
-
 
 function finalizar() {
 	document.removeEventListener("keydown", jogo)
@@ -155,22 +152,19 @@ function showGraphs() {
 }
 
 function transition() {
+	level++
+	i = 0
+	proximo_nivel()
+
 	lembrar.classList.remove("hidden")
-	traduzInformacao("sternberg", "test", `explain_level${level + 1}`, lang)
-	informacao.classList.remove("displaynone")
+	alternar.classList.add("info")
+	alternar.innerText =
+		"A lista a ser aprendida está acima.\nAperte qualquer tecla para começar"
 }
 
 function removeTransition() {
-	level++
-	i = 0
 	transicionando = false
 
-	informacao.classList.add("displaynone")
-
-	proximo_nivel()
-	document.removeEventListener("keydown", inicio)
-	
-	
 	window.removeEventListener("keypress", jogo)
 	comecarComTimer()
 }
@@ -180,7 +174,7 @@ var jogo = function sternberg(e) {
 		removeTransition()
 	} else {
 		var codigo = e.code.slice(3)
-		if(codigo != KEY_AUSENTE && codigo != KEY_PRESENTE){
+		if (codigo != KEY_AUSENTE && codigo != KEY_PRESENTE) {
 			return
 		}
 		getTime(resultadoFinal[`fase${level}`].tempo)
@@ -212,16 +206,28 @@ var jogo = function sternberg(e) {
 		} else if (step % PROX_NIVEL == 0) {
 			transicionando = true
 			transition()
+		} else {
+			alternar.innerHTML = letra_aleatoria()
 		}
-
-		alternar.innerHTML = letra_aleatoria()
 	}
 }
 
 function proximo_nivel() {
 	var frase = ""
 	for (let i = 0; i < level; i++) {
-		frase = frase + letra_aleatoria() + letra_aleatoria()
+		let letra1 = letra_aleatoria()
+		while (frase.includes(letra1)) {
+			letra1 = letra_aleatoria()
+		}
+
+		frase = frase + letra1
+
+		let letra2 = letra_aleatoria()
+		while (frase.includes(letra2)) {
+			letra2 = letra_aleatoria()
+		}
+
+		frase = frase + letra2
 	}
 	lembrar.innerHTML = frase
 }
