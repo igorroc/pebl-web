@@ -16,24 +16,28 @@ body {
 }
 
 .title {
-	position: relative;
 	background-image: url("https://source.unsplash.com/featured/?neuroscience");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 100px 0;
 }
 
 .title h1 {
-	z-index: 3;
 	font-size: 3em;
 	max-width: 60%;
 	width: 80%;
-	margin: 100px auto;
+	margin: 120px auto;
 
 	-webkit-filter: drop-shadow(5px 5px 5px #2227);
 	filter: drop-shadow(2px 3px 5px #2227);
+}
+
+.title .shadow {
+	background-color: #0009;
+	height: 100%;
+	display: flex;
+	backdrop-filter: blur(5px);
 }
 
 .resumo {
@@ -203,26 +207,23 @@ body {
 }
 
 @media (max-width: 800px) {
-	.title {
-		padding: 50px 0;
-	}
 	.title h1 {
 		font-size: 2em;
 	}
 }
 
 @media (max-width: 650px) {
-	.title h1{
+	.title h1 {
 		width: 90%;
-		max-width:90%;
+		max-width: 90%;
 	}
-	.container-participantes .card > .participante > .content > .description{
+	.container-participantes .card > .participante > .content > .description {
 		line-height: 1.2em;
 	}
 }
 
 @media (max-width: 500px) {
-	.container-participantes .card > .participante > .content > .description{
+	.container-participantes .card > .participante > .content > .description {
 		line-height: 1em;
 		font-size: 1em;
 	}
