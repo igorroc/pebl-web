@@ -1,6 +1,16 @@
 {
-	"INST1": "Nesta tarefa, você primeiro verá e memorizará uma pequena lista de letras. Por exemplo BN. Depois de memorizar a lista, aparecerá uma letra de cada vez na tela. Você avaliará se a letra que aparece estava ou não estava na lista.\nSe a letra estava, aperte a Shift esquerda.\nSe a letra não estava, aperte a a tecla Shift direita.\n\nClique abaixo quando estiver pronto para começar.",
-	"HEAD1": "A lista a ser aprendida.\n\n Pressione qualquer tecla para começar o teste.",
-	"HEAD2": "[A] PRESENTE                            AUSENTE [L]",
-	"DEBRIEF": "O teste está concluído.\n\nPressione OK para continuar."
+	"pretest": {
+		"instruction": {
+			"br": "Nesta tarefa, você primeiro verá e memorizará uma pequena lista de letras. Por exemplo BN. Depois de memorizar a lista, aparecerá uma letra de cada vez na tela. Você avaliará se a letra que aparece estava ou não estava na lista.\nSe a letra estava, aperte a tecla [A].\nSe a letra não estava, aperte a tecla [L].\n\nAperte qualquer tecla quando estiver pronto para começar.",
+			"us": "In this game, you will see a shape in the center of the screen, like the blue circle you see below. You will be asked to determine whether it belongs on the right side or left side, based on a rule.\nIf it belongs on the left, click or touch the left shape. If it belongs on the right, click or touch the right shape.\nPress any key to continue to the first part of the game."
+		},
+		"instruction_2": {
+			"br": "A lista a ser aprendida aparecerá no topo da tela.\n\n Pressione qualquer tecla para começar o teste.",
+			"us": "In this round, respond by clicking or touching the smaller shape corresponding to the SHAPE you see at the center of the screen. Ignore the color of the objects.\nWe will start with a practice round\nPress any key to begin."
+		}
+	},
+	"ending": {
+		"br": "O teste está concluído.",
+		"us": "Thank you for participating in this study.\nPlease alert the researcher that you are done."
+	}
 }
