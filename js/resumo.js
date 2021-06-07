@@ -15,7 +15,7 @@ var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
 if (id) {
-	fetch("https://igorroc.github.io/pebl-web/info_testes.json")
+	fetch("https://igorroc.github.io/pebl-web/testes/info_testes.json")
 		.then((Response) => Response.json())
 		.then((data) => {
 			if (data[id]) {
@@ -245,10 +245,15 @@ function addFilter(color) {
 	}
 }
 
-function continueMobile(){
+function continueMobile() {
 	let mobile = document.getElementById("mobile")
 	let everything = document.getElementById("everything")
 
 	mobile.style.display = "none"
 	everything.style.display = "block"
+}
+
+function scrollBar(){
+	let scroll = document.querySelector("::-webkit-scrollbar")
+	console.log(scroll)
 }
