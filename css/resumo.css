@@ -8,6 +8,7 @@
 @import "line.css";
 @import "tooltip.css";
 @import "mobile.css";
+@import "scroll-bar.css";
 
 body,
 html {

@@ -3,6 +3,7 @@
 @import "header-menu.css";
 @import "variables.css";
 @import "loader.css";
+@import "scroll-bar.css";
 
 body {
 	margin: 0px;
