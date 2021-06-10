@@ -3,7 +3,7 @@
 		"title": "Stroop",
 		"link": "stroop",
 		"color": "red",
-		"description": "O Teste de Cores e Palavras (mais conhecido como teste de STROOP) permite detetar problemas neurológicos e cerebrais, avaliando os efeitos de interferência entre os dois hemisférios cerebrais. O STROOP poderá ser utilizado em diversas situações clínicas (p.e., lesões cerebrais, demência, psicopatologia, etc.) independentemente do nível cultural do sujeito.\nAs tarefas requeridas pelo STROOP implicam a identificação de cores e de palavras.",
+		"description": "Avalia as funções executivas, particularmente memória de trabalho, habilidades de atenção seletiva, monitoramento mental e comportamento inibitório. Possui um conjunto de estímulos que ativa respostas automáticas referentes ao processamento verbal, o qual ocasiona interferência no processo de nomeação de cores. É necessário que o indivíduo consiga inibir informações e responder seletivamente ao solicitado na instrução do teste.",
 		"img": "",
 		"habilities": {
 			"1": {
@@ -48,7 +48,7 @@
 		"title": "Bst",
 		"link": "bst",
 		"color": "blue",
-		"description": "Descrição do teste BST\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"description": "O Bivalent Shape Task (BST), avalia a interferência cognitiva e a capacidade de suprimir a interferência. Fornece uma medida não verbal simples e rápida de interferência e supressão cognitiva que dispensa leitura.",
 		"img": "",
 		"habilities": {
 			"1": {
@@ -73,7 +73,7 @@
 		"title": "Sternberg",
 		"link": "sternberg",
 		"color": "yellow",
-		"description": "Descrição do teste Sternberg\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"description": "Avalia a memória de curto prazo, que é um  mecanismo da memória que nos permite reter temporariamente as informações processadas que desaparecem rápido ou se transformam em memória a longo prazo. Age como uma porta de acesso para a memória a longo prazo ou como um depósito que possibilita a retenção de informações que não precisaremos necessariamente no futuro, apenas as que precisamos no presente momento.",
 		"img": "",
 		"habilities": {
 			"1": {
@@ -98,7 +98,7 @@
 		"title": "Torre de Londres",
 		"link": "torre",
 		"color": "green",
-		"description": "Descrição do teste Torre de Londres\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perspiciatis natus facilis. Impedit laudantium totam facilis, dolorem porro cumque maiores molestias reprehenderit nemo, ratione facere harum cupiditate ducimus tempora similique.",
+		"description": "A Torre de Londres avalia funções executivas, especificamente as habilidades de planejamento e solução de problemas com níveis progressivos de dificuldades. Determinadas funções executivas são fundamentais tanto na vida diária, como em uma série de aprendizagens complexas (preparação do plano de execução de uma tarefa, na solução de problemas matemáticos e etc.). ",
 		"img": "",
 		"habilities": {
 			"1": {
