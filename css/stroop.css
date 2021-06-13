@@ -16,6 +16,7 @@ body {
 	backdrop-filter: blur(20px);
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 	width: 1200px;
+	height: 60vh;
 	margin: 10px auto;
 	padding: 10px;
 	display: grid;
@@ -37,6 +38,7 @@ body {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	width: 1200px;
 	margin: 0 auto;
+	margin-top: 50px;
 	bottom: 50px;
 }
 

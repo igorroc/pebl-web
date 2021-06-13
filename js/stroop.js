@@ -44,6 +44,10 @@ var filhos = teste.children
 var informacao = document.getElementById("informacao")
 
 // ! INICIO DO TESTE
+if(window.innerHeight <= 630){
+	alert("A tela do seu computador é muito pequena para realizar o teste")
+}
+
 for (var j = 0; j < 24; j++) {
 	filhos[j].children[0].classList.add(`bg-${coresFase1[j]}`)
 }
