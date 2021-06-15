@@ -5,6 +5,7 @@ var cor = url.searchParams.get("cor")
 
 var imagem = document.getElementById("imagemApresentacao")
 var habilidades = document.getElementById("iconsHabilidade")
+var controllers = document.getElementById("iconsControles")
 var titulo = document.getElementById("titulo")
 var description = document.getElementsByClassName("descricao")[0].children[0]
 var link = document.getElementById("link")
@@ -15,7 +16,7 @@ var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
 if (id) {
-	fetch("https://igorroc.github.io/pebl-web/testes/info_testes.json")
+	fetch("/testes/info_testes.json")
 		.then((Response) => Response.json())
 		.then((data) => {
 			if (data[id]) {
@@ -40,6 +41,20 @@ if (id) {
 					div.appendChild(span)
 					div.appendChild(img)
 					habilidades.appendChild(div)
+				}
+				for (const contr in data[id].controllers) {
+					let obj = data[id].controllers[contr]
+					let div = document.createElement("div")
+					div.classList.add("icon")
+					div.classList.add("tooltip-holder")
+					let img = document.createElement("img")
+					img.src = `./assets/icons/${obj.title}.svg`
+					let span = document.createElement("span")
+					span.classList.add("tooltip")
+					span.innerText = obj.description
+					div.appendChild(span)
+					div.appendChild(img)
+					controllers.appendChild(div)
 				}
 				addFilter(data[id].color)
 			}
@@ -232,6 +247,9 @@ function addFilter(color) {
 	for (const skill of habilidades.children) {
 		skill.classList.add(`filter-${color}`)
 	}
+	for (const controle of controllers.children) {
+		controle.classList.add(`filter-${color}`)
+	}
 	for (const particle of particles) {
 		for (const p of particle.children) {
 			p.classList.add(`bg-grad-${color}`)
@@ -251,9 +269,4 @@ function continueMobile() {
 
 	mobile.style.display = "none"
 	everything.style.display = "block"
-}
-
-function scrollBar(){
-	let scroll = document.querySelector("::-webkit-scrollbar")
-	console.log(scroll)
 }
