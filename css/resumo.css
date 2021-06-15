@@ -72,13 +72,18 @@ footer {
 	margin: 0;
 }
 
-.habilidades {
+#wrapperIcons{
+	display: flex;
+	gap: 3em;
+}
+
+.showCaseIcons {
 	display: grid;
 	grid-template-rows: 0.5fr 1fr;
 	gap: 0;
 }
 
-.info .habilidades p {
+.info .showCaseIcons p {
 	letter-spacing: 3px;
 	margin: 10px 0 0 0;
 }
@@ -92,8 +97,9 @@ footer {
 
 .icons {
 	max-width: 250px;
-	display: inline-block;
-	margin: 10px 0 0 0;
+	display: flex;
+	margin-top: 10px;
+	gap: .5em;
 }
 
 .icon {
@@ -102,8 +108,6 @@ footer {
 	width: 30px;
 	height: 30px;
 	border-radius: 100%;
-	margin-right: 10px;
-	margin-bottom: 10px;
 }
 
 .icon img {
@@ -294,6 +298,10 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+	#wrapperIcons{
+		flex-direction: column;
+		gap: 10px;
+	}
 	.resultados {
 		width: calc(90% - 60px);
 		padding: 30px;
