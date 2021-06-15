@@ -77,51 +77,56 @@ a {
 	width: 80%;
 	margin: 100px auto;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	position: relative;
 }
 
-.topico > .esquerda {
+.topico > .description {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: top;
 }
 
-.topico > .esquerda > h3 {
+.topico > .description > h3 {
 	font-size: 3rem;
 	font-weight: 800;
 	letter-spacing: 5px;
 	margin: 0 0 50px 0;
 }
 
-.topico > .esquerda > p {
+.topico > .description > p {
+	max-width: 1000px;
 	font-size: 1.5rem;
 	letter-spacing: 3px;
 	line-height: 3rem;
 	margin: 0;
 }
 
-.topico > .direita {
+.topico > .testsList {
 	justify-content: top;
 }
 
-.topico > .direita > .testes {
+.topico > .testsList > .testes {
+	margin-top: 3em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
+	gap: 2em;
 }
 
-.topico > .direita > .testes > .teste {
-	max-width: auto;
+.topico > .testsList > .testes > .teste {
+	min-width: 100px;
+	max-width: 500px;
+	height: 250px;
+
 	display: flex;
-	flex: 30%;
+	flex-grow: 1;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	margin: 50px;
-	margin-top: 0;
 
 	background-color: rgba(20, 20, 20, 0.5);
 	backdrop-filter: blur(5px);
@@ -132,25 +137,25 @@ a {
 	transition: 0.3s;
 }
 
-.topico > .direita > .testes > .teste:hover {
+.topico > .testsList > .testes > .teste:hover {
 	background-color: rgba(8, 8, 8, 0.5);
 	border-bottom: #009cd0 solid 5px;
 }
 
-.topico > .direita > .testes > .teste > h3 {
+.topico > .testsList > .testes > .teste > h3 {
 	font-size: 2rem;
 	text-align: center;
 	letter-spacing: 3px;
 	margin: 1rem;
 }
 
-.topico > .direita > .testes > .teste > p {
-	width: 80%;
+.topico > .testsList > .testes > .teste > p {
+	width: 90%;
 	text-align: center;
 	margin: 1rem auto;
 }
 
-.topico > .direita > .testes > .teste > a {
+.topico > .testsList > .testes > .teste > a {
 	margin: 1rem auto;
 }
 
@@ -350,10 +355,6 @@ footer > p > a {
 }
 
 @media (max-width: 600px) {
-	.topico > .direita > .testes {
-		flex-direction: column;
-	}
-
 	.participantes {
 		width: 80%;
 	}
@@ -382,22 +383,5 @@ footer > p > a {
 		margin-bottom: 60px;
 		line-height: 1.6rem;
 		font-size: 1rem;
-	}
-
-	.topico > .direita > .testes > .teste {
-		flex: 30%;
-		margin: 15px;
-	}
-
-	.topico > .direita > .testes > .teste > h3 {
-		font-size: 1.5rem;
-	}
-
-	.topico > .direita > .testes > .teste > p {
-		font-size: 0.9rem;
-	}
-
-	.topico > .direita > .testes > .teste > a {
-		font-size: 0.9rem;
 	}
 }
