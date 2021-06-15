@@ -16,14 +16,14 @@ var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
 if (id) {
-	fetch("/testes/info_testes.json")
+	fetch("https://igorroc.github.io/pebl-web/testes/info_testes.json")
 		.then((Response) => Response.json())
 		.then((data) => {
 			if (!data[id]) {
 				naoTemResumo()
 				return
 			}
-			
+
 			titulo.innerText = data[id].title
 			link.href = `./testes/${data[id].link}?lang=br`
 			link_us.href = `./testes/${data[id].link}?lang=us`
