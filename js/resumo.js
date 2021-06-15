@@ -61,6 +61,9 @@ if (id) {
 				controllers.appendChild(div)
 			}
 			addFilter(data[id].color)
+		}).catch((err) => {
+			console.error(err)
+			naoTemResumo()
 		})
 	generateGraphs()
 } else {
