@@ -3,44 +3,42 @@
 		"title": "Stroop",
 		"link": "stroop",
 		"color": "red",
-		"description": "Avalia as funções executivas, particularmente memória de trabalho, habilidades de atenção seletiva, monitoramento mental e comportamento inibitório. Possui um conjunto de estímulos que ativa respostas automáticas referentes ao processamento verbal, o qual ocasiona interferência no processo de nomeação de cores. É necessário que o indivíduo consiga inibir informações e responder seletivamente ao solicitado na instrução do teste.",
+		"description": "O teste avalia as funções executivas, particularmente o controle inibitório, memória de curto prazo, habilidades de atenção seletiva e monitoramento mental. A tarefa requer a nomeação de cores de estímulos neutros e verbais. Possui assim, um conjunto de estímulos que ativa respostas automáticas referentes ao processamento verbal, o qual ocasiona interferência no processo de nomeação de cores. É necessário que o indivíduo consiga inibir informações automáticas e responda seletivamente ao solicitado na instrução do teste.",
 		"img": "",
 		"habilities": {
 			"1": {
-				"title": "hearing",
-				"description": "Audição:\nCommodo reprehenderit esse exercitation commodo officia do do laboris aute cillum."
+				"title": "controle",
+				"description": "Controle Inibitório."
 			},
 			"2": {
-				"title": "speed",
-				"description": "Velocidade:\nIpsum officia eiusmod consectetur est non sunt nostrud fugiat incididunt et laboris ullamco occaecat."
+				"title": "memoria_curta",
+				"description": "Memória de Curto Prazo"
 			},
 			"3": {
-				"title": "battery",
-				"description": "Bateria:\nAdipisicing sint in veniam excepteur dolor velit id."
+				"title": "atencao",
+				"description": "Atenção Seletiva"
 			},
 			"4": {
-				"title": "lamp",
-				"description": "Ideia:\nSunt eu voluptate ullamco aliquip voluptate incididunt sit qui occaecat ullamco do."
+				"title": "monitoramento",
+				"description": "Monitoramento Mental"
+			}
+		},
+		"controllers": {
+			"1": {
+				"title": "keyboard",
+				"description": "Teclado"
 			},
-			"5": {
-				"title": "puzzle",
-				"description": "Puzzle:\nAnim minim duis sit tempor dolor amet non mollit duis cillum."
+			"2": {
+				"title": "mouse",
+				"description": "Mouse"
 			},
-			"6": {
+			"3": {
+				"title": "audio",
+				"description": "Caixa de Som"
+			},
+			"4": {
 				"title": "headphone",
-				"description": "Fone:\nQuis esse eu sit minim nostrud proident adipisicing deserunt pariatur ut in laborum."
-			},
-			"7": {
-				"title": "lamp",
-				"description": "Ideia:\nNostrud nulla laborum ut mollit labore."
-			},
-			"8": {
-				"title": "puzzle",
-				"description": "Puzzle:\nExercitation eiusmod elit ad cillum sit est laboris dolore consectetur deserunt mollit."
-			},
-			"9": {
-				"title": "headphone",
-				"description": "Fone:\nFugiat cillum minim dolore excepteur est consequat culpa tempor."
+				"description": "Fone de Ouvido"
 			}
 		}
 	},
@@ -48,24 +46,30 @@
 		"title": "Bst",
 		"link": "bst",
 		"color": "blue",
-		"description": "O Bivalent Shape Task (BST), avalia a interferência cognitiva e a capacidade de suprimir a interferência. Fornece uma medida não verbal simples e rápida de interferência e supressão cognitiva que dispensa leitura.",
+		"description": "O teste Bivalent Shape Task (BST), avalia a interferência cognitiva (influência de um estímulo irrelevante na emissão de uma resposta) e a capacidade de suprimir a interferência (inibição do estímulo irrelevante na emissão da resposta). A tarefa requer o sujeito classifique a forma (quadrado ou círculo), não levando em consideração a sua cor (interferência). Fornece uma medida não verbal simples e rápida de interferência e supressão cognitiva que dispensa leitura.",
 		"img": "",
 		"habilities": {
 			"1": {
-				"title": "puzzle",
-				"description": "Descrição de puzzle"
+				"title": "interferencia",
+				"description": "Interferência Cognitiva"
+			}
+		},
+		"controllers": {
+			"1": {
+				"title": "keyboard",
+				"description": "Teclado"
 			},
 			"2": {
-				"title": "speed",
-				"description": "Descrição de velocidade"
+				"title": "mouse",
+				"description": "Mouse"
 			},
 			"3": {
-				"title": "battery",
-				"description": "Descrição de bateria"
+				"title": "audio",
+				"description": "Caixa de Som"
 			},
 			"4": {
-				"title": "lamp",
-				"description": "Descrição de ideia"
+				"title": "headphone",
+				"description": "Fone de Ouvido"
 			}
 		}
 	},
@@ -73,24 +77,30 @@
 		"title": "Sternberg",
 		"link": "sternberg",
 		"color": "yellow",
-		"description": "Avalia a memória de curto prazo, que é um  mecanismo da memória que nos permite reter temporariamente as informações processadas que desaparecem rápido ou se transformam em memória a longo prazo. Age como uma porta de acesso para a memória a longo prazo ou como um depósito que possibilita a retenção de informações que não precisaremos necessariamente no futuro, apenas as que precisamos no presente momento.",
+		"description": "O teste avalia a memória de curto prazo, que é um mecanismo da memória que nos permite reter temporariamente (em um curto período), informações relevantes para serem manipuladas e monitoradas no momento presente. É o arquivamento temporário de informações direcionadas a um propósito específico que desaparecem rápido ou se transformam em memória a longo prazo, agindo como uma porta de acesso para memórias permanentes. A tarefa requer que uma lista seja memorizada temporariamente e evocada em seguida.",
 		"img": "",
 		"habilities": {
 			"1": {
-				"title": "puzzle",
-				"description": "Descrição de puzzle"
+				"title": "memoria_curta",
+				"description": "Memória de Curto Prazo"
+			}
+		},
+		"controllers": {
+			"1": {
+				"title": "keyboard",
+				"description": "Teclado"
 			},
 			"2": {
-				"title": "speed",
-				"description": "Descrição de velocidade"
+				"title": "mouse",
+				"description": "Mouse"
 			},
 			"3": {
-				"title": "battery",
-				"description": "Descrição de bateria"
+				"title": "audio",
+				"description": "Caixa de Som"
 			},
 			"4": {
-				"title": "lamp",
-				"description": "Descrição de ideia"
+				"title": "headphone",
+				"description": "Fone de Ouvido"
 			}
 		}
 	},
@@ -98,24 +108,34 @@
 		"title": "Torre de Londres",
 		"link": "torre",
 		"color": "green",
-		"description": "A Torre de Londres avalia funções executivas, especificamente as habilidades de planejamento e solução de problemas com níveis progressivos de dificuldades. Determinadas funções executivas são fundamentais tanto na vida diária, como em uma série de aprendizagens complexas (preparação do plano de execução de uma tarefa, na solução de problemas matemáticos e etc.). ",
+		"description": "O teste avalia funções executivas, especificamente as habilidades de planejamento e solução de problemas, com níveis progressivos de dificuldades. A tarefa requer que com apenas um movimento por vez, os itens (esferas) sejam posicionadas de acordo com o modelo apresentado. Determinadas funções executivas são fundamentais tanto na vida diária, como em uma série de aprendizagens complexas, como na preparação do plano de execução de uma tarefa, na solução de problemas matemáticos, dentre outros.",
 		"img": "",
 		"habilities": {
 			"1": {
-				"title": "puzzle",
-				"description": "Descrição de puzzle"
+				"title": "planejamento",
+				"description": "Planejamento"
 			},
 			"2": {
-				"title": "speed",
-				"description": "Descrição de velocidade"
+				"title": "solucao_problemas",
+				"description": "Solução de Problemas"
+			}
+		},
+		"controllers": {
+			"1": {
+				"title": "keyboard",
+				"description": "Teclado"
+			},
+			"2": {
+				"title": "mouse",
+				"description": "Mouse"
 			},
 			"3": {
-				"title": "battery",
-				"description": "Descrição de bateria"
+				"title": "audio",
+				"description": "Caixa de Som"
 			},
 			"4": {
-				"title": "lamp",
-				"description": "Descrição de ideia"
+				"title": "headphone",
+				"description": "Fone de Ouvido"
 			}
 		}
 	}
