@@ -4,7 +4,7 @@
 		"link": "stroop",
 		"color": "red",
 		"description": "O teste avalia as funções executivas, particularmente o controle inibitório, memória de curto prazo, habilidades de atenção seletiva e monitoramento mental. A tarefa requer a nomeação de cores de estímulos neutros e verbais. Possui assim, um conjunto de estímulos que ativa respostas automáticas referentes ao processamento verbal, o qual ocasiona interferência no processo de nomeação de cores. É necessário que o indivíduo consiga inibir informações automáticas e responda seletivamente ao solicitado na instrução do teste.",
-		"img": "",
+		"img": "stroop.png",
 		"habilities": {
 			"1": {
 				"title": "controle",
@@ -47,7 +47,7 @@
 		"link": "bst",
 		"color": "blue",
 		"description": "O teste Bivalent Shape Task (BST), avalia a interferência cognitiva (influência de um estímulo irrelevante na emissão de uma resposta) e a capacidade de suprimir a interferência (inibição do estímulo irrelevante na emissão da resposta). A tarefa requer o sujeito classifique a forma (quadrado ou círculo), não levando em consideração a sua cor (interferência). Fornece uma medida não verbal simples e rápida de interferência e supressão cognitiva que dispensa leitura.",
-		"img": "",
+		"img": "bst.png",
 		"habilities": {
 			"1": {
 				"title": "interferencia",
@@ -78,7 +78,7 @@
 		"link": "sternberg",
 		"color": "yellow",
 		"description": "O teste avalia a memória de curto prazo, que é um mecanismo da memória que nos permite reter temporariamente (em um curto período), informações relevantes para serem manipuladas e monitoradas no momento presente. É o arquivamento temporário de informações direcionadas a um propósito específico que desaparecem rápido ou se transformam em memória a longo prazo, agindo como uma porta de acesso para memórias permanentes. A tarefa requer que uma lista seja memorizada temporariamente e evocada em seguida.",
-		"img": "",
+		"img": "sternberg.jpg",
 		"habilities": {
 			"1": {
 				"title": "memoria_curta",
@@ -109,7 +109,7 @@
 		"link": "torre",
 		"color": "green",
 		"description": "O teste avalia funções executivas, especificamente as habilidades de planejamento e solução de problemas, com níveis progressivos de dificuldades. A tarefa requer que com apenas um movimento por vez, os itens (esferas) sejam posicionadas de acordo com o modelo apresentado. Determinadas funções executivas são fundamentais tanto na vida diária, como em uma série de aprendizagens complexas, como na preparação do plano de execução de uma tarefa, na solução de problemas matemáticos, dentre outros.",
-		"img": "",
+		"img": "torre_londres.jpg",
 		"habilities": {
 			"1": {
 				"title": "planejamento",

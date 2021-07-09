@@ -27,6 +27,7 @@ if (id) {
 			titulo.innerText = data[id].title
 			link.href = `./testes/${data[id].link}?lang=br`
 			link_us.href = `./testes/${data[id].link}?lang=us`
+			imagem.setAttribute("src", `../assets/img/testes/${data[id].img}`)
 			document.title =
 				data[id].title.charAt(0).toUpperCase() +
 				data[id].title.substr(1) +

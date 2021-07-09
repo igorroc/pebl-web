@@ -17,7 +17,7 @@ body {
 }
 
 .title {
-	background-image: url("https://source.unsplash.com/featured/?neuroscience");
+	background-image: url(../assets/img/about_parallax.jfif);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
