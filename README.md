@@ -60,9 +60,6 @@ Desenvolvimento de testes neuropsicológicos computadorizados online para o cont
 As seguintes ferramentas serão utilizadas no projeto:
 
 -   [Node.js](https://nodejs.org/en/)
--   [React](https://pt-br.reactjs.org/)
--   [React Native](https://reactnative.dev/)
--   [TypeScript](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Requerimentos
 
