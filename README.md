@@ -44,18 +44,18 @@
 
 <br>
 
-## :dart: Sobre
+## 🎯 Sobre
 
 Desenvolvimento de testes neuropsicológicos computadorizados online para o contexto brasileiro
 
-## :sparkles: Testes
+## ✨ Testes
 
 🚧 [Stroop](https://igorroc.github.io/pebl-web/testes/stroop.html);\
 🚧 [BST](https://igorroc.github.io/pebl-web/testes/bst.html);\
 🚧 [Sternberg](https://igorroc.github.io/pebl-web/testes/sternberg.html);\
 🚧 [Torre de Londres](https://igorroc.github.io/pebl-web/testes/torre.html);
 
-## :rocket: Tecnologias
+## 🚀 Tecnologias
 
 As seguintes ferramentas serão utilizadas no projeto:
 
@@ -68,11 +68,11 @@ As seguintes ferramentas serão utilizadas no projeto:
 - [Keras](https://keras.io)
 
 
-## :white_check_mark: Requerimentos
+## ✅ Requerimentos
 
 Antes de começar, você precisa ter o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
 
-## :checkered_flag: Começando
+## 🏁 Começando
 
 ```bash
 # Clone este projeto
@@ -88,7 +88,7 @@ $ yarn
 $ yarn start
 ```
 
-## :memo: Licença
+## 📝 Licença
 
 Esse projeto está sob licença MIT. Para mais detalhes, veja o arquivo de [LICENÇA](LICENSE.md).
 
