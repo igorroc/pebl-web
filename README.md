@@ -59,7 +59,14 @@ Desenvolvimento de testes neuropsicológicos computadorizados online para o cont
 
 As seguintes ferramentas serão utilizadas no projeto:
 
--   [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](https://www.postgresql.org)
+- [TypeORM](https://typeorm.io/#/)
+- [Python 3.8](https://www.python.org)
+- [Anaconda](https://www.anaconda.com/open-source)
+- [Scikit Learn](https://scikit-learn.org/stable/)
+- [Keras](https://keras.io)
+
 
 ## :white_check_mark: Requerimentos
 
