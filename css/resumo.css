@@ -228,14 +228,9 @@ footer {
 	left: 0;
 }
 
-#link_us {
+#idiom {
 	color: white;
 	margin: 20px 0;
-	transition: all 0.2s ease-in-out;
-}
-
-#link_us:hover {
-	color: rgb(240, 94, 81);
 }
 
 /* OPÇÕES */
