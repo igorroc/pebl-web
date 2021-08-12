@@ -28,7 +28,7 @@
 				<div class="imagem">
 					<img
 						id="imagemApresentacao"
-						src="https://source.unsplash.com/featured/?fast,speed"
+						src=""
 						alt=""
 					/>
 				</div>
@@ -56,7 +56,7 @@
 					</div>
 					<div class="iniciar">
 						<div id="slide"></div>
-						<a id="link" href="#">Iniciar Teste</a>
+						<span id="link" >Iniciar Teste</span>
 					</div>
 					<div id="idiom">
 						<label for="language">Selecione o idioma:</label>
@@ -122,6 +122,64 @@
 				<li></li>
 				<li></li>
 			</ul>
+		</div>
+
+		<div id="formID">
+			<div>
+				<div id="closeForm"></div>
+				<div id="formTitle">
+					<h3>
+						Informações<br />
+						<b>importantes</b>
+					</h3>
+					<p>Antes de iniciar o teste, preencha esse formulário!</p>
+				</div>
+				<div id="formContent">
+					<form onsubmit="envioFormulario()">
+						<div class="question">
+							<label for="name">1. Nome completo:</label>
+							<input type="text" id="name" min="3" required />
+						</div>
+						<div class="question">
+							<label for="prof">2. Nome do seu orientando:</label>
+							<input type="text" id="prof" required />
+						</div>
+						<div class="question">
+							<label for="idade">3. Sua idade:</label>
+							<input
+								type="number"
+								id="idade"
+								min="15"
+								max="100"
+								value="20"
+								required
+							/>
+						</div>
+						<div class="question">
+							<label for="email">4. Seu email:</label>
+							<input type="email" id="email" required />
+						</div>
+						<div class="question checkQuestion">
+							<input
+								type="checkbox"
+								id="check"
+								value="sim"
+								required
+							/>
+							<label for="check"
+								>Li e aceito os
+								<a href="#">Termos de Serviço</a></label
+							>
+						</div>
+
+						<input
+							type="submit"
+							id="submit"
+							value="Iniciar Teste"
+						/>
+					</form>
+				</div>
+			</div>
 		</div>
 
 		<!-- WARNING PARA CELULARES -->

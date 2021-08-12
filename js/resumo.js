@@ -15,6 +15,11 @@ var lines_h = document.getElementsByClassName("line-h")
 var lines_v = document.getElementsByClassName("line-v")
 var botao = document.getElementsByClassName("iniciar")[0]
 
+var form = document.getElementById("formID")
+var formClose = document.getElementById("closeForm")
+var everything = document.getElementById("everything")
+
+// DADOS INICIAIS
 if (id) {
 	fetch("https://igorroc.github.io/pebl-web/testes/info_testes.json")
 		.then((Response) => Response.json())
@@ -25,8 +30,12 @@ if (id) {
 			}
 
 			titulo.innerText = data[id].title
-			link.href = `./testes/${data[id].link}?lang=br`
-			imagem.setAttribute("src", `https://raw.githubusercontent.com/IgorRoc/pebl-web/main/assets/img/testes/${data[id].img}`)
+			link.setAttribute("linkDoTeste", data[id].link)
+			// link.href = `./testes/${data[id].link}?lang=br`
+			imagem.setAttribute(
+				"src",
+				`https://raw.githubusercontent.com/IgorRoc/pebl-web/main/assets/img/testes/${data[id].img}`
+			)
 			document.title =
 				data[id].title.charAt(0).toUpperCase() +
 				data[id].title.substr(1) +
@@ -61,7 +70,8 @@ if (id) {
 				controllers.appendChild(div)
 			}
 			addFilter(data[id].color)
-		}).catch((err) => {
+		})
+		.catch((err) => {
 			console.error(err)
 			naoTemResumo()
 		})
@@ -71,6 +81,35 @@ if (id) {
 }
 if (cor) {
 	addFilter(cor)
+}
+
+// Custom form
+link.addEventListener("click", () => {
+	form.style.display = "flex"
+	everything.classList.add("displaynone")
+})
+
+formClose.addEventListener("click", () => {
+	form.style.display = "none"
+	everything.classList.remove("displaynone")
+})
+
+function envioFormulario() {
+	var nome = document.getElementById("name")
+	var orientando = document.getElementById("prof")
+	var idade = document.getElementById("idade")
+	var email = document.getElementById("email")
+
+	var linkDoTeste = link.getAttribute("linkDoTeste")
+
+	var linkFinal = `${linkDoTeste}?lang=br&nome=${nome.value}&orientando=${orientando.value}&idade=${idade.value}&email=${email.value}`
+
+	console.log(linkFinal)
+	window.location.replace(`../testes/${linkFinal}`)
+	
+	alert(
+		`Form com sucesso:\nNome: ${nome.value}\nOrientando: ${orientando.value}\nIdade: ${idade.value}\nEmail: ${email.value}\n\nTeste: ${linkDoTeste}`
+	)
 }
 
 // GRAFICOS
