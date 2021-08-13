@@ -7,24 +7,30 @@ var resultadoFinal = {
 	fase1: {
 		tempo: [],
 		escolhas: [],
+		stim: [],
 	},
 	fase2: {
 		tempo: [],
 		escolhas: [],
+		stim: [],
 	},
 	fase3: {
 		tempo: [],
 		escolhas: [],
+		stim: [],
 	},
 	fase4: {
 		tempo: [],
 		escolhas: [],
+		stim: [],
 	},
 	fase5: {
 		tempo: [],
 		escolhas: [],
+		stim: [],
 	},
 }
+
 
 var level = 1
 var step = 0
@@ -64,9 +70,11 @@ function jogo(choice) {
 	getTime(resultadoFinal[`fase${level}`].tempo)
 	step++
 	if (choice == big.classList[2]) {
-		resultadoFinal[`fase${level}`].escolhas.push("acertou")
+		resultadoFinal[`fase${level}`].escolhas.push(1)
+		// Caso a escolha esteja correta, insere 1
 	} else {
-		resultadoFinal[`fase${level}`].escolhas.push("errou")
+		resultadoFinal[`fase${level}`].escolhas.push(0)
+		// Caso a escolha esteja errada, insere 0
 	}
 
 	if (step % FIM == 0) {
@@ -104,6 +112,8 @@ function removeTransition() {
 	let forma = random_shape()
 	big.classList.add(forma)
 	big.classList.add(random_aux(forma))
+
+	verifyWhatShape(big)
 
 	window.removeEventListener("keydown", removeTransition)
 
@@ -220,10 +230,8 @@ function showGraphs() {
 			borderColor[i].push(
 				`rgb(${255 - colorChange}, ${50 + 4 * j}, ${200 - 4 * j})`
 			)
-			// console.log(`🚀 | ${colorChange} | ${j} | ${borderColor[i]}`)
 		}
 		colorChange += colorVariation
-		// console.log("🚀 | file: bst.js | line 133 | showGraphs | data", data)
 		dataSet.push({
 			label: item[0],
 			data: data[i],
@@ -256,4 +264,11 @@ function showGraphs() {
 		document.getElementById("graficoBarra"),
 		configBarra
 	)
+}
+
+async function pushResponse() {
+	await fetch("http://localhost:3333/test/bst", {
+		method: "POST",
+		body: JSON.stringify(resultadoFinal),
+	})
 }
