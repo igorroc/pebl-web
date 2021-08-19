@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="assets/img/logo_brain.png" />
-		<title>Faça seu cadastro</title>
+		<title>Faça login</title>
 		<link href="./css/login.css" rel="stylesheet" type="text/css" />
 	</head>
 
@@ -19,44 +19,88 @@
 			<a class="contato" href="./contact">Contato</a>
 		</header>
 
-		<div class="cont">
-			<div class="form login">
-				<h2>Faça login</h2>
-				<form method="post">
-					<div class="txt_field">
-						<input type="email" required />
-						<span></span>
-						<label>Email</label>
-					</div>
-					<div class="txt_field">
-						<input type="password" required />
-						<span></span>
-						<label>Senha</label>
-					</div>
-					<a style="width: 30%" class="btn-cta" href="#">
-						<span class="btn-content">Entrar</span>
-						<img
-							class="btn-icon cl-invert"
-							src="./assets/icons/arrow-right-solid.svg"
-						/>
-					</a>
-					<a class="esqueci" href="#">Esqueci minha senha</a>
-				</form>
+		<div id="wrapper-form-main">
+			<div id="wrapper-inner-form">
+				<div id="form-sign-in">
+					<h2>Fazer Login</h2>
+					<form action="./user.html">
+						<div class="question">
+							<label for="email">Email</label>
+							<input
+								type="email"
+								name="email"
+								id="emailLogin"
+								required
+							/>
+						</div>
+						<div class="question">
+							<label for="password">Senha</label>
+							<input
+								type="password"
+								name="password"
+								id="passwordLogin"
+								required
+							/>
+						</div>
+						<div class="form-submit">
+							<input type="submit" value="Login" />
+						</div>
+					</form>
+					<a href="#">Esqueci minha senha</a>
+				</div>
+				<div id="form-sign-up">
+					<h2>Fazer Cadastro</h2>
+					<form action="">
+						<div class="question">
+							<label for="name">Nome Completo</label>
+							<input
+								type="text"
+								name="name"
+								id="nameSignUp"
+								required
+							/>
+						</div>
+						<div class="question">
+							<label for="email">Email</label>
+							<input
+								type="email"
+								name="email"
+								id="emailSignUp"
+								required
+							/>
+						</div>
+						<div class="question">
+							<label for="password">Senha</label>
+							<input
+								type="password"
+								name="password"
+								id="password1SignUp"
+								required
+							/>
+						</div>
+						<div class="question">
+							<label for="password">Repita sua senha</label>
+							<input
+								type="password"
+								name="password"
+								id="password2SignUp"
+								required
+							/>
+						</div>
+						<div class="form-submit">
+							<input type="submit" value="Cadastrar" />
+						</div>
+					</form>
+				</div>
 			</div>
-			<div class="sub-cont">
-				<div class="img">
-					<div class="img-text">
-						<h3>Novo aqui?</h3>
-						<p>Cadastre-se e começe a fazer os nossos testes!</p>
-					</div>
-					<div class="img-text">
-						<h3>Já tem uma conta?</h3>
-						<p>Faça login e veja os seus resultados!</p>
-					</div>
-					<div class="img-btn">
-						<span class="m-up">Cadastrar-se</span>
-						<span class="m-in">Entrar</span>
-					</div>
+			<div id="form-switch">
+				<div id="switch-to-login">
+					<h3>Você ja tem uma conta?</h3>
+					<button onclick="switchForm()">Fazer Login</button>
+				</div>
+				<div id="switch-to-signup">
+					<h3>Ainda não tem uma conta?</h3>
+					<button onclick="switchForm()">Criar conta</button>
 				</div>
 			</div>
 		</div>
