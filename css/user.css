@@ -385,6 +385,9 @@ main {
 }
 
 @media (max-width: 800px) {
+	#topBar #title h2{
+		margin: 0;
+	}
 	#topBar #searchBar{
 		display: none;
 	}
