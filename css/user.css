@@ -5,7 +5,417 @@
 @import "loader.css";
 
 body {
+	width: 100vw;
+	height: 100vh;
+
 	margin: 0px;
 	background-color: #252525;
 	color: white;
+
+	display: flex;
+}
+
+header {
+	position: fixed;
+	overflow: hidden;
+
+	width: 100px;
+	height: 100vh;
+
+	z-index: 10;
+
+	background: linear-gradient(90deg, #202020, #303030);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+.headerItem {
+	position: relative;
+	width: 100%;
+	height: 20px;
+
+	border-radius: 5px;
+
+	padding: 30px 0px;
+
+	color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+
+	transition: background-color 300ms ease;
+}
+
+.headerItem > * {
+	width: 30px;
+}
+
+.headerItem:hover {
+	background-color: #fff1;
+}
+
+.headerItemActive,
+.headerItemActive:hover {
+	color: #3fd0e7;
+	background-color: #fff2;
+}
+
+.headerItemActive::after {
+	content: "";
+	position: absolute;
+	right: 0;
+
+	width: 25px;
+	height: 100%;
+
+	transform: translateX(70%);
+
+	border-radius: 35px;
+
+	background-color: #3fd0e7;
+}
+
+#topBar {
+	position: fixed;
+
+	width: calc(100vw - 100px);
+	height: 100px;
+
+	z-index: 8;
+
+	margin-left: 100px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	background-color: #252525;
+	box-shadow: 0px 5px 10px #0003;
+}
+
+#topBar > div {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 100px;
+}
+
+#topBar #title {
+	margin-left: 100px;
+}
+
+#topBar #searchBar {
+	width: 100%;
+	max-width: 520px;
+
+	position: relative;
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	gap: 1em;
+
+	border-radius: 10px;
+
+	background-color: #2e2d30;
+}
+
+#topBar #searchBar img {
+	width: 20px;
+	margin-left: 30px;
+	filter: invert(1);
+}
+
+#topBar #searchBar input {
+	width: 100%;
+	display: block;
+
+	padding: 20px 30px;
+	padding-left: 0;
+
+	font-size: 1.2em;
+	color: #fff;
+	background: none;
+	outline: none;
+	border: none;
+}
+
+#wrapperSettings {
+	margin-left: auto;
+	margin-right: 100px;
+
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+#wrapperSettings .iconSettings {
+	width: 30px;
+	height: 30px;
+
+	padding: 10px;
+	border-radius: 50%;
+
+	background-color: #646262;
+
+	cursor: pointer;
+}
+
+#wrapperSettings .iconSettings img {
+	filter: invert(1);
+}
+
+main {
+	position: relative;
+
+	margin-left: 100px;
+	margin-top: 100px;
+
+	display: flex;
+	gap: 20px;
+	flex-grow: 1;
+}
+
+#sectionLeft {
+	overflow-y: auto;
+	width: 70%;
+	padding: 0 50px;
+}
+
+#sectionLeft::-webkit-scrollbar {
+	width: 0;
+}
+
+#sectionLeft:hover::-webkit-scrollbar {
+	width: 5px;
+}
+
+.container {
+	margin: 50px 0;
+}
+
+.sectionTitle {
+	font-size: 2.5em;
+}
+
+.wrapperCards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.card {
+	position: relative;
+	flex-grow: 1;
+
+	width: 200px;
+	height: 200px;
+
+	padding: 20px;
+
+	background: linear-gradient(#171721, #1f1f2b);
+
+	border-radius: 30px;
+
+	cursor: pointer;
+
+	transition: transform 300ms ease;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.card .cardContent {
+	position: absolute;
+	left: 40px;
+	right: 40px;
+	bottom: 40px;
+}
+
+.card .cardContent h3 {
+	font-size: 3em;
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+.card .cardContent h4 {
+	margin: 0;
+	font-size: 1.5em;
+	color: #c2c0c0;
+}
+
+.card .cardIcon {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+
+	padding: 10px 20px;
+
+	border-radius: 20px;
+
+	cursor: pointer;
+}
+
+.card .cardIcon:hover {
+	background-color: #fff1;
+}
+.card .cardIcon img {
+	height: 30px;
+	filter: invert(1);
+}
+
+#sectionRight {
+	flex-grow: 1;
+
+	overflow-y: auto;
+
+	padding-right: 5px;
+}
+
+#sectionRight::-webkit-scrollbar {
+	width: 0;
+}
+
+#sectionRight:hover {
+	padding-right: 0;
+}
+
+#sectionRight:hover::-webkit-scrollbar {
+	width: 5px;
+}
+
+.sectionTitle {
+	margin-top: 50px;
+}
+
+#wrapperPeople {
+	margin: 50px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.person {
+	padding: 20px 30px;
+	margin-right: 10px;
+
+	border-radius: 20px;
+
+	display: flex;
+	align-items: center;
+	gap: 1em;
+
+	background-color: #171721;
+
+	cursor: pointer;
+
+	transition: background-color 300ms ease;
+}
+
+.person:hover {
+	background-color: #3a5155;
+}
+
+.personPic {
+	width: 30px;
+	height: 30px;
+
+	padding: 5px;
+
+	background-color: #fff;
+
+	border-radius: 50%;
+}
+
+.personName {
+	font-size: 1.5em;
+	font-weight: 500;
+}
+.person span {
+	margin-left: auto;
+}
+
+.person span img {
+	width: 30px;
+	height: 30px;
+	filter: invert(1);
+}
+
+@media (max-width: 1600px) {
+	#sectionLeft {
+		width: 60%;
+	}
+	.card .cardContent h3 {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 1400px) {
+	#topBar #searchBar {
+		max-width: 300px;
+	}
+}
+
+@media (max-width: 1200px) {
+	#topBar > div {
+		gap: 30px;
+	}
+	.personPic {
+		display: none;
+	}
+}
+
+@media (max-width: 950px) {
+	#wrapperSettings {
+		margin-right: 20px;
+		gap: 5px;
+	}
+	#topBar #title{
+		margin-left: 20px;
+	}
+	#topBar > div{
+		gap: 0;
+	}
+}
+
+@media (max-width: 800px) {
+	#topBar #searchBar{
+		display: none;
+	}
+	#sectionLeft{
+		width: 50%;
+	}
+	.wrapperCards{
+		gap: 15px;
+	}
+	.card{
+		width: 90px;
+		height: 100px;
+		font-size: .5em;
+	}
+	.card .cardContent{
+		bottom: 15px;
+		left: 15px;
+	}
+	.card .cardContent h4{
+		display: none;
+	}
+}
+
+@media (max-width: 700px) {
+	main{
+		flex-direction: column;
+	}
+	#sectionLeft{
+		width: 100%;
+		padding: 0;
+
+		border-bottom: 2px solid #303030;
+	}
 }
