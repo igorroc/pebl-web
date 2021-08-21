@@ -56,14 +56,9 @@ document.addEventListener("keydown", inicio)
 // ! FIM DO INICIO DO TESTE
 
 function inicio() {
-	informacao.innerHTML = ""
-	let p = document.createElement("p")
-	p.innerText = ""
 	traduzInformacao("stroop", "pretest", "training", lang)
-	p.classList.add("content")
 	let div = document.createElement("div")
 	div.classList.add("feedback")
-	informacao.appendChild(p)
 	informacao.appendChild(div)
 
 	let comandos = document.getElementsByClassName("comandos")[0]
@@ -91,7 +86,7 @@ function treinamento(e) {
 	}
 
 	if (e.key == " ") {
-		informacao.innerHTML = ""
+		informacao.querySelector(".feedback").remove()
 		let comandos = document.getElementsByClassName("comandos")[0]
 		comandos.style = ""
 		informacao.classList.add("displaynone")
@@ -144,11 +139,7 @@ function fase3() {
 
 //transicao-----------------------
 function transition() {
-	var p = document.createElement("p")
-	p.innerText = ""
 	traduzInformacao("stroop", "test", `explain_level${level + 1}`, lang)
-	p.classList.add("content")
-	informacao.appendChild(p)
 	informacao.classList.remove("displaynone")
 }
 
@@ -157,7 +148,6 @@ function removeTransition() {
 	i = 0
 	transicionando = false
 
-	informacao.innerHTML = ""
 	informacao.classList.add("displaynone")
 
 	prox_fase()
@@ -173,21 +163,20 @@ function prox_fase() {
 	}
 }
 
-function finalizar() {
+async function finalizar() {
 	document.removeEventListener("keydown", jogo)
 
-	var p = document.createElement("p")
-	p.innerText = ""
 	traduzInformacao("stroop", "ending", undefined, lang)
-	p.classList.add("content")
 
+	await sleep(300)
+	getUserInfo()
+	
 	var graph_container = document.createElement("div")
 	graph_container.classList.add("graph-container")
 	var canvas = document.createElement("canvas")
 	canvas.id = "graficoBarra"
 	canvas.classList.add("content")
 
-	informacao.appendChild(p)
 	graph_container.appendChild(canvas)
 	informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")

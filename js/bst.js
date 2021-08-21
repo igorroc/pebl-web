@@ -31,7 +31,6 @@ var resultadoFinal = {
 	},
 }
 
-
 var level = 1
 var step = 0
 var transicionando = false
@@ -51,7 +50,6 @@ document.addEventListener("keydown", inicio)
 // ! FIM DO INICIO DO TESTE
 
 function inicio() {
-	informacao.children[0].innerHTML = ""
 	traduzInformacao("bst", "pretest", "instruction_2", lang)
 
 	document.removeEventListener("keydown", inicio)
@@ -59,7 +57,6 @@ function inicio() {
 }
 
 function treinamento() {
-	informacao.children[0].innerHTML = ""
 	informacao.classList.add("displaynone")
 	document.removeEventListener("keydown", treinamento)
 	getTime(resultadoFinal[`fase${level}`].tempo)
@@ -89,13 +86,12 @@ function jogo(choice) {
 	let forma = random_shape()
 	big.classList.add(forma)
 	big.classList.add(random_aux(forma))
-	set(() => {
+	setInterval(() => {
 		showOptions()
 	}, 100)
 }
 
 function transition(txt) {
-	informacao.children[0].innerHTML = ""
 	traduzInformacao("bst", "test", `explain_level${level}`, lang)
 	informacao.classList.remove("displaynone")
 
@@ -113,20 +109,23 @@ function removeTransition() {
 	big.classList.add(forma)
 	big.classList.add(random_aux(forma))
 
-	verifyWhatShape(big)
+	// verifyWhatShape(big)
 
 	window.removeEventListener("keydown", removeTransition)
 
-	informacao.children[0].innerHTML = ""
 	informacao.classList.add("displaynone")
 
 	getTime(resultadoFinal[`fase${level}`].tempo)
 }
 
-function finalizar() {
+async function finalizar() {
 	document.removeEventListener("keydown", jogo)
 
 	traduzInformacao("bst", "ending", undefined, lang)
+
+	await sleep(300)
+	
+	getUserInfo()
 
 	var graph_container = document.createElement("div")
 	graph_container.classList.add("graph-container")
@@ -264,11 +263,4 @@ function showGraphs() {
 		document.getElementById("graficoBarra"),
 		configBarra
 	)
-}
-
-async function pushResponse() {
-	await fetch("http://localhost:3333/test/bst", {
-		method: "POST",
-		body: JSON.stringify(resultadoFinal),
-	})
 }

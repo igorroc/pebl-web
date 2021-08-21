@@ -48,7 +48,7 @@ async function comecarComTimer() {
 	document.removeEventListener("keydown", comecarComTimer)
 	informacao.classList.add("displaynone")
 
-	await timer(4)
+	await timer(2)
 
 	alternar.innerHTML = letra_aleatoria()
 
@@ -60,11 +60,16 @@ async function comecarComTimer() {
 	window.addEventListener("keypress", jogo)
 }
 
-function finalizar() {
+async function finalizar() {
 	document.removeEventListener("keydown", jogo)
+	window.removeEventListener("keydown", jogo)
 
 	traduzInformacao("sternberg", "ending", undefined, lang)
 
+	await sleep(300)
+
+	getUserInfo()
+	
 	var graph_container = document.createElement("div")
 	graph_container.classList.add("graph-container")
 	var canvas = document.createElement("canvas")
