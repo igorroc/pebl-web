@@ -343,7 +343,7 @@ footer {
 	opacity: 0.8;
 }
 
-input[type="submit"] {
+#submitButton {
 	font-family: "Montserrat", sans-serif;
 	font-size: 1em;
 	font-weight: 500;
@@ -361,7 +361,7 @@ input[type="submit"] {
 	transition: all 100ms ease;
 }
 
-input[type="submit"]:hover {
+#submitButton:hover {
 	box-shadow: 0px 0px 10px #605af9;
 	transform: scale(1.02);
 }

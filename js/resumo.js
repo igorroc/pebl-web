@@ -94,6 +94,11 @@ formClose.addEventListener("click", () => {
 	everything.classList.remove("displaynone")
 })
 
+form.addEventListener("submit", (e) => {
+	e.preventDefault()
+	envioFormulario()
+})
+
 function envioFormulario() {
 	var nome = document.getElementById("name")
 	var orientando = document.getElementById("prof")
@@ -102,14 +107,11 @@ function envioFormulario() {
 
 	var linkDoTeste = link.getAttribute("linkDoTeste")
 
-	var linkFinal = `${linkDoTeste}?lang=br&nome=${nome.value}&orientando=${orientando.value}&idade=${idade.value}&email=${email.value}`
+	var linkFinal = `${linkDoTeste}.html?lang=br&nome=${nome.value}&orientando=${orientando.value}&idade=${idade.value}&email=${email.value}`
 
 	console.log(linkFinal)
+
 	window.location.replace(`../testes/${linkFinal}`)
-	
-	alert(
-		`Form com sucesso:\nNome: ${nome.value}\nOrientando: ${orientando.value}\nIdade: ${idade.value}\nEmail: ${email.value}\n\nTeste: ${linkDoTeste}`
-	)
 }
 
 // GRAFICOS
