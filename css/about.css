@@ -43,17 +43,33 @@ body {
 
 .resumo {
 	display: flex;
-	width: 60%;
-	margin: 100px auto;
+	margin: 100px 0;
 	align-items: center;
+	justify-content: center;
+}
+
+.resumo > div {
+	display: flex;
+
+	align-items: center;
+	width: 60%;
 }
 
 .resumo .text {
 	margin-right: 50px;
 }
 
+.resumo .text p {
+	line-height: 2em;
+	max-width: 700px;
+}
+
+.resumo .photo {
+	margin-left: auto;
+}
+
 .resumo .photo img {
-	height: 300px;
+	max-height: 400px;
 }
 
 .participantes {
@@ -195,13 +211,22 @@ body {
 	color: #fff;
 }
 
+@media (max-width: 1700px) {
+	.resumo .text p{
+		line-height: 1.5em;
+	}
+	.resumo .photo img {
+		max-height: 300px;
+	}
+}
+
 @media (max-width: 1500px) {
-	.resumo {
+	.resumo > div {
 		width: 80%;
 	}
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
 	.resumo .photo {
 		display: none;
 	}

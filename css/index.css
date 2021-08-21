@@ -101,6 +101,7 @@ a {
 	letter-spacing: 3px;
 	line-height: 3rem;
 	margin: 0;
+	text-align: center;
 }
 
 .topico > .testsList {
@@ -119,7 +120,7 @@ a {
 .topico > .testsList > .testes > .teste {
 	min-width: 100px;
 	max-width: 500px;
-	height: 250px;
+	min-height: 250px;
 
 	display: flex;
 	flex-grow: 1;
@@ -153,6 +154,7 @@ a {
 	width: 90%;
 	text-align: center;
 	margin: 1rem auto;
+	line-height: 1.5em;
 }
 
 .topico > .testsList > .testes > .teste > a {
