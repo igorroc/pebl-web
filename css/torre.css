@@ -1,23 +1,25 @@
 @import "font.css";
+@import "colors.css";
 @import "pattern.css";
 @import "header-menu.css";
 @import "variables.css";
+@import "loader.css";
 
 body {
 	margin: 0px;
-	background-color: var(--cor-de-fundo);
+	background: var(--gradiente-preto);
 }
 
 .teste {
-	display: grid;
-	grid-template-rows: 2fr 1fr 2fr;
+	display: flex;
+	flex-direction: column;
 	width: 80%;
-	height: 800px;
 	margin: 50px auto;
 }
 
-.copiar {
-	background-color: #e9b25a;
+#copiar {
+	height: 300px;
+	background-color: #333;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: center;
@@ -25,30 +27,52 @@ body {
 }
 
 .mao {
-	background-color: #a4d844;
+	height: 100px;
+	background-color: #eceee8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.inventario {
-	background-color: #52e7ce;
+#inventario {
+	background-color: #444;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	align-items: center;
+	align-items: end;
 	justify-content: center;
+}
+
+#inventario .container {
 	cursor: pointer;
 }
 
 .container {
-	display: grid;
-	grid-template-rows: 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: flex-start;
 	width: 100%;
 	height: 100%;
 	border: #202020 solid 3px;
+
+	box-sizing: border-box;
+}
+
+.container.max-height-1 {
+	height: 60px;
+}
+
+.container.max-height-2 {
+	height: 120px;
+}
+
+.container.max-height-3 {
+	height: 180px;
 }
 
 .disco {
 	width: 100px;
-	height: 100px;
-	border: #202020 solid 5px;
+	height: 50px;
+	border: #000 solid 2px;
 	margin: 0 auto;
 	color: white;
 	font-size: 3rem;
@@ -68,55 +92,27 @@ body {
 	background-color: blue;
 }
 
-/* OPÇÕES */
-.column-1 {
-	grid-column: 1;
+#cliques{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
 }
 
-.column-2 {
-	grid-column: 2;
+#wrapperCliques{
+	display: flex;
+	gap: 10px;
 }
 
-.column-3 {
-	grid-column: 3;
+#wrapperCliques span{
+	width: 30px;
+	height: 30px;
+
+	border: 2px solid #fff;
+	border-radius: 50%;
 }
 
-.row-1 {
-	grid-row: 1;
-}
-
-.row-2 {
-	grid-row: 2;
-}
-
-.row-3 {
-	grid-row: 3;
-}
-
-.diminuir {
-	animation: scale-down 0.3s ease-in;
-}
-
-.espera {
-	transform: scale(0);
-	opacity: 0;
-}
-
-.aumentar {
-	animation: scale-up 0.3s ease-in-out;
-}
-
-/* KEYFRAMES */
-@keyframes scale-up {
-	from {
-		transform: scale(0);
-		opacity: 0;
-	}
-}
-
-@keyframes scale-down {
-	to {
-		transform: scale(0);
-		opacity: 0;
-	}
+#wrapperCliques .cliquePossivel{
+	background-color: red;
 }
