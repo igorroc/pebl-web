@@ -111,7 +111,7 @@ function envioFormulario() {
 
 	console.log(linkFinal)
 
-	window.location.replace(`../testes/${linkFinal}`)
+	window.location.replace(`./testes/${linkFinal}`)
 }
 
 // GRAFICOS
