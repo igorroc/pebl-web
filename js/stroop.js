@@ -1,7 +1,7 @@
 var url = new URL(window.location)
 var lang = url.searchParams.get("lang") || "br"
 var body = document.getElementsByTagName("body")[0]
-var teste = document.getElementsByClassName("testes")[0]
+var teste = document.getElementsByClassName("teste_stroop")[0]
 var filhosBody = body.children
 
 const colors = ["red", "blue", "yellow", "green"]
