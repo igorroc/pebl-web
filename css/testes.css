@@ -30,6 +30,35 @@ footer{
 	height: 100px;
 }
 
+#filter{
+	width: 80%;
+	max-width: 800px;
+
+	margin: 0 auto;
+	padding: 50px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border: 1px solid #f9f9f9;
+}
+
+#filter h5{
+	font-size: 1rem;
+}
+
+#wrapperFiltros{
+	margin-top: 20px;
+	display: flex;
+	gap: 20px;
+}
+
+#wrapperFiltros h6{
+	font-size: 1rem;
+}
+
 #wrapper-cards{
 	width: 90%;
 	max-width: 1700px;
@@ -88,7 +117,8 @@ footer{
 	transition: opacity 300ms ease;
 }
 
-.card:hover .hoverLink{
+.card:hover .hoverLink,
+.card:focus .hoverLink{
 	opacity: 1;
 }
 
