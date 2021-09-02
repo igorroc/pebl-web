@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Testes</title>
 		<link href="./css/testes.css" rel="stylesheet" type="text/css" />
+		<link href="./css/tooltip.css" rel="stylesheet" type="text/css" />
 
 		<link rel="shortcut icon" href="assets/img/logo_brain.png" />
 	</head>
@@ -22,7 +23,385 @@
 			<a class="login" href="./login">Cadastrar-se</a>
 		</header>
 
-		<h1 style="text-align: center">FAZER PÁGINA DE TESTES</h1>
+		<h1 style="text-align: center">TESTES</h1>
+		<div id="filter">
+			<h5>Filtros:</h5>
+		</div>
+		<div id="wrapper-cards">
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/stroop.png"
+							alt="Stroop image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=1">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>Stroop</h2>
+						<p>
+							Avalia o controle inibitório, memória de trabalho,
+							atenção seletiva e monitoramento mental.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Controle Inibitório.</span
+								><img src="./assets/icons/controle.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Memória de Curto Prazo</span
+								><img src="./assets/icons/memoria_curta.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Atenção Seletiva</span
+								><img src="./assets/icons/atencao.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Monitoramento Mental</span
+								><img src="./assets/icons/monitoramento.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/bst.png"
+							alt="Stroop image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=2">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>BST</h2>
+						<p>
+							Avalia a interferência cognitiva (influência de um
+							estímulo irrelevante na emissão de uma resposta) e a
+							capacidade de inibi-la.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Interferência Cognitiva</span
+								><img src="./assets/icons/interferencia.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/sternberg.jpg"
+							alt="Sternberg image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=3">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>Sternberg</h2>
+						<p>
+							Avalia a memória de curto prazo, um mecanismo da
+							memória temporária.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Memória de Curto Prazo</span
+								><img src="./assets/icons/memoria_curta.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/torre_londres.jpg"
+							alt="Stroop image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=4">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>Torre de Londres</h2>
+						<p>
+							Avalia as habilidades de planejamento e solução de
+							problemas.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Planejamento</span
+								><img src="./assets/icons/planejamento.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Solução de Problemas</span
+								><img
+									src="./assets/icons/solucao_problemas.svg"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/stroop.png"
+							alt="Stroop image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=1">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>Stroop</h2>
+						<p>
+							Avalia o controle inibitório, memória de trabalho,
+							atenção seletiva e monitoramento mental.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Controle Inibitório.</span
+								><img src="./assets/icons/controle.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Memória de Curto Prazo</span
+								><img src="./assets/icons/memoria_curta.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Atenção Seletiva</span
+								><img src="./assets/icons/atencao.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Monitoramento Mental</span
+								><img src="./assets/icons/monitoramento.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/bst.png"
+							alt="Stroop image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=2">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>BST</h2>
+						<p>
+							Avalia a interferência cognitiva (influência de um
+							estímulo irrelevante na emissão de uma resposta) e a
+							capacidade de inibi-la.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Controle Inibitório.</span
+								><img src="./assets/icons/controle.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Memória de Curto Prazo</span
+								><img src="./assets/icons/memoria_curta.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Atenção Seletiva</span
+								><img src="./assets/icons/atencao.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Monitoramento Mental</span
+								><img src="./assets/icons/monitoramento.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/sternberg.jpg"
+							alt="Sternberg image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=3">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>Sternberg</h2>
+						<p>
+							Avalia a memória de curto prazo, um mecanismo da
+							memória temporária.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Controle Inibitório.</span
+								><img src="./assets/icons/controle.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Memória de Curto Prazo</span
+								><img src="./assets/icons/memoria_curta.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Atenção Seletiva</span
+								><img src="./assets/icons/atencao.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Monitoramento Mental</span
+								><img src="./assets/icons/monitoramento.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-top">
+					<div class="card-img">
+						<img
+							src="./assets/img/testes/torre_londres.jpg"
+							alt="Stroop image"
+						/>
+					</div>
+					<div class="hoverLink">
+						<a class="btn-cta" href="./resumo?id=4">
+							<span class="btn-content">Saiba mais</span>
+							<img
+								class="btn-icon cl-invert"
+								src="./assets/icons/arrow-right-solid.svg"
+							/>
+						</a>
+					</div>
+				</div>
+				<div class="card-bottom">
+					<div class="card-description">
+						<h2>Torre de Londres</h2>
+						<p>
+							Avalia as habilidades de planejamento e solução de
+							problemas.
+						</p>
+					</div>
+					<div class="card-habilities">
+						<h3>Habilidades</h3>
+						<div class="icons">
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Controle Inibitório.</span
+								><img src="./assets/icons/controle.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip"
+									>Memória de Curto Prazo</span
+								><img src="./assets/icons/memoria_curta.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Atenção Seletiva</span
+								><img src="./assets/icons/atencao.svg" />
+							</div>
+							<div class="icon tooltip-holder">
+								<span class="tooltip">Monitoramento Mental</span
+								><img src="./assets/icons/monitoramento.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer></footer>
 
 		<div id="loader-wrapper" class="loader-wrapper">
 			<div id="loader" class="loader box-loader">
