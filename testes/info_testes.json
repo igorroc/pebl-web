@@ -122,20 +122,8 @@
 		},
 		"controllers": {
 			"1": {
-				"title": "keyboard",
-				"description": "Teclado"
-			},
-			"2": {
 				"title": "mouse",
 				"description": "Mouse"
-			},
-			"3": {
-				"title": "audio",
-				"description": "Caixa de Som"
-			},
-			"4": {
-				"title": "headphone",
-				"description": "Fone de Ouvido"
 			}
 		}
 	}
