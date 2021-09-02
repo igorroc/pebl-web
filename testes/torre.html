@@ -13,50 +13,52 @@
 	</head>
 
 	<body>
-		<header class="topnav white-mode">
+		<header class="topnav">
 			<a class="logo" href="../"
 				><img src="../assets/img/logo_brain.png" alt="Logo"
 			/></a>
 			<a class="inicio" href="../">Início</a>
-				<a class="testes" href="../testes.html">Testes</a>
-				<a class="sobre" href="../about">Sobre</a>
+			<a class="testes" href="../testes.html">Testes</a>
+			<a class="sobre" href="../about">Sobre</a>
 			<a class="contato" href="../contact">Contato</a>
 			<a class="login" href="../usuario">Igor</a>
 		</header>
 
-		<div class="teste">
-			<div id="copiar">
-				<div class="container"></div>
-				<div class="container">
-					<div class="disco azul row-3"></div>
-					<div class="disco verde row-3"></div>
+		<main>
+			<div class="teste">
+				<div id="copiar">
+					<div class="container"></div>
+					<div class="container">
+						<div class="disco azul row-3"></div>
+						<div class="disco verde row-3"></div>
+					</div>
+					<div class="container">
+						<div class="disco vermelho row-3"></div>
+					</div>
 				</div>
-				<div class="container">
-					<div class="disco vermelho row-3"></div>
+
+				<div id="mao" class="mao"></div>
+
+				<div id="inventario">
+					<div id="slot1" class="container max-height-3">
+						<div class="disco verde row-3"></div>
+						<div class="disco vermelho row-3"></div>
+					</div>
+					<div id="slot2" class="container max-height-2">
+						<div class="disco azul row-3"></div>
+					</div>
+					<div id="slot3" class="container max-height-1"></div>
 				</div>
 			</div>
 
-			<div id="mao" class="mao"></div>
-
-			<div id="inventario">
-				<div id="slot1" class="container max-height-3">
-					<div class="disco verde row-3"></div>
-					<div class="disco vermelho row-3"></div>
+			<div id="cliques">
+				<h3>Cliques restantes:</h3>
+				<div id="wrapperCliques">
+					<span class="cliquePossivel"></span>
+					<span class="cliquePossivel"></span>
 				</div>
-				<div id="slot2" class="container max-height-2">
-					<div class="disco azul row-3"></div>
-				</div>
-				<div id="slot3" class="container max-height-1"></div>
 			</div>
-		</div>
-
-		<div id="cliques">
-			<h3>Cliques restantes:</h3>
-			<div id="wrapperCliques">
-				<span class="cliquePossivel"></span>
-				<span class="cliquePossivel"></span>
-			</div>
-		</div>
+		</main>
 
 		<div id="informacao" class="informacao backdrop-blur">
 			<p class="content">INFORMAÇÃO SOBRE O TESTE</p>

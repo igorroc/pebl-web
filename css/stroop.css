@@ -11,13 +11,20 @@ body {
 	overflow: hidden;
 }
 
+main{
+	height: calc(100vh - 50px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .teste_stroop {
 	background: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(20px);
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 	width: 1200px;
 	height: 60vh;
-	margin: 10px auto;
 	padding: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -37,7 +44,6 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	width: 1200px;
-	margin: 0 auto;
 	margin-top: 50px;
 	bottom: 50px;
 }

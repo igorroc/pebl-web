@@ -8,13 +8,22 @@
 body {
 	margin: 0px;
 	background: var(--gradiente-preto);
+	overflow: hidden;
+}
+
+
+main{
+	height: calc(100vh - 50px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .teste {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
-	margin: 50px auto;
 }
 
 #copiar {
@@ -28,14 +37,14 @@ body {
 
 .mao {
 	height: 100px;
-	background-color: #eceee8;
+	background-color: #555;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 #inventario {
-	background-color: #444;
+	background-color: #333;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: end;
@@ -98,6 +107,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	color: white;
+
+	margin-top: 50px;
 }
 
 #wrapperCliques{
