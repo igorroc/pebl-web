@@ -171,17 +171,17 @@ async function finalizar() {
 	await sleep(300)
 	getUserInfo()
 	
-	var graph_container = document.createElement("div")
-	graph_container.classList.add("graph-container")
-	var canvas = document.createElement("canvas")
-	canvas.id = "graficoBarra"
-	canvas.classList.add("content")
+	// var graph_container = document.createElement("div")
+	// graph_container.classList.add("graph-container")
+	// var canvas = document.createElement("canvas")
+	// canvas.id = "graficoBarra"
+	// canvas.classList.add("content")
 
-	graph_container.appendChild(canvas)
-	informacao.appendChild(graph_container)
+	// graph_container.appendChild(canvas)
+	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
 
-	showGraphs()
+	// showGraphs()
 }
 
 function showGraphs() {
