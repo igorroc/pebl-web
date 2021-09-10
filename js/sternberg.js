@@ -33,7 +33,7 @@ var resultadoFinal = {
 
 // ! INICIO DINAMICO
 lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
-traduzInformacao("sternberg", "pretest", "instruction", lang)
+traduzInformacao("sternberg", "pre_test", "instruction", lang)
 document.addEventListener("keydown", inicio)
 // ! FIM DO INICIO DINAMICO
 
@@ -69,7 +69,7 @@ async function finalizar() {
 	await sleep(300)
 
 	getUserInfo()
-	
+
 	// var graph_container = document.createElement("div")
 	// graph_container.classList.add("graph-container")
 	// var canvas = document.createElement("canvas")

@@ -45,12 +45,12 @@ var aux = {
 }
 
 // ! INICIO DO TESTE
-traduzInformacao("bst", "pretest", "instruction", lang)
+traduzInformacao("bst", "pre_test", "instruction", lang)
 document.addEventListener("keydown", inicio)
 // ! FIM DO INICIO DO TESTE
 
 function inicio() {
-	traduzInformacao("bst", "pretest", "instruction_2", lang)
+	traduzInformacao("bst", "pre_test", "instruction_2", lang)
 
 	document.removeEventListener("keydown", inicio)
 	document.addEventListener("keydown", treinamento)
@@ -124,7 +124,7 @@ async function finalizar() {
 	traduzInformacao("bst", "ending", undefined, lang)
 
 	await sleep(300)
-	
+
 	getUserInfo()
 
 	// var graph_container = document.createElement("div")

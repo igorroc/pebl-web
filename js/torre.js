@@ -46,7 +46,7 @@ for (const slot of slots) {
 	})
 }
 
-traduzInformacao("torre", "pretest", "instruction", lang)
+traduzInformacao("torre", "pre_test", "instruction", lang)
 window.addEventListener("click", inicio)
 
 function inicio() {
@@ -89,7 +89,7 @@ function insereDisco(slot) {
 	if (checkWin()) {
 		faseAtual++
 
-		traduzInformacao("torre", "test", "nextLevel", lang)
+		traduzInformacao("torre", "test", "next_level", lang)
 		informacao.classList.remove("displaynone")
 		window.addEventListener("mousedown", proximaFase)
 	}
@@ -195,7 +195,7 @@ function alteraCliques() {
 
 function perdeuPorClique() {
 	faseAtual++
-	traduzInformacao("torre", "test", "loseByClick", lang)
+	traduzInformacao("torre", "test", "lose_by_click", lang)
 
 	informacao.classList.remove("displaynone")
 

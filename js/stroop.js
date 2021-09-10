@@ -44,19 +44,19 @@ var filhos = teste.children
 var informacao = document.getElementById("informacao")
 
 // ! INICIO DO TESTE
-if(window.innerHeight <= 630){
+if (window.innerHeight <= 630) {
 	alert("A tela do seu computador é muito pequena para realizar o teste")
 }
 
 for (var j = 0; j < 24; j++) {
 	filhos[j].children[0].classList.add(`bg-${coresFase1[j]}`)
 }
-traduzInformacao("stroop", "pretest", "instruction", lang)
+traduzInformacao("stroop", "pre_test", "instruction", lang)
 document.addEventListener("keydown", inicio)
 // ! FIM DO INICIO DO TESTE
 
 function inicio() {
-	traduzInformacao("stroop", "pretest", "training", lang)
+	traduzInformacao("stroop", "pre_test", "training", lang)
 	let div = document.createElement("div")
 	div.classList.add("feedback")
 	informacao.appendChild(div)
@@ -170,7 +170,7 @@ async function finalizar() {
 
 	await sleep(300)
 	getUserInfo()
-	
+
 	// var graph_container = document.createElement("div")
 	// graph_container.classList.add("graph-container")
 	// var canvas = document.createElement("canvas")
