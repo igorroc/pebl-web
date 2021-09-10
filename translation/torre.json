@@ -1,40 +1,28 @@
 {
-	"pretest": {
+	"pre_test": {
 		"instruction": {
-			"br": "Vai começar o 'Torre de Londres'\nClique com o mouse para começar",
-			"us": "You are about to perform a task called the 'Tower of London'.\nYour goal is to move a pile of disks from their original configuration to the configuration shown on the top of the screen. You can only move one disk at a time, and you cannot move a disk onto a pile that has no more room (indicated by the size of the grey rectangle). To move a disk, click on the pile you want to "
-		},
-		"training": {
-			"br": "Antes de começar, reserve um momento para aprender o mapeamento entre as cores e as teclas.\nPressione as teclas [1, 2, 3 ou 4] consecutivamente para praticar os estímulos e a barra de espaço para iniciar o teste.",
-			"us": "Before we begin, take a moment to learn the mapping between colors and the keys.\nPress the keys [1, 2, 3 or 4] consecutively to practice the stimuli, and space bar to begin the test."
+			"br": "Você está prestes a iniciar um teste chamado 'Torre de Londres'.\nSeu objetivo é mover a pilha de discos de sua configuração original para a configuração mostrada no alto da tela.  Você pode mover apenas um disco por vez, e você não pode mover um disco para uma pilha que não tem mais espaço (indicado pelo tamanho do retângulo cinza).  Para mover um disco, clique na pilha da qual você quer retirar um disco e ele ficará acima das pilhas.  Então, clique em outra pilha e o disco se moverá para essa pilha.",
+			"en": "You are about to perform a task called the 'Tower of London'.\nYour goal is to move a pile of disks from their original configuration to the configuration shown on the top of the screen. You can only move one disk at a time, and you cannot move a disk onto a pile that has no more room (indicated by the size of the grey rectangle). To move a disk, click on the pile you want to "
 		},
 		"start_test": {
 			"br": "Pressione qualquer tecla para começar.",
-			"us": "Press any key to begin."
+			"en": "Press any key to begin."
 		}
 	},
 	"test": {
-		"nextLevel": {
-			"br": "Passou da fase!\nClique na tela para continuar",
-			"us": "Trial Complete.\nClick mouse to continue to the next trial."
+		"next_level": {
+			"br": "Problema resolvido.\nClique com o mouse para continuar para o próximo problema.",
+			"en": "Trial Complete.\nClick mouse to continue to the next trial."
 		},
-		"loseByClick": {
-			"br": "Passou do máximo numero de cliques",
-			"us": "Trial Incomplete.\nYou failed to complete the problem in the number of moves required.\nClick screen to move on to the next problem."
-		},
-		"explain_level2": {
-			"br": "Desta vez, nomeie as cores das palavras o mais rápido possível.\nSiga o retângulo de borda branca e pressione a tecla correta [1, 2, 3 ou 4] de acordo.\n\nPressione qualquer tecla para começar.",
-			"us": "This time, name the colors of the words as quickly as you can.\nFollow the white border rectangle and press the correct key [1, 2, 3 or 4] accordingly.\n\nPress any key to begin."
-		},
-		"explain_level3": {
-			"br": "Novamente, nomeie as cores em que as palavras são impressas o mais rápido possível. Não leia a palavra! Em vez disso, nomeie a cor na qual a palavra foi impressa.\n\nPressione qualquer tecla para começar.",
-			"us": "Again, name the colors in which the words are printed as quickly as you can. Don't read the word! Instead, name the color in which the word is printed.\n\nPress any key to begin."
+		"lose_by_click": {
+			"br": "Problema não resolvido.\nVocê não conseguiu terminar o problema no número de movimentos necessários.\nClique com o mouse para continuar para o próximo problema.",
+			"en": "Trial Incomplete.\nYou failed to complete the problem in the number of moves required.\nClick screen to move on to the next problem."
 		}
 	},
 	"ending": {
 		"end": {
 			"br": "Você finalizou!\nObrigado por participar.",
-			"us": "You are now finished!\nThank you for participating."
+			"en": "You are now finished!\nThank you for participating."
 		}
 	}
 }

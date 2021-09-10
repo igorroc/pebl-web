@@ -1,34 +1,34 @@
 {
-	"pretest": {
+	"pre_test": {
 		"instruction": {
 			"br": "Neste jogo, você verá uma forma no centro da tela, como o círculo azul que você vê abaixo. Baseado em uma regra, você determinará se a forma do centro da tela corresponde as formas dos cantos inferiores direito ou esquerdo da tela.\nSe a forma do centro da tela corresponder à forma da esquerda, clique na forma da esquerda. Se a forma do centro da tela corresponder à forma da direita, clique na forma da direita.\n Pressione qualquer tecla para prosseguir.",
-			"us": "In this game, you will see a shape in the center of the screen, like the blue circle you see below. You will be asked to determine whether it belongs on the right side or left side, based on a rule.\nIf it belongs on the left, click or touch the left shape. If it belongs on the right, click or touch the right shape.\nPress any key to continue to the first part of the game."
+			"en": "In this game, you will see a shape in the center of the screen, like the blue circle you see below. You will be asked to determine whether it belongs on the right side or left side, based on a rule.\nIf it belongs on the left, click or touch the left shape. If it belongs on the right, click or touch the right shape.\nPress any key to continue to the first part of the game."
 		},
 		"instruction_2": {
 			"br": "Nesta rodada, responda clicando ou tocando na forma dos cantos inferiores direito ou esquerdo da tela, que corresponderem à FORMA que você vê no centro da tela. Ignore a cor dos objetos e considere apenas a forma. Começaremos com uma rodada de treinos. \nPressione qualquer tecla para começar.",
-			"us": "In this round, respond by clicking or touching the smaller shape corresponding to the SHAPE you see at the center of the screen. Ignore the color of the objects.\nWe will start with a practice round\nPress any key to begin."
+			"en": "In this round, respond by clicking or touching the smaller shape corresponding to the SHAPE you see at the center of the screen. Ignore the color of the objects.\nWe will start with a practice round\nPress any key to begin."
 		}
 	},
 	"test": {
 		"explain_level1": {
 			"br": "Ótimo! Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à FORMA que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
-			"us": "Good. In the next round, respond by clicking or touching the smaller shape corresponding to the SHAPE you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
+			"en": "Good. In the next round, respond by clicking or touching the smaller shape corresponding to the SHAPE you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		},
 		"explain_level2": {
 			"br": "Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à forma que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
-			"us": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
+			"en": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		},
 		"explain_level3": {
 			"br": "Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à forma que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
-			"us": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
+			"en": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		},
 		"explain_level4": {
 			"br": "Nesta rodada, responda clicando ou tocando nas formas pequenas que corresponderem à forma que você vê no centro da tela. Ignore a cor dos objetos.\nPressione qualquer tecla para começar.",
-			"us": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
+			"en": "In the next round, respond by clicking or touching the smaller shape corresponding to the shape you see at the center of the screen. Ignore the color of the objects.\nPress any key to begin."
 		}
 	},
 	"ending": {
 		"br": "Obrigado por participar desse teste!\nPor favor avise ao seu pesquisador que você finalizou.",
-		"us": "Thank you for participating in this study.\nPlease alert the researcher that you are done."
+		"en": "Thank you for participating in this study.\nPlease alert the researcher that you are done."
 	}
 }
