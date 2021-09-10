@@ -266,6 +266,7 @@ main {
 
 .card .cardIcon:hover {
 	background-color: #fff1;
+	color: white;
 }
 .card .cardIcon img {
 	height: 30px;
@@ -378,53 +379,53 @@ main {
 		margin-right: 20px;
 		gap: 5px;
 	}
-	#topBar #title{
+	#topBar #title {
 		margin-left: 20px;
 	}
-	#topBar > div{
+	#topBar > div {
 		gap: 0;
 	}
 }
 
 @media (max-width: 800px) {
-	#topBar #title h2{
+	#topBar #title h2 {
 		margin: 0;
 	}
-	#topBar #searchBar{
+	#topBar #searchBar {
 		display: none;
 	}
-	#sectionLeft{
+	#sectionLeft {
 		width: 50%;
 	}
-	.wrapperCards{
+	.wrapperCards {
 		gap: 15px;
 	}
-	.card{
+	.card {
 		width: 90px;
 		height: 100px;
-		font-size: .5em;
+		font-size: 0.5em;
 	}
-	.card .cardContent{
+	.card .cardContent {
 		bottom: 15px;
 		left: 15px;
 	}
-	.card .cardContent h4{
+	.card .cardContent h4 {
 		display: none;
 	}
 }
 
 @media (max-width: 700px) {
-	main{
+	main {
 		flex-direction: column;
 		gap: 0;
 	}
-	#sectionLeft{
+	#sectionLeft {
 		width: calc(100% - 40px);
 		padding: 0 20px;
 
 		border-bottom: 2px solid #303030;
 	}
-	#sectionRight{
+	#sectionRight {
 		width: calc(100% - 40px);
 		padding: 0 20px;
 	}
