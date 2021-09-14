@@ -1,35 +1,32 @@
 {
-   "compilerOptions": {
-     "target": "es5",                          
-     "module": "commonjs",                    
-      "outDir": "./dist",                        
-      "rootDir": "./src",                       
-     "typeRoots": [
-       "src/shared/custom_typings",
-       "./custom_typings",
-       "./@types",
-       "./node_modules/@types"
-     ],
- 
-    
-     "strict": true,                          
-      "strictPropertyInitialization": false,
-      "strictNullChecks": false,  
-       "baseUrl": "./src",                       
-      "paths": {
-        "@modules/*": ["modules/*"],
-        "@config/*": ["config/*"],
-        "@shared/*": ["shared/*"],
-        "@spec/*": ["spec/*"]
-      },                           
-     "esModuleInterop": true,                    
-   
-      "experimentalDecorators": true,        
-      "emitDecoratorMetadata": true,     
- 
- 
-     "skipLibCheck": true,                     
-     "forceConsistentCasingInFileNames": true 
-   }
- }
- 
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"typeRoots": [
+			"src/shared/custom_typings",
+			"./custom_typings",
+			"./@types",
+			"./node_modules/@types"
+		],
+
+		"strict": true,
+		"strictPropertyInitialization": false,
+		"strictNullChecks": false,
+		"baseUrl": "./src",
+		"paths": {
+			"@modules/*": ["modules/*"],
+			"@config/*": ["config/*"],
+			"@shared/*": ["shared/*"],
+			"@spec/*": ["spec/*"]
+		},
+		"esModuleInterop": true,
+
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}

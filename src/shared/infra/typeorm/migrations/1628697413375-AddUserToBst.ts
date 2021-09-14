@@ -5,7 +5,8 @@ export class AddUserToBst1628697413375 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn('bst', new TableColumn({
             name: 'user_id',
-            type: 'uuid'
+            type: 'uuid',
+            isNullable: true
         }));
 
         await queryRunner.createForeignKey('bst', new TableForeignKey({

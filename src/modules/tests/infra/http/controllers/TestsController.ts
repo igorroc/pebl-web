@@ -24,6 +24,8 @@ export default class BstController {
             tooslow
         } = request.body;
 
+        console.error(request.body);
+
         const user_id = request.body;
 
         const createTest = container.resolve(CreateTestsService);
@@ -42,6 +44,8 @@ export default class BstController {
             rt,
             tooslow,
         });
+
+        console.log(test)
 
         return response.json(test); 
     } 

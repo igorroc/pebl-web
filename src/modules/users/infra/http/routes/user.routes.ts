@@ -18,4 +18,6 @@ usersRouter.post('/create', usersController.create);
 // usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), userAvatarController.update);
 usersRouter.get('/list', usersController.index);
 
+usersRouter.post('/testando', (req, res) => {console.log(req.body)})
+
 export default usersRouter;

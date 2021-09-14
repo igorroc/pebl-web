@@ -16,55 +16,66 @@ export class CreateBstTest1628695628554 implements MigrationInterface {
                 {
                     name: 'deadline',
                     type: 'timestamp with time zone',
+                    isNullable: true,
                 },
                 {
                     name: 'subnum',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'type',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'block',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'congruency',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'trial',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'stim',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'resp',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'corr',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'rt',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {
                     name: 'tooslow',
                     type: 'varchar',
+                    isNullable: true,
                     isArray: true
                 },
                 {

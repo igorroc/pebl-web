@@ -6,7 +6,7 @@ import TestsController from '../controllers/TestsController';
 const testsRouter = Router();
 const testsController = new TestsController();
 
-testsRouter.use(ensureAuthenticated);
+// testsRouter.use(ensureAuthenticated);
 testsRouter.post('/bst', testsController.create_bst);
 testsRouter.post('/sternberg', testsController.create_sternberg);
 testsRouter.post('/tol', testsController.create_tol);

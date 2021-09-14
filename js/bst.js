@@ -137,6 +137,7 @@ async function finalizar() {
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
 
+	pushResponse()
 	// showGraphs()
 }
 
