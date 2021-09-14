@@ -20,9 +20,9 @@ var coresFase3 = randomColors()
 var textosFase2 = randomWords()
 var textosFase3 = randomColorNames()
 
-let testeblabla = []
-let blabla
-traducaoTeste(testeblabla)
+// let testeblabla = []
+// let blabla
+// traducaoTeste(testeblabla)
 
 var resultadoFinal = {
 	fase1: {
@@ -180,7 +180,7 @@ async function finalizar() {
 	// graph_container.appendChild(canvas)
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
-
+	await pushResponse()
 	// showGraphs()
 }
 
