@@ -14,11 +14,6 @@ export class CreateBstTest1628695628554 implements MigrationInterface {
                     default: 'uuid_generate_v4()',
                 },
                 {
-                    name: 'deadline',
-                    type: 'timestamp with time zone',
-                    isNullable: true,
-                },
-                {
                     name: 'subnum',
                     type: 'varchar',
                     isNullable: true,

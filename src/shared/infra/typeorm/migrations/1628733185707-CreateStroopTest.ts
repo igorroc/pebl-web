@@ -15,10 +15,6 @@ export class CreateStroopTest1628733185707 implements MigrationInterface {
                         default: 'uuid_generate_v4()',
                     },
                     {
-                        name: 'deadline',
-                        type: 'timestamp with time zone',
-                    },
-                    {
                         name: 'subnum',
                         type: 'varchar',
                         isArray: true

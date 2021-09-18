@@ -15,10 +15,6 @@ export class CreateTolTest1628733289602 implements MigrationInterface {
                         default: 'uuid_generate_v4()'
                     },
                     {
-                        name: 'deadline',
-                        type: 'timestamp with time zone',
-                    },
-                    {
                         name: 'sub',
                         type: 'varchar',
                         isArray: true,

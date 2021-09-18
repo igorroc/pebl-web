@@ -27,7 +27,6 @@ class TestsRepository implements ITestsRepository{
     }
 
     public async create_bst({
-        deadline,
         subnum,
         type,
         block,
@@ -39,8 +38,7 @@ class TestsRepository implements ITestsRepository{
         rt,
         tooslow
     }: ICreateBstDTO): Promise<Bst>{
-        const test = this.ormRepositoryB.create({  
-            deadline,
+        const test = this.ormRepositoryB.create({
             subnum,
             type,
             block,
@@ -60,7 +58,6 @@ class TestsRepository implements ITestsRepository{
 
     public async create_sternberg({
         user_id,
-        deadline,
         subnum,
         length,
         trial,
@@ -73,7 +70,6 @@ class TestsRepository implements ITestsRepository{
     }: ICreateSternbergDTO): Promise<Sternberg>{
         const test = this.ormRepositoryS.create({  
             user_id,
-            deadline,
             subnum,
             length,
             trial,
@@ -92,7 +88,6 @@ class TestsRepository implements ITestsRepository{
 
     public async create_tol({
         user_id,
-        deadline,
         sub,
         trial,
         size,
@@ -109,7 +104,6 @@ class TestsRepository implements ITestsRepository{
     }: ICreateTolDTO): Promise<Tol>{
         const test = this.ormRepositoryT.create({  
             user_id,
-            deadline,
             sub,
             trial,
             size,
@@ -132,7 +126,6 @@ class TestsRepository implements ITestsRepository{
 
     public async create_stroop({   
         user_id,
-        deadline,
         subnum,
         round,
         block,
@@ -155,7 +148,6 @@ class TestsRepository implements ITestsRepository{
     }: ICreateStroopDTO): Promise<Stroop>{
         const test = this.ormRepositoryST.create({  
             user_id,
-            deadline,
             subnum,
             round,
             block,

@@ -1,6 +1,5 @@
 export default interface ICreateStroopDTO {
     user_id: string;
-    deadline: Date[];
     subnum: number[];
     round: number[];
     block: number[];

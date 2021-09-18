@@ -1,6 +1,5 @@
 export default interface ICreateBstDTO {
     user_id: string;
-    deadline: Date[];
     subnum: number[];
     type: string[];
     block: number[];

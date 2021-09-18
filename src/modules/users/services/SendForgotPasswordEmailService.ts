@@ -40,14 +40,12 @@ class SendForgotPasswordEmailService{
 
         await this.mailProvider.sendMail({
             to: {
-                name: user.name,
                 email: user.email,
             },
             subject: '[PEBL-BR] Recuperação de Senha',
             templateData: {
                 file: forgotPasswordTemplate,
                 variables: {
-                    name: user.name,
                     link: `http://localhost:3000/reset_password?token=${token}`,
                 },
             },

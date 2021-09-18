@@ -11,7 +11,6 @@ import StroopRepository from '../../typeorm/repositories/StroopRepository';
 export default class BstController { 
     public async create_bst(request: Request, response: Response): Promise<Response> {
         const {
-            deadline,
             subnum,
             type,
             block,
@@ -32,7 +31,6 @@ export default class BstController {
 
         const test = await createTest.execute_bst({
             user_id,
-            deadline,
             subnum,
             type,
             block,
@@ -53,7 +51,6 @@ export default class BstController {
     public async create_sternberg(request: Request, response: Response): Promise<Response> {
         const {
             user_id,
-            deadline,
             subnum,
             length,
             trial,
@@ -69,7 +66,6 @@ export default class BstController {
 
         const test = await createTest.execute_sternberg({
             user_id,
-            deadline,
             subnum,
             length,
             trial,
@@ -87,7 +83,6 @@ export default class BstController {
     public async create_tol(request: Request, response: Response): Promise<Response> {
         const {
             user_id,
-            deadline,
             sub,
             trial,
             size,
@@ -107,7 +102,6 @@ export default class BstController {
 
         const test = await createTest.execute_tol({
             user_id,
-            deadline,
             sub,
             trial,
             size,
@@ -129,7 +123,6 @@ export default class BstController {
     public async create_stroop(request: Request, response: Response): Promise<Response> {
         const {
             user_id,
-            deadline,
             subnum,
             round,
             block,
@@ -155,7 +148,6 @@ export default class BstController {
 
         const test = await createTest.execute_stroop({
             user_id,
-            deadline,
             subnum,
             round,
             block,

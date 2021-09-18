@@ -3,7 +3,7 @@
 		"target": "es5",
 		"module": "commonjs",
 		"outDir": "./dist",
-		"rootDir": "./src",
+		"rootDir": "./",
 		"typeRoots": [
 			"src/shared/custom_typings",
 			"./custom_typings",
@@ -27,6 +27,7 @@
 		"emitDecoratorMetadata": true,
 
 		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"lib": [ "ES2015" ]
 	}
 }

@@ -7,11 +7,17 @@ import AppError from '@shared/errors/AppError';
 import User from '@modules/users/infra/typeorm/entities/Users';
 
 interface Request{
-    name: string,
-    email: string,
-    password: string,
-    birthDate: Date, 
-    carrer: string
+    email: string;
+    password: string;
+    age: number;
+    gender: boolean;
+    scholarity: string;
+    workField: string;
+    headScholarity: string;
+    headWorkField: string;
+    maritalStatus: number;
+    currentWork: string;
+    glasses: boolean;
 }
 
 @injectable()
@@ -25,12 +31,19 @@ class CreateUserService{
     ){}
 
     public async execute({ 
-        name,
         email,
-        password, 
-        birthDate, 
-        carrer}: Request): Promise<User>{
-        
+        password,
+        age,
+        gender,
+        scholarity,
+        workField,
+        headScholarity,
+        headWorkField,
+        maritalStatus,
+        currentWork,
+        glasses,
+    }: Request): Promise<User>{
+
         const checkUserExists = await this.usersRepository.findByEmail(email);
        
         if(checkUserExists){
@@ -40,11 +53,17 @@ class CreateUserService{
         const hashedPassword = await this.hashProvider.generateHash(password);
 
         const user = await this.usersRepository.create({
-            name,
             email,
             password: hashedPassword,
-            birthDate, 
-            carrer
+            age,
+            gender,
+            scholarity,
+            workField,
+            headScholarity,
+            headWorkField,
+            maritalStatus,
+            currentWork,
+            glasses,
        });
 
        return user;

@@ -11,16 +11,34 @@ export default class UsersController {
 		response: Response
 	): Promise<Response> {
 		try {
-			const { name, email, password, birthDate, carrer } = request.body
+			const { 
+				email,
+				password,
+				age,
+				gender,
+				scholarity,
+				workField,
+				headScholarity,
+				headWorkField,
+				maritalStatus,
+				currentWork,
+				glasses,
+			} = request.body
 
 			const createUser = container.resolve(CreateUserService)
 
 			const user = await createUser.execute({
-				name,
 				email,
 				password,
-				birthDate,
-				carrer,
+				age,
+				gender,
+				scholarity,
+				workField,
+				headScholarity,
+				headWorkField,
+				maritalStatus,
+				currentWork,
+				glasses,
 			})
 
 			delete user.password

@@ -15,19 +15,37 @@ class User{
     id: string;
 
     @Column()
-    name: string;
-
-    @Column()
     email: string;
 
     @Column()
     password: string;
 
     @Column()
-    birthDate: Date;
+    age: number;
 
     @Column()
-    carrer: string;
+    gender: boolean;
+
+    @Column()
+    scholarity: string;
+
+    @Column()
+    workField: string;
+
+    @Column()
+    headScholarity: string;
+
+    @Column()
+    headWorkField: string;
+
+    @Column()
+    maritalStatus: number;
+
+    @Column()
+    currentWork: string;
+
+    @Column()
+    glasses: boolean;
 
     @Column()
     avatar: string;

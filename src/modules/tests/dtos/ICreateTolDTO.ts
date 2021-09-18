@@ -1,6 +1,5 @@
 export default interface ICreateTolDTO {
     user_id: string;
-    deadline: Date[];
     sub: number[];
     trial: number[];
     size: number[];
