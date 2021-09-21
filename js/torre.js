@@ -7,18 +7,18 @@ let iteracoesFase = 0
 
 let fases = [
 	// REFERENCIAS SUPERIORES
-	{ first: [], second: ["blue", "green"], third: ["red"], clicks: 2 },
-	{ first: ["green"], second: ["red"], third: ["blue"], clicks: 2 },
-	{ first: ["green", "blue"], second: ["red"], third: [], clicks: 3 },
-	{ first: ["green"], second: ["red", "blue"], third: [], clicks: 3 },
-	{ first: ["red", "green"], second: ["blue"], third: [], clicks: 4 },
-	{ first: ["blue"], second: ["red", "green"], third: [], clicks: 4 },
-	{ first: ["red", "blue"], second: [], third: ["green"], clicks: 4 },
-	{ first: [], second: ["red", "blue"], third: ["green"], clicks: 4 },
-	{ first: ["red", "green", "blue"], second: [], third: [], clicks: 5 },
-	{ first: ["red", "blue", "green"], second: [], third: [], clicks: 5 },
-	{ first: ["blue", "green"], second: ["red"], third: [], clicks: 5 },
-	{ first: ["blue"], second: ["red"], third: ["green"], clicks: 5 },
+	{ first: [], second: ["color3", "color2"], third: ["color1"], clicks: 2, disks: 3 },
+	{ first: ["color2"], second: ["color1"], third: ["color3"], clicks: 2, disks: 3 },
+	{ first: ["color2", "color3"], second: ["color1"], third: [], clicks: 3, disks: 3 },
+	{ first: ["color2"], second: ["color1", "color3"], third: [], clicks: 3, disks: 3 },
+	{ first: ["color1", "color2"], second: ["color3"], third: [], clicks: 4, disks: 3 },
+	{ first: ["color3"], second: ["color1", "color2"], third: [], clicks: 4, disks: 3 },
+	{ first: ["color1", "color3"], second: [], third: ["color2"], clicks: 4, disks: 3 },
+	{ first: [], second: ["color1", "color3"], third: ["color2"], clicks: 4, disks: 3 },
+	{ first: ["color1", "color2", "color3"], second: [], third: [], clicks: 5, disks: 3 },
+	{ first: ["color1", "color3", "color2"], second: [], third: [], clicks: 5, disks: 3 },
+	{ first: ["color3", "color2"], second: ["color1"], third: [], clicks: 5, disks: 3 },
+	{ first: ["color3"], second: ["color1"], third: ["color2"], clicks: 5, disks: 3 },
 ]
 
 let slots = [
@@ -145,9 +145,9 @@ function checkWin() {
 
 function alteraReferencia(firstBox, secondBox, thirdBox) {
 	let discos = {
-		green: document.querySelector("#copiar .disco.verde"),
-		blue: document.querySelector("#copiar .disco.azul"),
-		red: document.querySelector("#copiar .disco.vermelho"),
+		red: document.querySelector("#copiar .disco.color1"),
+		green: document.querySelector("#copiar .disco.color2"),
+		blue: document.querySelector("#copiar .disco.color3"),
 	}
 
 	firstBox.forEach((el) => {
@@ -165,9 +165,9 @@ function alteraReferencia(firstBox, secondBox, thirdBox) {
 
 function resetInventario() {
 	let discos = {
-		green: document.querySelector("#inventario .disco.verde"),
-		blue: document.querySelector("#inventario .disco.azul"),
-		red: document.querySelector("#inventario .disco.vermelho"),
+		red: document.querySelector("#inventario .disco.color1"),
+		green: document.querySelector("#inventario .disco.color2"),
+		blue: document.querySelector("#inventario .disco.color3"),
 	}
 
 	inventario.children[0].append(discos.green)
