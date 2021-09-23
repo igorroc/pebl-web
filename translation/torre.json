@@ -1,7 +1,7 @@
 {
 	"pre_test": {
 		"instruction": {
-			"br": "Você está prestes a iniciar um teste chamado 'Torre de Londres'.\nSeu objetivo é mover a pilha de discos de sua configuração original para a configuração mostrada no alto da tela.  Você pode mover apenas um disco por vez, e você não pode mover um disco para uma pilha que não tem mais espaço (indicado pelo tamanho do retângulo cinza).  Para mover um disco, clique na pilha da qual você quer retirar um disco e ele ficará acima das pilhas.  Então, clique em outra pilha e o disco se moverá para essa pilha.",
+			"br": "Você está prestes a iniciar um teste chamado 'Torre de Londres'.\nSeu objetivo é mover a pilha de discos de sua configuração original para a configuração mostrada no alto da tela.  Você pode mover apenas um disco por vez, e você não pode mover um disco para uma pilha que não tem mais espaço (indicado pelo tamanho do retângulo cinza).  Para mover um disco, clique na pilha da qual você quer retirar um disco e ele ficará acima das pilhas.  Então, clique em outra pilha e o disco se moverá para essa pilha.\nClique na tela para iniciar o teste.",
 			"en": "You are about to perform a task called the 'Tower of London'.\nYour goal is to move a pile of disks from their original configuration to the configuration shown on the top of the screen. You can only move one disk at a time, and you cannot move a disk onto a pile that has no more room (indicated by the size of the grey rectangle). To move a disk, click on the pile you want to "
 		},
 		"start_test": {
