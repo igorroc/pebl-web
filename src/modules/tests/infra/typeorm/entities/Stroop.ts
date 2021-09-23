@@ -22,9 +22,6 @@ class Stroop{
     @JoinColumn({ name: 'user_id' })
     user: User;
 
-    @Column('timestamp with time zone')
-    deadline: Date[];
-
     @Column("text", { array: true })
     subnum: number[];
 

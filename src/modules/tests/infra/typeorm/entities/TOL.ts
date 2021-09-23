@@ -22,9 +22,6 @@ class Tol{
     @JoinColumn({ name: 'user_id' })
     user: User;
 
-    @Column('timestamp with time zone')
-    deadline: Date[];
-
     @Column("text", { array: true })
     sub: number[];
 

@@ -15,8 +15,8 @@ export class CreateUser1618575236504 implements MigrationInterface {
                    default: 'uuid_generate_v4()',
                 },
                 {
-                   name: 'name',
-                   type: 'varchar',
+                   name: 'age',
+                   type: 'int',
                 },
                 {
                     name: 'email',
@@ -28,13 +28,36 @@ export class CreateUser1618575236504 implements MigrationInterface {
                     type: 'varchar',
                 },
                 {
-                    name: 'birthDate',
-                    type: 'Date',
-                    isUnique: true,
+                    name: 'gender',
+                    type: 'boolean'
                 },
                 {
-                    name: 'carrer',
+                    name: 'scholarity',
                     type: 'varchar',
+                },
+                {
+                    name: 'workField',
+                    type: 'varchar',
+                },
+                {
+                    name: 'headScholarity',
+                    type: 'varchar',
+                },
+                {
+                    name: 'headWorkField',
+                    type: 'varchar',
+                },
+                {
+                    name: 'maritalStatus',
+                    type: 'boolean',
+                },
+                {
+                    name: 'currentWork',
+                    type: 'varchar',
+                },
+                {
+                    name: 'glasses',
+                    type: 'boolean',
                 },
                 {
                     name: 'avatar',

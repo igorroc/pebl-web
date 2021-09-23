@@ -1,6 +1,5 @@
 export default interface ICreateTestDTO {
     user_id: string;
-    deadline: Date[];
     subnum: number[];
     length: number[];
     trial: number[];
