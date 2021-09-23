@@ -4,6 +4,14 @@ let lang = url.searchParams.get("lang") || "br"
 let faseAtual = 0
 let totalIteracoes = 0
 let iteracoesFase = 0
+let scoreTotal = 0
+
+let startTime = new Date()
+let endTime = new Date()
+
+// 1 = red
+// 2 = green
+// 3 = blue
 
 let fases = [
 	// REFERENCIAS SUPERIORES
@@ -25,6 +33,20 @@ let slots = [
 	document.getElementById("slot1"),
 	document.getElementById("slot2"),
 	document.getElementById("slot3"),
+]
+
+let resultadoFinal = [
+	// [ // fase 0
+	// 	{ // trial 0
+	// 		"current": ["21", "3", ""],
+	// 		"end": ["", "32", "1"],
+	// 		"score": 0,
+	// 		"absTime": 1231312,
+	// 		"trialTime": 0,
+	// 		"clickTime": 0,
+	// 		"done": 0
+	// 	},
+	// ],
 ]
 
 let mao = document.getElementById("mao")
@@ -50,14 +72,30 @@ traduzInformacao("torre", "pre_test", "instruction", lang)
 window.addEventListener("click", inicio)
 
 function inicio() {
-	console.log("inicio")
-
 	informacao.classList.add("displaynone")
 
 	window.removeEventListener("click", inicio)
+
+	if(!resultadoFinal[faseAtual]) {
+		resultadoFinal.push([])
+	}
+	let current = [[], [], []]
+	for(let i = 0; i < 3; i++){
+		inventario.querySelectorAll(`#slot${i+1} .disco`).forEach((el) => current[i].push(el.classList.value.split(" ")[1]) )
+	}
+	resultadoFinal[faseAtual].push({
+		"current": current,
+		"end": [fases[faseAtual].first, fases[faseAtual].second, fases[faseAtual].third],
+		"score": 0,
+		"absTime": new Date(),
+		"clickTime": 0,
+		"done": false
+	})
+	startTime = new Date()
 }
 
 function proximaFase() {
+	
 	if (faseAtual >= fases.length) {
 		finalizarTeste()
 		return
@@ -73,6 +111,23 @@ function proximaFase() {
 	resetInventario()
 
 	window.removeEventListener("mousedown", proximaFase)
+
+	if(!resultadoFinal[faseAtual]) {
+		resultadoFinal.push([])
+	}
+	let current = [[], [], []]
+	for(let i = 0; i < 3; i++){
+		inventario.querySelectorAll(`#slot${i+1} .disco`).forEach((el) => current[i].push(el.classList.value.split(" ")[1]) )
+	}
+	resultadoFinal[faseAtual].push({
+		"current": current,
+		"end": [fases[faseAtual].first, fases[faseAtual].second, fases[faseAtual].third],
+		"score": 0,
+		"absTime": new Date(),
+		"clickTime": 0,
+		"done": false
+	})
+	startTime = new Date()
 }
 
 // FUNCTIONS
@@ -86,9 +141,31 @@ function insereDisco(slot) {
 	colocaPosicao(mao.children[0], slot)
 	slot.append(mao.children[0])
 
-	if (checkWin()) {
-		faseAtual++
+	let userWin = checkWin()
+	
+	console.log("nova trial", faseAtual)
+	if(!resultadoFinal[faseAtual]) {
+		resultadoFinal.push([])
+	}
+	let current = [[], [], []]
+	for(let i = 0; i < 3; i++){
+		inventario.querySelectorAll(`#slot${i+1} .disco`).forEach((el) => current[i].push(el.classList.value.split(" ")[1]) )
+	}
+	endTime = new Date()
 
+	resultadoFinal[faseAtual].push({
+		"current": current,
+		"end": [fases[faseAtual].first, fases[faseAtual].second, fases[faseAtual].third],
+		"score": scoreTotal,
+		"absTime": new Date(),
+		"clickTime": endTime - startTime,
+		"done": userWin
+	})
+
+	if (userWin) {
+		faseAtual++
+		scoreTotal += fases[faseAtual].disks
+		
 		traduzInformacao("torre", "test", "next_level", lang)
 		informacao.classList.remove("displaynone")
 		window.addEventListener("mousedown", proximaFase)
@@ -145,11 +222,10 @@ function checkWin() {
 
 function alteraReferencia(firstBox, secondBox, thirdBox) {
 	let discos = {
-		red: document.querySelector("#copiar .disco.color1"),
-		green: document.querySelector("#copiar .disco.color2"),
-		blue: document.querySelector("#copiar .disco.color3"),
+		color1: document.querySelector("#copiar .disco.color1"),
+		color2: document.querySelector("#copiar .disco.color2"),
+		color3: document.querySelector("#copiar .disco.color3"),
 	}
-
 	firstBox.forEach((el) => {
 		copiar.children[0].append(discos[el])
 	})
