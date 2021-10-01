@@ -163,8 +163,7 @@ function insereDisco(slot) {
 	})
 
 	if (userWin) {
-		faseAtual++
-		scoreTotal += fases[faseAtual].disks
+		scoreTotal += fases[faseAtual++].disks
 		
 		traduzInformacao("torre", "test", "next_level", lang)
 		informacao.classList.remove("displaynone")
