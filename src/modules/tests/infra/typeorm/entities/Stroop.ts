@@ -1,17 +1,18 @@
-import{ 
+import {
     Entity,
-    Column, 
+    Column,
     PrimaryGeneratedColumn,
     CreateDateColumn,
-    UpdateDateColumn, 
+    UpdateDateColumn,
     ManyToOne,
     JoinColumn
-}from 'typeorm';
+} from 'typeorm';
 
 import User from '@modules/users/infra/typeorm/entities/Users';
+import Patient from '@modules/patients/infra/typeorm/entities/Patients';
 
 @Entity('stroop')
-class Stroop{
+class Stroop {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -21,6 +22,13 @@ class Stroop{
     @ManyToOne(() => User)
     @JoinColumn({ name: 'user_id' })
     user: User;
+
+    @Column()
+    patient_id: string;
+
+    @ManyToOne(() => Patient)
+    @JoinColumn({ name: 'patient_id' })
+    patient: Patient;
 
     @Column("text", { array: true })
     subnum: number[];
@@ -36,7 +44,7 @@ class Stroop{
 
     @Column("text", { array: true })
     word: number[];
-    
+
     @Column("text", { array: true })
     color: string[];
 
