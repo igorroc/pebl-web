@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+/* import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import { getCustomRepository } from 'typeorm';
 
@@ -245,3 +245,4 @@ export default class BstController {
     }
 
 }
+ */

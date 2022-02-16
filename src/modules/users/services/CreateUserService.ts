@@ -9,6 +9,7 @@ import User from '@modules/users/infra/typeorm/entities/Users';
 interface Request{
     email: string;
     password: string;
+    name:string;
     age: number;
     gender: boolean;
     scholarity: string;
@@ -34,6 +35,7 @@ class CreateUserService{
         email,
         password,
         age,
+        name,
         gender,
         scholarity,
         workField,
@@ -54,6 +56,7 @@ class CreateUserService{
 
         const user = await this.usersRepository.create({
             email,
+            name,
             password: hashedPassword,
             age,
             gender,

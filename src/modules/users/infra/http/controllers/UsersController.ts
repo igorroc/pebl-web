@@ -13,6 +13,7 @@ export default class UsersController {
 		try {
 			const { 
 				email,
+				name,
 				password,
 				age,
 				gender,
@@ -30,6 +31,7 @@ export default class UsersController {
 			const user = await createUser.execute({
 				email,
 				password,
+				name,
 				age,
 				gender,
 				scholarity,
