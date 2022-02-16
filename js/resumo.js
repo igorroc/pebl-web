@@ -99,11 +99,44 @@ form.addEventListener("submit", (e) => {
 	envioFormulario()
 })
 
-function envioFormulario() {
+var myHeader = {
+	"Access-Control-Allow-Origin": "*",
+	"Access-Control-Allow-Methods": "POST",
+	"Access-Control-Allow-Headers": "*",
+	"Access-Control-Max-Age": 86400,
+	"Content-Type": "application/json"
+}
+
+async function envioFormulario() {
 	var nome = document.getElementById("name")
 	var orientando = document.getElementById("prof")
 	var idade = document.getElementById("idade")
 	var email = document.getElementById("email")
+	var gender = document.getElementById("gender")
+	var scholarity = document.getElementById("scholarity")
+	var workField = document.getElementById("workField")
+	var cpf = document.getElementById("cpf")
+
+	const patient = {
+		"name": String(nome.value),
+		"age": Number(idade.value),
+		"email": String(email.value),
+		"gender": String(gender.value),
+		"scholarity": String(scholarity.value),
+		"workField": String(workField.value),
+		"cpf": String(cpf.value)
+	}
+
+	await fetch("http://localhost:3333/patient/create", {
+		method: "POST",
+		headers: myHeader,
+		body: JSON.stringify(patient),
+	})
+		.then((res) => {
+			console.log(res)
+		})
+		.catch((err) => console.error(err))
+
 
 	var linkDoTeste = link.getAttribute("linkDoTeste")
 
@@ -129,15 +162,15 @@ function generateGraphs() {
 				data: [
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 				],
 				backgroundColor: [
@@ -172,23 +205,23 @@ function generateGraphs() {
 				data: [
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 				],
 				backgroundColor: [
@@ -231,31 +264,31 @@ function generateGraphs() {
 				data: [
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 					Math.floor(
 						Math.random() * (max_graph_size - min_graph_size) +
-							min_graph_size
+						min_graph_size
 					),
 				],
 				backgroundColor: [
@@ -357,4 +390,51 @@ function continueMobile() {
 
 	mobile.style.display = "none"
 	everything.style.display = "block"
+}
+
+async function searchPatientCpf() {
+	let patientcpf = document.getElementById("patientcpf")
+	let patient
+
+	await fetch("http://localhost:3333/patient/cpf", {
+		method: "POST",
+		headers: myHeader,
+		body: JSON.stringify({
+			"cpf": String(patientcpf.value)
+		}),
+	})
+		.then((res) => {
+			//patient = res.data
+			console.log(res)
+			return res.json()
+
+		})
+		.then(function (data) {
+			patient = data
+		})
+		.catch((err) => {
+			alert("Paciente não cadastrado")
+			console.error(err)
+		})
+
+	var nome = document.getElementById("name")
+	var orientando = document.getElementById("prof")
+	var idade = document.getElementById("idade")
+	var email = document.getElementById("email")
+	var gender = document.getElementById("gender")
+	var scholarity = document.getElementById("scholarity")
+	var workField = document.getElementById("workField")
+	var cpf = document.getElementById("cpf")
+
+	if (patient) {
+		nome.value = patient.name
+		idade.value = patient.age
+		email.value = patient.email
+		gender.value = patient.gender
+		scholarity.value = patient.scholarity
+		workField.value = patient.workField
+		cpf.value = patientcpf.value
+		orientando.value = "Professor"
+	}
+
 }

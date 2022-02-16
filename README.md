@@ -3,7 +3,7 @@
 
 &#xa0;
 
-  <h1 align="center"><a href="https://igorroc.github.io/pebl-web" target="_blank">PEBL Web</a></h1>
+  <h1 align="center"><a href="https://igorroc.github.io/pebl-web" target="_blank">PEBL-Web</a></h1>
 
 <a href="https://igorroc.github.io/pebl-web" target="_blank">Site</a>
 

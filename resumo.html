@@ -1,204 +1,216 @@
 <!DOCTYPE html>
 <html lang="pt">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Resumo</title>
-		<link rel="shortcut icon" href="assets/img/logo_brain.png" />
-		<link href="./css/resumo.css" rel="stylesheet" type="text/css" />
-	</head>
 
-	<body class="stop-scrolling">
-		<div id="everything" class="displaynone">
-			<header class="topnav">
-				<a class="logo" href="./"
-					><img src="./assets/img/logo_brain.png" alt="Logo"
-				/></a>
-				<a class="inicio" href="./">Início</a>
-				<a class="testes" href="./testes.html">Testes</a>
-				<a class="sobre" href="./about.html">Sobre</a>
-				<a class="contato" href="./contact.html">Contato</a>
-				<a class="login">Igor</a>
-			</header>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Resumo</title>
+	<link rel="shortcut icon" href="assets/img/logo_brain.png" />
+	<link href="./css/resumo.css" rel="stylesheet" type="text/css" />
+</head>
 
-			<!-- LINHA DE DIVISAO HORIZONTAL -->
-			<div class="line-h" style="transform: scale(-1)"></div>
+<body class="stop-scrolling">
+	<div id="everything" class="displaynone">
+		<header class="topnav">
+			<a class="logo" href="./"><img src="./assets/img/logo_brain.png" alt="Logo" /></a>
+			<a class="inicio" href="./">Início</a>
+			<a class="testes" href="./testes.html">Testes</a>
+			<a class="sobre" href="./about.html">Sobre</a>
+			<a class="contato" href="./contact.html">Contato</a>
+			<a class="login">Igor</a>
+		</header>
 
-			<div class="apresentacao">
-				<div class="imagem">
-					<img id="imagemApresentacao" src="" alt="" />
-				</div>
-				<div class="line-v"></div>
-				<div class="info">
-					<h3 id="titulo">Nome do Teste</h3>
-					<div id="wrapperIcons">
-						<div class="showCaseIcons">
-							<p>Habilidades Avaliadas</p>
-							<div id="iconsHabilidade" class="icons"></div>
-						</div>
-						<div class="showCaseIcons">
-							<p>Controles Necessários</p>
-							<div id="iconsControles" class="icons"></div>
-						</div>
-					</div>
-					<div class="descricao">
-						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing
-							elit. Quidem voluptas nobis dignissimos adipisci
-							hic, eius reiciendis odit, reprehenderit nihil dicta
-							quos, nemo neque odio totam velit in illo?
-							Voluptatibus, nam.
-						</p>
-					</div>
-					<div class="iniciar">
-						<div id="slide"></div>
-						<span id="link">Iniciar Teste</span>
-					</div>
-					<div id="idiom">
-						<label for="language">Selecione o idioma:</label>
-						<select name="language" id="language">
-							<option value="br">PT-BR</option>
-							<option value="en">EN</option>
-							<option value="es">ES</option>
-						</select>
-					</div>
-				</div>
+		<!-- LINHA DE DIVISAO HORIZONTAL -->
+		<div class="line-h" style="transform: scale(-1)"></div>
+
+		<div class="apresentacao">
+			<div class="imagem">
+				<img id="imagemApresentacao" src="" alt="" />
 			</div>
-
-			<!-- LINHA DE DIVISAO HORIZONTAL -->
-			<div class="line-h"></div>
-
-			<div id="wrapperGraficos" class="resultados">
-				<h3>O Relatório de Resultados inclui:</h3>
-				<span class="line-h" style="transform: scale(-1)"></span>
-				<div class="result-container">
-					<div>
-						<h4>Pontuação Cognitiva</h4>
-						<canvas id="graficoPizza"></canvas>
+			<div class="line-v"></div>
+			<div class="info">
+				<h3 id="titulo">Nome do Teste</h3>
+				<div id="wrapperIcons">
+					<div class="showCaseIcons">
+						<p>Habilidades Avaliadas</p>
+						<div id="iconsHabilidade" class="icons"></div>
 					</div>
-					<span class="line-v"></span>
-					<span class="line-h" style="margin: 50px 0"></span>
-					<div>
-						<h4>Sinais e Sintomas</h4>
-						<canvas id="graficoPolar"></canvas>
-					</div>
-					<span class="line-v"></span>
-					<span class="line-h" style="margin: 50px 0"></span>
-					<div>
-						<h4>Outros</h4>
-						<canvas id="graficoBarra"></canvas>
+					<div class="showCaseIcons">
+						<p>Controles Necessários</p>
+						<div id="iconsControles" class="icons"></div>
 					</div>
 				</div>
-			</div>
-
-			<footer></footer>
-
-			<!-- PARTICULAS DE FUNDO -->
-			<ul id="particles" class="particles">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-			<ul class="particles" style="top: 1500px">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
-
-		<div id="formID">
-			<div>
-				<div id="closeForm"></div>
-				<div id="formTitle">
-					<h3>
-						Informações<br />
-						<b>importantes</b>
-					</h3>
-					<p>Antes de iniciar o teste, preencha esse formulário!</p>
+				<div class="descricao">
+					<p>
+						Lorem ipsum dolor sit, amet consectetur adipisicing
+						elit. Quidem voluptas nobis dignissimos adipisci
+						hic, eius reiciendis odit, reprehenderit nihil dicta
+						quos, nemo neque odio totam velit in illo?
+						Voluptatibus, nam.
+					</p>
 				</div>
-				<div id="formContent">
-					<form>
-						<div class="question">
-							<label for="name">1. Nome completo:</label>
-							<input type="text" id="name" min="3" required />
-						</div>
-						<div class="question">
-							<label for="prof">2. Nome do seu orientando:</label>
-							<input type="text" id="prof" required />
-						</div>
-						<div class="question">
-							<label for="idade">3. Sua idade:</label>
-							<input
-								type="number"
-								id="idade"
-								min="15"
-								max="100"
-								value="20"
-								required
-							/>
-						</div>
-						<div class="question">
-							<label for="email">4. Seu email:</label>
-							<input type="email" id="email" required />
-						</div>
-						<div class="question checkQuestion">
-							<input
-								type="checkbox"
-								id="check"
-								value="sim"
-								required
-							/>
-							<label for="check"
-								>Li e aceito os
-								<a href="#">Termos de Serviço</a></label
-							>
-						</div>
-
-						<button id="submitButton">Iniciar Teste</button>
-					</form>
+				<div class="iniciar">
+					<div id="slide"></div>
+					<span id="link">Iniciar Teste</span>
+				</div>
+				<div id="idiom">
+					<label for="language">Selecione o idioma:</label>
+					<select name="language" id="language">
+						<option value="br">PT-BR</option>
+						<option value="en">EN</option>
+						<option value="es">ES</option>
+					</select>
 				</div>
 			</div>
 		</div>
 
-		<!-- WARNING PARA CELULARES -->
-		<div id="mobile" class="mobileOnly">
-			<h2>Aviso</h2>
-			<p>
-				Os testes foram desenvolvidos para serem realizados apenas pelo
-				computador, é provável que você presencie alguns problemas
-				realizando-o pelo celular.
-			</p>
-			<div class="btn" onclick="continueMobile()">
-				Continuar mesmo assim
+		<!-- LINHA DE DIVISAO HORIZONTAL -->
+		<div class="line-h"></div>
+
+		<div id="wrapperGraficos" class="resultados">
+			<h3>O Relatório de Resultados inclui:</h3>
+			<span class="line-h" style="transform: scale(-1)"></span>
+			<div class="result-container">
+				<div>
+					<h4>Pontuação Cognitiva</h4>
+					<canvas id="graficoPizza"></canvas>
+				</div>
+				<span class="line-v"></span>
+				<span class="line-h" style="margin: 50px 0"></span>
+				<div>
+					<h4>Sinais e Sintomas</h4>
+					<canvas id="graficoPolar"></canvas>
+				</div>
+				<span class="line-v"></span>
+				<span class="line-h" style="margin: 50px 0"></span>
+				<div>
+					<h4>Outros</h4>
+					<canvas id="graficoBarra"></canvas>
+				</div>
 			</div>
 		</div>
 
-		<div id="loader-wrapper" class="loader-wrapper">
-			<div id="loader" class="loader box-loader">
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+		<footer></footer>
+
+		<!-- PARTICULAS DE FUNDO -->
+		<ul id="particles" class="particles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="particles" style="top: 1500px">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<div id="formID">
+		<div>
+			<div id="closeForm"></div>
+			<div id="formTitle">
+				<h3>
+					Informações<br />
+					<b>importantes</b>
+				</h3>
+				<p>Antes de iniciar o teste, preencha esse formulário!</p>
+			</div>
+			<div id="formSearchCpf">
+				<div class="question">
+					<input type="text" id="patientcpf" required maxlength="11" placeholder="Procure o paciente pelo CPF:"/>
+				</div>
+				<div id="btnCPF" onclick="searchPatientCpf()">
+					Pesquisar
+				</div>
+			</div>
+			<div id="formContent">
+				<form>
+
+					<div class="question">
+						<label for="name">1. Nome completo:</label>
+						<input type="text" id="name" min="3" required />
+					</div>
+					<div class="question">
+						<label for="prof">2. Nome do seu orientando:</label>
+						<input type="text" id="prof" required />
+					</div>
+					<div class="question">
+						<label for="idade">3. Sua idade:</label>
+						<input type="number" id="idade" min="15" max="100" value="20" required />
+					</div>
+					<div class="question">
+						<label for="email">4. Seu email:</label>
+						<input type="email" id="email" required />
+					</div>
+
+					<div class="question">
+						<label for="gender">5. Seu gênero</label>
+						<input type="text" id="gender" required />
+					</div>
+					<div class="question">
+						<label for="scholarity">6. Sua escolaridade:</label>
+						<input type="text" id="scholarity" required />
+					</div>
+					<div class="question">
+						<label for="workField">7. Sua profissão:</label>
+						<input type="text" id="workField" required />
+					</div>
+					<div class="question">
+						<label for="cpf">8. Seu CPF:</label>
+						<input type="text" id="cpf" required maxlength="11" />
+					</div>
+					<div class="question checkQuestion">
+						<input type="checkbox" id="check" value="sim" required />
+						<label for="check">Li e aceito os
+							<a href="#">Termos de Serviço</a></label>
+					</div>
+
+					<button id="submitButton">Iniciar Teste</button>
+				</form>
 			</div>
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		<script src="./js/resumo.js"></script>
-		<script src="./js/loader.js"></script>
-		<script src="./js/background.js"></script>
-	</body>
+	</div>
+
+	<!-- WARNING PARA CELULARES -->
+	<div id="mobile" class="mobileOnly">
+		<h2>Aviso</h2>
+		<p>
+			Os testes foram desenvolvidos para serem realizados apenas pelo
+			computador, é provável que você presencie alguns problemas
+			realizando-o pelo celular.
+		</p>
+		<div class="btn" onclick="continueMobile()">
+			Continuar mesmo assim
+		</div>
+	</div>
+
+	<div id="loader-wrapper" class="loader-wrapper">
+		<div id="loader" class="loader box-loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="./js/resumo.js"></script>
+	<script src="./js/loader.js"></script>
+	<script src="./js/background.js"></script>
+</body>
+
 </html>

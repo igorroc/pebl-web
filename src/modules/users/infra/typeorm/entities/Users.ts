@@ -1,21 +1,24 @@
-import { 
-    Entity ,
-    Column, 
-    PrimaryGeneratedColumn, 
-    CreateDateColumn, 
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
     UpdateDateColumn,
     JoinTable,
     ManyToMany
 }
-from 'typeorm';
+    from 'typeorm';
 
 @Entity('users')
-class User{
+class User {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column()
     email: string;
+
+    @Column()
+    name: string;
 
     @Column()
     password: string;
