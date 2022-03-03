@@ -7,27 +7,52 @@ var resultadoFinal = {
 	fase1: {
 		tempo: [],
 		escolhas: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase2: {
 		tempo: [],
 		escolhas: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase3: {
 		tempo: [],
 		escolhas: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase4: {
 		tempo: [],
 		escolhas: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase5: {
 		tempo: [],
 		escolhas: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 }
 
@@ -66,6 +91,29 @@ function jogo(choice) {
 	if (transicionando) return
 	getTime(resultadoFinal[`fase${level}`].tempo)
 	step++
+
+	if (choice == shape[1]){
+		resultadoFinal[`fase${level}`].resp.push(`lshift`)//circle
+	} else {
+		resultadoFinal[`fase${level}`].resp.push(`rshift`)//square
+	}
+
+	let trial
+	step % PROX_NIVEL == 0 ? trial = PROX_NIVEL : trial = step % PROX_NIVEL
+	resultadoFinal[`fase${level}`].trial.push(trial)
+
+	let stim = mapstim(big.classList[2],big.classList[3])
+	resultadoFinal[`fase${level}`].stim.push(stim)
+	resultadoFinal[`fase${level}`].congruency.push(mapcongruency(stim))
+	
+	let lengthTime = resultadoFinal[`fase${level}`].tempo.length
+	let diffTime = resultadoFinal[`fase${level}`].tempo[lengthTime-1].getTime()-resultadoFinal[`fase${level}`].tempo[lengthTime-2].getTime()
+	resultadoFinal[`fase${level}`].rt.push(diffTime)
+
+	let tooslow
+	diffTime > 3000 ? tooslow = 1 : tooslow = 0
+	resultadoFinal[`fase${level}`].tooslow.push(tooslow)
+
 	if (choice == big.classList[2]) {
 		resultadoFinal[`fase${level}`].escolhas.push(1)
 		// Caso a escolha esteja correta, insere 1
@@ -137,7 +185,7 @@ async function finalizar() {
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
 
-	pushResponse()
+	pushResponse("bst")
 	// showGraphs()
 }
 
@@ -196,6 +244,45 @@ function random_shape() {
 
 function random_aux(forma) {
 	return aux[forma][Math.floor(Math.random() * aux[forma].length)]
+}
+
+function mapstim(form,color) {
+	let stim
+
+	switch (color){
+		case "red":
+			form == "circle" ? stim = 1 : stim = 2
+			break;
+		case "blue":
+			form == "square" ? stim = 3 : stim = 4
+			break;
+		case "line":
+			form == "circle" ? stim = 5 : stim = 6
+			break;
+	}
+
+	return stim
+}
+
+function mapcongruency(stim) {
+	let congruency
+
+	switch (stim){
+		case 1:
+		case 3:
+			congruency = 1
+			break;
+		case 2:
+		case 4:
+			congruency = -1
+			break;
+		case 5:
+		case 6:
+			congruency = 0
+			break;
+	}
+
+	return congruency
 }
 
 // GRAFICOS

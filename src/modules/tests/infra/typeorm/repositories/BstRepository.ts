@@ -69,6 +69,26 @@ class BstsRepository implements ITestsBstRepository {
 
     return tests;
   }
+
+  public async findAndCount(user_id: string): Promise<Bst[]> {
+    let tests: Bst[];
+
+    tests = await this.ormRepositoryB.find({
+      where: {
+        id: user_id,
+      },
+    });
+
+    return tests;
+  }
+
+  public async find(): Promise<Bst[]> {
+    let tests: Bst[];
+
+    tests = await this.ormRepositoryB.find();
+
+    return tests;
+  }
 }
 
 export default BstsRepository;

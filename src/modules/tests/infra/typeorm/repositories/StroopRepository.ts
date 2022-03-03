@@ -94,6 +94,26 @@ class StroopRepository implements ITestsStroopRepository {
 
     return tests;
   }
+
+  public async findAndCount(user_id: string): Promise<Stroop[]> {
+    let tests: Stroop[];
+
+    tests = await this.ormRepositorySt.find({
+      where: {
+        id: user_id,
+      },
+    });
+
+    return tests;
+  }
+
+  public async find(): Promise<Stroop[]> {
+    let tests: Stroop[];
+
+    tests = await this.ormRepositorySt.find();
+
+    return tests;
+  }
 }
 
 export default StroopRepository;

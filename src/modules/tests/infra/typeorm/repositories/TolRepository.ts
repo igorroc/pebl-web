@@ -76,6 +76,26 @@ class TolRepository implements ITestsTolRepository {
 
     return tests;
   }
+
+  public async findAndCount(user_id: string): Promise<Tol[]> {
+    let tests: Tol[];
+
+    tests = await this.ormRepositoryT.find({
+      where: {
+        id: user_id,
+      },
+    });
+
+    return tests;
+  }
+
+  public async find(): Promise<Tol[]> {
+    let tests: Tol[];
+
+    tests = await this.ormRepositoryT.find();
+
+    return tests;
+  }
 }
 
 export default TolRepository;
