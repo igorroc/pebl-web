@@ -66,24 +66,6 @@ class SternbergRepository implements ITestsSternbergRepository {
     });
     return tests;
   }
-
-  public async findAndCount(user_id: string): Promise<Sternberg[]> {
-    let tests: Sternberg[];
-
-    tests = await this.ormRepositoryS.find({
-      where: {
-        id: user_id,
-      },
-    });
-    return tests;
-  }
-
-  public async find(): Promise<Sternberg[]> {
-    let tests: Sternberg[];
-
-    tests = await this.ormRepositoryS.find();
-    return tests;
-  }
 }
 
 export default SternbergRepository;

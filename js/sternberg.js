@@ -79,7 +79,7 @@ async function finalizar() {
 	// graph_container.appendChild(canvas)
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
-	await pushResponse()
+
 	// showGraphs()
 }
 

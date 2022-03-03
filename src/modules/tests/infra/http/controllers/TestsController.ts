@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+/* import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import { getCustomRepository } from 'typeorm';
 
@@ -11,8 +11,6 @@ import StroopRepository from '../../typeorm/repositories/StroopRepository';
 export default class BstController { 
     public async create_bst(request: Request, response: Response): Promise<Response> {
         const {
-            user_id,
-            patient_id,
             subnum,
             type,
             block,
@@ -25,15 +23,14 @@ export default class BstController {
             tooslow
         } = request.body;
 
-        //console.error(request.body);
-        console.log("create_bst body",request.body);
-        //const user_id = request.body;
+        console.error(request.body);
+
+        const user_id = request.body;
 
         const createTest = container.resolve(CreateTestsService);
 
         const test = await createTest.execute_bst({
             user_id,
-            patient_id,
             subnum,
             type,
             block,
@@ -46,7 +43,7 @@ export default class BstController {
             tooslow,
         });
 
-        console.log("create_bst test",test)
+        console.log(test)
 
         return response.json(test); 
     } 
@@ -54,7 +51,6 @@ export default class BstController {
     public async create_sternberg(request: Request, response: Response): Promise<Response> {
         const {
             user_id,
-            patient_id,
             subnum,
             length,
             trial,
@@ -70,7 +66,6 @@ export default class BstController {
 
         const test = await createTest.execute_sternberg({
             user_id,
-            patient_id,
             subnum,
             length,
             trial,
@@ -88,7 +83,6 @@ export default class BstController {
     public async create_tol(request: Request, response: Response): Promise<Response> {
         const {
             user_id,
-            patient_id,
             sub,
             trial,
             size,
@@ -108,7 +102,6 @@ export default class BstController {
 
         const test = await createTest.execute_tol({
             user_id,
-            patient_id,
             sub,
             trial,
             size,
@@ -130,7 +123,6 @@ export default class BstController {
     public async create_stroop(request: Request, response: Response): Promise<Response> {
         const {
             user_id,
-            patient_id,
             subnum,
             round,
             block,
@@ -156,7 +148,6 @@ export default class BstController {
 
         const test = await createTest.execute_stroop({
             user_id,
-            patient_id,
             subnum,
             round,
             block,
@@ -193,6 +184,7 @@ export default class BstController {
 
     public async index_bst(request: Request, response: Response): Promise <Response> { 
         const testRepository = getCustomRepository(BstRepository);
+            
             const test = await testRepository.find();
 
             return response.json(test);
@@ -251,4 +243,6 @@ export default class BstController {
 
             return response.json(test);
     }
+
 }
+ */
