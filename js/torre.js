@@ -298,4 +298,7 @@ async function finalizarTeste() {
 		`\nMovimentos totais: ${totalIteracoes}`
 
 	getUserInfo()
+
+	
+	await pushResponse()
 }

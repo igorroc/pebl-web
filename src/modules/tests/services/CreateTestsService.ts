@@ -13,6 +13,7 @@ import ICreateTolDTO from '../dtos/ICreateTolDTO';
 import ICreateStroopDTO from '../dtos/ICreateStroopDTO';
 import Stroop from '../infra/typeorm/entities/Stroop';
 
+
 @injectable()
 class CreateTestsService {
     constructor(
@@ -22,6 +23,7 @@ class CreateTestsService {
     
     public async execute_bst({ 
         user_id,
+        patient_id,
         subnum,
         type,
         block,
@@ -35,6 +37,7 @@ class CreateTestsService {
      }: ICreateTestDTO): Promise<Bst> {
         const test = await this.testsRepository.create_bst({
             user_id,
+            patient_id,
             subnum,
             type,
             block,
@@ -52,6 +55,7 @@ class CreateTestsService {
 
     public async execute_sternberg({ 
         user_id,
+        patient_id,
         subnum,
         length,
         trial,
@@ -64,6 +68,7 @@ class CreateTestsService {
         }: ICreateSternbergDTO): Promise<Sternberg> {
         const test = await this.testsRepository.create_sternberg({
             user_id,
+            patient_id,
             subnum,
             length,
             trial,
@@ -80,6 +85,7 @@ class CreateTestsService {
 
     public async execute_tol({ 
         user_id,
+        patient_id,
         sub,
         trial,
         size,
@@ -96,6 +102,7 @@ class CreateTestsService {
         }: ICreateTolDTO): Promise<Tol> {
         const test = await this.testsRepository.create_tol({
             user_id,
+            patient_id,
             sub,
             trial,
             size,
@@ -116,6 +123,7 @@ class CreateTestsService {
 
     public async execute_stroop({ 
         user_id,
+        patient_id,
         subnum,
         round,
         block,
@@ -138,6 +146,7 @@ class CreateTestsService {
         }: ICreateStroopDTO): Promise<Stroop> {
         const test = await this.testsRepository.create_stroop({
             user_id,
+            patient_id,
             subnum,
             round,
             block,

@@ -13,6 +13,7 @@ import ICreateTolDTO from "@modules/tests/dtos/ICreateTolDTO";
 
 import Stroop from "@modules/tests/infra/typeorm/entities/Stroop";
 import ICreateStroopDTO from "@modules/tests/dtos/ICreateStroopDTO";
+
 class TestsRepository implements ITestsRepository {
   private ormRepositoryB: Repository<Bst>;
   private ormRepositoryS: Repository<Sternberg>;
@@ -27,6 +28,8 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_bst({
+    user_id,
+    patient_id,
     subnum,
     type,
     block,
@@ -39,6 +42,8 @@ class TestsRepository implements ITestsRepository {
     tooslow,
   }: ICreateBstDTO): Promise<Bst> {
     const test = this.ormRepositoryB.create({
+      user_id,
+      patient_id,
       subnum,
       type,
       block,
@@ -58,6 +63,7 @@ class TestsRepository implements ITestsRepository {
 
   public async create_sternberg({
     user_id,
+    patient_id,
     subnum,
     length,
     trial,
@@ -70,6 +76,7 @@ class TestsRepository implements ITestsRepository {
   }: ICreateSternbergDTO): Promise<Sternberg> {
     const test = this.ormRepositoryS.create({
       user_id,
+      patient_id,
       subnum,
       length,
       trial,
@@ -88,6 +95,7 @@ class TestsRepository implements ITestsRepository {
 
   public async create_tol({
     user_id,
+    patient_id,
     sub,
     trial,
     size,
@@ -104,6 +112,7 @@ class TestsRepository implements ITestsRepository {
   }: ICreateTolDTO): Promise<Tol> {
     const test = this.ormRepositoryT.create({
       user_id,
+      patient_id,
       sub,
       trial,
       size,
@@ -126,6 +135,7 @@ class TestsRepository implements ITestsRepository {
 
   public async create_stroop({
     user_id,
+    patient_id,
     subnum,
     round,
     block,
@@ -148,6 +158,7 @@ class TestsRepository implements ITestsRepository {
   }: ICreateStroopDTO): Promise<Stroop> {
     const test = this.ormRepositoryST.create({
       user_id,
+      patient_id,
       subnum,
       round,
       block,

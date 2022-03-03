@@ -2,6 +2,7 @@ import ICreateBstDTO from "@modules/tests/dtos/ICreateBstDTO";
 import ITestsBstRepository from "@modules/tests/repositories/ITestsBstRepository";
 import { DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
 import Bst from "../entities/BST";
+
 class BstsRepository implements ITestsBstRepository {
   private ormRepositoryB: Repository<Bst>;
 
@@ -66,6 +67,26 @@ class BstsRepository implements ITestsBstRepository {
         id: user_id,
       },
     });
+
+    return tests;
+  }
+
+  public async findAndCount(user_id: string): Promise<Bst[]> {
+    let tests: Bst[];
+
+    tests = await this.ormRepositoryB.find({
+      where: {
+        id: user_id,
+      },
+    });
+
+    return tests;
+  }
+
+  public async find(): Promise<Bst[]> {
+    let tests: Bst[];
+
+    tests = await this.ormRepositoryB.find();
 
     return tests;
   }

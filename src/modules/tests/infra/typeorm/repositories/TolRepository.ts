@@ -3,6 +3,7 @@ import ITestsTolRepository from "@modules/tests/repositories/ITestsTolRepository
 import { DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
 import Tol from "../entities/TOL";
 
+
 class TolRepository implements ITestsTolRepository {
   private ormRepositoryT: Repository<Tol>;
 
@@ -73,6 +74,26 @@ class TolRepository implements ITestsTolRepository {
         id: user_id,
       },
     });
+
+    return tests;
+  }
+
+  public async findAndCount(user_id: string): Promise<Tol[]> {
+    let tests: Tol[];
+
+    tests = await this.ormRepositoryT.find({
+      where: {
+        id: user_id,
+      },
+    });
+
+    return tests;
+  }
+
+  public async find(): Promise<Tol[]> {
+    let tests: Tol[];
+
+    tests = await this.ormRepositoryT.find();
 
     return tests;
   }

@@ -1,4 +1,4 @@
-/* import { Router } from 'express';
+import { Router } from 'express';
 
 import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 import TestsController from '../controllers/TestsController';
@@ -7,6 +7,7 @@ const testsRouter = Router();
 const testsController = new TestsController();
 
 // testsRouter.use(ensureAuthenticated);
+
 testsRouter.post('/bst', testsController.create_bst);
 testsRouter.post('/sternberg', testsController.create_sternberg);
 testsRouter.post('/tol', testsController.create_tol);
@@ -20,4 +21,4 @@ testsRouter.get('/list/tol', testsController.index_tol);
 testsRouter.post('/show/stroop', testsController.show_userstroop);
 testsRouter.get('/list/stroop', testsController.index_stroop);
 
-export default testsRouter; */
+export default testsRouter;
