@@ -11,13 +11,13 @@ interface TokenPayload{
 }
 
 export default function ensureAuthenticated(request: Request, response: Response, next: NextFunction): void {
-    const authHeader = request.headers.authorization;
+    const authHeader = request.headers.cookie;
 
     if(!authHeader){
         throw new AppError('JWT token is missing', 401);
     }
 
-    const [, token] = authHeader.split(' ');
+   const [, token] = authHeader.split("=");
 
     try{
         const decoded = verify(token, authConfig.jwt.secret);
@@ -27,8 +27,6 @@ export default function ensureAuthenticated(request: Request, response: Response
         request.user = {
             id: sub,
         }
-
-        //console.log(decoded);
 
         return next();
     }catch(err){

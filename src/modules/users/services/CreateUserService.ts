@@ -11,14 +11,11 @@ interface Request{
     password: string;
     name:string;
     age: number;
-    gender: boolean;
+    gender: string;
     scholarity: string;
     workField: string;
-    headScholarity: string;
     headWorkField: string;
-    maritalStatus: number;
-    currentWork: string;
-    glasses: boolean;
+    maritalStatus: string;
 }
 
 @injectable()
@@ -39,11 +36,8 @@ class CreateUserService{
         gender,
         scholarity,
         workField,
-        headScholarity,
         headWorkField,
         maritalStatus,
-        currentWork,
-        glasses,
     }: Request): Promise<User>{
 
         const checkUserExists = await this.usersRepository.findByEmail(email);
@@ -62,11 +56,8 @@ class CreateUserService{
             gender,
             scholarity,
             workField,
-            headScholarity,
             headWorkField,
             maritalStatus,
-            currentWork,
-            glasses,
        });
 
        return user;

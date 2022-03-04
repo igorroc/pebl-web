@@ -28,6 +28,8 @@
 		"multer": "^1.4.2",
 		"mysql": "^2.14.1",
 		"nodemailer": "^6.5.0",
+		"passport": "^0.5.2",
+		"passport-jwt": "^4.0.0",
 		"pg": "^8.6.0",
 		"postgres": "^1.0.2",
 		"reflect-metadata": "^0.1.10",
@@ -42,6 +44,8 @@
 	"devDependencies": {
 		"@types/cors": "^2.8.12",
 		"@types/node": "^14.14.41",
+		"@types/passport": "^1.0.7",
+		"@types/passport-jwt": "^3.0.6",
 		"ts-node": "3.3.0",
 		"typescript": "^4.2.4"
 	}

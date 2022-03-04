@@ -3,12 +3,9 @@ export default interface ICreateUserDTO {
   name: string;
   password: string;
   age: number;
-  gender: boolean;
+  gender: string;
   scholarity: string;
   workField: string;
-  headScholarity: string;
   headWorkField: string;
-  maritalStatus: number;
-  currentWork: string;
-  glasses: boolean;
+  maritalStatus: string;
 }
