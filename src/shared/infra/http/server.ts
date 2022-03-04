@@ -17,33 +17,10 @@ import passport from "passport"
 
 const app = express()
 
-const allowedHeaders = [ "http://127.0.0.1:5500", "https://igorroc.github.io/pebl-web/"]
+const allowedHeaders = [ "http://127.0.0.1:5500", "https://igorroc.github.io"]
 
-// const corsOpts = {
-// 	origin: "http://127.0.0.1:5500",
-
-// 	methods: ["GET", "POST"],
-
-// 	allowedHeaders: ["Content-Type"],
-	
-// 	credentials:true,
-// 	exposedHeaders: ["set-cookie"],
-// 	preflightContinue:true
-// }
-
-//app.use(cors(corsOpts))
-
-app.use(cors({
-	origin: function (origin, callback) {
-		// bypass the requests with no origin (like curl requests, mobile apps, etc )
-		if (!origin) return callback(null, true);
-	 
-		if (allowedHeaders.indexOf(origin) === -1) {
-		  var msg = `This site ${origin} does not have an access. Only specific domains are allowed to access it.`;
-		  return callback(new Error(msg), false);
-		}
-		return callback(null, true);
-	},
+const corsOpts = {
+	origin: ["https://igorroc.github.io", "http://127.0.0.1:5500"],
 
 	methods: ["GET", "POST"],
 
@@ -52,7 +29,9 @@ app.use(cors({
 	credentials:true,
 	exposedHeaders: ["set-cookie"],
 	preflightContinue:true
-}))
+}
+
+app.use(cors(corsOpts))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
