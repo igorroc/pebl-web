@@ -19,11 +19,8 @@ export default class UsersController {
 				gender,
 				scholarity,
 				workField,
-				headScholarity,
 				headWorkField,
 				maritalStatus,
-				currentWork,
-				glasses,
 			} = request.body
 
 			const createUser = container.resolve(CreateUserService)
@@ -36,11 +33,8 @@ export default class UsersController {
 				gender,
 				scholarity,
 				workField,
-				headScholarity,
 				headWorkField,
 				maritalStatus,
-				currentWork,
-				glasses,
 			})
 
 			delete user.password

@@ -51,6 +51,8 @@ input[type="submit"]:hover {
 	width: 80vw;
 	height: 80vh;
 	max-width: 1300px;
+	
+	border-radius: 10px;
 }
 
 #wrapper-inner-form {
@@ -67,6 +69,8 @@ input[type="submit"]:hover {
 	overflow: hidden;
 
 	transition: transform 300ms ease-in-out;
+
+	border-radius: 10px;
 }
 
 #wrapper-inner-form.show-sign-up {
@@ -85,8 +89,8 @@ input[type="submit"]:hover {
 
 #form-sign-up {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 48%;
+	left: 48%;
 	max-width: 80%;
 
 	transform: translate(100%, -50%);
@@ -101,47 +105,97 @@ input[type="submit"]:hover {
 	transform: translate(-50%, -50%);
 }
 
-#form-sign-in h2,
-#form-sign-up h2 {
-	font-size: 2.5em;
+#form-sign-in h2 {
+	font-size: 2em;
 	margin: 0;
 }
 
-#form-sign-in form,
-#form-sign-up form {
+#wrapper-inner-form #form-sign-up h2 {
+	font-size: 1.5em;
+	margin: 0;
+}
+
+#form-sign-in form{
+	font-size: 0.9em;
 	display: flex;
 	flex-direction: column;
 	gap: 2em;
-
-	margin: 3em 0;
+	margin: 2em 0;
+	width: 25vw;
 }
 
-#form-sign-in .question,
-#form-sign-up .question {
-	font-size: 2em;
+#form-sign-up form {
+	display: flex;
+	flex-direction: row;
+	/* grid-template-rows: 2fr 2fr;  */
+	gap: 2em;
+	margin: 1em 0;
+	/* width: 100vw; */
+}
+
+#form-sign-in .question{
 	display: flex;
 	flex-direction: column;
 }
 
-#form-sign-in .question input,
-#form-sign-up .question input {
-	font-size: 1em;
+#form-sign-up .question {
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+}
 
-	padding: 0.2em 0.5em;
+#form-sign-up form .wrap-questions{
+	max-width: 50vw;
+}
+
+#form-sign-up form .question label{
+	font-size:  0.7em;
+	display: flex;
+	flex-direction: column;
+}
+
+#form-sign-in .question input{
+	font-size: 0.9em;
+	margin-top: 5px;
+	padding: 0.4em 1em;
+	/*width:60%;
+	padding: 0.4em 6em 0.4em 1em;
+	*/
 	color: white;
 	background-color: #2424246c;
 	border: none;
 	outline: none;
+	
+	border-radius: 10px;
+}
+#form-sign-up .question input {
+	font-size: 0.7em;
+	margin-top: 5px;
+	padding: 0.4em 1em;
+	color: white;
+	background-color: #2424246c;
+	border: none;
+	outline: none;
+	
+	border-radius: 10px;
 }
 
-#form-sign-in .form-submit input,
-#form-sign-up .form-submit input {
-	font-size: 1.5em;
+#form-sign-in form .form-submit input{
+	font-size: 1em;
 	padding: 10px 30px;
 }
+#form-sign-up form .form-submit input {
+	position: absolute;
+	font-size:  0.8em;
+	padding: 10px 20px;
+	left: 75%;
+	
+	margin-top: 15px;
+}
 
-#form-sign-in a {
-	font-size: 1.5em;
+#wrapper-inner-form #form-sign-in a {
+	font-size: 1em;
 	text-decoration: underline;
 	color: #63bbf5;
 }
@@ -169,7 +223,8 @@ input[type="submit"]:hover {
 	left: 50%;
 	transform: translate(-50%, -50%);
 
-	font-size: 1.5em;
+	font-size: 1.4em;
+	width: 25vw;
 
 	opacity: 0;
 	pointer-events: none;
@@ -178,6 +233,7 @@ input[type="submit"]:hover {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 
 	transition: opacity 300ms ease-in-out;
 }
@@ -186,7 +242,7 @@ input[type="submit"]:hover {
 #switch-to-signup button {
 	font-size: 1em;
 	font-weight: 600;
-
+	margin-top: 5px;
 	padding: 10px 20px;
 	
 	background: linear-gradient(90deg, #2bacc0, #3FD0E7);
@@ -211,3 +267,242 @@ input[type="submit"]:hover {
 	pointer-events: none;
 	opacity: 0;
 }
+
+
+/* RESPONSIVE
+ */
+
+@media only screen and (max-width: 1800px) {
+	#form-sign-up {
+		left: 50%;
+	}
+	
+	#form-sign-in .question,
+	#form-sign-up .question {
+		font-size: 1.4em;
+	}
+	#form-sign-in .form-submit input,
+	#form-sign-up .form-submit input {
+		font-size: 1.4em;
+	}
+	#form-sign-in a {
+		font-size: 1.4em;
+	}
+	
+	#form-sign-in h2,
+	#form-sign-up h2 {
+		font-size: 1.8em;
+	}
+
+		
+	#switch-to-login,
+	#switch-to-signup {
+
+		top: 50%;
+		left: 50%;
+		font-size: 1.2em;
+	}
+
+	#switch-to-login button,
+	#switch-to-signup button {
+		font-size: 1em;
+	}
+
+	#form-sign-up form {
+		gap: 1em;
+	}
+	#form-sign-up form .wrap-questions{
+		width: 18.5vw;
+	}
+	
+}
+@media only screen and (max-width: 900px) {
+	#form-sign-in .question,
+	#form-sign-up .question {
+		font-size: 1.2em;
+	}
+	#form-sign-in .form-submit input,
+	#form-sign-up .form-submit input {
+		font-size: 1.2em;
+	}
+	#form-sign-in a {
+		font-size: 1.2em;
+	}
+	
+	#form-sign-in h2,
+	#form-sign-up h2 {
+		font-size: 1.4em;
+	}
+
+		
+	#switch-to-login,
+	#switch-to-signup {
+		font-size: 1em;
+	}
+
+	#switch-to-login button,
+	#switch-to-signup button {
+		font-size: 1em;
+	}
+
+	#form-sign-up form {
+		gap: 1em;
+	}
+	#form-sign-up form .wrap-questions{
+		width: 20vw;
+	}
+	#form-sign-up {
+		left: 45%;
+	}
+	
+}
+
+@media only screen and (max-width: 750px) {
+	#form-sign-in .question{
+		font-size: 1.2em;
+		margin-top: 5px;
+	}
+	#form-sign-up .question {
+		font-size: 1.2em;
+		padding: 0;
+		margin-top: 5px;
+	}
+	#form-sign-in .form-submit input {
+		font-size: 0.8em;
+	}
+	#form-sign-up form .form-submit input {
+		position: absolute;
+		font-size:  0.8em;
+		padding: 10px 10px;
+		left: 25%;
+		
+		margin-top: 10px;
+	}
+	#form-sign-in a {
+		font-size: 0.8em;
+	}
+	
+	#form-sign-in h2{
+		font-size: 1.5em;
+	}	
+	#wrapper-inner-form #form-sign-up h2 {
+		font-size: 1.2em;
+		margin-bottom: 8px;
+	}
+	
+	#switch-to-login,
+	#switch-to-signup {
+		font-size: 0.8em;
+	}
+
+	#switch-to-login button,
+	#switch-to-signup button {
+		font-size: 0.8em;
+	}
+
+	#form-sign-up {
+		left: 40%;
+		top: 43%;
+		right: 0;
+	}
+	
+	#form-sign-in form{
+		width: 35vw;
+	}
+	#form-sign-up form {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		gap: 0;
+	}
+
+	#form-sign-up form .wrap-questions{
+		width: 35vw;
+	}
+
+	#wrapper-inner-form {
+		width: 60%;
+		margin: 0;
+	}
+
+	#wrapper-form-main {	
+		margin-top:60px;
+		height: 100%;
+	}
+	
+}
+
+@media only screen and (max-width: 600px) {
+	#form-sign-up {
+		left: 40%;
+		top: 43%;
+		right: 0;
+	}
+	
+	#form-sign-in form{
+		width: 35vw;
+	}
+	#form-sign-up form {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		gap: 0;
+	}
+	#form-sign-in .question{
+		font-size: 1.2em;
+		margin-top: 5px;
+	}
+	#form-sign-up .question {
+		font-size: 1.2em;
+		margin-top: 5px;
+	}
+	#form-sign-in .form-submit input{
+		font-size: 0.9em;
+	}
+	#form-sign-up form .form-submit input {
+		position: absolute;
+		font-size:  0.8em;
+		padding: 10px 10px;
+		left: 25%;
+		
+		margin-top: 10px;
+	}
+	#form-sign-in a {
+		font-size: 0.8em;
+	}
+	
+	#form-sign-in h2{
+		font-size: 1.5em;
+	}
+	#wrapper-inner-form #form-sign-up h2 {
+		font-size: 1.2em;
+		margin-bottom: 8px;
+	}
+
+		
+	#switch-to-login,
+	#switch-to-signup {
+		font-size: 0.8em;
+	}
+
+	#switch-to-login button,
+	#switch-to-signup button {
+		font-size: 0.8em;
+	}
+
+	#form-sign-up form .wrap-questions{
+		width: 35vw;
+	}
+
+	#wrapper-inner-form {
+		width: 60%;
+		margin: 0;
+	}
+
+	#wrapper-form-main {	
+		margin-top:60px;
+		height: 100%;
+	}
+	
+}
+

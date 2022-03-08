@@ -14,6 +14,8 @@ import UserTokensRepository from '@modules/users/infra/typeorm/repositories/User
 
 import IPatientRepository from '@modules/patients/interfaces/IPatientRepository';
 import PatientRepository from '@modules/patients/infra/typeorm/repositories/PatientRepository';
+import IAuthenticateUserService from '@modules/users/repositories/IAuthenticateUserService';
+import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 
 container.registerSingleton<ITestRepository>('TestsRepository', TestsRepository);
 
@@ -24,3 +26,6 @@ container.registerSingleton<IUserTokensRepository>('UserTokensRepository', UserT
 container.registerSingleton<IHashProvider>('HashProvider', BCryptHashProvider);
 
 container.registerSingleton<IPatientRepository>('PatientRepository', PatientRepository);
+
+container.registerSingleton<IAuthenticateUserService>('IAuthenticateUserService', AuthenticateUserService);
+
