@@ -1,56 +1,56 @@
-import "reflect-metadata"
+import "reflect-metadata";
 
-import express, { Request, Response, NextFunction } from "express"
-import "express-async-errors"
+import express, { Request, Response, NextFunction } from "express";
+import "express-async-errors";
 
-import routes from "./routes"
-import uploadConfig from "@config/upload"
-import AppError from "@shared/errors/AppError"
+import routes from "./routes";
+import uploadConfig from "@config/upload";
+import AppError from "@shared/errors/AppError";
 
-import cors from "cors"
-import bodyParser from "body-parser"
+import cors from "cors";
+import bodyParser from "body-parser";
 
-import "@shared/infra/typeorm"
-import "@shared/container"
-import { passportJWTConfig } from "@modules/users/infra/http/middlewares/passportAuthentication"
-import passport from "passport"
+import "@shared/infra/typeorm";
+import "@shared/container";
+import { passportJWTConfig } from "@modules/users/infra/http/middlewares/passportAuthentication";
+import passport from "passport";
 
-const app = express()
+const app = express();
 
-const allowedHeaders = [ "http://127.0.0.1:5500", "https://igorroc.github.io"]
+const allowedHeaders = ["http://127.0.0.1:5500", "https://igorroc.github.io"];
 
 const corsOpts = {
-	origin: ["https://igorroc.github.io", "http://127.0.0.1:5500"],
+  origin: ["https://igorroc.github.io", "http://127.0.0.1:5500"],
 
-	methods: ["GET", "POST"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
 
-	allowedHeaders: ["Content-Type"],
-	
-	credentials:true,
-	exposedHeaders: ["set-cookie"],
-	preflightContinue:true
-}
+  allowedHeaders: ["Content-Type"],
 
-app.use(cors(corsOpts))
+  credentials: true,
+  exposedHeaders: ["set-cookie"],
+  preflightContinue: true,
+};
+
+app.use(cors(corsOpts));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.json())
-app.use("/files", express.static(uploadConfig.tmpFolder))
-app.use(routes)
+app.use(express.json());
+app.use("/files", express.static(uploadConfig.tmpFolder));
+app.use(routes);
 
 app.use(function (req, res, next) {
-	if (allowedHeaders.indexOf(req.headers.origin) !== -1) {
-		res.header('Access-Control-Allow-Origin', req.headers.origin);
-	}
-	res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
-	res.setHeader("Access-Control-Allow-Headers", "Content-Type")
-	res.setHeader("Access-Control-Allow-Credentials", "true")
-	res.setHeader("Access-Control-Request-Method", "GET, POST, PUT, DELETE")
-	res.setHeader("Access-Control-Request-Headers", "Content-Type")
-	next()
-})
+  if (allowedHeaders.indexOf(req.headers.origin) !== -1) {
+    res.header("Access-Control-Allow-Origin", req.headers.origin);
+  }
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Request-Method", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Request-Headers", "Content-Type");
+  next();
+});
 
 // app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 // 	if (err instanceof AppError) {
@@ -70,6 +70,6 @@ app.use(function (req, res, next) {
 passportJWTConfig(passport);
 app.use(passport.initialize());
 
-app.listen(3333,'127.0.0.1', () => {
-	console.log("Server started on port 3333!")
-})
+app.listen(3333, "127.0.0.1", () => {
+  console.log("Server started on port 3333!");
+});

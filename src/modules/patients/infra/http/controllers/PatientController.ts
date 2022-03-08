@@ -11,6 +11,17 @@ export default class PatientController {
 
       const patientDb = await createpatient.execute(patient);
 
+      // response.cookie("patientId", patientDb.id, {
+      //   expires: new Date(Date.now() + 2 * 3600000),
+      //   httpOnly: true,
+      //   sameSite: "none",
+      //   secure: true,
+      //   path: "/",
+      // });
+
+      response.setHeader("Set-Cookie", [`patientId=${patientDb.id};Path=/`]);
+      //  console.log(response.getHeaders());
+
       return response.json(patientDb);
     } catch (err) {
       return response.status(400).json({ error: err });
@@ -26,6 +37,17 @@ export default class PatientController {
       const createpatient = container.resolve(PatientService);
 
       const patientDb = await createpatient.searchCpf(cpf);
+
+      // response.cookie("patientId", patientDb.id, {
+      //   expires: new Date(Date.now() + 2 * 3600000),
+      //   httpOnly: true,
+      //   sameSite: "none",
+      //   secure: true,
+      //   path: "/",
+      // });
+
+      response.setHeader("Set-Cookie", [`patientId=${patientDb.id};Path=/`]);
+      console.log(request.headers.cookie);
 
       return response.json(patientDb);
     } catch (err) {

@@ -1,303 +1,201 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="assets/img/logo_brain.png" />
-		<title>Igor Rocha</title>
-		<link href="./css/user.css" rel="stylesheet" type="text/css" />
-		<link href="./css/scroll-bar.css" rel="stylesheet" type="text/css" />
-	</head>
 
-	<body>
-		<header>
-			<a class="headerItem" href="./">
-				<svg fill="currentColor" viewBox="0 0 510 510">
-					<g>
-						<g id="home">
-							<polygon
-								points="204,471.75 204,318.75 306,318.75 306,471.75 433.5,471.75 433.5,267.75 510,267.75 255,38.25 0,267.75 76.5,267.75 76.5,471.75 		"
-							/>
-						</g>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="assets/img/logo_brain.png" />
+	<title>Igor Rocha</title>
+	<link href="./css/user.css" rel="stylesheet" type="text/css" />
+	<link href="./css/scroll-bar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="loadPeople()">
+	<header>
+		<a class="headerItem" href="./">
+			<svg fill="currentColor" viewBox="0 0 510 510">
+				<g>
+					<g id="home">
+						<polygon
+							points="204,471.75 204,318.75 306,318.75 306,471.75 433.5,471.75 433.5,267.75 510,267.75 255,38.25 0,267.75 76.5,267.75 76.5,471.75 		" />
 					</g>
-				</svg>
-			</a>
-			<div class="headerItem">
-				<svg viewBox="0 0 256 256">
-					<defs>
-						<style>
-							.cls-1 {
-								fill: #fff;
-							}
-						</style>
-					</defs>
-					<path
-						class="cls-1"
-						d="M0,256V0H256V256ZM165.63,32c-12.15,0-24.31,0-36.47,0-12.74.06-22.09,8.73-22.37,20.65-.29,12.34,8.62,21.84,21.53,22q37,.42,74,0c12.75-.11,22-9.8,21.72-21.92-.28-11.85-9.77-20.68-22.38-20.73C189.62,32,177.63,32,165.63,32Zm-.22,192c12,0,24,0,36,0,12.92-.05,22.46-9,22.6-21s-9.21-21.58-22-21.67q-36.74-.24-73.47,0c-12.84.1-22,9.5-21.75,21.8.19,12,9.54,20.82,22.15,20.89C141.08,224.05,153.24,224,165.41,224Zm0-74.79v0c11.83,0,23.65,0,35.48,0a29.68,29.68,0,0,0,7.88-.87,21.22,21.22,0,0,0,15.15-23c-1.35-10.31-9.85-18.42-20.34-18.5-25.48-.2-51-.07-76.45,0a18.36,18.36,0,0,0-5.38.88c-10.24,3.16-16.18,12.78-14.73,23.68a20.84,20.84,0,0,0,20.42,17.77C140.05,149.38,152.71,149.21,165.36,149.21ZM80,128.2a26.61,26.61,0,1,0-53.22-.4,26.56,26.56,0,0,0,26.35,26.91A26.85,26.85,0,0,0,80,128.2Zm-26.91,101A26.61,26.61,0,1,0,26.76,202.4,26.56,26.56,0,0,0,53.08,229.22ZM26.77,53.13A26.61,26.61,0,1,0,53.53,26.77,26.29,26.29,0,0,0,26.77,53.13Z"
-					/>
-					<path
-						d="M165.63,32c12,0,24,0,36,0,12.61.05,22.1,8.88,22.38,20.73.29,12.12-9,21.81-21.72,21.92q-37,.34-74,0c-12.91-.14-21.82-9.64-21.53-22,.28-11.92,9.63-20.59,22.37-20.65C141.32,32,153.48,32,165.63,32Z"
-					/>
-					<path
-						d="M165.41,224c-12.17,0-24.33.05-36.49,0-12.61-.07-22-8.94-22.15-20.89-.2-12.3,8.91-21.7,21.75-21.8q36.73-.27,73.47,0c12.79.09,22.15,9.54,22,21.67s-9.68,21-22.6,21C189.4,224,177.4,224,165.41,224Z"
-					/>
-					<path
-						d="M165.36,149.21c-12.65,0-25.31.17-38-.05A20.84,20.84,0,0,1,107,131.39c-1.45-10.9,4.49-20.52,14.73-23.68a18.36,18.36,0,0,1,5.38-.88c25.48-.06,51-.19,76.45,0,10.49.08,19,8.19,20.34,18.5a21.22,21.22,0,0,1-15.15,23,29.68,29.68,0,0,1-7.88.87c-11.83.09-23.65,0-35.48,0Z"
-					/>
-					<path
-						d="M80,128.2a26.85,26.85,0,0,1-26.87,26.51,26.72,26.72,0,0,1,.41-53.43A26.85,26.85,0,0,1,80,128.2Z"
-					/>
-					<path
-						d="M53.08,229.22a26.61,26.61,0,0,1,.5-53.22,26.61,26.61,0,1,1-.5,53.22Z"
-					/>
-					<path
-						d="M26.77,53.13a26.61,26.61,0,0,1,53.22.4,26.61,26.61,0,1,1-53.22-.4Z"
-					/>
-				</svg>
-			</div>
-			<div class="headerItem headerItemActive">
-				<svg viewBox="0 0 24 24" fill="currentColor">
-					<path
-						d="m22.241 7h-.241v-.25c0-1.517-1.234-2.75-2.75-2.75h-16.5c-1.516 0-2.75 1.233-2.75 2.75v9.5c0 1.517 1.234 2.75 2.75 2.75h16.5c1.516 0 2.75-1.233 2.75-2.75v-.25h.241c.965 0 1.75-.785 1.75-1.75v-5.5c0-.965-.785-1.75-1.75-1.75zm-8.324 3.77-3.496 5.499c-.093.147-.254.231-.421.231-.057 0-.114-.01-.169-.029-.22-.08-.356-.301-.327-.533l.43-3.438-1.438-.002c-.188 0-.359-.105-.444-.271-.085-.167-.071-.367.038-.52l3.576-4.999c.135-.188.384-.258.598-.171.215.089.34.314.303.543l-.479 2.92 1.408.002c.183 0 .35.1.438.26.087.159.081.354-.017.508z"
-					/>
-				</svg>
-			</div>
-			<div class="headerItem">
-				<svg viewBox="0 0 487.336 487.335" fill="currentColor">
+				</g>
+			</svg>
+		</a>
+		<div class="headerItem">
+			<svg viewBox="0 0 256 256">
+				<defs>
+					<style>
+						.cls-1 {
+							fill: #fff;
+						}
+					</style>
+				</defs>
+				<path class="cls-1"
+					d="M0,256V0H256V256ZM165.63,32c-12.15,0-24.31,0-36.47,0-12.74.06-22.09,8.73-22.37,20.65-.29,12.34,8.62,21.84,21.53,22q37,.42,74,0c12.75-.11,22-9.8,21.72-21.92-.28-11.85-9.77-20.68-22.38-20.73C189.62,32,177.63,32,165.63,32Zm-.22,192c12,0,24,0,36,0,12.92-.05,22.46-9,22.6-21s-9.21-21.58-22-21.67q-36.74-.24-73.47,0c-12.84.1-22,9.5-21.75,21.8.19,12,9.54,20.82,22.15,20.89C141.08,224.05,153.24,224,165.41,224Zm0-74.79v0c11.83,0,23.65,0,35.48,0a29.68,29.68,0,0,0,7.88-.87,21.22,21.22,0,0,0,15.15-23c-1.35-10.31-9.85-18.42-20.34-18.5-25.48-.2-51-.07-76.45,0a18.36,18.36,0,0,0-5.38.88c-10.24,3.16-16.18,12.78-14.73,23.68a20.84,20.84,0,0,0,20.42,17.77C140.05,149.38,152.71,149.21,165.36,149.21ZM80,128.2a26.61,26.61,0,1,0-53.22-.4,26.56,26.56,0,0,0,26.35,26.91A26.85,26.85,0,0,0,80,128.2Zm-26.91,101A26.61,26.61,0,1,0,26.76,202.4,26.56,26.56,0,0,0,53.08,229.22ZM26.77,53.13A26.61,26.61,0,1,0,53.53,26.77,26.29,26.29,0,0,0,26.77,53.13Z" />
+				<path
+					d="M165.63,32c12,0,24,0,36,0,12.61.05,22.1,8.88,22.38,20.73.29,12.12-9,21.81-21.72,21.92q-37,.34-74,0c-12.91-.14-21.82-9.64-21.53-22,.28-11.92,9.63-20.59,22.37-20.65C141.32,32,153.48,32,165.63,32Z" />
+				<path
+					d="M165.41,224c-12.17,0-24.33.05-36.49,0-12.61-.07-22-8.94-22.15-20.89-.2-12.3,8.91-21.7,21.75-21.8q36.73-.27,73.47,0c12.79.09,22.15,9.54,22,21.67s-9.68,21-22.6,21C189.4,224,177.4,224,165.41,224Z" />
+				<path
+					d="M165.36,149.21c-12.65,0-25.31.17-38-.05A20.84,20.84,0,0,1,107,131.39c-1.45-10.9,4.49-20.52,14.73-23.68a18.36,18.36,0,0,1,5.38-.88c25.48-.06,51-.19,76.45,0,10.49.08,19,8.19,20.34,18.5a21.22,21.22,0,0,1-15.15,23,29.68,29.68,0,0,1-7.88.87c-11.83.09-23.65,0-35.48,0Z" />
+				<path
+					d="M80,128.2a26.85,26.85,0,0,1-26.87,26.51,26.72,26.72,0,0,1,.41-53.43A26.85,26.85,0,0,1,80,128.2Z" />
+				<path d="M53.08,229.22a26.61,26.61,0,0,1,.5-53.22,26.61,26.61,0,1,1-.5,53.22Z" />
+				<path d="M26.77,53.13a26.61,26.61,0,0,1,53.22.4,26.61,26.61,0,1,1-53.22-.4Z" />
+			</svg>
+		</div>
+		<div class="headerItem headerItemActive">
+			<svg viewBox="0 0 24 24" fill="currentColor">
+				<path
+					d="m22.241 7h-.241v-.25c0-1.517-1.234-2.75-2.75-2.75h-16.5c-1.516 0-2.75 1.233-2.75 2.75v9.5c0 1.517 1.234 2.75 2.75 2.75h16.5c1.516 0 2.75-1.233 2.75-2.75v-.25h.241c.965 0 1.75-.785 1.75-1.75v-5.5c0-.965-.785-1.75-1.75-1.75zm-8.324 3.77-3.496 5.499c-.093.147-.254.231-.421.231-.057 0-.114-.01-.169-.029-.22-.08-.356-.301-.327-.533l.43-3.438-1.438-.002c-.188 0-.359-.105-.444-.271-.085-.167-.071-.367.038-.52l3.576-4.999c.135-.188.384-.258.598-.171.215.089.34.314.303.543l-.479 2.92 1.408.002c.183 0 .35.1.438.26.087.159.081.354-.017.508z" />
+			</svg>
+		</div>
+		<div class="headerItem">
+			<svg viewBox="0 0 487.336 487.335" fill="currentColor">
+				<g>
 					<g>
-						<g>
-							<path
-								d="M243.573,24.136C109.269,24.76,0,134.531,0,268.832c0,40.784,10.226,80.992,29.563,116.62v-64.692
+						<path d="M243.573,24.136C109.269,24.76,0,134.531,0,268.832c0,40.784,10.226,80.992,29.563,116.62v-64.692
 						c0-11.925,4.243-22.984,11.683-32.471c-0.616-6.453-0.933-12.946-0.933-19.457c0-112.177,91.265-203.861,203.261-204.382
 						c112.183,0.519,203.447,92.205,203.447,204.382c0,7.21-0.4,14.396-1.156,21.533c6.467,9.01,10.116,19.33,10.116,30.395v67.975
-						c20.508-36.43,31.354-77.864,31.354-119.902C487.336,134.531,378.067,24.76,243.573,24.136z"
-							/>
-							<path
-								d="M44.578,310.312c-1.03,3.373-1.578,6.867-1.578,10.449v62.352v29.023c0,28.199,33.586,51.063,75.019,51.063h31.586V269.7
-						h-31.586C81.848,269.699,51.665,287.121,44.578,310.312z"
-							/>
-							<path
-								d="M442.543,412.136v-30.037v-61.338c0-2.201-0.229-4.367-0.626-6.496c-4.69-25.133-36.196-44.565-74.394-44.565h-31.586
-						v193.5h31.587C408.958,463.199,442.543,440.335,442.543,412.136z"
-							/>
-						</g>
+						c20.508-36.43,31.354-77.864,31.354-119.902C487.336,134.531,378.067,24.76,243.573,24.136z" />
+						<path d="M44.578,310.312c-1.03,3.373-1.578,6.867-1.578,10.449v62.352v29.023c0,28.199,33.586,51.063,75.019,51.063h31.586V269.7
+						h-31.586C81.848,269.699,51.665,287.121,44.578,310.312z" />
+						<path d="M442.543,412.136v-30.037v-61.338c0-2.201-0.229-4.367-0.626-6.496c-4.69-25.133-36.196-44.565-74.394-44.565h-31.586
+						v193.5h31.587C408.958,463.199,442.543,440.335,442.543,412.136z" />
 					</g>
-				</svg>
-			</div>
-		</header>
+				</g>
+			</svg>
+		</div>
+	</header>
 
-		<div id="topBar">
-			<div>
-				<div id="title">
-					<h2>Bem vindo, Igor!</h2>
+	<div id="topBar">
+		<div>
+			<div id="title">
+
+				<h2 id="userTitle">Bem vindo, Igor!</h2>
+			</div>
+			<div id="searchBar">
+				<img src="./assets/icons/search.svg" alt="">
+				<input type="text" placeholder="Busque um teste ou um paciente específico">
+			</div>
+			<div id="wrapperSettings">
+				<div class="iconSettings">
+					<img src="./assets/icons/bell.svg" alt="">
 				</div>
-				<div id="searchBar">
-					<img src="./assets/icons/search.svg" alt="">
-					<input type="text" placeholder="Busque um teste ou um paciente específico">
+				<div class="iconSettings">
+					<img src="./assets/icons/user.svg" alt="">
 				</div>
-				<div id="wrapperSettings">
-					<div class="iconSettings">
-						<img src="./assets/icons/bell.svg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<main>
+		<div id="sectionLeft">
+			<div class="sectionTitle">Testes</div>
+			<div class="container">
+				<div class="wrapperCards">
+					<div class="card">
+						<div class="cardContent">
+							<h3>Stroop</h3>
+							<h4>10 resultados</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
 					</div>
-					<div class="iconSettings">
-						<img src="./assets/icons/user.svg" alt="">
+					<div class="card">
+						<div class="cardContent">
+							<h3>BST</h3>
+							<h4>2 resultados</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
+					</div>
+					<div class="card">
+						<div class="cardContent">
+							<h3>TOL</h3>
+							<h4>nenhum resultado recente</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="wrapperCards">
+					<div class="card">
+						<div class="cardContent">
+							<h3>Stroop</h3>
+							<h4>10 resultados</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="wrapperCards">
+					<div class="card">
+						<div class="cardContent">
+							<h3>Stroop</h3>
+							<h4>10 resultados</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
+					</div>
+					<div class="card">
+						<div class="cardContent">
+							<h3>BST</h3>
+							<h4>2 resultados</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
+					</div>
+					<div class="card">
+						<div class="cardContent">
+							<h3>TOL</h3>
+							<h4>nenhum resultado recente</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="wrapperCards">
+					<div class="card">
+						<div class="cardContent">
+							<h3>Stroop</h3>
+							<h4>10 resultados</h4>
+						</div>
+						<span class="cardIcon"><img src="./assets/icons/dots.svg" /></span>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<main>
-			<div id="sectionLeft">
-				<div class="sectionTitle">Testes</div>
-				<div class="container">
-					<div class="wrapperCards">
-						<div class="card">
-							<div class="cardContent">
-								<h3>Stroop</h3>
-								<h4>10 resultados</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-						<div class="card">
-							<div class="cardContent">
-								<h3>BST</h3>
-								<h4>2 resultados</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-						<div class="card">
-							<div class="cardContent">
-								<h3>TOL</h3>
-								<h4>nenhum resultado recente</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
+		<div id="sectionRight">
+			<div class="sectionTitle">Pacientes</div>
+			<div id="wrapperPeople">
+				<div class="person">
+					<div class="personPic">
+						<img src="./assets/icons/user.svg" alt="" />
 					</div>
+					<div class="personName">Igor Rocha</div>
+					<span>
+						<img src="./assets/icons/arrow-right-solid.svg" alt="" />
+					</span>
 				</div>
-				<div class="container">
-					<div class="wrapperCards">
-						<div class="card">
-							<div class="cardContent">
-								<h3>Stroop</h3>
-								<h4>10 resultados</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="wrapperCards">
-						<div class="card">
-							<div class="cardContent">
-								<h3>Stroop</h3>
-								<h4>10 resultados</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-						<div class="card">
-							<div class="cardContent">
-								<h3>BST</h3>
-								<h4>2 resultados</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-						<div class="card">
-							<div class="cardContent">
-								<h3>TOL</h3>
-								<h4>nenhum resultado recente</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="wrapperCards">
-						<div class="card">
-							<div class="cardContent">
-								<h3>Stroop</h3>
-								<h4>10 resultados</h4>
-							</div>
-							<span class="cardIcon"
-								><img src="./assets/icons/dots.svg"
-							/></span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="sectionRight">
-				<div class="sectionTitle">Pacientes</div>
-				<div id="wrapperPeople">
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-					<div class="person">
-						<div class="personPic">
-							<img src="./assets/icons/user.svg" alt="" />
-						</div>
-						<div class="personName">Igor Rocha</div>
-						<span>
-							<img src="./assets/icons/arrow-right-solid.svg" alt="" />
-						</span>
-					</div>
-				</div>
-			</div>
-		</main>
-
-		<div id="loader-wrapper" class="loader-wrapper">
-			<div id="loader" class="loader">
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
 			</div>
 		</div>
+	</main>
 
-		<script src="./js/user.js"></script>
-		<script src="./js/loader.js"></script>
-		<script src="./js/background.js"></script>
-	</body>
+	<div id="loader-wrapper" class="loader-wrapper">
+		<div id="loader" class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<script src="./js/user.js"></script>
+	<script src="./js/loader.js"></script>
+	<script src="./js/background.js"></script>
+</body>
+
 </html>
