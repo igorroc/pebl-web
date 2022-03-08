@@ -23,8 +23,9 @@ export function passportJWTConfig(passportInstance: PassportJWTProps) {
 const cookieExtractor = function(req:Request) {
   if (req && req.headers.cookie)
   {
-    const [, token] = req.headers.cookie.split("=");
-    console.log(token)
+    const cookieValue = req.headers.cookie.split('; ').find(x => x.startsWith('token='));
+    let token
+    if (cookieValue) token = cookieValue.split('=')[1]
     return token
   }
 };

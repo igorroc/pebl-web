@@ -48,11 +48,8 @@ async function handleLogin() {
 		email: String(emailLogin.value),
 		password: String(passwordLogin.value)
 	}).then((res)=>{
-		//window.location.href = `./user.html`
+		window.location.href = `./user.html`
 		dataPost = res.data
-		console.log("cookie data", document.cookie)
-		
-		console.log("axios", res.headers["set-cookie"])
 	}).catch((err)=>{
 		console.log("error", err)
 		alert('Dados inválidos')
