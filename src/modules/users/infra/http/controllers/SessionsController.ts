@@ -15,13 +15,16 @@ export default class SessionsController {
         });
         delete user.password;
 
-        response.cookie("token", token, {
-            expires: new Date(Date.now() + 2 * 3600000),
-            httpOnly:true,
-            sameSite:'none',
-            secure:true,
-            path: "/",
-        })
+        // response.cookie("token", token, {
+        //     expires: new Date(Date.now() + 2 * 3600000),
+        //     httpOnly:true,
+        //     sameSite:'none',
+        //     secure:true,
+        //     path: "/",
+        // })
+
+        response.setHeader("Set-Cookie", [`token2=${token}`]);
+        console.log(response.getHeaders())
 
         return response.json({ user, token });  
     } 

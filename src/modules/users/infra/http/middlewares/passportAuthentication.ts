@@ -7,7 +7,7 @@ type PassportJWTProps = typeof passport;
 
 export function passportJWTConfig(passportInstance: PassportJWTProps) {
   const options: StrategyOptions = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    jwtFromRequest: cookieExtractor,
     secretOrKey:  authConfig.jwt.secret,
     algorithms: ["HS256"],
   };
@@ -19,6 +19,15 @@ export function passportJWTConfig(passportInstance: PassportJWTProps) {
     }),
   );
 }
+
+const cookieExtractor = function(req:Request) {
+  if (req && req.headers.cookie)
+  {
+    const [, token] = req.headers.cookie.split("=");
+    console.log(token)
+    return token
+  }
+};
 
 export function isTokenAuthenticated(req: Request, res: Response, next: NextFunction) {
   return passport.authenticate("jwt", { session: false })(req, res, next);

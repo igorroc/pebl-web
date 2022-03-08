@@ -89,28 +89,6 @@
 								/>
 							</div>
 							<div class="question">
-								<label for="gender">Gênero</label>
-								<input
-									type="text"
-									name="gender"
-									id="genderSignUp"
-									placeholder="Masculino"
-									required
-								/>
-							</div>
-							<div class="question">
-								<label for="scholarity">Escolaridade</label>
-								<input
-									type="text"
-									name="scholarity"
-									id="scholaritySignUp"
-									placeholder="Superior completo"
-									required
-								/>
-							</div>
-						</div>
-						<div class="wrap-questions">
-							<div class="question">
 								<label for="workField">Trabalho</label>
 								<input
 									type="text"
@@ -130,15 +108,45 @@
 									required
 								/>
 							</div>
+						</div>
+						<div class="wrap-questions">
+							<div class="question">
+								<label for="scholarity" id="scholarityLabel">Escolaridade</label>
+								<div class="custom-select" >
+									<select name="scholarity" id="selectScholarity" required>
+										<option value="" selected="selected">Selecionar</option>
+										<option value="Graduação Completa">Graduação Completa</option>
+										<option value="Mestrado Incompleto">Mestrado Incompleto</option>
+										<option value="Mestrado Completo">Mestrado Completo</option>
+										<option value="Doutorado Incompleto">Doutorado Incompleto</option>
+										<option value="Doutorado Completo">Doutorado Completo</option>
+										<option value="Pós Doutorado Incompleto">Pós Doutorado Incompleto</option>
+										<option value="Pós Doutorado Completo">Pós Doutorado Completo</option>
+								  	</select>
+								</div>
+							</div>
+							<div class="question">
+								<label for="gender">Gênero</label>
+								<div class="custom-select" >
+									<select name="gender" id="selectGender" required placeholder="Selecione um estado">
+										<option value="" selected="selected">Selecionar</option>
+										<option value="Masculino">Masculino</option>
+										<option value="Feminino">Feminino</option>
+										<option value="Outro">Outro</option>
+								  	</select>
+								</div>
+							</div>
 							<div class="question">
 								<label for="maritalStatus">Estado civil</label>
-								<input
-									type="text"
-									name="maritalStatus"
-									id="maritalStatusSignUp"
-									placeholder="solteiro"
-									required
-								/>
+								<div class="custom-select" >
+									<select name="maritalStatus" id="selectMaritalStatus" required>
+										<option value="" selected="selected">Selecionar</option>
+										<option value="Casado(a)">Casado(a)</option>
+										<option value="Solteiro(a)">Solteiro(a)</option>
+										<option value="Viúvo(a)">Viúvo(a)</option>
+										<option value="União estável">União estável</option>
+									</select>
+								</div>
 							</div>
 							<div class="question">
 								<label for="password">Senha</label>

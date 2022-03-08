@@ -158,7 +158,7 @@ input[type="submit"]:hover {
 #form-sign-in .question input{
 	font-size: 0.9em;
 	margin-top: 5px;
-	padding: 0.4em 1em;
+	padding: 0.5em 1em;
 	/*width:60%;
 	padding: 0.4em 6em 0.4em 1em;
 	*/
@@ -172,7 +172,84 @@ input[type="submit"]:hover {
 #form-sign-up .question input {
 	font-size: 0.7em;
 	margin-top: 5px;
-	padding: 0.4em 1em;
+	padding: 0.5em 1em;
+	color: white;
+	background-color: #2424246c;
+	border: none;
+	outline: none;
+	
+	border-radius: 10px;
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+	position: relative;
+  }
+  
+  .custom-select select {
+	display: none; /*hide original SELECT element: */
+  }
+
+  .select-selected {
+	margin-top: 5px;
+	background-color:  #2424246c;
+	font-size: 0.65em;
+	border-radius: 10px;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+	position: absolute;
+	content: "";
+	top: 20px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 10px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+	color: #ffffff;
+	padding: 8px 16px;
+	cursor: pointer;
+	border-radius: 10px;
+	
+  }
+  
+  /* Style items (options): */
+  .select-items {
+	background-color: rgba(36, 36, 36);
+	position: absolute;
+	font-size: 0.65em;
+	border-radius: 10px;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	border-bottom:rgba(0, 0, 0, 0.8) 2px solid;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+	display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+	background-color: rgba(0, 0, 0, 0.8);
+  }
+
+#form-sign-up .question select {
+	font-size: 0.7em;
+	margin-top: 5px;
+	padding: 0.4em;
 	color: white;
 	background-color: #2424246c;
 	border: none;
@@ -186,11 +263,9 @@ input[type="submit"]:hover {
 	padding: 10px 30px;
 }
 #form-sign-up form .form-submit input {
-	position: absolute;
 	font-size:  0.8em;
 	padding: 10px 20px;
-	left: 75%;
-	
+	float:right;
 	margin-top: 15px;
 }
 
@@ -354,7 +429,6 @@ input[type="submit"]:hover {
 	#form-sign-up {
 		left: 45%;
 	}
-	
 }
 
 @media only screen and (max-width: 750px) {
@@ -374,7 +448,7 @@ input[type="submit"]:hover {
 		position: absolute;
 		font-size:  0.8em;
 		padding: 10px 10px;
-		left: 25%;
+		left: 40%;
 		
 		margin-top: 10px;
 	}
@@ -463,7 +537,7 @@ input[type="submit"]:hover {
 		position: absolute;
 		font-size:  0.8em;
 		padding: 10px 10px;
-		left: 25%;
+		left: 40%;
 		
 		margin-top: 10px;
 	}
@@ -475,7 +549,7 @@ input[type="submit"]:hover {
 		font-size: 1.5em;
 	}
 	#wrapper-inner-form #form-sign-up h2 {
-		font-size: 1.2em;
+		font-size: 1em;
 		margin-bottom: 8px;
 	}
 
