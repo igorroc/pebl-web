@@ -5,8 +5,10 @@ var lang = url.searchParams.get("lang") || "br"
 
 var resultadoFinal = {
 	fase1: {
+		type: "practice",
+		block: 0,
 		tempo: [],
-		escolhas: [],
+		corr: [],
 		trial: [],
 		stim: [],
 		resp: [],
@@ -15,8 +17,10 @@ var resultadoFinal = {
 		tooslow: [],
 	},
 	fase2: {
+		type: "neutral",
+		block: 1,
 		tempo: [],
-		escolhas: [],
+		corr: [],
 		trial: [],
 		stim: [],
 		resp: [],
@@ -25,8 +29,10 @@ var resultadoFinal = {
 		tooslow: [],
 	},
 	fase3: {
+		type: "congruent",
+		block: 2,
 		tempo: [],
-		escolhas: [],
+		corr: [],
 		trial: [],
 		stim: [],
 		resp: [],
@@ -35,8 +41,10 @@ var resultadoFinal = {
 		tooslow: [],
 	},
 	fase4: {
+		type: "incongruent",
+		block: 3,
 		tempo: [],
-		escolhas: [],
+		corr: [],
 		trial: [],
 		stim: [],
 		resp: [],
@@ -45,8 +53,10 @@ var resultadoFinal = {
 		tooslow: [],
 	},
 	fase5: {
+		type: "mixed",
+		block: 4,
 		tempo: [],
-		escolhas: [],
+		corr: [],
 		trial: [],
 		stim: [],
 		resp: [],
@@ -116,10 +126,10 @@ function jogo(choice) {
 	resultadoFinal[`fase${level}`].tooslow.push(tooslow)
 
 	if (choice == big.classList[2]) {
-		resultadoFinal[`fase${level}`].escolhas.push(1)
+		resultadoFinal[`fase${level}`].corr.push(1)
 		// Caso a escolha esteja correta, insere 1
 	} else {
-		resultadoFinal[`fase${level}`].escolhas.push(0)
+		resultadoFinal[`fase${level}`].corr.push(0)
 		// Caso a escolha esteja errada, insere 0
 	}
 
@@ -186,6 +196,10 @@ async function finalizar() {
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
 
+	for (let i = 1; i < 6; i++) {
+		delete resultadoFinal[`fase${i}`].tempo
+	}
+	
 	pushResponse("bst")
 	// showGraphs()
 }

@@ -13,8 +13,11 @@ import Patient from '@modules/patients/infra/typeorm/entities/Patients';
 
 @Entity('sternberg')
 class Sternberg {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn()
     id: string;
+
+    @Column("uuid")
+    result_id: string;
 
     @Column()
     user_id: string;
@@ -30,17 +33,17 @@ class Sternberg {
     @JoinColumn({ name: 'patient_id' })
     patient: Patient;
 
-    @Column("text", { array: true })
-    subnum: number[];
+    @Column()
+    subnum: string
+
+    @Column()
+    length: number;
 
     @Column("int", { array: true })
-    length: number[];
-
-    @Column("text", { array: true })
     trial: number[];
 
-    @Column("text", { array: true })
-    set: string[];
+    @Column()
+    set: string;
 
     @Column("text", { array: true })
     stim: string[];
@@ -51,10 +54,10 @@ class Sternberg {
     @Column("text", { array: true })
     resp: string[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     corr: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     rt: number[];
 
     @CreateDateColumn()

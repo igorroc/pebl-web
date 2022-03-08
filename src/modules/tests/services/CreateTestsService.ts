@@ -1,4 +1,5 @@
 import { injectable, inject } from 'tsyringe';
+import { v4 as uuid_v4 } from "uuid";
 
 import ITestsRepository from '@modules/tests/repositories/ITestsRepository';
 
@@ -12,6 +13,8 @@ import Tol from '../infra/typeorm/entities/TOL';
 import ICreateTolDTO from '../dtos/ICreateTolDTO';
 import ICreateStroopDTO from '../dtos/ICreateStroopDTO';
 import Stroop from '../infra/typeorm/entities/Stroop';
+import {IBstResultDTO, IFaseBst} from '../dtos/IBstResultDTO';
+import { ISternbergResultDTO, IFaseSternberg } from '../dtos/ISternbergResultDTO';
 
 
 @injectable()
@@ -21,64 +24,54 @@ class CreateTestsService {
         private testsRepository: ITestsRepository,
     ){}
     
-    public async execute_bst({ 
-        user_id,
-        patient_id,
-        subnum,
-        type,
-        block,
-        congruency,
-        trial,
-        stim,
-        resp,
-        corr,
-        rt,
-        tooslow
-     }: ICreateTestDTO): Promise<Bst> {
-        const test = await this.testsRepository.create_bst({
-            user_id,
-            patient_id,
-            subnum,
-            type,
-            block,
-            congruency,
-            trial,
-            stim,
-            resp,
-            corr,
-            rt,
-            tooslow
-        });
+    public async execute_bst({user_id, patient_id, resultadoFinal}: IBstResultDTO): Promise<Bst[]> {
+        
+        const result_id = uuid_v4();
+        const test: Bst[] = [];
+        
+        for(const item of Object.entries(resultadoFinal)){
+            let fase: IFaseBst = item[1];
+            test.push(await this.testsRepository.create_bst({
+                result_id: result_id,
+                user_id: user_id,
+                patient_id: patient_id,
+                subnum: patient_id,
+                type: fase.type,
+                block: fase.block,
+                congruency: fase.congruency,
+                trial: fase.trial,
+                stim: fase.stim,
+                resp: fase.resp,
+                corr: fase.corr,
+                rt: fase.rt,
+                tooslow: fase.tooslow
+            }));
+        }
 
         return test; 
     }
 
-    public async execute_sternberg({ 
-        user_id,
-        patient_id,
-        subnum,
-        length,
-        trial,
-        set,
-        stim,
-        targetfoil,
-        resp,
-        corr,
-        rt
-        }: ICreateSternbergDTO): Promise<Sternberg> {
-        const test = await this.testsRepository.create_sternberg({
-            user_id,
-            patient_id,
-            subnum,
-            length,
-            trial,
-            set,
-            stim,
-            targetfoil,
-            resp,
-            corr,
-            rt
-        });
+    public async execute_sternberg({user_id, patient_id, resultadoFinal}: ISternbergResultDTO): Promise<Sternberg[]> {
+        const result_id = uuid_v4();
+        const test: Sternberg[] = [];
+
+        for(const item of Object.entries(resultadoFinal)){
+            let fase: IFaseSternberg = item[1];
+            test.push(await this.testsRepository.create_sternberg({
+                result_id: result_id,
+                user_id: user_id,
+                patient_id: patient_id,
+                subnum: patient_id,
+                length: fase.length,
+                trial: fase.trial,
+                set: fase.set,
+                stim: fase.stim,
+                targetfoil: fase.targetfoil,
+                resp: fase.resp,
+                corr: fase.corr,
+                rt: fase.rt
+            }));
+        }
 
         return test; 
     }

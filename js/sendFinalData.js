@@ -38,12 +38,12 @@ var myHeader = {
 }
 
 async function pushResponse(testType) {
-	console.log("antes")
-	console.log(resultadoFinal)
+	//console.log("antes")
 	
-	//delete resultadoFinal.fase1.tempo
- 
-	console.log(resultadoFinal)
+	//let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
+	//let patient_id = "cbf16a0c-f1da-4320-a193-c3042470ab44"
+	//console.log(resultadoFinal)
+	//console.log(JSON.stringify({user_id, patient_id, resultadoFinal}))
 	
 	switch (testType){
 		case "bst":
@@ -63,12 +63,12 @@ async function pushResponse(testType) {
 	await fetch(address, {
 		method: "POST",
 		headers: myHeader,
-		body: JSON.stringify(resultadoFinal),
+		body: JSON.stringify({user_id, patient_id, resultadoFinal}),
 	})
 		.then((r) => console.log(r))	
 		.catch((err) => console.error(err))
 
-	console.log("depois")
+	//console.log("depois")
 }
 
 async function getResponse(testType) {

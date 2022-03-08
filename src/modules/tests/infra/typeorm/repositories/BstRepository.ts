@@ -11,6 +11,7 @@ class BstsRepository implements ITestsBstRepository {
   }
 
   public async create_bst({
+    result_id,
     user_id,
     patient_id,
     subnum,
@@ -25,6 +26,7 @@ class BstsRepository implements ITestsBstRepository {
     tooslow,
   }: ICreateBstDTO): Promise<Bst> {
     const test = this.ormRepositoryB.create({
+      result_id,
       user_id,
       patient_id,
       subnum,

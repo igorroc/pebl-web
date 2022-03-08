@@ -1,10 +1,11 @@
 export default interface ICreateSternbergDTO {
+  result_id: string;
   user_id: string;
   patient_id: string;
-  subnum: number[];
-  length: number[];
+  subnum: string;
+  length: number;
   trial: number[];
-  set: string[];
+  set: string;
   stim: string[];
   targetfoil: string[];
   resp: string[];

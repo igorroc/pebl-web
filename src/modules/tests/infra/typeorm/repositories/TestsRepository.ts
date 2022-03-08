@@ -28,6 +28,7 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_bst({
+    result_id,
     user_id,
     patient_id,
     subnum,
@@ -42,6 +43,7 @@ class TestsRepository implements ITestsRepository {
     tooslow,
   }: ICreateBstDTO): Promise<Bst> {
     const test = this.ormRepositoryB.create({
+      result_id,
       user_id,
       patient_id,
       subnum,
@@ -62,6 +64,7 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_sternberg({
+    result_id,
     user_id,
     patient_id,
     subnum,
@@ -75,6 +78,7 @@ class TestsRepository implements ITestsRepository {
     rt,
   }: ICreateSternbergDTO): Promise<Sternberg> {
     const test = this.ormRepositoryS.create({
+      result_id,
       user_id,
       patient_id,
       subnum,

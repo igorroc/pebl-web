@@ -2,86 +2,36 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import { getCustomRepository } from 'typeorm';
 
+import Bst from '@modules/tests/infra/typeorm/entities/BST';
+import {IBstResultDTO} from '@modules/tests/dtos/IBstResultDTO';
 import CreateTestsService from '@modules/tests/services/CreateTestsService';
 import BstRepository from '../../typeorm/repositories/BstRepository';
 import SternbergRepository from '../../typeorm/repositories/SternbergRepository';
 import TolRepository from '../../typeorm/repositories/TolRepository';
 import StroopRepository from '../../typeorm/repositories/StroopRepository';
+import { ISternbergResultDTO } from '@modules/tests/dtos/ISternbergResultDTO';
 
 export default class BstController { 
     public async create_bst(request: Request, response: Response): Promise<Response> {
-        const {
-            user_id,
-            patient_id,
-            subnum,
-            type,
-            block,
-            congruency,
-            trial,
-            stim,
-            resp,
-            corr,
-            rt,
-            tooslow
-        } = request.body;
-
-        //console.error(request.body);
-        console.log("create_bst body",request.body);
-        //const user_id = request.body;
+        //console.log("create_bst body",request.body);
+        const result: IBstResultDTO = request.body;
+        
         const createTest = container.resolve(CreateTestsService);
 
-        const test = await createTest.execute_bst({
-            user_id,
-            patient_id,
-            subnum,
-            type,
-            block,
-            congruency,
-            trial,
-            stim,
-            resp,
-            corr,
-            rt,
-            tooslow,
-        });
-
-        console.log("create_bst test",test)
-
-        return response.json(test); 
+        const bts_result = await createTest.execute_bst(result)
+        //console.log("create_bst result",bts_result)
+        return response.json(bts_result); 
     } 
 
     public async create_sternberg(request: Request, response: Response): Promise<Response> {
-        const {
-            user_id,
-            patient_id,
-            subnum,
-            length,
-            trial,
-            set,
-            stim,
-            targetfoil,
-            resp,
-            corr,
-            rt
-        } = request.body;
-
+        //console.log("create_sternberg body",request.body);
+        const result: ISternbergResultDTO = request.body;
+        
         const createTest = container.resolve(CreateTestsService);
 
-        const test = await createTest.execute_sternberg({
-            user_id,
-            patient_id,
-            subnum,
-            length,
-            trial,
-            set,
-            stim,
-            targetfoil,
-            resp,
-            corr,
-            rt
-        });
-
-        return response.json(test); 
+        const sternberg_result = await createTest.execute_sternberg(result)
+        //console.log("create_sternberg result",sternberg_result)
+        return response.json(sternberg_result);
     }
 
     public async create_tol(request: Request, response: Response): Promise<Response> {

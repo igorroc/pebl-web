@@ -18,21 +18,43 @@ var informacao = document.getElementById("informacao")
 
 var resultadoFinal = {
 	fase1: {
-		tempo: [],
-		escolhas: [],
+		length: 0,
+		set: "",
+		trial: [],
+		stim: [],
+		targetfoil: [],
+		resp: [],
+		corr: [],
+		rt: [],
+		tempo: []
 	},
 	fase2: {
-		tempo: [],
-		escolhas: [],
+		length: 0,
+		set: "",
+		trial: [],
+		stim: [],
+		targetfoil: [],
+		resp: [],
+		corr: [],
+		rt: [],
+		tempo: []
 	},
 	fase3: {
-		tempo: [],
-		escolhas: [],
+		length: 0,
+		set: "",
+		trial: [],
+		stim: [],
+		targetfoil: [],
+		resp: [],
+		corr: [],
+		rt: [],
+		tempo: []
 	},
 }
 
 // ! INICIO DINAMICO
-lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
+resultadoFinal.fase1.set = lembrar.innerHTML = letra_aleatoria() + letra_aleatoria()
+resultadoFinal.fase1.length = 2
 traduzInformacao("sternberg", "pre_test", "instruction", lang)
 document.addEventListener("keydown", inicio)
 // ! FIM DO INICIO DINAMICO
@@ -79,7 +101,12 @@ async function finalizar() {
 	// graph_container.appendChild(canvas)
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
-	await pushResponse()
+
+	for (let i = 1; i < 4; i++) {
+		delete resultadoFinal[`fase${i}`].tempo
+	}
+
+	await pushResponse("sternberg")
 	// showGraphs()
 }
 
@@ -181,11 +208,24 @@ var jogo = function sternberg(e) {
 		removeTransition()
 	} else {
 		var codigo = e.code.slice(3)
+		console.log(`codigo: ${codigo} - Ausente: ${KEY_AUSENTE} - Presente: ${KEY_PRESENTE}`)
+		
 		if (codigo != KEY_AUSENTE && codigo != KEY_PRESENTE) {
 			return
 		}
+		resultadoFinal[`fase${level}`].resp.push(codigo == KEY_AUSENTE ? "<lshift>" : "<rshift>")
+
 		getTime(resultadoFinal[`fase${level}`].tempo)
 		step++
+		resultadoFinal[`fase${level}`].trial.push(step)
+
+		let lengthTime = resultadoFinal[`fase${level}`].tempo.length
+		let diffTime = resultadoFinal[`fase${level}`].tempo[lengthTime-1].getTime()-resultadoFinal[`fase${level}`].tempo[lengthTime-2].getTime()
+		resultadoFinal[`fase${level}`].rt.push(diffTime)
+
+		resultadoFinal[`fase${level}`].stim.push(alternar.innerHTML)
+		resultadoFinal[`fase${level}`].targetfoil.push(lembrar.innerHTML.includes(alternar.innerHTML) == true ? "T" : "F")
+
 		var acertou = false
 
 		if (codigo == KEY_AUSENTE) {
@@ -201,10 +241,10 @@ var jogo = function sternberg(e) {
 
 		if (acertou) {
 			//Inserção no vetor de escolhas
-			resultadoFinal[`fase${level}`].escolhas.push("acertou")
+			resultadoFinal[`fase${level}`].corr.push(1)//acertou
 			lembrar.classList.add("hidden")
 		} else {
-			resultadoFinal[`fase${level}`].escolhas.push("errou")
+			resultadoFinal[`fase${level}`].corr.push(0)//errou
 			lembrar.classList.remove("hidden")
 		}
 
@@ -236,7 +276,9 @@ function proximo_nivel() {
 
 		frase = frase + letra2
 	}
-	lembrar.innerHTML = frase
+	
+	resultadoFinal[`fase${level}`].set = lembrar.innerHTML = frase
+	resultadoFinal[`fase${level}`].length = frase.length
 }
 
 async function timer(tempo) {
