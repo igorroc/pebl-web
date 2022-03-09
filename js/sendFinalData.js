@@ -29,17 +29,9 @@ function getUserInfo() {
 		`\nINFO: ${nome} | ${orientando} | ${idade} | ${email}`
 }
 
-var myHeader = {
-	"Content-Type": "application/json"
-}
-
 async function pushResponse(testType) {
-	/* console.log("antes")
-	
-	let patient_id = "cbf16a0c-f1da-4320-a193-c3042470ab44"
-	console.log(resultadoFinal)
-	console.log(JSON.stringify({patient_id, resultadoFinal})) */
-	
+	const patient_id = document.cookie.split('; ').find(x => x.startsWith('patientId=')).split('=')[1]
+		
 	let address = ""
 
 	switch (testType){
@@ -72,8 +64,6 @@ async function pushResponse(testType) {
 		})
 		.then((r) => console.log(r))	
 		.catch((err) => console.error(err)) */
-
-	//console.log("depois")
 }
 
 async function getResponse(testType) {

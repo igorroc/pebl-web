@@ -14,22 +14,23 @@ import { IStroopResultDTO } from '@modules/tests/dtos/IStroopResultDTO';
 
 export default class BstController { 
     public async create_bst(request: Request, response: Response): Promise<Response> {
-        //console.log("create_bst body",request.body);
-        //const user_id: request.user.id;
-        const user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
+        console.log("create_bst body",request.body);
+        const user_id = request.user.id;
+        console.log(user_id);
+        //const user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
         const result: IBstResultDTO = request.body;
         
         const createTest = container.resolve(CreateTestsService);
 
         const bts_result = await createTest.execute_bst(user_id, result)
-        //console.log("create_bst body",bts_result);
+        console.log("create_bst body",bts_result);
         return response.json(bts_result); 
     } 
 
     public async create_sternberg(request: Request, response: Response): Promise<Response> {
         //console.log("create_sternberg body",request.body);
-        //const user_id: request.user.id;
-        let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
+        const user_id = request.user.id;
+        //let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
         const result: ISternbergResultDTO = request.body;
         
         const createTest = container.resolve(CreateTestsService);
@@ -83,8 +84,8 @@ export default class BstController {
 
     public async create_stroop(request: Request, response: Response): Promise<Response> {
         //console.log("create_stroop body",request.body);
-        //const user_id: request.user.id;
-        let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
+        const user_id = request.user.id;
+        //let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
         const result: IStroopResultDTO = request.body;
 
         const createTest = container.resolve(CreateTestsService);
