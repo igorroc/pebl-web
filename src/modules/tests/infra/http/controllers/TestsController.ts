@@ -10,26 +10,31 @@ import SternbergRepository from '../../typeorm/repositories/SternbergRepository'
 import TolRepository from '../../typeorm/repositories/TolRepository';
 import StroopRepository from '../../typeorm/repositories/StroopRepository';
 import { ISternbergResultDTO } from '@modules/tests/dtos/ISternbergResultDTO';
+import { IStroopResultDTO } from '@modules/tests/dtos/IStroopResultDTO';
 
 export default class BstController { 
     public async create_bst(request: Request, response: Response): Promise<Response> {
         //console.log("create_bst body",request.body);
+        //const user_id: request.user.id;
+        const user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
         const result: IBstResultDTO = request.body;
         
         const createTest = container.resolve(CreateTestsService);
 
-        const bts_result = await createTest.execute_bst(result)
-        //console.log("create_bst result",bts_result)
+        const bts_result = await createTest.execute_bst(user_id, result)
+        //console.log("create_bst body",bts_result);
         return response.json(bts_result); 
     } 
 
     public async create_sternberg(request: Request, response: Response): Promise<Response> {
         //console.log("create_sternberg body",request.body);
+        //const user_id: request.user.id;
+        let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
         const result: ISternbergResultDTO = request.body;
         
         const createTest = container.resolve(CreateTestsService);
 
-        const sternberg_result = await createTest.execute_sternberg(result)
+        const sternberg_result = await createTest.execute_sternberg(user_id, result)
         //console.log("create_sternberg result",sternberg_result)
         return response.json(sternberg_result);
     }
@@ -77,57 +82,16 @@ export default class BstController {
     }
 
     public async create_stroop(request: Request, response: Response): Promise<Response> {
-        const {
-            user_id,
-            patient_id,
-            subnum,
-            round,
-            block,
-            trial,
-            word,
-            color,
-            part,
-            xpos,
-            ypos,
-            resp,
-            rname,
-            correct,
-            intrusion,
-            numresponses,
-            time0,
-            timea,
-            timeend,
-            trialtime,
-            responsetime
-        } = request.body;
+        //console.log("create_stroop body",request.body);
+        //const user_id: request.user.id;
+        let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
+        const result: IStroopResultDTO = request.body;
 
         const createTest = container.resolve(CreateTestsService);
 
-        const test = await createTest.execute_stroop({
-            user_id,
-            patient_id,
-            subnum,
-            round,
-            block,
-            trial,
-            word,
-            color,
-            part,
-            xpos,
-            ypos,
-            resp,
-            rname,
-            correct,
-            intrusion,
-            numresponses,
-            time0,
-            timea,
-            timeend,
-            trialtime,
-            responsetime
-        });
-
-        return response.json(test); 
+        const stroop_result = await createTest.execute_stroop(user_id, result)
+        //console.log("create_stroop body",bts_result);
+        return response.json(stroop_result);
     }
 
     public async show_userbst(request: Request, response: Response): Promise <Response> { 

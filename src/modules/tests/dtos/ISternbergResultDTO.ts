@@ -10,7 +10,6 @@ export interface IFaseSternberg {
   }
   
   export interface ISternbergResultDTO {
-      user_id: string;
       patient_id: string;
       resultadoFinal: {
         fase1: IFaseSternberg;

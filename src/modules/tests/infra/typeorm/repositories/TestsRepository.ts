@@ -138,6 +138,7 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_stroop({
+    result_id,
     user_id,
     patient_id,
     subnum,
@@ -161,6 +162,7 @@ class TestsRepository implements ITestsRepository {
     responsetime,
   }: ICreateStroopDTO): Promise<Stroop> {
     const test = this.ormRepositoryST.create({
+      result_id,
       user_id,
       patient_id,
       subnum,

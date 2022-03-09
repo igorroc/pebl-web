@@ -12,7 +12,6 @@ export interface IFaseBst {
 }
 
 export interface IBstResultDTO {
-    user_id: string;
     patient_id: string;
     resultadoFinal: {
       fase1: IFaseBst;
