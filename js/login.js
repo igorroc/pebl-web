@@ -59,7 +59,7 @@ async function handleLogin() {
 	})
 	//window.location.href = `./user.html`
 	console.log("dataPost", dataPost)
-	
+	document.cookie =  `token=${dataPost.token}; path=/;`
 	console.log("cookie",document.cookie)
 
 }
