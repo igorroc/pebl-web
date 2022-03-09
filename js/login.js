@@ -2,6 +2,9 @@ var loader = document.getElementById("loader")
 var form = document.getElementById('form-sign-in')
 var formSignUp = document.getElementById('form-sign-up')
 
+const cookieValue = document.cookie.includes("token");
+if(cookieValue) window.location.replace(`./index.html`)
+
 loader.addEventListener("click", () => {
 	loader.classList.toggle("pausado")
 })

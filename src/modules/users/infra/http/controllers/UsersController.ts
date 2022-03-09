@@ -88,7 +88,6 @@ export default class UsersController {
 	public async findById(request: Request, response: Response): Promise<Response> {
 		try {
 			const id = request.user.id;
-			console.log(id);
 			const createuser = container.resolve(CreateUserService);
 	  
 			const userDb = await createuser.findById(id);

@@ -218,7 +218,7 @@ input[type="submit"]:hover {
   /* style the items (options), including the selected item: */
   .select-items div,.select-selected {
 	color: #ffffff;
-	padding: 8px 16px;
+	padding: 8px 13px;
 	cursor: pointer;
 	border-radius: 10px;
 	
@@ -349,7 +349,7 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 1800px) {
 	#form-sign-up {
-		left: 50%;
+		left: 48%;
 	}
 	
 	#form-sign-in .question,
@@ -384,10 +384,10 @@ input[type="submit"]:hover {
 	}
 
 	#form-sign-up form {
-		gap: 1em;
+		gap: 0.8em;
 	}
 	#form-sign-up form .wrap-questions{
-		width: 18.5vw;
+		width: 19.8vw;
 	}
 	
 }

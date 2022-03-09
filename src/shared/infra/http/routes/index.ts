@@ -13,8 +13,8 @@ const routes = Router();
 routes.use('/test', testsRouter);
 routes.use("/users", passwordRouter);
 routes.use("/users", usersRouter);
-routes.use("/patient", patientRouter);
 routes.use("/sessions", sessionsRouter);
 routes.use("/profile", profileRouter);
+routes.use("/patient", patientRouter);
 
 export default routes;

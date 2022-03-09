@@ -142,15 +142,14 @@ async function updatePatient(){
 	.find(row => row.startsWith('patientId='))
 	.split('=')[1];
 
-	await fetch(`http://localhost:3333/patient/update/${cookieValue}`, {
-		method: "PUT",
-		headers: myHeader,
-		body: JSON.stringify(patient),
+	const Api = axiosConfig()
+
+	await Api.put(`/patient/update/${cookieValue}`, 
+		patient
+	).then((res) => {
+		console.log(res)
 	})
-		.then((res) => {
-			console.log(res)
-		})
-		.catch((err) => console.error(err))
+	.catch((err) => console.error(err))
 }
 
 var myHeader = {
