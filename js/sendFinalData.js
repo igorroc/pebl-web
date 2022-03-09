@@ -30,43 +30,48 @@ function getUserInfo() {
 }
 
 var myHeader = {
-	"Access-Control-Allow-Origin": "*",
-	"Access-Control-Allow-Methods": "POST",
-	"Access-Control-Allow-Headers": "*",
-	"Access-Control-Max-Age": 86400,
 	"Content-Type": "application/json"
 }
 
 async function pushResponse(testType) {
-	//console.log("antes")
+	/* console.log("antes")
 	
-	//let user_id = "9153b417-eb8a-4173-8217-a5abb2857c72"
-	//let patient_id = "cbf16a0c-f1da-4320-a193-c3042470ab44"
-	//console.log(resultadoFinal)
-	//console.log(JSON.stringify({user_id, patient_id, resultadoFinal}))
+	let patient_id = "cbf16a0c-f1da-4320-a193-c3042470ab44"
+	console.log(resultadoFinal)
+	console.log(JSON.stringify({patient_id, resultadoFinal})) */
 	
+	let address = ""
+
 	switch (testType){
 		case "bst":
-			address = "http://localhost:3333/test/bst";
+			address = `/test/bst`;
 			break;
 		case "sternberg":
-			address = "http://localhost:3333/test/sternberg";
+			address = `/test/sternberg`;
 			break;
 		case "stroop":
-			address = "http://localhost:3333/test/stroop";
+			address = `/test/stroop`;
 			break;
 		case "torre":
-			address = "http://localhost:3333/test/torre";
+			address = `/test/torre`;
 			break;
 	}
 
-	await fetch(address, {
+	const Api = axiosConfig()
+
+	await Api.post(address, {
+		patient_id, resultadoFinal
+	}).then((r) => console.log(r))
+	.catch((err) => console.error(err))
+
+	/* await fetch(address, {
 		method: "POST",
 		headers: myHeader,
-		body: JSON.stringify({user_id, patient_id, resultadoFinal}),
-	})
+		body: JSON.stringify({
+			user_id, patient_id, resultadoFinal
+		})
 		.then((r) => console.log(r))	
-		.catch((err) => console.error(err))
+		.catch((err) => console.error(err)) */
 
 	//console.log("depois")
 }

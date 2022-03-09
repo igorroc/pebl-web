@@ -1,13 +1,14 @@
 export default interface ICreateStroopDTO {
+  result_id: string;
   user_id: string;
   patient_id: string;
-  subnum: number[];
-  round: number[];
-  block: number[];
+  subnum: string;
+  round: number;
+  block: number;
   trial: number[];
-  word: number[];
+  word: string[];
   color: string[];
-  part: string[];
+  part: string;
   xpos: number[];
   ypos: number[];
   resp: number[];
