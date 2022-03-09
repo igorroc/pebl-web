@@ -152,10 +152,6 @@ async function updatePatient(){
 	.catch((err) => console.error(err))
 }
 
-var myHeader = {
-	"Content-Type": "application/json"
-}
-
 async function envioFormulario() {
 
 	const patient = {
@@ -185,12 +181,17 @@ async function envioFormulario() {
 		// 	})
 		// 	.catch((err) => console.error(err))
 		const Api = axiosConfig()
+		let patientCreated
 
 		await Api.post("/patient/create", 
 			patient
-		).catch((err)=>{
+		).then((res)=>{
+			patientCreated = res.data;
+		}).catch((err)=>{
 			alert('Erro ao criar paciente')
 		})
+		
+		document.cookie =  `patientId=${patientCreated.id};Path=/;SameSite=None;Secure;`
 	}
 	
 }
@@ -440,16 +441,6 @@ function continueMobile() {
 	everything.style.display = "block"
 }
 
-function axiosConfig(){
-	const Api = axios.create({
-		baseURL: "http://127.0.0.1:3333",
-		credentials: 'include',
-		withCredentials:true,
-		headers:myHeader
-	});
-	return Api
-}
-
 async function searchPatientCpf() {
 	let patientcpf = document.getElementById("patientcpf")
 	let patientData
@@ -464,6 +455,8 @@ async function searchPatientCpf() {
 		patientcpf.value = "";
 		alert('Dados inválidos')
 	})
+
+	document.cookie =  `patientId=${patientData.id};Path=/;SameSite=None;Secure;`
 	
 	var nome = document.getElementById("name")
 	var orientando = document.getElementById("prof")

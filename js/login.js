@@ -28,17 +28,6 @@ var myHeader = {
 	"Content-Type": "application/json",
 }
 
-//axios.defaults.withCredentials = true
-function axiosConfig(){
-	const Api = axios.create({
-		baseURL: "http://127.0.0.1:3333",
-		credentials: 'include',
-		withCredentials:true,
-		headers:myHeader,
-	});
-	return Api
-}
-
 async function handleLogin() {
 
 	var emailLogin = document.getElementById("emailLogin")
@@ -57,11 +46,7 @@ async function handleLogin() {
 		console.log("error", err)
 		alert('Dados inválidos')
 	})
-	//window.location.href = `./user.html`
-	console.log("dataPost", dataPost)
 	document.cookie =  `token=${dataPost.token};Path=/;SameSite=None;Secure;`
-	console.log("cookie",document.cookie)
-
 }
 
 
@@ -116,7 +101,6 @@ async function handleSignUp() {
 
 		})
 		.then(function (data) {
-			console.log("data", data)
 			alert(`Usuário ${String(nameSignUp.value)} cadastrado com sucesso!\nFaça login para continuar!`)
 			window.location.href = `./login.html`
 			//window.location.replace(`./user.html`)

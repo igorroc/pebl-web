@@ -10,11 +10,9 @@ const hoverLink2 = document.querySelector("#hoverLink2")
 const hoverLink3 = document.querySelector("#hoverLink3")
 const hoverLink4 = document.querySelector("#hoverLink4")
 
-// if(!cookieExists) {
-// 	hoverLink1.href = './login.html'
-// 	hoverLink2.href = './login.html'
-// 	hoverLink3.href = './login.html'
-// 	hoverLink4.href = './login.html'
-// }
-
-console.log("cookie contact",document.cookie)
+if(!cookieExists) {
+	hoverLink1.href = './login.html'
+	hoverLink2.href = './login.html'
+	hoverLink3.href = './login.html'
+	hoverLink4.href = './login.html'
+}
