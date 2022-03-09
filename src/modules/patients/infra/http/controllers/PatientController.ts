@@ -11,6 +11,8 @@ export default class PatientController {
 
       const patientDb = await createpatient.execute(patient);
 
+      response.setHeader("Set-Cookie", [`patientId=${patientDb.id};Path=/`]);
+
       return response.json(patientDb);
     } catch (err) {
       return response.status(400).json({ error: err });
@@ -27,6 +29,8 @@ export default class PatientController {
 
       const patientDb = await createpatient.searchCpf(cpf);
 
+      response.setHeader("Set-Cookie", [`patientId=${patientDb.id};Path=/`]);
+
       return response.json(patientDb);
     } catch (err) {
       return response.status(400).json({ error: err });
@@ -39,7 +43,6 @@ export default class PatientController {
   ): Promise<Response> {
     try {
       const { id } = request.params;
-      console.log(id);
       const createpatient = container.resolve(PatientService);
 
       const patientDb = await createpatient.searchId(id);

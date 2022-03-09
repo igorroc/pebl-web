@@ -19,6 +19,15 @@ var form = document.getElementById("formID")
 var formClose = document.getElementById("closeForm")
 var everything = document.getElementById("everything")
 
+var nome = document.getElementById("name")
+var orientando = document.getElementById("prof")
+var idade = document.getElementById("idade")
+var email = document.getElementById("email")
+var gender = document.getElementById("gender")
+var scholarity = document.getElementById("scholarity")
+var workField = document.getElementById("workField")
+var cpf = document.getElementById("cpf")
+
 // DADOS INICIAIS
 if (id) {
 	fetch("https://igorroc.github.io/pebl-web/testes/info_testes.json")
@@ -87,35 +96,36 @@ if (cor) {
 link.addEventListener("click", () => {
 	form.style.display = "flex"
 	everything.classList.add("displaynone")
+	document.cookie = "patientId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 })
 
 formClose.addEventListener("click", () => {
 	form.style.display = "none"
 	everything.classList.remove("displaynone")
+	document.cookie = "patientId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	window.location.reload();
 })
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault()
-	envioFormulario()
+	var cpfField = document.getElementById("patientcpf").value
+
+	if(cpfField === ""){
+		envioFormulario()
+	}else{
+		updatePatient()
+	}
+
+	var linkDoTeste = link.getAttribute("linkDoTeste")
+
+	//var linkFinal = `${linkDoTeste}.html?lang=br&nome=${nome.value}&orientando=${orientando.value}&idade=${idade.value}&email=${email.value}`
+
+	//console.log(linkFinal)
+	
+	window.location.replace(`./testes/${linkDoTeste}.html`)
 })
 
-var myHeader = {
-	"Access-Control-Allow-Origin": "*",
-	"Access-Control-Allow-Methods": "POST",
-	"Access-Control-Allow-Headers": "*",
-	"Access-Control-Max-Age": 86400,
-	"Content-Type": "application/json"
-}
-
-async function envioFormulario() {
-	var nome = document.getElementById("name")
-	var orientando = document.getElementById("prof")
-	var idade = document.getElementById("idade")
-	var email = document.getElementById("email")
-	var gender = document.getElementById("gender")
-	var scholarity = document.getElementById("scholarity")
-	var workField = document.getElementById("workField")
-	var cpf = document.getElementById("cpf")
+async function updatePatient(){
 
 	const patient = {
 		"name": String(nome.value),
@@ -126,25 +136,63 @@ async function envioFormulario() {
 		"workField": String(workField.value),
 		"cpf": String(cpf.value)
 	}
+	
+	const cookieValue = document.cookie
+	.split('; ')
+	.find(row => row.startsWith('patientId='))
+	.split('=')[1];
 
-	await fetch("http://localhost:3333/patient/create", {
-		method: "POST",
-		headers: myHeader,
-		body: JSON.stringify(patient),
+	const Api = axiosConfig()
+
+	await Api.put(`/patient/update/${cookieValue}`, 
+		patient
+	).then((res) => {
+		console.log(res)
 	})
-		.then((res) => {
-			console.log(res)
+	.catch((err) => console.error(err))
+}
+
+var myHeader = {
+	"Content-Type": "application/json"
+}
+
+async function envioFormulario() {
+
+	const patient = {
+		name: String(nome.value),
+		age: Number(idade.value),
+		email: String(email.value),
+		gender: String(gender.value),
+		scholarity: String(scholarity.value),
+		workField: String(workField.value),
+		cpf: String(cpf.value)
+	}
+	const cookieValue = document.cookie.includes("patientId");
+// 	const cookieValue = document.cookie
+//   .split('; ')
+//   .find(row => row.startsWith('patientId='))
+//   .split('=')[1];
+ 
+
+	if(!cookieValue){
+		// await fetch("http://localhost:3333/patient/create", {
+		// 	method: "POST",
+		// 	headers: myHeader,
+		// 	body: JSON.stringify(patient),
+		// })
+		// 	.then((res) => {
+		// 		console.log(res)
+		// 	})
+		// 	.catch((err) => console.error(err))
+		const Api = axiosConfig()
+
+		await Api.post("/patient/create", 
+			patient
+		).catch((err)=>{
+			alert('Erro ao criar paciente')
 		})
-		.catch((err) => console.error(err))
-
-
-	var linkDoTeste = link.getAttribute("linkDoTeste")
-
-	var linkFinal = `${linkDoTeste}.html?lang=br&nome=${nome.value}&orientando=${orientando.value}&idade=${idade.value}&email=${email.value}`
-
-	console.log(linkFinal)
-
-	window.location.replace(`./testes/${linkFinal}`)
+	}
+	
 }
 
 // GRAFICOS
@@ -392,31 +440,31 @@ function continueMobile() {
 	everything.style.display = "block"
 }
 
+function axiosConfig(){
+	const Api = axios.create({
+		baseURL: "http://127.0.0.1:3333",
+		credentials: 'include',
+		withCredentials:true,
+		headers:myHeader
+	});
+	return Api
+}
+
 async function searchPatientCpf() {
 	let patientcpf = document.getElementById("patientcpf")
-	let patient
+	let patientData
 
-	await fetch("http://localhost:3333/patient/cpf", {
-		method: "POST",
-		headers: myHeader,
-		body: JSON.stringify({
-			"cpf": String(patientcpf.value)
-		}),
+	const Api = axiosConfig()
+
+	await Api.post("/patient/cpf", {
+		cpf: String(patientcpf.value),
+	}).then((res)=>{
+		patientData = res.data;
+	}).catch((err)=>{
+		patientcpf.value = "";
+		alert('Dados inválidos')
 	})
-		.then((res) => {
-			//patient = res.data
-			console.log(res)
-			return res.json()
-
-		})
-		.then(function (data) {
-			patient = data
-		})
-		.catch((err) => {
-			alert("Paciente não cadastrado")
-			console.error(err)
-		})
-
+	
 	var nome = document.getElementById("name")
 	var orientando = document.getElementById("prof")
 	var idade = document.getElementById("idade")
@@ -426,15 +474,21 @@ async function searchPatientCpf() {
 	var workField = document.getElementById("workField")
 	var cpf = document.getElementById("cpf")
 
-	if (patient) {
-		nome.value = patient.name
-		idade.value = patient.age
-		email.value = patient.email
-		gender.value = patient.gender
-		scholarity.value = patient.scholarity
-		workField.value = patient.workField
+	if (patientData) {
+		nome.value = patientData.name
+		idade.value = patientData.age
+		email.value = patientData.email
+		gender.value = patientData.gender
+		scholarity.value = patientData.scholarity
+		workField.value = patientData.workField
 		cpf.value = patientcpf.value
 		orientando.value = "Professor"
+
+		cpf.disabled = true
+
+		cpf.style.backgroundColor = "#4a4a4a"
+		
+
 	}
 
 }
