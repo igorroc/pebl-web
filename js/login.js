@@ -59,6 +59,9 @@ async function handleLogin() {
 	})
 	//window.location.href = `./user.html`
 	console.log("dataPost", dataPost)
+	
+	console.log("cookie",document.cookie)
+
 }
 
 

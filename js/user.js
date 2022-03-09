@@ -72,6 +72,7 @@ const logout = document.getElementById("logout")
 
 logout.addEventListener("click", () => {
 	document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	document.cookie = "patientId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 	window.location.replace('./login.html')
 })
 

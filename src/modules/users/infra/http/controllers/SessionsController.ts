@@ -15,8 +15,7 @@ export default class SessionsController {
         });
         delete user.password;
         
-        response.cookie('token',token)
-        response.setHeader("Set-Cookie", [`token=${token}`]);
+        response.setHeader("Set-Cookie", [`token=${token};Path=/;SameSite=None;Secure;`]);
 
         return response.json({ user, token });  
     } 
