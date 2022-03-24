@@ -12,6 +12,7 @@ class TolRepository implements ITestsTolRepository {
   }
 
   public async create_tol({
+    result_id,
     user_id,
     patient_id,
     sub,
@@ -29,6 +30,7 @@ class TolRepository implements ITestsTolRepository {
     done,
   }: ICreateTolDTO): Promise<Tol> {
     const test = this.ormRepositoryT.create({
+      result_id,
       user_id,
       patient_id,
       sub,

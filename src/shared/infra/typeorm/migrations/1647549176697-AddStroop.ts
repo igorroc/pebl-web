@@ -1,7 +1,7 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class addStroop1646831286646 implements MigrationInterface {
-    name = 'addStroop1646831286646'
+export class AddStroop1647549176697 implements MigrationInterface {
+    name = 'AddStroop1647549176697'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
@@ -62,14 +62,14 @@ export class addStroop1646831286646 implements MigrationInterface {
         `);
         await queryRunner.query(`
             ALTER TABLE "public"."stroop"
-            ADD "xpos" integer array NOT NULL
+            ADD "xpos" double precision array NOT NULL
         `);
         await queryRunner.query(`
             ALTER TABLE "public"."stroop" DROP COLUMN "ypos"
         `);
         await queryRunner.query(`
             ALTER TABLE "public"."stroop"
-            ADD "ypos" integer array NOT NULL
+            ADD "ypos" double precision array NOT NULL
         `);
         await queryRunner.query(`
             ALTER TABLE "public"."stroop" DROP COLUMN "resp"

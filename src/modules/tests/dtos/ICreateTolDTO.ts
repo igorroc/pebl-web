@@ -1,11 +1,12 @@
 export default interface ICreateTolDTO {
+  result_id: string;
   user_id: string;
   patient_id: string;
-  sub: number[];
+  sub: string;
   trial: number[];
-  size: number[];
-  current: number[];
-  end: number[];
+  size: number;
+  current: string[];
+  end: string[];
   step: number[];
   reset: number[];
   tries: number[];

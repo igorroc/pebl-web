@@ -11,6 +11,7 @@ import TolRepository from '../../typeorm/repositories/TolRepository';
 import StroopRepository from '../../typeorm/repositories/StroopRepository';
 import { ISternbergResultDTO } from '@modules/tests/dtos/ISternbergResultDTO';
 import { IStroopResultDTO } from '@modules/tests/dtos/IStroopResultDTO';
+import { ITolResultDTO } from '@modules/tests/dtos/ITolResultDTO';
 
 export default class BstController { 
     public async create_bst(request: Request, response: Response): Promise<Response> {
@@ -41,45 +42,16 @@ export default class BstController {
     }
 
     public async create_tol(request: Request, response: Response): Promise<Response> {
-        const {
-            user_id,
-            patient_id,
-            sub,
-            trial,
-            size,
-            current,
-            end,
-            step,
-            reset,
-            tries,
-            score,
-            abstime,
-            trialtime,
-            clicktime,
-            done
-        } = request.body;
-
+        //console.log("create_tol body",request.body);
+        const user_id = request.user.id;
+        //let user_id = "ab35109b-70fc-428e-8a2d-883250dad572"
+        const result: ITolResultDTO = request.body;
+        
         const createTest = container.resolve(CreateTestsService);
 
-        const test = await createTest.execute_tol({
-            user_id,
-            patient_id,
-            sub,
-            trial,
-            size,
-            current,
-            end,
-            step,
-            reset,
-            tries,
-            score,
-            abstime,
-            trialtime,
-            clicktime,
-            done
-        });
-
-        return response.json(test); 
+        const tol_result = await createTest.execute_tol(user_id, result)
+        //console.log("create_tol result",tol_result)
+        return response.json(tol_result);
     }
 
     public async create_stroop(request: Request, response: Response): Promise<Response> {

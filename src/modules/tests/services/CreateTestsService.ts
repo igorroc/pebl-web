@@ -16,6 +16,7 @@ import Stroop from '../infra/typeorm/entities/Stroop';
 import {IBstResultDTO, IFaseBst} from '../dtos/IBstResultDTO';
 import { ISternbergResultDTO, IFaseSternberg } from '../dtos/ISternbergResultDTO';
 import { IFaseStroop, IStroopResultDTO } from '../dtos/IStroopResultDTO';
+import { ITolResultDTO } from '../dtos/ITolResultDTO';
 
 
 @injectable()
@@ -77,40 +78,29 @@ class CreateTestsService {
         return test; 
     }
 
-    public async execute_tol({ 
-        user_id,
+    public async execute_tol(user_id: string, {
         patient_id,
-        sub,
-        trial,
-        size,
-        current,
-        end,
-        step,
-        reset,
-        tries,
-        score,
-        abstime,
-        trialtime,
-        clicktime,
-        done
-        }: ICreateTolDTO): Promise<Tol> {
-        const test = await this.testsRepository.create_tol({
-            user_id,
-            patient_id,
-            sub,
-            trial,
-            size,
-            current,
-            end,
-            step,
-            reset,
-            tries,
-            score,
-            abstime,
-            trialtime,
-            clicktime,
-            done
-        });
+        resultadoFinal
+        }: ITolResultDTO): Promise<Tol> {
+            const result_id = uuid_v4();
+            const test: Tol = await this.testsRepository.create_tol({
+                result_id: result_id,
+                user_id: user_id,
+                patient_id: patient_id,
+                sub: patient_id,
+                trial: resultadoFinal.trial,
+                size: resultadoFinal.size,
+                current: resultadoFinal.current,
+                end: resultadoFinal.end,
+                step: resultadoFinal.step,
+                reset: resultadoFinal.reset,
+                tries: resultadoFinal.tries,
+                score: resultadoFinal.score,
+                abstime: resultadoFinal.abstime,
+                trialtime: resultadoFinal.trialtime,
+                clicktime: resultadoFinal.clicktime,
+                done: resultadoFinal.done
+            });
 
         return test; 
     }

@@ -13,12 +13,23 @@ const gabarito =
 
 const palavras = ["batata", "quando", "sobre", "brocolis"]
 
-var coresFase1 = randomColors()
-var coresFase2 = randomColors()
-var coresFase3 = randomColors()
-
-var textosFase2 = randomWords()
-var textosFase3 = randomColorNames()
+var coresFase = []
+coresFase[1] = randomColors()//coresFase1
+coresFase[2] = randomColors()//coresFase2
+coresFase[3] = randomColors()//coresFase3
+//var coresFase1 = randomColors()
+//var coresFase2 = randomColors()
+//var coresFase3 = randomColors()
+var textosFase = []
+var aux = []
+for (let j = 0; j < 24; j++) {
+	aux.push("0")
+}
+textosFase[1] = aux;
+textosFase[2] = randomWords()
+textosFase[3] = randomColorNames()
+//var textosFase2 = randomWords()
+//var textosFase3 = randomColorNames()
 
 // let testeblabla = []
 // let blabla
@@ -26,13 +37,70 @@ var textosFase3 = randomColorNames()
 
 var resultadoFinal = {
 	fase1: {
-		tempo: [],
+		timeclick: [],
+		timepast: [],
+		round: 0,
+		block: 0,
+		trial: [],
+		word: [],
+		color: [],
+		part: "d",
+		xpos: [],
+		ypos: [],
+		resp: [],
+		rname: [],
+		correct: [],
+		intrusion: [],
+		numresponses: [],
+		time0: [],
+		timea: [],
+		timeend: [],
+		trialtime: [],
+		responsetime: []
 	},
 	fase2: {
-		tempo: [],
+		timeclick: [],
+		timepast: [],
+		round: 0,
+		block: 0,
+		trial: [],
+		word: [],
+		color: [],
+		part: "w",
+		xpos: [],
+		ypos: [],
+		resp: [],
+		rname: [],
+		correct: [],
+		intrusion: [],
+		numresponses: [],
+		time0: [],
+		timea: [],
+		timeend: [],
+		trialtime: [],
+		responsetime: []
 	},
 	fase3: {
-		tempo: [],
+		timeclick: [],
+		timepast: [],
+		round: 0,
+		block: 0,
+		trial: [],
+		word: [],
+		color: [],
+		part: "c",
+		xpos: [],
+		ypos: [],
+		resp: [],
+		rname: [],
+		correct: [],
+		intrusion: [],
+		numresponses: [],
+		time0: [],
+		timea: [],
+		timeend: [],
+		trialtime: [],
+		responsetime: []
 	},
 }
 
@@ -49,7 +117,7 @@ if (window.innerHeight <= 630) {
 }
 
 for (var j = 0; j < 24; j++) {
-	filhos[j].children[0].classList.add(`bg-${coresFase1[j]}`)
+	filhos[j].children[0].classList.add(`bg-${coresFase[1][j]}`)
 }
 traduzInformacao("stroop", "pre_test", "instruction", lang)
 document.addEventListener("keydown", inicio)
@@ -66,19 +134,17 @@ function inicio() {
 	comandos.style.position = "absolute"
 	comandos.style.left = "50%"
 	comandos.style.transform = "translateX(-50%)"
-
+	getTime(resultadoFinal.fase1.timepast)
 	document.removeEventListener("keydown", inicio)
 	document.addEventListener("keydown", treinamento)
 }
 
 function treinamento(e) {
 	let escolha = colors[e.key - 1]
-
 	let feedback = document.getElementsByClassName("feedback")[0]
 	if (escolha) {
 		feedback.classList.add(`bg-${escolha}`)
 	}
-
 	for (var classe of feedback.classList) {
 		if (classe != "feedback" && classe != `bg-${escolha}`) {
 			feedback.classList.remove(classe)
@@ -91,7 +157,9 @@ function treinamento(e) {
 		comandos.style = ""
 		informacao.classList.add("displaynone")
 		level = 1
-		getTime(resultadoFinal[`fase${level}`].tempo)
+		getTime(resultadoFinal[`fase${level}`].timeclick)
+		resultadoFinal[`fase${level}`].round = 1
+		resultadoFinal[`fase${level}`].block = level
 		document.removeEventListener("keydown", treinamento)
 		document.addEventListener("keydown", jogo)
 	}
@@ -110,14 +178,14 @@ function alteraCorCirculos() {
 	}
 }
 
-function alteratextoCirculos(textos) {
+function alteratextoCirculos(textos, fase) {
 	var p = document.createElement("p")
 	for (var j = 0; j < circulos.length; j++) {
 		p.innerHTML = textos[j]
 		circulos[j].appendChild(p.cloneNode(true))
 	}
 	for (var [k, c] of circulos.entries()) {
-		c.classList.add(`cl-${coresFase2[k]}`)
+		c.classList.add(`cl-${coresFase[fase][k]}`)
 	}
 }
 
@@ -129,14 +197,47 @@ function removetxt() {
 
 function fase2() {
 	alteraCorCirculos()
-	alteratextoCirculos(textosFase2)
+	alteratextoCirculos(textosFase[2],2)
 }
 
 function fase3() {
 	removetxt()
-	alteratextoCirculos(textosFase3)
+	alteratextoCirculos(textosFase[3],3)
 }
 
+function calctimes() {
+	let len = 0
+	let sumtimea = 0
+	let sumtimeend = 0
+	for (let i = 1; i < 4; i++) {
+		resultadoFinal[`fase${i}`].timea = timesumdif(resultadoFinal[`fase${i}`].timeclick, sumtimea)
+		resultadoFinal[`fase${i}`].timeend = timesumdif(resultadoFinal[`fase${i}`].timepast, sumtimeend)
+
+		sumtimea = resultadoFinal[`fase${i}`].timea[resultadoFinal[`fase${i}`].timea.length - 1]
+		sumtimeend = resultadoFinal[`fase${i}`].timeend[resultadoFinal[`fase${i}`].timeend.length - 1]
+
+		len = resultadoFinal[`fase${i}`].timea.length
+		for (let j = 0; j < len - 1; j++) {
+			//resultadoFinal[`fase${i}`].time0[j] = 0
+			if (j==0 || resultadoFinal[`fase${i}`].correct[j-1] == 1){
+				//resultadoFinal[`fase${i}`].time0.push(resultadoFinal[`fase${i}`].timea[j])
+				resultadoFinal[`fase${i}`].time0[j] = resultadoFinal[`fase${i}`].timea[j]
+			} else {
+				//resultadoFinal[`fase${i}`].time0.push(resultadoFinal[`fase${i}`].time0[j-1])
+				resultadoFinal[`fase${i}`].time0[j] = resultadoFinal[`fase${i}`].time0[j-1]
+			}
+			//console.log("i: "+i,"j: "+j,"time0: " + resultadoFinal[`fase${i}`].time0[j])
+			//console.log("i: "+i,"j: "+j,"timea: " + resultadoFinal[`fase${i}`].timea[j])
+			//console.log("i: "+i,"j: "+j,"timeend: " + resultadoFinal[`fase${i}`].timeend[j])
+			resultadoFinal[`fase${i}`].trialtime[j] = resultadoFinal[`fase${i}`].timeend[j] - resultadoFinal[`fase${i}`].time0[j]
+			resultadoFinal[`fase${i}`].responsetime[j] = resultadoFinal[`fase${i}`].timeend[j] - resultadoFinal[`fase${i}`].timea[j]
+			//resultadoFinal[`fase${i}`].trialtime.push(resultadoFinal[`fase${i}`].timend[j] - resultadoFinal[`fase${i}`].time0[j])
+			//resultadoFinal[`fase${i}`].responsetime.push(resultadoFinal[`fase${i}`].timend[j] - resultadoFinal[`fase${i}`].timea[j])
+		}
+		delete resultadoFinal[`fase${i}`].timeclick
+		delete resultadoFinal[`fase${i}`].timepast
+	}
+}
 //transicao-----------------------
 function transition() {
 	traduzInformacao("stroop", "test", `explain_level${level + 1}`, lang)
@@ -152,7 +253,10 @@ function removeTransition() {
 
 	prox_fase()
 	document.removeEventListener("keydown", inicio)
-	getTime(resultadoFinal[`fase${level}`].tempo)
+	getTime(resultadoFinal[`fase${level}`].timeclick)
+	getTime(resultadoFinal[`fase${level}`].timepast)
+	resultadoFinal[`fase${level}`].round = 1
+	resultadoFinal[`fase${level}`].block = level
 }
 
 function prox_fase() {
@@ -180,7 +284,9 @@ async function finalizar() {
 	// graph_container.appendChild(canvas)
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
-	await pushResponse()
+	calctimes()
+
+	await pushResponse("stroop")
 	// showGraphs()
 }
 
@@ -191,21 +297,21 @@ function showGraphs() {
 	const borderColor = [[], [], []]
 	var i = 1
 
-	for (const key of resultado(resultadoFinal.fase1.tempo)) {
+	for (const key of resultado(resultadoFinal.fase1.tempoclick)) {
 		labels.push(`L${i++}`)
 		data[0].push(key)
 		backgroundColor[0].push(`rgba(255, ${50 + 4 * i}, ${200 - 4 * i}, 0.2)`)
 		borderColor[0].push(`rgb(255, ${50 + 4 * i}, ${200 - 4 * i})`)
 	}
 	i = 0
-	for (const key of resultado(resultadoFinal.fase2.tempo)) {
+	for (const key of resultado(resultadoFinal.fase2.tempoclick)) {
 		i++
 		data[1].push(key)
 		backgroundColor[1].push(`rgba(150, ${50 + 4 * i}, ${200 - 4 * i}, 0.2)`)
 		borderColor[1].push(`rgb(150, ${50 + 4 * i}, ${200 - 4 * i})`)
 	}
 	i = 0
-	for (const key of resultado(resultadoFinal.fase3.tempo)) {
+	for (const key of resultado(resultadoFinal.fase3.tempoclick)) {
 		i++
 		data[2].push(key)
 		backgroundColor[2].push(`rgba(75, ${50 + 4 * i}, ${200 - 4 * i}, 0.2)`)
@@ -312,14 +418,34 @@ function randomColorNames() {
 
 var jogo = function (e) {
 	let escolha = colors[e.key - 1]
+	
 	if (transicionando) {
 		removeTransition()
 	} else {
+		
+		resultadoFinal[`fase${level}`].trial.push(i+1)
+		resultadoFinal[`fase${level}`].word.push(textosFase[level][i])
+		resultadoFinal[`fase${level}`].color.push(coresFase[level][i])
+
+		let pos = filhos[i].getBoundingClientRect()
+		//console.log(pos)
+		resultadoFinal[`fase${level}`].xpos.push(pos.x + (pos.width/2))
+		resultadoFinal[`fase${level}`].ypos.push(pos.y + (pos.height/2))
+
+		resultadoFinal[`fase${level}`].resp.push(e.key)
+		resultadoFinal[`fase${level}`].rname.push(escolha)
+		
+		resultadoFinal[`fase${level}`].numresponses.push(resultadoFinal[`fase${level}`].numresponses.length + 1)
+
+		getTime(resultadoFinal[`fase${level}`].timeclick)//timea
+		getTime(resultadoFinal[`fase${level}`].timepast)//timeend
+
 		if (
 			filhos[i].children[0].classList.contains(`bg-${escolha}`) ||
 			filhos[i].children[0].classList.contains(`cl-${escolha}`)
 		) {
-			getTime(resultadoFinal[`fase${level}`].tempo)
+			resultadoFinal[`fase${level}`].correct.push(1)//acertou
+			resultadoFinal[`fase${level}`].intrusion.push(0)
 			i = i + 1
 			if (i < 24) {
 				filhos[i - 1].classList.remove("clique-errado")
@@ -327,6 +453,10 @@ var jogo = function (e) {
 				filhos[i].classList.add("ativo")
 			}
 		} else {
+			resultadoFinal[`fase${level}`].correct.push(0)//errou
+			
+			resultadoFinal[`fase${level}`].intrusion.push(e.key - 1 == gabarito.indexOf(textosFase[level][i]) ? 1 : 0)
+
 			filhos[i].classList.remove("clique-errado")
 			void filhos[i].offsetWidth
 			filhos[i].classList.add("clique-errado")

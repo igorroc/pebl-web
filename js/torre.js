@@ -5,6 +5,7 @@ let faseAtual = 0
 let totalIteracoes = 0
 let iteracoesFase = 0
 let scoreTotal = 0
+let sumAbsTime = 0
 
 let startTime = new Date()
 let endTime = new Date()
@@ -83,15 +84,16 @@ function inicio() {
 	for(let i = 0; i < 3; i++){
 		inventario.querySelectorAll(`#slot${i+1} .disco`).forEach((el) => current[i].push(el.classList.value.split(" ")[1]) )
 	}
+	startTime = new Date()
+	sumAbsTime = startTime - endTime
 	resultadoFinal[faseAtual].push({
 		"current": current,
 		"end": [fases[faseAtual].first, fases[faseAtual].second, fases[faseAtual].third],
 		"score": 0,
-		"absTime": new Date(),
-		"clickTime": 0,
+		"abstime": sumAbsTime,
+		"clicktime": 0,
 		"done": false
 	})
-	startTime = new Date()
 }
 
 function proximaFase() {
@@ -119,15 +121,16 @@ function proximaFase() {
 	for(let i = 0; i < 3; i++){
 		inventario.querySelectorAll(`#slot${i+1} .disco`).forEach((el) => current[i].push(el.classList.value.split(" ")[1]) )
 	}
+	startTime = new Date()
+	sumAbsTime += startTime - endTime
 	resultadoFinal[faseAtual].push({
 		"current": current,
 		"end": [fases[faseAtual].first, fases[faseAtual].second, fases[faseAtual].third],
-		"score": 0,
-		"absTime": new Date(),
-		"clickTime": 0,
+		"score": scoreTotal,
+		"abstime": sumAbsTime,
+		"clicktime": 0,
 		"done": false
 	})
-	startTime = new Date()
 }
 
 // FUNCTIONS
@@ -152,13 +155,13 @@ function insereDisco(slot) {
 		inventario.querySelectorAll(`#slot${i+1} .disco`).forEach((el) => current[i].push(el.classList.value.split(" ")[1]) )
 	}
 	endTime = new Date()
-
+	sumAbsTime += endTime - startTime
 	resultadoFinal[faseAtual].push({
 		"current": current,
 		"end": [fases[faseAtual].first, fases[faseAtual].second, fases[faseAtual].third],
 		"score": scoreTotal,
-		"absTime": new Date(),
-		"clickTime": endTime - startTime,
+		"abstime": sumAbsTime,
+		"clicktime": endTime - startTime,
 		"done": userWin
 	})
 
@@ -287,6 +290,101 @@ function resetCliques() {
 	}
 }
 
+function processResult() {
+	let finalResult = {
+		trial: [],
+		size: 3,
+		current: [],
+		end: [],
+		step: [],
+		reset: [],
+		tries: [],
+		score: [],
+		abstime: [],
+		trialtime: [],
+		clicktime: [],
+		done: []
+	}
+	let numFase = 1
+	let numStep = 0
+	let sumTimeStep = 0
+
+	//console.log("resultadoFinal",resultadoFinal)
+	resultadoFinal.forEach(fase => {
+		//console.log("fase "+numFase, fase[0].end)
+		numStep = 0
+		sumTimeStep = 0
+		fase.forEach(step => {
+			//console.log("step "+numStep, step)
+			sumTimeStep += step.clicktime
+			/* finalResult.push({
+				"trial": numFase,
+				"size": 3,
+				"current": arrayToString(step.current),
+				"end": arrayToString(step.end),
+				"step": numStep,
+				"reset": 0,
+				"tries": 1,
+				"score": step.score,
+				"absTime": step.absTime,
+				"trialtime": sumTimeStep,
+				"clickTime": step.clickTime,
+				"done": step.done
+			}) */
+			finalResult.trial.push(numFase)
+			finalResult.current.push(arrayToString(step.current))
+			finalResult.end.push(arrayToString(step.end))
+			finalResult.step.push(numStep)
+			finalResult.reset.push(0)
+			finalResult.tries.push(1)
+			finalResult.score.push(step.score)
+			finalResult.abstime.push(step.abstime)
+			finalResult.trialtime.push(sumTimeStep)
+			finalResult.clicktime.push(step.clicktime)
+			finalResult.done.push(step.done ? 1 : 0)
+			numStep += 1
+		})
+		numFase += 1
+		
+	});
+	//console.log(finalResult)
+	resultadoFinal = finalResult
+}
+
+function arrayToString (a) {
+	let result = "|"
+	//console.log("arrayToString - array",a)
+
+	for (let i = 0; i < 3; i++) {
+		for (let j = 0; j < a[i].length; j++) {
+			result += colorToNum(a[i][j])
+		}
+		result += "|"
+	}
+	//console.log("arrayToString - string", result)
+	return result
+}
+
+function colorToNum (color) {
+	let num
+
+	switch (color) {
+		case "color1":
+			num = "1"
+			break;
+		case "color2":
+			num = "2"
+			break;
+		case "color3":
+			num = "3"
+			break;
+		default:
+			break;
+	}
+
+	return num
+}
+
 async function finalizarTeste() {
 	traduzInformacao("torre", "ending", "end", lang)
 	window.removeEventListener("mousedown", proximaFase)
@@ -299,6 +397,7 @@ async function finalizarTeste() {
 
 	getUserInfo()
 
-	
-	await pushResponse()
+	processResult()
+
+	await pushResponse("tol")
 }

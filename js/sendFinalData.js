@@ -31,7 +31,12 @@ function getUserInfo() {
 
 async function pushResponse(testType) {
 	const patient_id = document.cookie.split('; ').find(x => x.startsWith('patientId=')).split('=')[1]
-		
+	
+	/* console.log(resultadoFinal)
+	console.log(JSON.stringify({
+		patient_id, resultadoFinal
+	})) */
+	
 	let address = ""
 
 	switch (testType){
@@ -44,8 +49,8 @@ async function pushResponse(testType) {
 		case "stroop":
 			address = `/test/stroop`;
 			break;
-		case "torre":
-			address = `/test/torre`;
+		case "tol":
+			address = `/test/tol`;
 			break;
 	}
 

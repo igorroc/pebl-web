@@ -54,10 +54,10 @@ class Stroop {
     @Column()
     part: string;
 
-    @Column("int", { array: true })
+    @Column("float", { array: true })
     xpos: number[];
 
-    @Column("int", { array: true })
+    @Column("float", { array: true })
     ypos: number[];
 
     @Column("int", { array: true })
