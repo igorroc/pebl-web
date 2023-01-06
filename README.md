@@ -59,14 +59,13 @@ Desenvolvimento de testes neuropsicológicos computadorizados online para o cont
 
 As seguintes ferramentas serão utilizadas no projeto:
 
-- [Node.js](https://nodejs.org/en/)
-- [PostgreSQL](https://www.postgresql.org)
-- [TypeORM](https://typeorm.io/#/)
-- [Python 3.8](https://www.python.org)
-- [Anaconda](https://www.anaconda.com/open-source)
-- [Scikit Learn](https://scikit-learn.org/stable/)
-- [Keras](https://keras.io)
-
+-   [Node.js](https://nodejs.org/en/)
+-   [PostgreSQL](https://www.postgresql.org)
+-   [TypeORM](https://typeorm.io/#/)
+-   [Python 3.8](https://www.python.org)
+-   [Anaconda](https://www.anaconda.com/open-source)
+-   [Scikit Learn](https://scikit-learn.org/stable/)
+-   [Keras](https://keras.io)
 
 ## ✅ Requerimentos
 
@@ -80,19 +79,13 @@ $ git clone https://github.com/IgorRoc/pebl-web.git
 
 # Acesse
 $ cd pebl-web
-
-# Instale as depencencias
-$ yarn
-
-# Rode o projeto
-$ yarn start
 ```
 
 ## 📝 Licença
 
 Esse projeto está sob licença MIT. Para mais detalhes, veja o arquivo de [LICENÇA](LICENSE.md).
 
-Feito com :heart: por <a href="https://github.com/IgorRoc" target="_blank">Igor Rocha</a>, <a href="https://github.com/inlima" target="_blank">Isaac Lima</a>, <a href="https://github.com/jvrupp" target="_blank">João Rupp</a>
+Feito com ❤ por <a href="https://github.com/IgorRoc" target="_blank">Igor Rocha</a>, <a href="https://github.com/inlima" target="_blank">Isaac Lima</a>, <a href="https://github.com/jvrupp" target="_blank">João Rupp</a>
 
 &#xa0;
 

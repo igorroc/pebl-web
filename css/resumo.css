@@ -27,6 +27,27 @@ footer {
 	height: 200px;
 }
 
+.question input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkMark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background: linear-gradient(90deg, #4440b2, #625cff);
+}
+
+.checkQuestion>label:hover input ~ .checkMark {
+	background-color: #ccc;
+}
+
 #avisoNaoEncontrou {
 	width: 80%;
 
@@ -286,7 +307,7 @@ footer {
 	margin-top: 20px; /*40px*/
 }
 
-#formContent > form{
+#formContent > form {
 	margin-top: 0px;
 	display: grid;
 	grid-template-columns: 2fr 2fr;
@@ -302,7 +323,7 @@ footer {
 	gap: 10px;
 }
 
-#btnCPF{
+#btnCPF {
 	font-family: "Montserrat", sans-serif;
 	font-size: 1em;
 	font-weight: 500;
@@ -334,9 +355,18 @@ footer {
 }
 
 .checkQuestion {
+	position: relative;
 	flex-direction: row;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
+.checkQuestion label {
+	margin-left: 30px;
+}
 .checkQuestion a {
 	color: #5cb0ff;
 }

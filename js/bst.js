@@ -191,11 +191,15 @@ function removeClasses(div) {
 }
 
 function random_shape() {
-	return shape[Math.floor(Math.random() * shape.length)]
+	let chosen_shape = shape[Math.floor(Math.random() * shape.length)]
+	console.log(chosen_shape)
+	return chosen_shape
 }
 
 function random_aux(forma) {
-	return aux[forma][Math.floor(Math.random() * aux[forma].length)]
+	let chosen_color = aux[forma][Math.floor(Math.random() * aux[forma].length)]
+	console.log(chosen_color)
+	return chosen_color
 }
 
 // GRAFICOS
