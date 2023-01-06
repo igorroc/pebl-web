@@ -22,8 +22,16 @@
 				<a class="login">Igor</a>
 			</header>
 
-			<!-- LINHA DE DIVISAO HORIZONTAL -->
-			<div class="line-h" style="transform: scale(-1)"></div>
+<body class="stop-scrolling">
+	<div id="everything" class="displaynone">
+		<header class="topnav">
+			<a class="logo" href="./"><img src="./assets/img/logo_brain.png" alt="Logo" /></a>
+			<a class="inicio" href="./">Início</a>
+			<a class="testes" href="./testes.html">Testes</a>
+			<a class="sobre" href="./about.html">Sobre</a>
+			<a class="contato" href="./contact.html">Contato</a>
+			<a class="login" id="cookieData">Igor</a>
+		</header>
 
 			<div class="apresentacao">
 				<div class="imagem">
@@ -233,9 +241,37 @@
 				<span></span>
 			</div>
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		<script src="./js/resumo.js"></script>
-		<script src="./js/loader.js"></script>
-		<script src="./js/background.js"></script>
-	</body>
+	</div>
+
+	<!-- WARNING PARA CELULARES -->
+	<div id="mobile" class="mobileOnly">
+		<h2>Aviso</h2>
+		<p>
+			Os testes foram desenvolvidos para serem realizados apenas pelo
+			computador, é provável que você presencie alguns problemas
+			realizando-o pelo celular.
+		</p>
+		<div class="btn" onclick="continueMobile()">
+			Continuar mesmo assim
+		</div>
+	</div>
+
+	<div id="loader-wrapper" class="loader-wrapper">
+		<div id="loader" class="loader box-loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="./js/axios.js"></script>
+	<script src="./js/cookieData.js"></script>
+	<script src="./js/resumo.js"></script>
+	<script src="./js/loader.js"></script>
+	<script src="./js/background.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
 </html>

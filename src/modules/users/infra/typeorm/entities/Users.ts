@@ -27,31 +27,19 @@ class User {
     age: number;
 
     @Column()
-    gender: boolean;
+    gender: string;
 
     @Column()
-    scholarity: string;
+    scholarity: string; 
 
     @Column()
     workField: string;
 
     @Column()
-    headScholarity: string;
-
-    @Column()
     headWorkField: string;
 
     @Column()
-    maritalStatus: number;
-
-    @Column()
-    currentWork: string;
-
-    @Column()
-    glasses: boolean;
-
-    @Column()
-    avatar: string;
+    maritalStatus: string; 
 
     @CreateDateColumn()
     created_at: Date;

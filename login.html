@@ -23,22 +23,26 @@
 			<div id="wrapper-inner-form">
 				<div id="form-sign-in">
 					<h2>Fazer Login</h2>
-					<form action="./user.html">
+					<!-- <form action="./user.html"  method="post" > -->
+					<form>
 						<div class="question">
 							<label for="email">Email</label>
-							<input
-								type="email"
-								name="email"
-								id="emailLogin"
-								required
-							/>
+								<input
+									type="email"
+									name="email"
+									id="emailLogin"
+									required
+									placeholder="email@google.com"
+								/>
 						</div>
 						<div class="question">
 							<label for="password">Senha</label>
+							
 							<input
 								type="password"
 								name="password"
 								id="passwordLogin"
+								placeholder="***********"
 								required
 							/>
 						</div>
@@ -50,45 +54,123 @@
 				</div>
 				<div id="form-sign-up">
 					<h2>Fazer Cadastro</h2>
-					<form action="">
-						<div class="question">
-							<label for="name">Nome Completo</label>
-							<input
-								type="text"
-								name="name"
-								id="nameSignUp"
-								required
-							/>
+					<form action="./testes.html">
+						<div class="wrap-questions">
+							<div class="question">
+								<label for="name">Nome Completo</label>
+								<input
+									type="text"
+									name="name"
+									id="nameSignUp"
+									placeholder="Digite seu nome"
+									required
+								/>
+							</div>
+							<div class="question">
+								<label for="email">Email</label>
+								<input
+									type="email"
+									name="email"
+									id="emailSignUp"
+									placeholder="email@google.com"
+									required
+								/>
+							</div>
+							<div class="question">
+								<label for="age">Idade</label>
+								<input
+									type="number" 
+									min="15" 
+									max="100" 
+									value="20"
+									name="age"
+									id="ageSignUp"
+									required
+								/>
+							</div>
+							<div class="question">
+								<label for="workField">Trabalho</label>
+								<input
+									type="text"
+									name="workField"
+									id="workFieldSignUp"
+									placeholder="Trabalho atual"
+									required
+								/>
+							</div>
+							<div class="question">
+								<label for="headWorkField">Área de Trabalho</label>
+								<input
+									type="text"
+									name="headWorkField"
+									id="headWorkFieldSignUp"
+									placeholder="Área de Trabalho"
+									required
+								/>
+							</div>
 						</div>
-						<div class="question">
-							<label for="email">Email</label>
-							<input
-								type="email"
-								name="email"
-								id="emailSignUp"
-								required
-							/>
-						</div>
-						<div class="question">
-							<label for="password">Senha</label>
-							<input
-								type="password"
-								name="password"
-								id="password1SignUp"
-								required
-							/>
-						</div>
-						<div class="question">
-							<label for="password">Repita sua senha</label>
-							<input
-								type="password"
-								name="password"
-								id="password2SignUp"
-								required
-							/>
-						</div>
-						<div class="form-submit">
-							<input type="submit" value="Cadastrar" />
+						<div class="wrap-questions">
+							<div class="question">
+								<label for="scholarity" id="scholarityLabel">Escolaridade</label>
+								<div class="custom-select" >
+									<select name="scholarity" id="selectScholarity" required>
+										<option value="" selected="selected">Selecionar</option>
+										<option value="Graduação Completa">Graduação Completa</option>
+										<option value="Mestrado Incompleto">Mestrado Incompleto</option>
+										<option value="Mestrado Completo">Mestrado Completo</option>
+										<option value="Doutorado Incompleto">Doutorado Incompleto</option>
+										<option value="Doutorado Completo">Doutorado Completo</option>
+										<option value="Pós Doutorado">Pós Doutorado</option>
+								  	</select>
+								</div>
+							</div>
+							<div class="question">
+								<label for="gender">Gênero</label>
+								<div class="custom-select" >
+									<select name="gender" id="selectGender" required placeholder="Selecione um estado">
+										<option value="" selected="selected">Selecionar</option>
+										<option value="Masculino">Masculino</option>
+										<option value="Feminino">Feminino</option>
+										<option value="Outro">Outro</option>
+								  	</select>
+								</div>
+							</div>
+							<div class="question">
+								<label for="maritalStatus">Estado civil</label>
+								<div class="custom-select" >
+									<select name="maritalStatus" id="selectMaritalStatus" required>
+										<option value="" selected="selected">Selecionar</option>
+										<option value="Casado(a)">Casado(a)</option>
+										<option value="Solteiro(a)">Solteiro(a)</option>
+										<option value="Viúvo(a)">Viúvo(a)</option>
+										<option value="União estável">União estável</option>
+									</select>
+								</div>
+							</div>
+							<div class="question">
+								<label for="password">Senha</label>
+								<input
+									type="password"
+									name="password"
+									id="password1SignUp"
+									placeholder="***********"
+									required
+								/>
+							</div>
+							<div class="question">
+								<label for="password">Repita sua senha</label>
+								<input
+									type="password"
+									name="password"
+									id="password2SignUp"
+									placeholder="***********"
+									required
+								/>
+							</div>
+							<div class="form-submit">
+								<input type="submit" value="Cadastrar" />
+							</div>
+					
 						</div>
 					</form>
 				</div>
@@ -128,8 +210,10 @@
 			</div>
 		</div>
 
+		<script src="./js/axios.js"></script>
 		<script src="./js/login.js"></script>
 		<script src="./js/loader.js"></script>
 		<script src="./js/background.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	</body>
 </html>

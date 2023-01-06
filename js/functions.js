@@ -13,6 +13,16 @@ function resultado(a) {
 	return dif
 }
 
+function timesumdif(a, initsum) {
+	var dif = new Array()
+	var sum = initsum
+	for (var i = 0; i < a.length - 1; i++) {
+		sum += a[i + 1].getTime() - a[i].getTime()
+		dif.push(sum)
+	}
+	return dif
+}
+
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms))
 }

@@ -45,6 +45,11 @@ class PatientRepository implements IPatientRepository {
 
     return patient;
   }
+
+  public async listAll(): Promise<Patient[]> {
+    const patients = this.ormRepository.find();
+    return patients;
+  }
 }
 
 export default PatientRepository;

@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-//import testsRouter from '@modules/tests/infra/http/routes/tests.routes';
+import testsRouter from '@modules/tests/infra/http/routes/tests.routes';
 import usersRouter from "@modules/users/infra/http/routes/user.routes";
 import sessionsRouter from "@modules/users/infra/http/routes/sessions.routes";
 import passwordRouter from "@modules/users/infra/http/routes/password.routes";
@@ -9,11 +9,12 @@ import patientRouter from "@modules/patients/infra/http/routes/patient.routes";
 
 const routes = Router();
 
-//routes.use('/test', testsRouter);
+
+routes.use('/test', testsRouter);
 routes.use("/users", passwordRouter);
 routes.use("/users", usersRouter);
-routes.use("/patient", patientRouter);
 routes.use("/sessions", sessionsRouter);
 routes.use("/profile", profileRouter);
+routes.use("/patient", patientRouter);
 
 export default routes;

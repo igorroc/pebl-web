@@ -13,8 +13,11 @@ import Patient from '@modules/patients/infra/typeorm/entities/Patients';
 
 @Entity('tol')
 class Tol {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn()
     id: string;
+
+    @Column("uuid")
+    result_id: string;
 
     @Column()
     user_id: string;
@@ -30,43 +33,43 @@ class Tol {
     @JoinColumn({ name: 'patient_id' })
     patient: Patient;
 
-    @Column("text", { array: true })
-    sub: number[];
+    @Column()
+    sub: string;
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     trial: number[];
 
-    @Column("text", { array: true })
-    size: number[];
+    @Column()
+    size: number;
 
     @Column("text", { array: true })
-    current: number[];
+    current: string[];
 
     @Column("text", { array: true })
-    end: number[];
+    end: string[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     step: number[]
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     reset: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     tries: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     score: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     abstime: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     trialtime: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     clicktime: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     done: number[];
 
     @CreateDateColumn()

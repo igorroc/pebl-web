@@ -3,6 +3,7 @@ import ITestsSternbergRepository from "@modules/tests/repositories/ITestsSternbe
 import { DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
 import Sternberg from "../entities/Sternberg";
 
+
 class SternbergRepository implements ITestsSternbergRepository {
   private ormRepositoryS: Repository<Sternberg>;
   constructor() {
@@ -10,6 +11,7 @@ class SternbergRepository implements ITestsSternbergRepository {
   }
 
   public async create_sternberg({
+    result_id,
     user_id,
     patient_id,
     subnum,
@@ -23,6 +25,7 @@ class SternbergRepository implements ITestsSternbergRepository {
     rt,
   }: ICreateSternbergDTO): Promise<Sternberg> {
     const test = this.ormRepositoryS.create({
+      result_id,
       user_id,
       patient_id,
       subnum,
@@ -64,6 +67,24 @@ class SternbergRepository implements ITestsSternbergRepository {
         id: user_id,
       },
     });
+    return tests;
+  }
+
+  public async findAndCount(user_id: string): Promise<Sternberg[]> {
+    let tests: Sternberg[];
+
+    tests = await this.ormRepositoryS.find({
+      where: {
+        id: user_id,
+      },
+    });
+    return tests;
+  }
+
+  public async find(): Promise<Sternberg[]> {
+    let tests: Sternberg[];
+
+    tests = await this.ormRepositoryS.find();
     return tests;
   }
 }

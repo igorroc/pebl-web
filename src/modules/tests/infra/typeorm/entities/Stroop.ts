@@ -13,8 +13,11 @@ import Patient from '@modules/patients/infra/typeorm/entities/Patients';
 
 @Entity('stroop')
 class Stroop {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn()
     id: string;
+
+    @Column("uuid")
+    result_id: string;
 
     @Column()
     user_id: string;
@@ -30,61 +33,61 @@ class Stroop {
     @JoinColumn({ name: 'patient_id' })
     patient: Patient;
 
-    @Column("text", { array: true })
-    subnum: number[];
+    @Column()
+    subnum: string;
+
+    @Column()
+    round: number;
+
+    @Column()
+    block: number;
 
     @Column("int", { array: true })
-    round: number[];
-
-    @Column("text", { array: true })
-    block: number[];
-
-    @Column("text", { array: true })
     trial: number[];
 
     @Column("text", { array: true })
-    word: number[];
+    word: string[];
 
     @Column("text", { array: true })
     color: string[];
 
-    @Column("text", { array: true })
-    part: string[];
+    @Column()
+    part: string;
 
-    @Column("text", { array: true })
+    @Column("float", { array: true })
     xpos: number[];
 
-    @Column("text", { array: true })
+    @Column("float", { array: true })
     ypos: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     resp: number[];
 
     @Column("text", { array: true })
     rname: string[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     correct: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     intrusion: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     numresponses: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     time0: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     timea: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     timeend: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     trialtime: number[];
 
-    @Column("text", { array: true })
+    @Column("int", { array: true })
     responsetime: number[];
 
     @CreateDateColumn()

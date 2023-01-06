@@ -1,3 +1,5 @@
+const { json } = require("body-parser")
+
 var finalTeste = {
     "deadline": "2020-10-11 10:00:00",
     "subnum": [9,9,9,9],
@@ -27,32 +29,67 @@ function getUserInfo() {
 		`\nINFO: ${nome} | ${orientando} | ${idade} | ${email}`
 }
 
-var myHeader = {
-	"Access-Control-Allow-Origin": "*",
-	"Access-Control-Allow-Methods": "POST",
-	"Access-Control-Allow-Headers": "*",
-	"Access-Control-Max-Age": 86400,
-	"Content-Type": "application/json"
-}
-
-async function pushResponse() {
-	console.log("antes")
+async function pushResponse(testType) {
+	const patient_id = document.cookie.split('; ').find(x => x.startsWith('patientId=')).split('=')[1]
 	
-	await fetch("http://localhost:3333/test/bst", {
+	/* console.log(resultadoFinal)
+	console.log(JSON.stringify({
+		patient_id, resultadoFinal
+	})) */
+	
+	let address = ""
+
+	switch (testType){
+		case "bst":
+			address = `/test/bst`;
+			break;
+		case "sternberg":
+			address = `/test/sternberg`;
+			break;
+		case "stroop":
+			address = `/test/stroop`;
+			break;
+		case "tol":
+			address = `/test/tol`;
+			break;
+	}
+
+	const Api = axiosConfig()
+
+	await Api.post(address, {
+		patient_id, resultadoFinal
+	}).then((r) => console.log(r))
+	.catch((err) => console.error(err))
+
+	/* await fetch(address, {
 		method: "POST",
 		headers: myHeader,
-		body: JSON.stringify(resultadoFinal),
-	})
+		body: JSON.stringify({
+			user_id, patient_id, resultadoFinal
+		})
 		.then((r) => console.log(r))	
-		.catch((err) => console.error(err))
-
-	console.log("depois")
+		.catch((err) => console.error(err)) */
 }
 
-async function getResponse() {
+async function getResponse(testType) {
 	console.log("antes")
 	
-	let res = await fetch("http://localhost:3333/test/list/bst", {
+	switch (testType){
+		case "bst":
+			address = "http://localhost:3333/test/list/bst";
+			break;
+		case "sternberg":
+			address = "http://localhost:3333/test/list/bst";
+			break;
+		case "stroop":
+			address = "http://localhost:3333/test/list/bst";
+			break;
+		case "torre":
+			address = "http://localhost:3333/test/list/bst";
+			break;
+	}
+
+	let res = await fetch(address, {
 		method: "GET"
 	})
 

@@ -5,29 +5,64 @@ var lang = url.searchParams.get("lang") || "br"
 
 var resultadoFinal = {
 	fase1: {
+		type: "practice",
+		block: 0,
 		tempo: [],
-		escolhas: [],
+		corr: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase2: {
+		type: "neutral",
+		block: 1,
 		tempo: [],
-		escolhas: [],
+		corr: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase3: {
+		type: "congruent",
+		block: 2,
 		tempo: [],
-		escolhas: [],
+		corr: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase4: {
+		type: "incongruent",
+		block: 3,
 		tempo: [],
-		escolhas: [],
+		corr: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 	fase5: {
+		type: "mixed",
+		block: 4,
 		tempo: [],
-		escolhas: [],
+		corr: [],
+		trial: [],
 		stim: [],
+		resp: [],
+		congruency: [],
+		rt: [],
+		tooslow: [],
 	},
 }
 
@@ -47,6 +82,7 @@ var aux = {
 // ! INICIO DO TESTE
 traduzInformacao("bst", "pre_test", "instruction", lang)
 document.addEventListener("keydown", inicio)
+
 // ! FIM DO INICIO DO TESTE
 
 function inicio() {
@@ -66,11 +102,34 @@ function jogo(choice) {
 	if (transicionando) return
 	getTime(resultadoFinal[`fase${level}`].tempo)
 	step++
+
+	if (choice == shape[1]){
+		resultadoFinal[`fase${level}`].resp.push(`lshift`)//circle
+	} else {
+		resultadoFinal[`fase${level}`].resp.push(`rshift`)//square
+	}
+
+	let trial
+	step % PROX_NIVEL == 0 ? trial = PROX_NIVEL : trial = step % PROX_NIVEL
+	resultadoFinal[`fase${level}`].trial.push(trial)
+
+	let stim = mapstim(big.classList[2],big.classList[3])
+	resultadoFinal[`fase${level}`].stim.push(stim)
+	resultadoFinal[`fase${level}`].congruency.push(mapcongruency(stim))
+	
+	let lengthTime = resultadoFinal[`fase${level}`].tempo.length
+	let diffTime = resultadoFinal[`fase${level}`].tempo[lengthTime-1].getTime()-resultadoFinal[`fase${level}`].tempo[lengthTime-2].getTime()
+	resultadoFinal[`fase${level}`].rt.push(diffTime)
+
+	let tooslow
+	diffTime > 3000 ? tooslow = 1 : tooslow = 0
+	resultadoFinal[`fase${level}`].tooslow.push(tooslow)
+
 	if (choice == big.classList[2]) {
-		resultadoFinal[`fase${level}`].escolhas.push(1)
+		resultadoFinal[`fase${level}`].corr.push(1)
 		// Caso a escolha esteja correta, insere 1
 	} else {
-		resultadoFinal[`fase${level}`].escolhas.push(0)
+		resultadoFinal[`fase${level}`].corr.push(0)
 		// Caso a escolha esteja errada, insere 0
 	}
 
@@ -137,7 +196,11 @@ async function finalizar() {
 	// informacao.appendChild(graph_container)
 	informacao.classList.remove("displaynone")
 
-	pushResponse()
+	for (let i = 1; i < 6; i++) {
+		delete resultadoFinal[`fase${i}`].tempo
+	}
+	
+	pushResponse("bst")
 	// showGraphs()
 }
 
@@ -200,6 +263,45 @@ function random_aux(forma) {
 	let chosen_color = aux[forma][Math.floor(Math.random() * aux[forma].length)]
 	console.log(chosen_color)
 	return chosen_color
+}
+
+function mapstim(form,color) {
+	let stim
+
+	switch (color){
+		case "red":
+			form == "circle" ? stim = 1 : stim = 2
+			break;
+		case "blue":
+			form == "square" ? stim = 3 : stim = 4
+			break;
+		case "line":
+			form == "circle" ? stim = 5 : stim = 6
+			break;
+	}
+
+	return stim
+}
+
+function mapcongruency(stim) {
+	let congruency
+
+	switch (stim){
+		case 1:
+		case 3:
+			congruency = 1
+			break;
+		case 2:
+		case 4:
+			congruency = -1
+			break;
+		case 5:
+		case 6:
+			congruency = 0
+			break;
+	}
+
+	return congruency
 }
 
 // GRAFICOS

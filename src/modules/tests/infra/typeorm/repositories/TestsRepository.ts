@@ -13,6 +13,7 @@ import ICreateTolDTO from "@modules/tests/dtos/ICreateTolDTO";
 
 import Stroop from "@modules/tests/infra/typeorm/entities/Stroop";
 import ICreateStroopDTO from "@modules/tests/dtos/ICreateStroopDTO";
+
 class TestsRepository implements ITestsRepository {
   private ormRepositoryB: Repository<Bst>;
   private ormRepositoryS: Repository<Sternberg>;
@@ -27,6 +28,9 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_bst({
+    result_id,
+    user_id,
+    patient_id,
     subnum,
     type,
     block,
@@ -39,6 +43,9 @@ class TestsRepository implements ITestsRepository {
     tooslow,
   }: ICreateBstDTO): Promise<Bst> {
     const test = this.ormRepositoryB.create({
+      result_id,
+      user_id,
+      patient_id,
       subnum,
       type,
       block,
@@ -57,7 +64,9 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_sternberg({
+    result_id,
     user_id,
+    patient_id,
     subnum,
     length,
     trial,
@@ -69,7 +78,9 @@ class TestsRepository implements ITestsRepository {
     rt,
   }: ICreateSternbergDTO): Promise<Sternberg> {
     const test = this.ormRepositoryS.create({
+      result_id,
       user_id,
+      patient_id,
       subnum,
       length,
       trial,
@@ -87,7 +98,9 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_tol({
+    result_id,
     user_id,
+    patient_id,
     sub,
     trial,
     size,
@@ -103,7 +116,9 @@ class TestsRepository implements ITestsRepository {
     done,
   }: ICreateTolDTO): Promise<Tol> {
     const test = this.ormRepositoryT.create({
+      result_id,
       user_id,
+      patient_id,
       sub,
       trial,
       size,
@@ -125,7 +140,9 @@ class TestsRepository implements ITestsRepository {
   }
 
   public async create_stroop({
+    result_id,
     user_id,
+    patient_id,
     subnum,
     round,
     block,
@@ -147,7 +164,9 @@ class TestsRepository implements ITestsRepository {
     responsetime,
   }: ICreateStroopDTO): Promise<Stroop> {
     const test = this.ormRepositoryST.create({
+      result_id,
       user_id,
+      patient_id,
       subnum,
       round,
       block,

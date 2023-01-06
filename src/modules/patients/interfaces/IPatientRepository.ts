@@ -8,4 +8,5 @@ export default interface IPatientRepository {
   create(data: ICreatePatientDTO): Promise<Patient>;
   update(id: string, data: ICreatePatientDTO): Promise<UpdateResult>;
   delete(id: string): Promise<DeleteResult>;
+  listAll(): Promise<Patient[]>;
 }

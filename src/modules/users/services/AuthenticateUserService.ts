@@ -31,7 +31,6 @@ class AuthenticateUserService{
 
     public async execute({email, password}: Request): Promise<Response>{
         const user = await this.usersRepository.findByEmail(email);
-
         if(!user) {
             throw new AppError('Incorrect email/password combination.', 401);
         }
@@ -47,8 +46,7 @@ class AuthenticateUserService{
 
         const {secret, expiresIn} = authConfig.jwt;
 
-        const token = sign({}, secret, {
-            subject: user.id,
+        const token = sign({id:user.id,name:user.name}, secret, {
             expiresIn,
         });
 
